@@ -3,7 +3,7 @@
   "framework": "nextjs",
   "rewrites": [
     {
-      "source": "/:selliver/:data/:module*",
+      "source": "/:selliver((?!api|admin|portal|_next)[^/]+)/:data(\\d{4}-\\d{2}-\\d{2})/:module+",
       "destination": "/api/serve-course?selliver=:selliver&data=:data&module=:module"
     }
   ],

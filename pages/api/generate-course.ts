@@ -36,7 +36,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     triggerVercelBuild().catch((e) => console.error('[generate-course] Vercel trigger failed:', e));
 
     const coursePath = `/${form.selliver.slug}/${form.live.date}/`;
-    registerProduct({
+    await registerProduct({
       id: `${form.selliver.slug}-${form.live.date}`,
       name: form.hero.name,
       slug: form.selliver.slug,
@@ -54,9 +54,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       status: 'ok',
       url,
       indice_url: `${url}00-INDICE.html`,
-      files: builtFiles,
+      files: builtFiles.files,
       meta: courseData._meta,
-      message: 'Curso gerado. Vercel deploya em ~2 min.',
+      message: 'Curso gerado com sucesso!',
     });
   } catch (err: any) {
     console.error('[generate-course] ERROR:', err);

@@ -22,7 +22,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const TEMPLATES_DIR = path.join(ROOT, 'templates');
 const PARTIALS_DIR = path.join(TEMPLATES_DIR, '_partials');
-const PUBLIC_DIR = path.join(ROOT, 'public');
+const PUBLIC_DIR = process.env.COURSE_OUTPUT_DIR || path.join(ROOT, 'public');
 
 const MODULES = [
   { file: '00-INDICE', title: 'Índice' },

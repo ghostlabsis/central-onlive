@@ -1,14 +1,15 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { head } from '@vercel/blob';
 
-// GET — lê data/[slug]-[date].json
 export async function GET(req: Request, ctx: { params: Promise<{ slug: string; date: string }> }) {
   const { slug, date } = await ctx.params;
-  const filePath = path.join(process.cwd(), 'data', `${slug}-${date}.json`);
-  if (!fs.existsSync(filePath)) {
-    return NextResponse.json({ error: 'Curso não encontrado' }, { status: 404 });
+  try {
+    const blob = await head(`courses/${slug}/${date}/_data.json`).catch(() => null);
+    if (!blob) return NextResponse.json({ error: 'Curso não encontrado' }, { status: 404 });
+    const res = await fetch(blob.url);
+    const data = await res.json();
+    return NextResponse.json(data);
+  } catch {
+    return NextResponse.json({ error: 'Erro ao carregar dados do curso' }, { status: 500 });
   }
-  const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-  return NextResponse.json(data);
 }
