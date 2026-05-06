@@ -16,7 +16,7 @@ interface Product {
 const HUB_URL = 'https://n-olive-mu-76.vercel.app';
 
 export default function PortalPage() {
-  const params = useParams();
+  const params = useParams() ?? {};
   const selliver = typeof params.selliver === 'string' ? params.selliver : '';
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);

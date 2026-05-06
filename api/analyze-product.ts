@@ -163,7 +163,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       .map((c) => (c as any).text)
       .join('');
 
-    const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/) || text.match(/(\{[\s\S]*\})/s);
+    const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/) || text.match(/(\{[\s\S]*\})/);
     if (!jsonMatch) throw new Error('Claude não retornou JSON válido');
 
     const analysis = JSON.parse(jsonMatch[1] ?? jsonMatch[0]);
