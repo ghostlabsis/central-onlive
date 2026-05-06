@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+{{> head}}
+</head>
+<body class="min-h-screen">
+
+{{> header}}
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-12">
+    <p class="text-purple-600 font-bold text-sm tracking-wider mb-2">MÓDULO {{moduleNumber module.number}}</p>
+    <h1 class="text-4xl font-bold leading-tight mb-3">{{module.title}}</h1>
+    <p class="text-lg text-gray-700 mb-4">Não é descrever. É mostrar. Quem vê funcionando, compra.</p>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+      <span>⏱️ 20 minutos</span>
+      <span>📋 Pré: Módulos 1-4</span>
+      <span>🎯 Demo de 3 min que funciona no mute</span>
+    </div>
+  </div>
+
+  <!-- L · LEARN -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">L</div>
+      <div>
+        <h2 class="text-2xl font-bold">Learn — Absorver</h2>
+        <p class="text-sm text-gray-500">7 minutos</p>
+      </div>
+    </div>
+
+    <div class="bg-white border border-purple-100 rounded-xl p-5 mb-6 glow">
+      <div class="flex items-center gap-3 mb-3"><span class="text-2xl">🎧</span><span class="font-semibold">Narração: ~5 minutos</span></div>
+      <div class="bg-purple-50 rounded-lg p-4">
+        <p class="text-sm font-bold text-purple-900 mb-3">▶️ Ouvir agora</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="tts-play" onclick="ttsToggle()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold text-sm">▶ Tocar</button>
+          <button onclick="ttsStop()" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-bold text-sm">⏹ Parar</button>
+          <select id="tts-rate" onchange="ttsSetRate()" class="px-3 py-2 rounded-lg border border-gray-300 text-sm">
+            <option value="0.85">Devagar</option><option value="1" selected>Normal</option><option value="1.15">Rápido</option><option value="1.3">Bem rápido</option>
+          </select>
+          <select id="tts-voice" class="px-3 py-2 rounded-lg border border-gray-300 text-sm flex-1 min-w-0"><option>Carregando...</option></select>
+        </div>
+        <div id="tts-status" class="text-xs text-gray-600">Aguardando voz BR…</div>
+      </div>
+    </div>
+
+    <div class="bg-white border border-gray-100 rounded-xl p-6 mb-6">
+      <h3 class="text-xl font-bold mb-4">A estrutura: PPTRI</h3>
+      <p class="text-sm text-gray-600 mb-4">Toda demonstração segue 5 etapas. Não pula. Não inverte.</p>
+      <div class="space-y-3">
+        <div class="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-500">
+          <p class="font-bold text-purple-900">P · PROBLEMA</p>
+          <p class="text-sm text-gray-700 mt-1">Diga em palavras da persona o problema que esse produto resolve.</p>
+        </div>
+        <div class="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-500">
+          <p class="font-bold text-purple-900">P · PRODUTO</p>
+          <p class="text-sm text-gray-700 mt-1">Mostra o produto. Pega na mão. Vira pra câmera. Foco nos detalhes técnicos: {{#each hero.differentials}}{{label}}{{#unless @last}}, {{/unless}}{{/each}}.</p>
+        </div>
+        <div class="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-500">
+          <p class="font-bold text-purple-900">T · TESTE</p>
+          <p class="text-sm text-gray-700 mt-1">USA o produto AO VIVO. Aplica na mão, no rosto, no objeto. Sem corte.</p>
+        </div>
+        <div class="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-500">
+          <p class="font-bold text-purple-900">R · RESULTADO</p>
+          <p class="text-sm text-gray-700 mt-1">Mostra o resultado VISUAL. Pausa 2s pra câmera captar. Não fala — deixa o resultado falar.</p>
+        </div>
+        <div class="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-500">
+          <p class="font-bold text-purple-900">I · IMPACTO</p>
+          <p class="text-sm text-gray-700 mt-1">"Para quem [tem essa dor], muda [esse aspecto da rotina]." Conecta resultado à vida real.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-orange-50 border border-orange-200 rounded-xl p-5 mb-6">
+      <h3 class="text-lg font-bold text-orange-900 mb-3">⚠️ As 4 regras de ouro da demonstração</h3>
+      <ol class="space-y-2 text-sm text-gray-800">
+        <li><strong>1.</strong> Mostre, não descreva. Cada feature, mostra na mão. Não fala — mostra.</li>
+        <li><strong>2.</strong> Mude o visual a cada 30 segundos. Mesmo ângulo de câmera por 1 min = drop de retenção.</li>
+        <li><strong>3.</strong> Antes/depois em ≤60s. Se demora mais, espectador rola.</li>
+        <li><strong>4.</strong> Responde a objeção principal DENTRO da demo, sem esperar o chat perguntar.</li>
+      </ol>
+    </div>
+
+    {{#if compliance.forbidden_claims.length}}
+    <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-6">
+      <h3 class="text-base font-bold text-red-800 mb-2">⚠️ Na demo, NUNCA fala:</h3>
+      <div class="grid grid-cols-2 gap-1 text-sm">
+        {{#each compliance.forbidden_claims}}
+        <div class="text-red-700">✗ {{this}}</div>
+        {{/each}}
+      </div>
+      <p class="text-xs text-gray-600 mt-2">Pode falar: {{#each compliance.allowed_claims}}"{{this}}"{{#unless @last}}, {{/unless}}{{/each}}</p>
+    </div>
+    {{/if}}
+
+    <div class="bg-black text-white rounded-xl p-8 text-center">
+      <p class="text-xs text-purple-400 font-bold tracking-wider mb-4">PRINCÍPIO</p>
+      <p class="text-2xl font-bold leading-snug">"Eu não quero que você compre porque eu falei. Quero que você veja funcionando."</p>
+    </div>
+  </section>
+
+  <!-- I · IMITATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">I</div>
+      <div>
+        <h2 class="text-2xl font-bold">Imitate — Modelar</h2>
+        <p class="text-sm text-gray-500">5 minutos · Demo modelo de 3 min</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+      <p class="text-xs text-purple-600 font-bold mb-3">DEMO MODELO — {{hero.name}} · 3 MINUTOS</p>
+
+      <div class="space-y-3 text-sm">
+        <div class="border-l-4 border-purple-400 pl-4">
+          <p class="font-bold text-purple-700">[0:00 - 0:30] PROBLEMA</p>
+          <p class="italic text-gray-800 mt-1">"{{persona.main_pain_quote}}" — esse é o problema que esse produto resolve. [Segura o produto na mão, foco médio]</p>
+        </div>
+        <div class="border-l-4 border-purple-400 pl-4">
+          <p class="font-bold text-purple-700">[0:30 - 1:00] PRODUTO</p>
+          <p class="italic text-gray-800 mt-1">"Esse aqui é {{hero.name}}. {{#each hero.differentials}}{{label}} — {{description}}.{{#unless @last}} {{/unless}}{{/each}}" [Vira o produto, mostra rótulo e detalhes]</p>
+        </div>
+        <div class="border-l-4 border-purple-400 pl-4">
+          <p class="font-bold text-purple-700">[1:00 - 2:00] TESTE</p>
+          <p class="italic text-gray-800 mt-1">"Vou aplicar agora. Olha aqui. [pausa] Olha que rápido absorve. Não fica pesado, não fica pegajoso." [Close-up na aplicação. MUDA ÂNGULO.]</p>
+        </div>
+        <div class="border-l-4 border-purple-400 pl-4">
+          <p class="font-bold text-purple-700">[2:00 - 2:30] RESULTADO</p>
+          <p class="italic text-gray-800 mt-1">"[Pausa 2 segundos] Olha agora. [silêncio]" [Câmera muda para super close — 5 segundos de imagem pura, SEM FALA.]</p>
+        </div>
+        <div class="border-l-4 border-purple-400 pl-4">
+          <p class="font-bold text-purple-700">[2:30 - 3:00] IMPACTO</p>
+          <p class="italic text-gray-800 mt-1">"Para quem tem {{hero.category}}, isso muda a rotina inteira. {{#each compliance.allowed_claims}}{{#if @first}}{{this}}.{{/if}}{{/each}} Em 30-60 dias usando consistente, você nota." [Câmera frontal, produto visível]</p>
+        </div>
+      </div>
+
+      <details class="bg-purple-50 rounded-lg p-4 mt-6">
+        <summary class="font-bold text-purple-900">O que você vai imitar ▼</summary>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li>✦ <strong>Abre com a dor real da persona</strong> — não com "esse produto é incrível"</li>
+          <li>✦ <strong>5 mudanças de visual em 3 min</strong> — câmera nunca fica mais de 30s no mesmo ângulo</li>
+          <li>✦ <strong>Silêncio nos 5 segundos do resultado</strong> — onde o produto se vende sozinho</li>
+          <li>✦ <strong>Termina com expectativa real</strong> — prazo honesto, sem promessa de milagre</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- V · VERIFY -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">V</div>
+      <div>
+        <h2 class="text-2xl font-bold">Verify — Drillar</h2>
+        <p class="text-sm text-gray-500">6 minutos · Gravar demo + mute test</p>
+      </div>
+    </div>
+
+    <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-lg font-bold mb-3">🎯 Drill 5.1 — Sua demo de 3 minutos</h3>
+      <p class="mb-4 text-gray-700">Liga câmera. Pega o {{hero.name}}. Sem ler. Em 3 minutos, executa PPTRI completo.</p>
+
+      <div class="bg-black text-white rounded-lg p-6 text-center mb-4">
+        <p class="text-xs text-purple-300 mb-2">CRONÔMETRO + GUIA POR ETAPA</p>
+        <div class="text-6xl font-black timer-display mb-2" id="timer1">03:00</div>
+        <p class="text-xs text-gray-400 mb-4" id="phase-label">Aguardando início</p>
+        <div class="flex gap-2 justify-center flex-wrap">
+          <button onclick="startDemoTimer()" class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-lg font-bold">▶ Comecei a gravar</button>
+          <button onclick="resetDemoTimer()" class="bg-gray-700 px-6 py-2 rounded-lg font-bold">↻ Refazer</button>
+        </div>
+      </div>
+
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+        <p class="font-bold text-yellow-900 mb-2">🔇 MUTE TEST OBRIGATÓRIO</p>
+        <p class="text-sm text-gray-800">Depois de gravar, assiste o vídeo COM SOM MUDO. Pergunta: <strong>uma pessoa que nunca viu esse produto entenderia o que ele faz só pela imagem?</strong> Se sim, demo aprovada. Se não, refaz.</p>
+      </div>
+
+      <div class="mt-6">
+        <p class="font-bold mb-3">Conferi e:</p>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Cobri as 5 etapas (P-P-T-R-I) em ≤3 min</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Mudei o visual pelo menos 4 vezes</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Tive pelo menos 3s de silêncio na etapa Resultado</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Apliquei o produto AO VIVO (não só descrevi)</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Demo funciona no mute (mute test)</span></label>
+        {{#each compliance.forbidden_claims}}
+        {{#if @first}}<label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Não falei "{{this}}" ou outros claims proibidos</span></label>{{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- E · EVALUATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">E</div>
+      <div>
+        <h2 class="text-2xl font-bold">Evaluate — Testar</h2>
+        <p class="text-sm text-gray-500">2 minutos</p>
+      </div>
+    </div>
+
+    <div id="quiz" class="space-y-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 1 / 4</p>
+        <p class="font-bold mb-4">Qual a sequência da estrutura PPTRI?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Produto → Preço → Teste → Resultado → Impacto</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Problema → Produto → Teste → Resultado → Impacto</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Promessa → Produto → Tempo → Resposta → Indicação</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Pergunta → Produto → Teste → Recompensa → Indicação</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 2 / 4</p>
+        <p class="font-bold mb-4">Por que ficar em silêncio na etapa Resultado?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Pra Selliver respirar</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Pra deixar a imagem do resultado vender sozinha — sem narração competindo</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Pra criar mistério</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Tempo pra ler o chat</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 3 / 4</p>
+        <p class="font-bold mb-4">Qual o tempo máximo no mesmo ângulo/visual?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">5 segundos</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">30 segundos</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">1 minuto</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">2 minutos</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 4 / 4</p>
+        <p class="font-bold mb-4">Mute test serve para:</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Verificar a qualidade do áudio</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Verificar se o espectador entende o produto só pela imagem (como ele chega na live)</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Treinar leitura labial</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Reduzir tamanho do arquivo de vídeo</button>
+        </div>
+      </div>
+
+      <div id="quiz-score" class="hidden bg-purple-50 border-2 border-purple-300 rounded-xl p-6 text-center">
+        <p class="text-xs text-purple-600 font-bold mb-2">SEU RESULTADO</p>
+        <p id="score-text" class="text-3xl font-bold mb-2"></p>
+        <p id="score-message" class="text-sm text-gray-700"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <div class="bg-white border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-4">✅ Pode passar para o Módulo 6 se:</h3>
+      <div class="space-y-3 mb-6">
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Acertei pelo menos 3 das 4 perguntas</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Gravei demo de 3 min seguindo PPTRI</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Demo passou no mute test</span></label>
+      </div>
+      <button id="next-btn" disabled class="w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg">Marca os 3 acima</button>
+    </div>
+  </section>
+
+  <footer class="text-center text-xs text-gray-400 py-8">{{brand.name}} · Curso Selliver · Método LIVE™ · Módulo {{module.number}} de {{module.total}}</footer>
+</main>
+
+<script type="text/plain" id="tts-script">
+Bem-vinda ao módulo cinco. Esse é o módulo da execução.
+Se hook é abrir, demonstração é onde a venda acontece.
+
+A regra é simples: não descreve, mostra.
+A maioria das Sellivers iniciantes erra aqui. Falam sobre o produto, listam benefícios, e nunca aplicam ele na frente da câmera.
+Espectador não compra do que ouve. Compra do que vê.
+
+A estrutura é a mesma sempre. Cinco etapas. Decora a sigla: PPTRI.
+
+P. Problema.
+Você abre dizendo, em palavras da persona, qual o problema que esse produto resolve.
+"{{persona.main_pain_quote}}" — esse é o problema.
+
+P. Produto.
+Mostra. Pega na mão. Vira pra câmera.
+{{hero.name}}. {{#each hero.differentials}}{{label}}, {{description}}. {{/each}}Detalhes técnicos com número, não com adjetivo.
+
+T. Teste.
+Aqui é onde maioria trava. Você USA o produto AO VIVO.
+Sem corte. Espectador precisa ver o produto sair da embalagem e ir pra pele.
+
+R. Resultado.
+Aqui vem o segredo: você fica em SILÊNCIO por dois a cinco segundos.
+Mostra o resultado visual. Não fala. Deixa a imagem vender sozinha.
+
+I. Impacto.
+Conecta o resultado à vida da persona.
+{{#each compliance.allowed_claims}}{{#if @first}}{{this}}.{{/if}}{{/each}} Em trinta a sessenta dias você nota.
+
+Quatro regras de ouro.
+Um. Mostre, não descreva.
+Dois. Mude o visual a cada trinta segundos.
+Três. Antes e depois em até sessenta segundos.
+Quatro. Responde a objeção principal DENTRO da demo.
+
+Agora você vai gravar uma demo de três minutos. PPTRI completo. Sem ler. Cronometrado.
+Depois faz o teste do mute. Vamos.
+</script>
+
+{{> scripts-engine}}
+
+<script>
+  initQuiz(4);
+  setupApproval('06-Oferta-e-Preco.html');
+
+  function startDemoTimer() {
+    if (timers.timer1) clearInterval(timers.timer1);
+    let s = 180;
+    const e = document.getElementById('timer1'), lbl = document.getElementById('phase-label');
+    const phases = [
+      {at:180, label:'P · PROBLEMA', color:'text-purple-300'},
+      {at:150, label:'P · PRODUTO', color:'text-purple-300'},
+      {at:120, label:'T · TESTE (aplica AGORA)', color:'text-yellow-300'},
+      {at:60,  label:'R · RESULTADO (silêncio 2-5s)', color:'text-green-300'},
+      {at:30,  label:'I · IMPACTO', color:'text-purple-300'}
+    ];
+    const u = () => {
+      const m = String(Math.floor(s/60)).padStart(2,'0'), x = String(s%60).padStart(2,'0');
+      e.textContent = `${m}:${x}`;
+      const c = phases.find(p => s <= p.at) || phases[0];
+      lbl.textContent = c.label;
+      lbl.className = `text-sm font-bold mb-4 ${c.color}`;
+      if (phases.find(p => p.at === s+1)) { navigator.vibrate && navigator.vibrate(150); }
+      if (s <= 0) {
+        clearInterval(timers.timer1);
+        e.classList.add('text-red-500');
+        e.textContent = '⏰ FIM!';
+        lbl.textContent = 'Agora faz o mute test.';
+        navigator.vibrate && navigator.vibrate([300,100,300]);
+      }
+      s--;
+    };
+    u();
+    timers.timer1 = setInterval(u, 1000);
+  }
+
+  function resetDemoTimer() {
+    if (timers.timer1) clearInterval(timers.timer1);
+    const e = document.getElementById('timer1');
+    e.textContent = '03:00';
+    e.classList.remove('text-red-500');
+    document.getElementById('phase-label').textContent = 'Aguardando início';
+  }
+</script>
+
+</body>
+</html>

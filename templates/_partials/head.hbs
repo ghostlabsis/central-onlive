@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Módulo {{moduleNumber module.number}} — {{module.title}} · Curso Selliver {{brand.name}}</title>
+<meta name="description" content="Curso Selliver {{selliver.name}} · {{live.date}} · Hero: {{hero.name}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root { --p:#7547FF; --pd:#5B38CC; --ps:rgba(117,71,255,0.08); }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #FAFAFA; color: #0A0A0A; }
+  .bebas { font-family: 'Bebas Neue', 'Trebuchet MS', sans-serif; letter-spacing: 0.02em; }
+  .lora-italic { font-family: 'Lora', Georgia, serif; font-style: italic; }
+  .timer-display { font-family: 'JetBrains Mono', 'Courier New', monospace; font-variant-numeric: tabular-nums; }
+  .quiz-option { transition: all 0.15s; }
+  .quiz-option:hover { background: rgba(117,71,255,0.08); }
+  .quiz-option.correct { background: #D1FAE5; border-color: #10B981; }
+  .quiz-option.wrong { background: #FEE2E2; border-color: #EF4444; }
+  .glow { box-shadow: 0 0 0 4px rgba(117,71,255,0.15); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  /* Violeta OnLive #7547FF — override Tailwind purple */
+  .bg-purple-600,.bg-purple-500 { background-color: var(--p) !important; }
+  .hover\:bg-purple-700:hover,.hover\:bg-purple-600:hover { background-color: var(--pd) !important; }
+  .text-purple-600,.text-purple-500 { color: var(--p) !important; }
+  .text-purple-400 { color: rgba(117,71,255,0.75) !important; }
+  .text-purple-900 { color: #2d1b6b !important; }
+  .text-purple-300 { color: rgba(117,71,255,0.6) !important; }
+  .border-purple-600,.border-purple-500 { border-color: var(--p) !important; }
+  .border-purple-200,.border-purple-100 { border-color: rgba(117,71,255,0.25) !important; }
+  .bg-purple-50 { background-color: rgba(117,71,255,0.06) !important; }
+  .bg-purple-100 { background-color: rgba(117,71,255,0.12) !important; }
+  .from-purple-50 { --tw-gradient-from: rgba(117,71,255,0.06) var(--tw-gradient-from-position) !important; }
+  .to-purple-100 { --tw-gradient-to: rgba(117,71,255,0.12) var(--tw-gradient-to-position) !important; }
+  .ring-purple-500 { --tw-ring-color: var(--p) !important; }
+  .focus\:ring-purple-500:focus { --tw-ring-color: var(--p) !important; }
+  .focus\:border-purple-500:focus { border-color: var(--p) !important; }
+</style>

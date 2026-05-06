@@ -1,0 +1,12 @@
+<header class="bg-black text-white px-4 py-3 sticky top-0 z-10">
+  <div class="max-w-2xl mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <div class="w-3 h-3 rounded-full bg-purple-500 animate-pulse"></div>
+      <span class="font-bold text-purple-400 text-sm tracking-wider">{{brand.name}} · CURSO SELLIVER</span>
+    </div>
+    <div class="text-xs text-gray-400">Módulo {{module.number}} / {{module.total}} · {{selliver.name}}</div>
+  </div>
+  <div class="max-w-2xl mx-auto mt-2 h-1 bg-gray-800 rounded">
+    <div class="h-1 bg-purple-500 rounded" style="width: {{module.progress_pct}}%"></div>
+  </div>
+</header>

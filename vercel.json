@@ -1,0 +1,23 @@
+{
+  "buildCommand": "npm run build",
+  "framework": "nextjs",
+  "rewrites": [
+    {
+      "source": "/:selliver/:data/:module*",
+      "destination": "/api/serve-course?selliver=:selliver&data=:data&module=:module"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)\\.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }
+      ]
+    }
+  ],
+  "functions": {
+    "api/generate-course.ts": {
+      "maxDuration": 300
+    }
+  }
+}

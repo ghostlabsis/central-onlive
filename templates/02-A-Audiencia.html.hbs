@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+{{> head}}
+</head>
+<body class="min-h-screen">
+
+{{> header}}
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-12">
+    <p class="text-purple-600 font-bold text-sm tracking-wider mb-2">MÓDULO {{moduleNumber module.number}}</p>
+    <h1 class="text-4xl font-bold leading-tight mb-3">{{module.title}}</h1>
+    <p class="text-lg text-gray-700 mb-4">Você não vende para "as pessoas". Vende para uma pessoa específica que você precisa enxergar antes de abrir a câmera.</p>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+      <span>⏱️ 10 minutos</span>
+      <span>📋 Pré-requisito: Módulo 1</span>
+      <span>🎯 Identificar frase marketeira em 5s e refrasear em demonstração</span>
+    </div>
+  </div>
+
+  <!-- L · LEARN -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">L</div>
+      <div>
+        <h2 class="text-2xl font-bold">Learn — Absorver</h2>
+        <p class="text-sm text-gray-500">3 minutos · Conhecer a {{persona.fictional_name}}</p>
+      </div>
+    </div>
+
+    <div class="bg-white border border-purple-100 rounded-xl p-5 mb-6 glow">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="text-2xl">🎧</span>
+        <span class="font-semibold">Narração: ~3 minutos</span>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-4 mb-3">
+        <p class="text-sm font-bold text-purple-900 mb-3">▶️ Ouvir agora (voz do navegador)</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="tts-play" onclick="ttsToggle()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold text-sm">▶ Tocar</button>
+          <button onclick="ttsStop()" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold text-sm">⏹ Parar</button>
+          <select id="tts-rate" onchange="ttsSetRate()" class="px-3 py-2 rounded-lg border border-gray-300 text-sm">
+            <option value="0.85">Devagar</option><option value="1" selected>Normal</option><option value="1.15">Rápido</option><option value="1.3">Bem rápido</option>
+          </select>
+          <select id="tts-voice" class="px-3 py-2 rounded-lg border border-gray-300 text-sm flex-1 min-w-0"><option>Carregando...</option></select>
+        </div>
+        <div id="tts-status" class="text-xs text-gray-600">Aguardando voz BR…</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 1 — Persona -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-4">
+      <div class="text-xs text-purple-600 font-bold mb-2">SLIDE 1 / 4 — A PESSOA</div>
+      <h3 class="text-xl font-bold mb-3">Conheça a {{persona.fictional_name}}</h3>
+      <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-5 mb-4">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-2xl">{{persona.fictional_name}}</div>
+          <div>
+            <p class="text-xl font-bold">{{persona.fictional_name}}, {{persona.age}} anos</p>
+            <p class="text-sm text-gray-700">{{persona.city}} · classe {{persona.class}} · {{persona.occupation}}</p>
+          </div>
+        </div>
+        <ul class="text-sm space-y-1 text-gray-800">
+          <li>• Ganha R$ {{persona.income_monthly}}/mês · gasta tudo todo mês</li>
+          <li>• {{persona.routine}}</li>
+          <li>• Consome TikTok no horário de prime: {{persona.best_live_time}}</li>
+          <li>• Compra impulso até R$ 100 · acima disso pesquisa antes</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 — A dor -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-4">
+      <div class="text-xs text-purple-600 font-bold mb-2">SLIDE 2 / 4 — A DOR</div>
+      <h3 class="text-xl font-bold mb-3">A frase real que ela diria</h3>
+      <div class="bg-orange-50 border-l-4 border-orange-400 p-4 mb-3">
+        <p class="text-lg italic text-gray-800">"{{persona.main_pain_quote}}"</p>
+      </div>
+      <p class="text-sm text-gray-600">Reparou? Ela não usa linguagem de marketing. Usa palavras do cotidiano real. Essa é a linguagem que você quer ecoar.</p>
+    </div>
+
+    <!-- SLIDE 3 — Frases que ressoam -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-4">
+      <div class="text-xs text-purple-600 font-bold mb-2">SLIDE 3 / 4 — LINGUAGEM</div>
+      <h3 class="text-xl font-bold mb-3">Frases que a {{persona.fictional_name}} reconhece</h3>
+      <div class="grid grid-cols-1 gap-2 mb-4">
+        {{#each persona.phrases_that_resonate}}
+        <div class="bg-green-50 border border-green-200 rounded p-3 text-sm">✓ "{{this}}"</div>
+        {{/each}}
+      </div>
+      <h3 class="text-base font-bold mb-2 text-red-700">E as que NÃO ressoam (linguagem marketeira):</h3>
+      <div class="grid grid-cols-1 gap-2">
+        {{#each persona.phrases_to_avoid}}
+        <div class="bg-red-50 border border-red-200 rounded p-3 text-sm">✗ "{{this}}"</div>
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- SLIDE 4 — Princípio -->
+    <div class="bg-black text-white rounded-xl p-8 text-center">
+      <p class="text-xs text-purple-400 font-bold tracking-wider mb-4">PRINCÍPIO PARA MEMORIZAR</p>
+      <p class="text-2xl font-bold leading-snug">"Eu falo como a {{persona.fictional_name}} falaria — não como um marketeiro falaria sobre a {{persona.fictional_name}}."</p>
+    </div>
+  </section>
+
+  <!-- I · IMITATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">I</div>
+      <div>
+        <h2 class="text-2xl font-bold">Imitate — Modelar</h2>
+        <p class="text-sm text-gray-500">3 minutos · Refrasear em ação</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+      <p class="text-xs text-purple-600 font-bold mb-3">PADRÃO GERAL — FRASE MARKETEIRA → VERSÃO DEMONSTRAÇÃO</p>
+      <div class="space-y-4">
+        <div class="border-l-4 border-red-300 pl-4">
+          <p class="text-sm text-red-700 line-through mb-1">"Desperte sua beleza natural com nossa fórmula."</p>
+          <p class="text-sm font-bold text-green-700">→ Usa cena cotidiana + dor real + número específico.</p>
+        </div>
+        <div class="border-l-4 border-red-300 pl-4">
+          <p class="text-sm text-red-700 line-through mb-1">"Minha comunidade ama esse produto."</p>
+          <p class="text-sm font-bold text-green-700">→ "Não precisa confiar em mim — confia no teste. Vou mostrar agora."</p>
+        </div>
+        <div class="border-l-4 border-red-300 pl-4">
+          <p class="text-sm text-red-700 line-through mb-1">"Empoderamento através do autocuidado."</p>
+          <p class="text-sm font-bold text-green-700">→ Resultado concreto + rotina real + sem promessa vaga.</p>
+        </div>
+        <div class="border-l-4 border-red-300 pl-4">
+          <p class="text-sm text-red-700 line-through mb-1">"Skincare é amor próprio."</p>
+          <p class="text-sm font-bold text-green-700">→ "Cuidar da pele não é luxo — é rotina. E essa rotina pode caber no seu salário."</p>
+        </div>
+        <div class="border-l-4 border-red-300 pl-4">
+          <p class="text-sm text-red-700 line-through mb-1">"Vivencie a melhor experiência sensorial."</p>
+          <p class="text-sm font-bold text-green-700">→ Ação observável em número de segundos. "Absorve em 30s. Olha aqui."</p>
+        </div>
+      </div>
+
+      <details class="bg-purple-50 rounded-lg p-4 mt-6">
+        <summary class="font-bold text-purple-900">O padrão que você vai imitar ▼</summary>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li>✦ <strong>Substitua adjetivo por número</strong> — "alta performance" → "15%"</li>
+          <li>✦ <strong>Substitua emoção por ação</strong> — "experiência sensorial" → "absorve em 30s"</li>
+          <li>✦ <strong>Substitua "minha comunidade" por "o teste"</strong></li>
+          <li>✦ <strong>Substitua promessa por processo</strong> — "desperte beleza" → "30 dias de uso"</li>
+          <li>✦ <strong>Use a frase real da {{persona.fictional_name}}</strong> — palavras cotidianas dela</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- V · VERIFY -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">V</div>
+      <div>
+        <h2 class="text-2xl font-bold">Verify — Drillar</h2>
+        <p class="text-sm text-gray-500">3 minutos · Refrasear 5 frases</p>
+      </div>
+    </div>
+
+    <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-lg font-bold mb-3">🎯 Drill 2.1 — Reescrita rápida</h3>
+      <p class="mb-4 text-gray-700">Você tem 60s por frase. Reescreve cada uma EM VOZ ALTA na linguagem da {{persona.fictional_name}}. Aperta "Comecei" para começar:</p>
+
+      <div class="space-y-3 mb-6">
+        <div class="bg-white p-3 rounded-lg"><strong class="text-red-700">1.</strong> "Desbloqueie o brilho saudável com nossa fórmula ativa."</div>
+        <div class="bg-white p-3 rounded-lg"><strong class="text-red-700">2.</strong> "Conecte-se com sua melhor versão."</div>
+        <div class="bg-white p-3 rounded-lg"><strong class="text-red-700">3.</strong> "Ingredientes ativos de alta performance."</div>
+        <div class="bg-white p-3 rounded-lg"><strong class="text-red-700">4.</strong> "Transforme sua rotina, transforme sua vida."</div>
+        <div class="bg-white p-3 rounded-lg"><strong class="text-red-700">5.</strong> "Mais que um produto, uma jornada."</div>
+      </div>
+
+      <div class="bg-black text-white rounded-lg p-6 text-center">
+        <p class="text-xs text-purple-300 mb-2">CRONÔMETRO POR FRASE</p>
+        <div class="text-6xl font-black timer-display mb-4" id="timer1">01:00</div>
+        <div class="flex gap-2 justify-center flex-wrap">
+          <button onclick="startTimer('timer1', 60)" class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-lg font-bold">▶ Comecei</button>
+          <button onclick="resetTimer('timer1', 60)" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-lg font-bold">↻ Refazer</button>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <p class="font-bold mb-3">Conferi e:</p>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Substituí pelo menos 1 adjetivo por número em cada</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Não usei "jornada", "empoderamento", "autocuidado"</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Usei pelo menos 1 frase real da {{persona.fictional_name}} em alguma versão</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Cada versão cabe em ≤15s falada</span></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- E · EVALUATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">E</div>
+      <div>
+        <h2 class="text-2xl font-bold">Evaluate — Testar</h2>
+        <p class="text-sm text-gray-500">1 minuto · Quiz de 4 perguntas</p>
+      </div>
+    </div>
+
+    <div id="quiz" class="space-y-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 1 / 4</p>
+        <p class="font-bold mb-4">Qual é a dor central da {{persona.fictional_name}}?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Vontade de empoderamento</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">{{persona.main_pain_quote}}</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Falta de tempo para cuidar de si</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Desejo de status social</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 2 / 4</p>
+        <p class="font-bold mb-4">Qual destas é linguagem MARKETEIRA (a evitar)?</p>
+        <div class="space-y-2">
+          {{#each persona.phrases_that_resonate}}
+          {{#if @first}}<button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">"{{this}}"</button>{{/if}}
+          {{/each}}
+          {{#each persona.phrases_to_avoid}}
+          {{#if @first}}<button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">"{{this}}"</button>{{/if}}
+          {{/each}}
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">"Confia no teste, não em mim"</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">"Aplica na mão e olha em 30 segundos"</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 3 / 4</p>
+        <p class="font-bold mb-4">Qual o melhor horário para alcançar a {{persona.fictional_name}} ao vivo?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">6h da manhã</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">12h (almoço)</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">{{persona.best_live_time}}</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">3h da madrugada</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 4 / 4</p>
+        <p class="font-bold mb-4">Qual a regra de ouro para refrasear?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Adicionar mais adjetivos sensoriais</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Substituir adjetivo por número, emoção por ação, promessa por processo</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Falar como uma personagem inspiradora</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Sempre usar "minha comunidade"</button>
+        </div>
+      </div>
+
+      <div id="quiz-score" class="hidden bg-purple-50 border-2 border-purple-300 rounded-xl p-6 text-center">
+        <p class="text-xs text-purple-600 font-bold mb-2">SEU RESULTADO</p>
+        <p id="score-text" class="text-3xl font-bold mb-2"></p>
+        <p id="score-message" class="text-sm text-gray-700"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <div class="bg-white border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-4">✅ Pode passar para o Módulo 3 se:</h3>
+      <div class="space-y-3 mb-6">
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Acertei pelo menos 3 das 4 perguntas</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Refrasiei as 5 frases do drill em ≤60s cada</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Consigo identificar uma frase marketeira em 5s</span></label>
+      </div>
+      <button id="next-btn" disabled class="w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg">Marca os 3 acima para liberar próximo módulo</button>
+    </div>
+  </section>
+
+  <footer class="text-center text-xs text-gray-400 py-8">{{brand.name}} · Curso Selliver · Método LIVE™ · Módulo {{module.number}} de {{module.total}}</footer>
+</main>
+
+<script type="text/plain" id="tts-script">
+Bem-vinda ao módulo dois.
+Hoje você vai conhecer a {{persona.fictional_name}}.
+A {{persona.fictional_name}} não existe. Mas ela representa as pessoas que vão assistir sua live amanhã.
+Quando você fala, fala pra ela. Não pra "as pessoas". Pra {{persona.fictional_name}}.
+
+A {{persona.fictional_name}} tem {{persona.age}} anos. Mora em {{persona.city}}.
+Trabalha como {{persona.occupation}}.
+{{persona.routine}}.
+Consome TikTok no horário {{persona.best_live_time}}.
+Esse é o seu horário de prime.
+
+A dor da {{persona.fictional_name}}, na voz dela:
+"{{persona.main_pain_quote}}"
+
+Note o que ela fala — linguagem cotidiana, não de marketing.
+Essa é a linguagem que você quer ecoar.
+
+Frases que ressoam com a {{persona.fictional_name}}:
+{{#each persona.phrases_that_resonate}}
+{{this}}.
+{{/each}}
+
+Frases que NÃO ressoam — linguagem marketeira:
+{{#each persona.phrases_to_avoid}}
+{{this}}.
+{{/each}}
+
+A regra geral que você vai aplicar a vida inteira como Selliver:
+Eu falo como a {{persona.fictional_name}} falaria — não como um marketeiro falaria sobre a {{persona.fictional_name}}.
+Decora isso.
+
+Agora você vai praticar refraseando cinco frases marketeiras na linguagem dela.
+Sessenta segundos por frase. Em voz alta.
+Vamos.
+</script>
+
+{{> scripts-engine}}
+
+<script>
+  initQuiz(4);
+  setupApproval('03-O-Ciclo-OnLive.html');
+</script>
+
+</body>
+</html>

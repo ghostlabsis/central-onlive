@@ -1,0 +1,155 @@
+{
+  "$schema": "../schemas/course-data.json",
+  "version": "1.0",
+  "template_version": "v1.0",
+  "generated_at": "2026-05-04T22:30:00Z",
+
+  "selliver": {
+    "slug": "kamille",
+    "name": "Kamille",
+    "level": "iniciante",
+    "previous_lives": 0,
+    "whatsapp": "+5511999999999"
+  },
+
+  "live": {
+    "date": "2026-05-12",
+    "time": "19:00",
+    "duration_min": 90,
+    "context": "regular",
+    "master_coupon": "LIVEONLIVE15",
+    "set": "studio-onlive",
+    "schedule": [
+      {"d": -5, "label": "T-5d · 7 mai (manhã)", "modules": [1, 2], "duration_min": 25},
+      {"d": -4, "label": "T-4d · 8 mai", "modules": [3], "duration_min": 20},
+      {"d": -3, "label": "T-3d · 9 mai", "modules": [4, 5], "duration_min": 35},
+      {"d": -2, "label": "T-2d · 10 mai", "modules": [6, 7], "duration_min": 25},
+      {"d": -1, "label": "T-1d · 11 mai (noite)", "modules": [8, 9], "duration_min": 40}
+    ]
+  },
+
+  "hero": {
+    "name": "Sérum Facial Vitamina C 30ml",
+    "category": "skincare",
+    "price_full": 129.00,
+    "price_live": 79.00,
+    "extra_coupon": "SERUM10",
+    "stock": 240,
+    "key_phrase": "Sérum facial com 15% de Vitamina C estabilizada que ajuda na uniformização do tom da pele oleosa.",
+    "differentials": [
+      {"label": "15%", "description": "Vitamina C estabilizada (não oxida em 2 semanas)"},
+      {"label": "Âmbar", "description": "Embalagem que protege a fórmula da luz"},
+      {"label": "BR", "description": "Fabricado no Brasil, registro ANVISA"}
+    ],
+    "main_objection": "preço alto vs genéricos da farmácia"
+  },
+
+  "secondary_products": [
+    {
+      "name": "Esponja de Aplicação Konjac",
+      "price_live": 19.00,
+      "bundle_with_hero": true,
+      "kit_price": 90.00
+    },
+    {
+      "name": "Hidratante Facial Diurno 50g",
+      "price_live": 49.00,
+      "bundle_with_hero": true,
+      "combo_price": 130.00
+    }
+  ],
+
+  "persona": {
+    "fictional_name": "Bia",
+    "age": 33,
+    "city": "Diadema",
+    "class": "C+",
+    "occupation": "atendente",
+    "income_monthly": 3500,
+    "kids": 2,
+    "routine": "5h levanta · 7h creche · 8h-17h trabalho · 18h30 casa · 19h-22h TikTok",
+    "main_pain_quote": "Tenho pele oleosa que brilha 1h depois de me arrumar e nada que eu uso resolve. Já gastei mais de R$ 300 em produto.",
+    "phrases_that_resonate": [
+      "Sabe quando você se arruma e em 1h o nariz já tá brilhando?",
+      "Cansei de gastar dinheiro em sérum que não funciona pra pele oleosa.",
+      "Esse aqui não é milagre. É processo. 30 dias e você nota.",
+      "Se você tem pele oleosa, presta atenção nessa parte."
+    ],
+    "phrases_to_avoid": [
+      "Sua jornada de autocuidado começa aqui",
+      "Skincare é amor próprio",
+      "Minha comunidade pediu esse produto",
+      "Empoderamento através da pele radiante"
+    ],
+    "buying_triggers": ["preço", "prova social", "comparação visual", "urgência", "FOMO"],
+    "best_live_time": "19h-21h"
+  },
+
+  "hooks": {
+    "by_type": [
+      {"type": "pergunta-problema", "text": "Você tem pele oleosa e nenhum sérum funcionou até agora?"},
+      {"type": "afirmacao-resultado", "text": "Em 30 dias usando esse sérum, minha pele oleosa parou de brilhar 1h depois."},
+      {"type": "curiosidade", "text": "Eu não acreditava nesse sérum. Até passar só de um lado do rosto. Olha o que aconteceu."},
+      {"type": "polemica-leve", "text": "Sérum caro não é o que sua pele oleosa precisa. Olha aqui."},
+      {"type": "prova-social", "text": "Esgotou 4 vezes esse mês. Acabou de chegar novo lote."},
+      {"type": "comparacao-visual", "text": "Lado direito sem sérum, lado esquerdo com. 7 dias. Olha."}
+    ],
+    "rotation_plan": [
+      {"cycle": 1, "type": "pergunta-problema"},
+      {"cycle": 2, "type": "afirmacao-resultado"},
+      {"cycle": 3, "type": "comparacao-visual"},
+      {"cycle": 4, "type": "curiosidade"},
+      {"cycle": 5, "type": "prova-social"},
+      {"cycle": 6, "type": "polemica-leve"}
+    ]
+  },
+
+  "objections_pool": [
+    {"q": "Tá caro pra um sérum, vi mais barato no Shopee", "a": "Entendo. Olha: no mercado, sérum equivalente é R$ 129. Aqui R$ 79 com cupom. O frasco rende 60 aplicações — dá R$ 1,30 por dia. Menos que um café. Tá na sacolinha."},
+    {"q": "Esse lojista é confiável mesmo?", "a": "Loja oficial no TikTok Shop, pagamento protegido pela plataforma. Se algo der errado, a TikTok cobre. Eu testei o produto, tá aqui na minha mão."},
+    {"q": "Demora muito pra chegar?", "a": "Prazo está na página do produto, varia por região. Pra capitais é 3-5 dias úteis. Clica na sacolinha que aparece o prazo da sua cidade."},
+    {"q": "Serve pra pele com rosácea?", "a": "Pra rosácea ativa eu sempre recomendo conversar com dermato antes. Honestidade vale mais que insistência. Pra pele oleosa e mista, sim — testei."},
+    {"q": "É igual ao da farmácia mais barato?", "a": "Tem produtos parecidos no mercado. A diferença desse: 15% de Vit C estabilizada, embalagem âmbar que não deixa oxidar, e ANVISA. Vou mostrar a embalagem."},
+    {"q": "Posso parcelar?", "a": "Sim, no checkout do TikTok Shop dá pra parcelar no cartão. Não é juros da Shop, é do seu banco. Quem prefere PIX, à vista pode sair com desconto."},
+    {"q": "Vai chegar antes do dia das mães?", "a": "Se você é capital, sim — 3 a 5 dias úteis. Pra interior pode ser 5 a 7. Clica na sacolinha que aparece o prazo da sua região."},
+    {"q": "Tá com pele oleosa há 10 anos, nada funciona", "a": "Te entendo. Esse aqui não é milagre — é processo. Em 30-60 dias você nota. Não promete cura. Promete rotina. Tá na sacolinha pra você testar."},
+    {"q": "Sou alérgica a Vitamina C", "a": "Se você tem alergia confirmada, esse produto não é pra você. Honestidade. Pode olhar a linha sem ácido — tem outras opções."},
+    {"q": "Tem amostra grátis?", "a": "Não tem amostra. Frasco de 30ml por R$ 79 com cupom. Mas tem garantia da TikTok Shop — se não te servir, troca ou devolve. Risco zero."},
+    {"q": "Faz tempo que tô aqui e ainda não decidi", "a": "Entendo. Olha: enquanto a live tá rolando, o cupom LIVEONLIVE15 tá ativo. Quando eu encerrar, o cupom sai e o preço volta a R$ 129."},
+    {"q": "Vocês pagam pra recomendar produto né?", "a": "Sou Selliver da OnLive — agência de live commerce. Recebo por hora trabalhada, não por venda específica. O produto eu testei. Confia no teste, não em mim."}
+  ],
+
+  "scenarios_pool": [
+    {"situation": "São 19h45 e o chat tá parado há 4 minutos. Ninguém comenta. Ciclo 2.", "type": "B1 · CHAT SILENCIOSO", "action": "Pergunta sim/não. Lê comentário antigo. Pede reação simples.", "phrase": "Quem aqui tem pele oleosa, digita SIM no chat. Quem nunca passou por isso, NÃO."},
+    {"situation": "Tinha 280 viewers no minuto 18. Agora minuto 22 só tem 190. Caindo.", "type": "B2 · VIEWERS CAINDO", "action": "Troca product pin + muda ângulo + pega produto de forma diferente.", "phrase": "Olha o detalhe que muda a decisão. Pra quem chegou agora: Sérum Vit C, R$ 79 na live, sacolinha aqui."},
+    {"situation": "O microfone caiu, áudio sumiu por 5 segundos. Você percebeu agora.", "type": "B3 · PROBLEMA TÉCNICO", "action": "Frase de transição. Cupom no chat. Volta em ≤1 min.", "phrase": "Pessoal, problema técnico. Volto em 1 minutinho. Cupom LIVEONLIVE15 ativo, produto na sacolinha."},
+    {"situation": "Comentário fixo: 'Você tá vendendo coisa cara pra quem não tem dinheiro, isso é golpe'", "type": "B4 · TROLL", "action": "NÃO responde direto. Pede moderador fixar positivo por cima. Continua ciclo.", "phrase": "[Sem frase. Continua o roteiro como se o comentário não existisse.]"},
+    {"situation": "Você tava no bloco de Demo, pegou o sérum errado da bancada, percebeu na hora.", "type": "B3 · TÉCNICO (suave)", "action": "Faz piada leve consigo, troca produto, continua. Não esconde — assume.", "phrase": "Pegado errado. [troca o produto]. Esse aqui é o sérum, agora vai. Continuando."},
+    {"situation": "Chat ativo mas perguntam: 'Esse vídeo é antigo né? Não é live de verdade'", "type": "B1 → cria interação", "action": "Prova ao vivo (mostra horário, faz gesto inesperado). Reativa.", "phrase": "19h47, segunda. Olha o relógio aqui. Quem quer que eu faça [gesto aleatório], comenta."},
+    {"situation": "Você esqueceu o cupom-mestre, ele saiu da sua cabeça no minuto 35.", "type": "Travou", "action": "Usa coringa 1. Pede moderador escrever cupom no chat fixo.", "phrase": "Pra quem chegou agora: Sérum Vit C, R$ 79 na live, cupom tá fixado no chat — moderador, fixa de novo."},
+    {"situation": "Ciclo 4, você sente que tá perdendo energia, voz baixa, frase enrolando.", "type": "Energia caindo", "action": "Pega água. Muda postura. Volta pro script base.", "phrase": "[Bebe água]. Voltando. Pra quem chegou agora: produto é Sérum Vit C..."}
+  ],
+
+  "compliance": {
+    "regulated_category": "skincare-cosmético",
+    "forbidden_claims": [
+      "cura acne",
+      "elimina rugas",
+      "trata melasma",
+      "previne envelhecimento",
+      "milagre"
+    ],
+    "allowed_claims": [
+      "ajuda na uniformização do tom",
+      "dá viço",
+      "em 30-60 dias você nota diferença"
+    ],
+    "anvisa_registration": "XXXXX-Y"
+  },
+
+  "audience_profile": {
+    "expected_size": "200-500 viewers",
+    "main_origin": "organico",
+    "funnel_stage": "descoberta_da_marca"
+  }
+}

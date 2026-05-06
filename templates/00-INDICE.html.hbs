@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+{{> head}}
+<style>
+  .module-card { transition: all 0.2s; }
+  .module-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(117,71,255,0.12); }
+</style>
+</head>
+<body class="min-h-screen text-gray-900">
+
+<header class="bg-black text-white">
+  <div class="max-w-3xl mx-auto px-4 py-6">
+    <div class="flex items-center gap-2 mb-1">
+      <div class="w-3 h-3 rounded-full bg-purple-500 animate-pulse"></div>
+      <span class="font-bold text-purple-400 text-sm tracking-wider">{{brand.name}} · CURSO SELLIVER</span>
+    </div>
+    <h1 class="text-3xl font-bold mt-3">Curso Personalizado · {{selliver.name}}</h1>
+    <p class="text-gray-400 mt-1">Live de {{live.date}} · {{hero.name}} · {{live.duration_min}} minutos</p>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-4 py-8">
+
+  <div class="bg-purple-50 border border-purple-200 rounded-xl p-6 mb-8">
+    <h2 class="text-xl font-bold mb-3">📋 Como funciona o Método LIVE™</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
+      <div class="bg-white p-3 rounded-lg"><strong class="text-purple-600">L</strong>earn<br><span class="text-xs text-gray-600">absorver</span></div>
+      <div class="bg-white p-3 rounded-lg"><strong class="text-purple-600">I</strong>mitate<br><span class="text-xs text-gray-600">modelar</span></div>
+      <div class="bg-white p-3 rounded-lg"><strong class="text-purple-600">V</strong>erify<br><span class="text-xs text-gray-600">drillar</span></div>
+      <div class="bg-white p-3 rounded-lg"><strong class="text-purple-600">E</strong>valuate<br><span class="text-xs text-gray-600">testar</span></div>
+    </div>
+    <p class="text-sm text-gray-700 mt-4">
+      Cada módulo dura 10–30 minutos. Você consome no celular, no notebook, no carro — onde der.
+      <strong>Não pula passos.</strong> Cada drill aprovado libera o próximo módulo.
+    </p>
+  </div>
+
+  <h2 class="text-2xl font-bold mb-4">📚 Os 9 módulos</h2>
+  <p class="text-sm text-gray-600 mb-6">Cronograma sugerido: 5 dias × 25-30 min/dia. Total ~145 min.</p>
+
+  <div class="space-y-3">
+    {{#with live.schedule.0}}
+    <div class="text-xs text-purple-600 font-bold tracking-wider mt-6">{{label}} ({{duration_min}} min)</div>
+    {{/with}}
+    <a href="01-O-Produto.html" class="module-card block bg-white rounded-xl p-5 border border-gray-100">
+      <div class="flex items-start justify-between">
+        <div>
+          <p class="text-xs text-gray-500 mb-1">MÓDULO 1 · 15 min</p>
+          <h3 class="text-lg font-bold">O Produto</h3>
+          <p class="text-sm text-gray-600 mt-1">O que vende, para quem, qual o diferencial técnico.</p>
+        </div>
+        <div class="text-purple-600">→</div>
+      </div>
+    </a>
+    <a href="02-A-Audiencia.html" class="module-card block bg-white rounded-xl p-5 border border-gray-100">
+      <div class="flex items-start justify-between">
+        <div>
+          <p class="text-xs text-gray-500 mb-1">MÓDULO 2 · 10 min</p>
+          <h3 class="text-lg font-bold">A Audiência</h3>
+          <p class="text-sm text-gray-600 mt-1">Persona, frases que ressoam vs frases marketeiras. Drill: refrasear 5.</p>
+        </div>
+        <div class="text-purple-600">→</div>
+      </div>
+    </a>
+
+    {{#with live.schedule.1}}
+    <div class="text-xs text-purple-600 font-bold tracking-wider mt-6">{{label}} ({{duration_min}} min)</div>
+    {{/with}}
+    <a href="03-O-Ciclo-OnLive.html" class="module-card block bg-white rounded-xl p-5 border border-gray-100">
+      <div class="flex items-start justify-between">
+        <div>
+          <p class="text-xs text-gray-500 mb-1">MÓDULO 3 · 20 min</p>
+          <h3 class="text-lg font-bold">O Ciclo OnLive</h3>
+          <p class="text-sm text-gray-600 mt-1">Os 5 blocos × 10-12 min. Drill: 1 ciclo completo cronometrado.</p>
+        </div>
+        <div class="text-purple-600">→</div>
+      </div>
+    </a>
+
+    {{#with live.schedule.2}}
+    <div class="text-xs text-purple-600 font-bold tracking-wider mt-6">{{label}} ({{duration_min}} min)</div>
+    {{/with}}
+    <a href="04-Hooks.html" class="module-card block bg-white rounded-xl p-5 border border-gray-100">
+      <div class="flex items-start justify-between">
+        <div>
+          <p class="text-xs text-gray-500 mb-1">MÓDULO 4 · 15 min</p>
+          <h3 class="text-lg font-bold">Hooks que Capturam</h3>
+          <p class="text-sm text-gray-600 mt-1">6 tipos. Drill: gravar 6 hooks ≤15s + mute test.</p>
+        </div>
+        <div class="text-purple-600">→</div>
+      </div>
+    </a>
+    <a href="05-Demonstracao.html" class="module-card block bg-white rounded-xl p-5 border border-gray-100">
+      <div class="flex items-start justify-between">
+        <div>
+          <p class="text-xs text-gray-500 mb-1">MÓDULO 5 · 20 min</p>
+          <h3 class="text-lg font-bold">Demonstração que Vende</h3>
+          <p class="text-sm text-gray-600 mt-1">PPTRI: Problema→Produto→Teste→Resultado→Impacto. Drill: demo 3 min com mute test.</p>
+        </div>
+        <div class="text-purple-600">→</div>
+      </div>
+    </a>
+
+    {{#with live.schedule.3}}
+    <div class="text-xs text-purple-600 font-bold tracking-wider mt-6">{{label}} ({{duration_min}} min)</div>
+    {{/with}}
+    <a href="06-Oferta-e-Preco.html" class="module-card block bg-white rounded-xl p-5 border border-gray-100">
+      <div class="flex items-start justify-between">
+        <div>
+          <p class="text-xs text-gray-500 mb-1">MÓDULO 6 · 10 min</p>
+          <h3 class="text-lg font-bold">Oferta e Preço</h3>
+          <p class="text-sm text-gray-600 mt-1">Ancoragem + item→kit→combo + cupom. Drill: oferta em 90s.</p>
+        </div>
+        <div class="text-purple-600">→</div>
+      </div>
+    </a>
+    <a href="07-CTA-e-Objecoes.html" class="module-card block bg-white rounded-xl p-5 border border-gray-100">
+      <div class="flex items-start justify-between">
+        <div>
+          <p class="text-xs text-gray-500 mb-1">MÓDULO 7 · 15 min</p>
+          <h3 class="text-lg font-bold">CTA e Objeções <span class="text-xs bg-red-600 text-white px-2 py-0.5 rounded ml-1">SPARRING</span></h3>
+          <p class="text-sm text-gray-600 mt-1">10 rodadas × 10s. Aprovação 8/10. IA joga objeção, você responde em voz alta.</p>
+        </div>
+        <div class="text-purple-600">→</div>
+      </div>
+    </a>
+
+    {{#with live.schedule.4}}
+    <div class="text-xs text-purple-600 font-bold tracking-wider mt-6">{{label}} ({{duration_min}} min)</div>
+    {{/with}}
+    <a href="08-Plano-B.html" class="module-card block bg-white rounded-xl p-5 border border-gray-100">
+      <div class="flex items-start justify-between">
+        <div>
+          <p class="text-xs text-gray-500 mb-1">MÓDULO 8 · 10 min</p>
+          <h3 class="text-lg font-bold">Plano B e Emergências</h3>
+          <p class="text-sm text-gray-600 mt-1">B1 chat silencioso · B2 viewers caindo · B3 técnico · B4 troll. Drill: 6 cenários × 15s.</p>
+        </div>
+        <div class="text-purple-600">→</div>
+      </div>
+    </a>
+    <a href="09-Prova-Final.html" class="module-card block bg-gradient-to-br from-red-50 to-purple-50 rounded-xl p-5 border-2 border-red-300">
+      <div class="flex items-start justify-between">
+        <div>
+          <p class="text-xs text-red-600 font-bold mb-1">MÓDULO 9 · 30 min · 🔴 PROVA FINAL</p>
+          <h3 class="text-lg font-bold">Live Simulada</h3>
+          <p class="text-sm text-gray-600 mt-1">30 min cronometrados com câmera. Scorecard 8 critérios. 7/8 = aprovada para {{live.date}}.</p>
+        </div>
+        <div class="text-red-600">→</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="mt-12 bg-black text-white rounded-xl p-6">
+    <h3 class="font-bold mb-2">🟣 Critério de aprovação para a live</h3>
+    <p class="text-sm text-gray-300 mb-3">Você só vai ao ar se passar na <strong>Prova Final</strong> (módulo 9). Se reprovar 2 vezes, a live é adiada e Ana define se reforça módulo 5 (demo) ou 7 (objeções).</p>
+    <p class="text-xs text-purple-400">Não é castigo. É garantia de que você entrou no ar com método — não com sorte.</p>
+  </div>
+
+  <footer class="text-center text-xs text-gray-400 py-8 mt-8">
+    Curso gerado pelo Agente 10 — Treinador da Selliver · {{brand.name}} · {{live.date}}
+  </footer>
+</main>
+
+</body>
+</html>

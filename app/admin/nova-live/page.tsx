@@ -1,0 +1,526 @@
+'use client';
+
+import { useState } from 'react';
+
+// ── Types ──────────────────────────────────────────────────────────────────
+type Differential = { label: string; description: string };
+
+type ProductAnalysis = {
+  hero: {
+    name: string; category: string; price_full: number; price_live: number;
+    stock: number; differentials: Differential[]; main_objection: string; key_phrase: string;
+  };
+  compliance: {
+    regulated_category: string; forbidden_claims: string[];
+    allowed_claims: string[]; anvisa_registration: string;
+  };
+  product_analysis: {
+    target_audience: string; main_pains: string[]; main_desires: string[];
+    product_strengths: string[]; live_selling_angle: string;
+  };
+};
+
+type FormState = {
+  selliver: { slug: string; name: string; level: 'iniciante' | 'intermediaria' | 'pro'; previous_lives: number; whatsapp: string };
+  live: { date: string; time: string; duration_min: number; context: 'regular' | 'brand-day' | 'cast-day' | 'lancamento'; master_coupon: string };
+  hero: { name: string; category: string; price_full: number; price_live: number; extra_coupon: string; stock: number; main_objection: string };
+  differentials: Differential[];
+  compliance: { regulated_category: string; forbidden_claims: string; allowed_claims: string; anvisa_registration: string };
+};
+
+const EMPTY_FORM: FormState = {
+  selliver: { slug: '', name: '', level: 'iniciante', previous_lives: 0, whatsapp: '' },
+  live: { date: '', time: '19:00', duration_min: 90, context: 'regular', master_coupon: '' },
+  hero: { name: '', category: '', price_full: 0, price_live: 0, extra_coupon: '', stock: 50, main_objection: '' },
+  differentials: [{ label: '', description: '' }, { label: '', description: '' }, { label: '', description: '' }],
+  compliance: { regulated_category: '', forbidden_claims: '', allowed_claims: '', anvisa_registration: '' },
+};
+
+const ADMIN_PASSWORD = 'onlive2026';
+
+// ── Main component ─────────────────────────────────────────────────────────
+export default function NovaLivePage() {
+  const [step, setStep] = useState<'url' | 'review' | 'done'>('url');
+  const [productUrl, setProductUrl] = useState('');
+  const [extraContext, setExtraContext] = useState('');
+  const [analyzing, setAnalyzing] = useState(false);
+  const [analyzeError, setAnalyzeError] = useState<string | null>(null);
+  const [analysis, setAnalysis] = useState<ProductAnalysis | null>(null);
+  const [analysisOpen, setAnalysisOpen] = useState(true);
+  const [form, setForm] = useState<FormState>(EMPTY_FORM);
+  const [secondaryProducts, setSecondaryProducts] = useState<
+    { name: string; price_live: number; bundle_with_hero: boolean }[]
+  >([]);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [result, setResult] = useState<{ url: string; indice_url: string } | null>(null);
+
+  // ── Step 1: Analyze URL ────────────────────────────────────────────────
+  async function handleAnalyze(e: React.FormEvent) {
+    e.preventDefault();
+    const trimmed = productUrl.trim();
+    if (!trimmed) { setAnalyzeError('Cole o link do produto antes de continuar.'); return; }
+    if (!trimmed.startsWith('http')) { setAnalyzeError('Link inválido — precisa começar com http:// ou https://'); return; }
+    setAnalyzing(true);
+    setAnalyzeError(null);
+
+    try {
+      const r = await fetch('/api/analyze-product', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${ADMIN_PASSWORD}`,
+        },
+        body: JSON.stringify({ url: productUrl.trim(), extra_context: extraContext.trim() || undefined }),
+      });
+
+      const json = await r.json();
+      if (!r.ok) throw new Error(json.message ?? `Erro ${r.status}`);
+
+      const a: ProductAnalysis = json.analysis;
+      setAnalysis(a);
+
+      // Pre-fill form with analysis data
+      setForm({
+        ...EMPTY_FORM,
+        hero: {
+          name: a.hero.name ?? '',
+          category: a.hero.category ?? '',
+          price_full: Number(a.hero.price_full) || 0,
+          price_live: Number(a.hero.price_live) || 0,
+          extra_coupon: '',
+          stock: Number(a.hero.stock) || 50,
+          main_objection: a.hero.main_objection ?? '',
+        },
+        differentials: (a.hero.differentials ?? []).slice(0, 3).map((d) => ({
+          label: d.label ?? '',
+          description: d.description ?? '',
+        })),
+        compliance: {
+          regulated_category: a.compliance.regulated_category ?? '',
+          forbidden_claims: (a.compliance.forbidden_claims ?? []).join('\n'),
+          allowed_claims: (a.compliance.allowed_claims ?? []).join('\n'),
+          anvisa_registration: a.compliance.anvisa_registration ?? '',
+        },
+      });
+
+      setStep('review');
+    } catch (err: any) {
+      setAnalyzeError(err.message);
+    } finally {
+      setAnalyzing(false);
+    }
+  }
+
+  // ── Step 2: Generate Course ────────────────────────────────────────────
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      // Auto-gera slug a partir do nome do produto
+      const productSlug = form.hero.name
+        .toLowerCase()
+        .normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/[^a-z0-9-]/g, '')
+        .slice(0, 40);
+
+      // Coupon a partir da primeira palavra do produto (ex: MASCARALIVE)
+      const autoCoupon = form.hero.name
+        .split(' ')[0]
+        .toUpperCase()
+        .normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .replace(/[^A-Z0-9]/g, '')
+        .slice(0, 10) + 'LIVE';
+
+      const today = new Date().toISOString().split('T')[0];
+
+      const payload = {
+        ...form,
+        selliver: {
+          slug: productSlug,
+          name: 'Selliver',
+          level: 'iniciante' as const,
+          previous_lives: 0,
+          whatsapp: '',
+        },
+        live: {
+          date: today,
+          time: '19:00',
+          duration_min: 90,
+          context: 'regular' as const,
+          master_coupon: autoCoupon,
+        },
+        hero: {
+          ...form.hero,
+          differentials: form.differentials.filter((d) => d.label && d.description),
+        },
+        secondary_products: secondaryProducts.filter((p) => p.name && p.price_live > 0),
+        compliance: {
+          ...form.compliance,
+          forbidden_claims: form.compliance.forbidden_claims.split('\n').map((s) => s.trim()).filter(Boolean),
+          allowed_claims: form.compliance.allowed_claims.split('\n').map((s) => s.trim()).filter(Boolean),
+        },
+      };
+
+      const r = await fetch('/api/generate-course', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${ADMIN_PASSWORD}`,
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const json = await r.json();
+      if (!r.ok) throw new Error(json.message ?? `Erro ${r.status}`);
+      setResult(json);
+      setStep('done');
+    } catch (err: any) {
+      setSubmitError(err.message);
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  // ── Render ─────────────────────────────────────────────────────────────
+  return (
+    <div className="min-h-screen bg-gray-50 py-8">
+      <div className="max-w-3xl mx-auto px-4">
+
+        {/* Header */}
+        <header className="mb-8">
+          <div className="flex items-center gap-2 mb-1">
+            <div className="w-2 h-2 rounded-full bg-purple-600"></div>
+            <p className="text-sm text-purple-600 font-bold tracking-widest">ONLIVE · ADMIN</p>
+          </div>
+          <h1 className="text-4xl font-bold">Novo Curso Selliver</h1>
+          <p className="text-gray-500 mt-1 text-sm">Cole o link do produto → IA analisa → confirma → 10 módulos publicados</p>
+        </header>
+
+        {/* Progress */}
+        <div className="flex items-center gap-2 mb-8">
+          {(['url', 'review', 'done'] as const).map((s, i) => (
+            <div key={s} className="flex items-center gap-2">
+              <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
+                step === s ? 'bg-purple-600 text-white' :
+                (step === 'review' && i === 0) || (step === 'done' && i <= 1) ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-500'
+              }`}>{step !== 'url' && i === 0 ? '✓' : step === 'done' && i === 1 ? '✓' : i + 1}</div>
+              <span className={`text-sm hidden sm:block ${step === s ? 'text-purple-700 font-bold' : 'text-gray-400'}`}>
+                {s === 'url' ? 'Link do produto' : s === 'review' ? 'Revisar + configurar' : 'Curso gerado'}
+              </span>
+              {i < 2 && <div className="w-8 h-0.5 bg-gray-200 mx-1"></div>}
+            </div>
+          ))}
+        </div>
+
+        {/* ── STEP 1: URL ───────────────────────────────────────────────── */}
+        {step === 'url' && (
+          <form onSubmit={handleAnalyze} className="space-y-4">
+            <div className="bg-white rounded-2xl border-2 border-purple-100 p-8 shadow-sm">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🔗</div>
+                <div>
+                  <h2 className="text-xl font-bold">Link do produto</h2>
+                  <p className="text-sm text-gray-500 mt-0.5">TikTok Shop, Shopee, Mercado Livre, site da marca — qualquer URL funciona</p>
+                </div>
+              </div>
+
+              <input
+                type="text"
+                value={productUrl}
+                onChange={(e) => setProductUrl(e.target.value)}
+                placeholder="https://www.tiktok.com/shop/products/... ou qualquer link"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-base focus:border-purple-500 focus:outline-none transition-colors"
+              />
+
+              <div className="mt-5">
+                <label className="block text-sm font-bold text-gray-700 mb-2">
+                  Contexto adicional <span className="font-normal text-gray-400">(opcional)</span>
+                </label>
+                <textarea
+                  value={extraContext}
+                  onChange={(e) => setExtraContext(e.target.value)}
+                  rows={4}
+                  placeholder="Cole aqui ficha técnica, ingredientes, resultados de testes, informações do fornecedor, observações sobre o público ou qualquer detalhe que enriquece a análise…"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm font-mono focus:border-purple-500 focus:outline-none transition-colors resize-none"
+                />
+              </div>
+
+              {analyzeError && (
+                <div className="mt-4 bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">
+                  ✗ {analyzeError}
+                </div>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              disabled={analyzing || !productUrl.trim()}
+              className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-gray-300 text-white font-bold py-4 rounded-xl text-lg transition-colors flex items-center justify-center gap-3"
+            >
+              {analyzing ? (
+                <>
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Analisando produto com IA…
+                </>
+              ) : '🔍 Analisar produto'}
+            </button>
+
+            {analyzing && (
+              <div className="bg-purple-50 border border-purple-200 rounded-xl p-5 text-sm">
+                <p className="font-bold text-purple-900 mb-3">O que está acontecendo:</p>
+                <ol className="space-y-2 list-decimal list-inside text-purple-700">
+                  <li>Buscando conteúdo da página do produto</li>
+                  <li>Claude analisa: ingredientes ativos, diferenciais, embalagem, certificações</li>
+                  <li>Pesquisa público-alvo, dores, desejos e forças do produto</li>
+                  <li>Mapeia regulação ANVISA e claims permitidos / proibidos</li>
+                  <li>Pré-preenche o formulário automaticamente</li>
+                </ol>
+              </div>
+            )}
+          </form>
+        )}
+
+        {/* ── STEP 2: REVIEW ────────────────────────────────────────────── */}
+        {step === 'review' && analysis && (
+          <form onSubmit={handleSubmit} className="space-y-5">
+
+            {/* Analysis card */}
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-2xl overflow-hidden shadow-lg">
+              <button
+                type="button"
+                onClick={() => setAnalysisOpen(!analysisOpen)}
+                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center text-sm">🧠</div>
+                  <div>
+                    <p className="font-bold text-sm">Análise completa — {analysis.hero.name}</p>
+                    <p className="text-xs text-gray-400">Público-alvo · Dores · Desejos · Forças · Ângulo de venda</p>
+                  </div>
+                </div>
+                <span className="text-gray-400">{analysisOpen ? '▲' : '▼'}</span>
+              </button>
+
+              {analysisOpen && (
+                <div className="px-6 pb-6 space-y-5 border-t border-white/10 pt-5">
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="bg-purple-600/20 border border-purple-500/30 rounded-xl p-4">
+                      <p className="text-xs text-purple-300 font-bold mb-2 tracking-wider">FRASE-CHAVE PARA DECORAR</p>
+                      <p className="text-white text-sm font-semibold leading-relaxed">"{analysis.hero.key_phrase}"</p>
+                    </div>
+                    <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-4">
+                      <p className="text-xs text-yellow-300 font-bold mb-2 tracking-wider">ÂNGULO DE ABERTURA NA LIVE</p>
+                      <p className="text-yellow-100 text-sm leading-relaxed">{analysis.product_analysis.live_selling_angle}</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="text-xs text-gray-400 font-bold mb-2 tracking-wider">PÚBLICO-ALVO</p>
+                    <p className="text-gray-200 text-sm leading-relaxed">{analysis.product_analysis.target_audience}</p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                      <p className="text-xs text-red-400 font-bold mb-2 tracking-wider">DORES</p>
+                      <div className="space-y-1.5">
+                        {(analysis.product_analysis.main_pains ?? []).map((p, i) => (
+                          <div key={i} className="bg-red-900/20 border border-red-800/30 rounded-lg px-3 py-2 text-xs text-red-200 leading-snug">{p}</div>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-xs text-green-400 font-bold mb-2 tracking-wider">DESEJOS</p>
+                      <div className="space-y-1.5">
+                        {(analysis.product_analysis.main_desires ?? []).map((d, i) => (
+                          <div key={i} className="bg-green-900/20 border border-green-800/30 rounded-lg px-3 py-2 text-xs text-green-200 leading-snug">{d}</div>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-xs text-blue-400 font-bold mb-2 tracking-wider">FORÇAS DO PRODUTO</p>
+                      <div className="space-y-1.5">
+                        {(analysis.product_analysis.product_strengths ?? []).map((s, i) => (
+                          <div key={i} className="bg-blue-900/20 border border-blue-800/30 rounded-lg px-3 py-2 text-xs text-blue-200 leading-snug">{s}</div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Hero product — pre-filled, editable */}
+            <Section title="Produto (pré-preenchido — revise)" emoji="🛍️">
+              <div className="grid grid-cols-2 gap-4">
+                <Field label="Nome do produto" value={form.hero.name} onChange={(v) => setForm({ ...form, hero: { ...form.hero, name: v } })} full />
+                <Field label="Categoria" value={form.hero.category} onChange={(v) => setForm({ ...form, hero: { ...form.hero, category: v } })} />
+                <Field label="Preço cheio (R$)" type="number" value={String(form.hero.price_full)} onChange={(v) => setForm({ ...form, hero: { ...form.hero, price_full: Number(v) } })} />
+                <Field label="Preço de live (R$)" type="number" value={String(form.hero.price_live)} onChange={(v) => setForm({ ...form, hero: { ...form.hero, price_live: Number(v) } })} />
+                <Field label="Cupom extra" value={form.hero.extra_coupon} onChange={(v) => setForm({ ...form, hero: { ...form.hero, extra_coupon: v.toUpperCase() } })} />
+                <Field label="Estoque" type="number" value={String(form.hero.stock)} onChange={(v) => setForm({ ...form, hero: { ...form.hero, stock: Number(v) } })} />
+                <Field label="Objeção principal" full value={form.hero.main_objection} onChange={(v) => setForm({ ...form, hero: { ...form.hero, main_objection: v } })} />
+              </div>
+              <p className="text-xs font-bold text-gray-500 mt-4 mb-2 tracking-wider">DIFERENCIAIS</p>
+              {form.differentials.map((d, i) => (
+                <div key={i} className="grid grid-cols-3 gap-3 mb-2">
+                  <Field label={`Label ${i + 1}`} value={d.label} onChange={(v) => {
+                    const nd = [...form.differentials]; nd[i] = { ...nd[i], label: v }; setForm({ ...form, differentials: nd });
+                  }} />
+                  <div className="col-span-2">
+                    <Field label={`Descrição ${i + 1}`} value={d.description} onChange={(v) => {
+                      const nd = [...form.differentials]; nd[i] = { ...nd[i], description: v }; setForm({ ...form, differentials: nd });
+                    }} />
+                  </div>
+                </div>
+              ))}
+            </Section>
+
+            {/* Compliance — pre-filled */}
+            <Section title="Compliance (pré-preenchido — revise)" emoji="⚖️">
+              <div className="grid grid-cols-2 gap-4 mb-3">
+                <Field label="Categoria regulada" value={form.compliance.regulated_category} onChange={(v) => setForm({ ...form, compliance: { ...form.compliance, regulated_category: v } })} />
+                <Field label="Registro ANVISA" value={form.compliance.anvisa_registration} onChange={(v) => setForm({ ...form, compliance: { ...form.compliance, anvisa_registration: v } })} />
+              </div>
+              <Textarea label="Claims PROIBIDOS (1 por linha)" value={form.compliance.forbidden_claims} onChange={(v) => setForm({ ...form, compliance: { ...form.compliance, forbidden_claims: v } })} />
+              <Textarea label="Claims PERMITIDOS (1 por linha)" value={form.compliance.allowed_claims} onChange={(v) => setForm({ ...form, compliance: { ...form.compliance, allowed_claims: v } })} />
+            </Section>
+
+            {/* Secondary products */}
+            <Section title="Produtos secundários" emoji="➕" subtitle="Opcional — cross-sell na live">
+              <div className="flex justify-end mb-2">
+                <button type="button"
+                  onClick={() => setSecondaryProducts([...secondaryProducts, { name: '', price_live: 0, bundle_with_hero: false }])}
+                  className="text-purple-600 font-bold text-sm hover:text-purple-800">
+                  + Adicionar
+                </button>
+              </div>
+              {secondaryProducts.length === 0 && <p className="text-sm text-gray-400 text-center py-2">Nenhum.</p>}
+              {secondaryProducts.map((p, i) => (
+                <div key={i} className="grid grid-cols-4 gap-3 mb-2 items-end">
+                  <div className="col-span-2"><Field label={`Nome ${i + 1}`} value={p.name} onChange={(v) => { const ns = [...secondaryProducts]; ns[i] = { ...ns[i], name: v }; setSecondaryProducts(ns); }} /></div>
+                  <Field label="Preço live" type="number" value={String(p.price_live)} onChange={(v) => { const ns = [...secondaryProducts]; ns[i] = { ...ns[i], price_live: Number(v) }; setSecondaryProducts(ns); }} />
+                  <div className="flex items-center gap-2 pb-1">
+                    <input type="checkbox" id={`b-${i}`} checked={p.bundle_with_hero}
+                      onChange={(e) => { const ns = [...secondaryProducts]; ns[i] = { ...ns[i], bundle_with_hero: e.target.checked }; setSecondaryProducts(ns); }}
+                      className="accent-purple-600" />
+                    <label htmlFor={`b-${i}`} className="text-xs">Bundle?</label>
+                    <button type="button" onClick={() => setSecondaryProducts(secondaryProducts.filter((_, j) => j !== i))} className="ml-auto text-red-400 hover:text-red-600 text-sm">✕</button>
+                  </div>
+                </div>
+              ))}
+            </Section>
+
+            {submitError && (
+              <div className="bg-red-50 border-2 border-red-300 rounded-xl p-4 text-sm text-red-700">✗ {submitError}</div>
+            )}
+
+            <div className="flex gap-3 pt-2">
+              <button type="button" onClick={() => setStep('url')}
+                className="px-6 py-4 rounded-xl border-2 border-gray-200 text-gray-600 font-bold hover:border-gray-300 transition-colors">
+                ← Voltar
+              </button>
+              <button type="submit" disabled={submitting}
+                className="flex-1 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-300 text-white font-bold py-4 rounded-xl text-lg transition-colors flex items-center justify-center gap-3">
+                {submitting ? (
+                  <><div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />Gerando curso…</>
+                ) : '🟣 Gerar curso'}
+              </button>
+            </div>
+
+            {submitting && (
+              <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 text-sm text-purple-800">
+                <ol className="space-y-1 list-decimal list-inside text-purple-700">
+                  <li>Validando dados</li>
+                  <li>Claude gerando persona + 6 hooks + 12 objeções + 8 cenários Plano B</li>
+                  <li>Renderizando 10 módulos HTML</li>
+                  <li>Salvando dados do curso</li>
+                </ol>
+              </div>
+            )}
+          </form>
+        )}
+
+        {/* ── STEP 3: DONE ──────────────────────────────────────────────── */}
+        {step === 'done' && result && (
+          <div className="space-y-4">
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-400 rounded-2xl p-10 text-center">
+              <div className="text-5xl mb-4">✅</div>
+              <h2 className="text-2xl font-bold text-green-900 mb-2">Curso gerado</h2>
+              <p className="text-green-700 mb-6">10 módulos prontos. Manda o link no WhatsApp da Selliver.</p>
+              <a href={result.indice_url} target="_blank" rel="noopener noreferrer"
+                className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors">
+                🟣 Abrir curso →
+              </a>
+              <p className="text-xs text-gray-400 mt-4 break-all">{result.indice_url}</p>
+            </div>
+            <button
+              onClick={() => { setStep('url'); setProductUrl(''); setExtraContext(''); setAnalysis(null); setResult(null); setForm(EMPTY_FORM); setSecondaryProducts([]); }}
+              className="w-full border-2 border-gray-200 rounded-xl py-3 text-gray-600 font-bold hover:border-gray-300 transition-colors">
+              + Gerar outro curso
+            </button>
+          </div>
+        )}
+
+      </div>
+    </div>
+  );
+}
+
+// ── Shared form helpers ────────────────────────────────────────────────────
+function Section({ title, emoji, subtitle, children }: { title: string; emoji: string; subtitle?: string; children: React.ReactNode }) {
+  return (
+    <div className="bg-white rounded-xl border p-6">
+      <div className="flex items-center gap-2 mb-4">
+        <span className="text-lg">{emoji}</span>
+        <div>
+          <h2 className="text-base font-bold">{title}</h2>
+          {subtitle && <p className="text-xs text-gray-400">{subtitle}</p>}
+        </div>
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function Field({ label, value, onChange, type = 'text', full = false }: {
+  label: string; value: string; onChange: (v: string) => void; type?: string; full?: boolean;
+}) {
+  return (
+    <div className={full ? 'col-span-2' : ''}>
+      <label className="block text-xs font-bold text-gray-600 mb-1">{label}</label>
+      <input type={type} value={value} onChange={(e) => onChange(e.target.value)}
+        className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-100 transition-colors" />
+    </div>
+  );
+}
+
+function Select({ label, value, options, onChange }: {
+  label: string; value: string; options: string[]; onChange: (v: string) => void;
+}) {
+  return (
+    <div>
+      <label className="block text-xs font-bold text-gray-600 mb-1">{label}</label>
+      <select value={value} onChange={(e) => onChange(e.target.value)}
+        className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:border-purple-500 focus:outline-none transition-colors">
+        {options.map((o) => <option key={o} value={o}>{o}</option>)}
+      </select>
+    </div>
+  );
+}
+
+function Textarea({ label, value, onChange, placeholder }: {
+  label: string; value: string; onChange: (v: string) => void; placeholder?: string;
+}) {
+  return (
+    <div className="mt-3">
+      <label className="block text-xs font-bold text-gray-600 mb-1">{label}</label>
+      <textarea value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} rows={3}
+        className="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs font-mono focus:border-purple-500 focus:outline-none transition-colors resize-none" />
+    </div>
+  );
+}

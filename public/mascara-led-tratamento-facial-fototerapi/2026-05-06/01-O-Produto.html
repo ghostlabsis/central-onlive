@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Módulo 01 — O Produto · Curso Selliver OnLive</title>
+<meta name="description" content="Curso Selliver Selliver · 2026-05-06 · Hero: Máscara LED Tratamento Facial Fototerapia Estética 7 Cores">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root { --p:#7547FF; --pd:#5B38CC; --ps:rgba(117,71,255,0.08); }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #FAFAFA; color: #0A0A0A; }
+  .bebas { font-family: 'Bebas Neue', 'Trebuchet MS', sans-serif; letter-spacing: 0.02em; }
+  .lora-italic { font-family: 'Lora', Georgia, serif; font-style: italic; }
+  .timer-display { font-family: 'JetBrains Mono', 'Courier New', monospace; font-variant-numeric: tabular-nums; }
+  .quiz-option { transition: all 0.15s; }
+  .quiz-option:hover { background: rgba(117,71,255,0.08); }
+  .quiz-option.correct { background: #D1FAE5; border-color: #10B981; }
+  .quiz-option.wrong { background: #FEE2E2; border-color: #EF4444; }
+  .glow { box-shadow: 0 0 0 4px rgba(117,71,255,0.15); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  /* Violeta OnLive #7547FF — override Tailwind purple */
+  .bg-purple-600,.bg-purple-500 { background-color: var(--p) !important; }
+  .hover\:bg-purple-700:hover,.hover\:bg-purple-600:hover { background-color: var(--pd) !important; }
+  .text-purple-600,.text-purple-500 { color: var(--p) !important; }
+  .text-purple-400 { color: rgba(117,71,255,0.75) !important; }
+  .text-purple-900 { color: #2d1b6b !important; }
+  .text-purple-300 { color: rgba(117,71,255,0.6) !important; }
+  .border-purple-600,.border-purple-500 { border-color: var(--p) !important; }
+  .border-purple-200,.border-purple-100 { border-color: rgba(117,71,255,0.25) !important; }
+  .bg-purple-50 { background-color: rgba(117,71,255,0.06) !important; }
+  .bg-purple-100 { background-color: rgba(117,71,255,0.12) !important; }
+  .from-purple-50 { --tw-gradient-from: rgba(117,71,255,0.06) var(--tw-gradient-from-position) !important; }
+  .to-purple-100 { --tw-gradient-to: rgba(117,71,255,0.12) var(--tw-gradient-to-position) !important; }
+  .ring-purple-500 { --tw-ring-color: var(--p) !important; }
+  .focus\:ring-purple-500:focus { --tw-ring-color: var(--p) !important; }
+  .focus\:border-purple-500:focus { border-color: var(--p) !important; }
+</style>
+
+</head>
+<body class="min-h-screen">
+
+<header class="bg-black text-white px-4 py-3 sticky top-0 z-10">
+  <div class="max-w-2xl mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <div class="w-3 h-3 rounded-full bg-purple-500 animate-pulse"></div>
+      <span class="font-bold text-purple-400 text-sm tracking-wider">OnLive · CURSO SELLIVER</span>
+    </div>
+    <div class="text-xs text-gray-400">Módulo 1 / 9 · Selliver</div>
+  </div>
+  <div class="max-w-2xl mx-auto mt-2 h-1 bg-gray-800 rounded">
+    <div class="h-1 bg-purple-500 rounded" style="width: 11%"></div>
+  </div>
+</header>
+
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-12">
+    <p class="text-purple-600 font-bold text-sm tracking-wider mb-2">MÓDULO 01</p>
+    <h1 class="text-4xl font-bold leading-tight mb-3">O Produto</h1>
+    <p class="text-lg text-gray-700 mb-4">Não decora. Entende. Você vende o produto que entende — não o que tá no script.</p>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+      <span>⏱️ 15 minutos</span>
+      <span>📋 Pré-requisito: nenhum</span>
+      <span>🎯 Sair sabendo descrever o produto em 60s sem ler</span>
+    </div>
+  </div>
+
+  <!-- Slot de vídeo YouTube — auto-carrega de videos.json -->
+<div id="yt-slot" class="mb-8 hidden">
+  <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <div class="px-5 py-3 bg-gradient-to-r from-purple-50 to-pink-50 border-b">
+      <p class="text-xs text-purple-600 font-bold tracking-wider">🎥 VÍDEO — O Produto</p>
+    </div>
+    <div class="aspect-video bg-black" id="yt-iframe-wrap"></div>
+  </div>
+</div>
+
+<div id="yt-empty" class="mb-8 bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hidden">
+  <p class="text-3xl mb-2">📹</p>
+  <p class="text-sm text-gray-600">Vídeo ainda não disponível para esse módulo.</p>
+  <p class="text-xs text-gray-400 mt-1">Continua com a narração e slides abaixo — o vídeo é complementar.</p>
+</div>
+
+<script>
+(function() {
+  const moduleNum = '01';
+  fetch('videos.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : {})
+    .then(videos => {
+      const url = videos[moduleNum] || '';
+      const ytId = (url.match(/(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/) || [])[1];
+      if (ytId) {
+        document.getElementById('yt-slot').classList.remove('hidden');
+        document.getElementById('yt-iframe-wrap').innerHTML =
+          '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' + ytId + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      } else {
+        // Quando deploy estável: mostra o "vazio". Durante MVP, esconde tudo
+        // document.getElementById('yt-empty').classList.remove('hidden');
+      }
+    })
+    .catch(() => {});
+})();
+</script>
+
+
+  <!-- L · LEARN -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">L</div>
+      <div>
+        <h2 class="text-2xl font-bold">Learn — Absorver</h2>
+        <p class="text-sm text-gray-500">5 minutos · Áudio + slides</p>
+      </div>
+    </div>
+
+    
+    <div class="bg-white border border-purple-100 rounded-xl p-5 mb-6 glow">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="text-2xl">🎧</span>
+        <span class="font-semibold">Narração: ~4 minutos</span>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-4 mb-3">
+        <p class="text-sm font-bold text-purple-900 mb-3">▶️ Ouvir agora (voz do navegador)</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="tts-play" onclick="ttsToggle()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold text-sm">▶ Tocar</button>
+          <button onclick="ttsStop()" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold text-sm">⏹ Parar</button>
+          <select id="tts-rate" onchange="ttsSetRate()" class="px-3 py-2 rounded-lg border border-gray-300 text-sm">
+            <option value="0.85">Devagar</option><option value="1" selected>Normal</option><option value="1.15">Rápido</option><option value="1.3">Bem rápido</option>
+          </select>
+          <select id="tts-voice" class="px-3 py-2 rounded-lg border border-gray-300 text-sm flex-1 min-w-0"><option>Carregando...</option></select>
+        </div>
+        <div id="tts-status" class="text-xs text-gray-600">Aguardando voz BR…</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 1 -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-4">
+      <div class="text-xs text-purple-600 font-bold mb-2">SLIDE 1 / 4</div>
+      <h3 class="text-xl font-bold mb-3">Quem é esse produto?</h3>
+      <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-5 mb-4">
+        <p class="font-mono text-sm text-purple-900 mb-1">PRODUTO</p>
+        <p class="text-2xl font-bold mb-3">Máscara LED Tratamento Facial Fototerapia Estética 7 Cores</p>
+        <p class="font-mono text-sm text-purple-900 mb-1">CATEGORIA</p>
+        <p class="mb-3">cosmeticos</p>
+        
+      </div>
+    </div>
+
+    <!-- SLIDE 2 — Diferenciais -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-4">
+      <div class="text-xs text-purple-600 font-bold mb-2">SLIDE 2 / 4 — DIFERENCIAL</div>
+      <h3 class="text-xl font-bold mb-3">O que torna esse produto diferente</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+        
+        <div class="bg-purple-50 p-4 rounded-lg">
+          <p class="text-2xl font-bold text-purple-600">86 LEDs Ativos</p>
+          <p class="text-sm text-gray-600">86 luzes LED distribuídas para cobertura facial completa, com 7 comprimentos de onda terapêuticos distintos</p>
+        </div>
+        
+        <div class="bg-purple-50 p-4 rounded-lg">
+          <p class="text-2xl font-bold text-purple-600">7 Cores Terapêuticas</p>
+          <p class="text-sm text-gray-600">Vermelho (colágeno), azul (acne), verde (manchas), amarelo (luminosidade), roxo, ciano e branco — cada cor age em uma necessidade específica da pele</p>
+        </div>
+        
+        <div class="bg-purple-50 p-4 rounded-lg">
+          <p class="text-2xl font-bold text-purple-600">Sem Fio — USB-C</p>
+          <p class="text-sm text-gray-600">Bateria recarregável de 1200mAh com carregamento via USB Tipo C, sem necessidade de ficar plugada durante o uso</p>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- SLIDE 3 — Compliance -->
+    
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-4">
+      <div class="text-xs text-purple-600 font-bold mb-2">SLIDE 3 / 4 — COMPLIANCE</div>
+      <h3 class="text-xl font-bold mb-3">⚠️ NUNCA fala (categoria dispositivos_medicos)</h3>
+      <div class="grid grid-cols-1 gap-2 mb-4">
+        
+        <div class="bg-red-50 border border-red-200 rounded p-3 text-sm">✗ Cura acne, manchas ou rugas — verbos 'cura', 'trata' e 'elimina' são proscritos para equipamentos sem registro ANVISA como dispositivo médico</div>
+        
+        <div class="bg-red-50 border border-red-200 rounded p-3 text-sm">✗ Substitui tratamento dermatológico ou procedimento clínico profissional</div>
+        
+        <div class="bg-red-50 border border-red-200 rounded p-3 text-sm">✗ Aumenta a produção de colágeno — alegação terapêutica/fisiológica não permitida sem comprovação clínica registrada na ANVISA</div>
+        
+        <div class="bg-red-50 border border-red-200 rounded p-3 text-sm">✗ Remove manchas e hiperpigmentação — claim de resultado medicamentoso sem respaldo regulatório para o produto nessa categoria</div>
+        
+        <div class="bg-red-50 border border-red-200 rounded p-3 text-sm">✗ Fecha poros — resultado fisiológico não comprovável por uso doméstico de LED de baixa potência</div>
+        
+      </div>
+      <h3 class="text-base font-bold mb-2 text-green-700">PODE falar:</h3>
+      <div class="grid grid-cols-1 gap-2">
+        
+        <div class="bg-green-50 border border-green-200 rounded p-3 text-sm">✓ Sensação de pele mais descansada e radiante após o uso — claim de experiência sensorial, não terapêutico</div>
+        
+        <div class="bg-green-50 border border-green-200 rounded p-3 text-sm">✓ Ritual de autocuidado com tecnologia de fototerapia — posicionamento como rotina de beleza, não tratamento médico</div>
+        
+        <div class="bg-green-50 border border-green-200 rounded p-3 text-sm">✓ Confortável para uso em casa, sem necessidade de fios durante a sessão</div>
+        
+        <div class="bg-green-50 border border-green-200 rounded p-3 text-sm">✓ 7 modos de luz para personalizar sua rotina de skincare</div>
+        
+        <div class="bg-green-50 border border-green-200 rounded p-3 text-sm">✓ Design anatômico com alça ajustável para uso sentado ou deitado</div>
+        
+      </div>
+    </div>
+    
+
+    <!-- SLIDE 4 — Frase-chave -->
+    <div class="bg-black text-white rounded-xl p-8 text-center">
+      <p class="text-xs text-purple-400 font-bold tracking-wider mb-4">FRASE-CHAVE PARA MEMORIZAR</p>
+      <p class="text-2xl font-bold leading-snug">"Máscara LED Tratamento Facial Fototerapia Estética 7 Cores 86 luzes LED distribuídas para cobertura facial completa, com 7 comprimentos de onda terapêuticos distintos para quem Gasto com creme e não vejo resultado nenhum, minha pele tá apagada e eu não tenho dinheiro pra ficar indo em dermatologista toda semana.."</p>
+      <p class="text-sm text-gray-400 mt-4">— se você decora isso, já vendeu metade.</p>
+    </div>
+  </section>
+
+  <!-- I · IMITATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">I</div>
+      <div>
+        <h2 class="text-2xl font-bold">Imitate — Modelar</h2>
+        <p class="text-sm text-gray-500">3 minutos · Exemplo modelo de 60s</p>
+      </div>
+    </div>
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+      <p class="text-xs text-purple-600 font-bold mb-3">EXEMPLO MODELO — 60 SEGUNDOS</p>
+      <div class="bg-gray-50 p-4 rounded-lg italic text-gray-800 mb-4">
+        <p>"Esse é um cosmeticos — 86 LEDs Ativos 86 luzes LED distribuídas para cobertura facial completa, com 7 comprimentos de onda terapêuticos distintos, 7 Cores Terapêuticas Vermelho (colágeno), azul (acne), verde (manchas), amarelo (luminosidade), roxo, ciano e branco — cada cor age em uma necessidade específica da pele, Sem Fio — USB-C Bateria recarregável de 1200mAh com carregamento via USB Tipo C, sem necessidade de ficar plugada durante o uso, .
+        Para quem Gasto com creme e não vejo resultado nenhum, minha pele tá apagada e eu não tenho dinheiro pra ficar indo em dermatologista toda semana..
+        Sensação de pele mais descansada e radiante após o uso — claim de experiência sensorial, não terapêutico.
+        Não promete cura — promete rotina."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- V · VERIFY -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">V</div>
+      <div>
+        <h2 class="text-2xl font-bold">Verify — Drillar</h2>
+        <p class="text-sm text-gray-500">5 minutos · Drill cronometrado</p>
+      </div>
+    </div>
+    <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-lg font-bold mb-3">🎯 Drill 1.1 — Descrição em 60 segundos</h3>
+      <p class="mb-4 text-gray-700">Sem ler. Em até 60 segundos, descreve o Máscara LED Tratamento Facial Fototerapia Estética 7 Cores cobrindo:</p>
+      <div class="bg-white rounded-lg p-4 mb-4">
+        <ol class="text-sm space-y-1 list-decimal list-inside text-gray-700">
+          <li>O que é (categoria: cosmeticos)</li>
+          <li>Para quem (persona: Renata Souza, 34)</li>
+          <li>Diferencial (86 LEDs Ativos, 7 Cores Terapêuticas, Sem Fio — USB-C, )</li>
+          <li>Resultado realista</li>
+          <li>O que NÃO promete (Cura acne, manchas ou rugas — verbos 'cura', 'trata' e 'elimina' são proscritos para equipamentos sem registro ANVISA como dispositivo médico, Substitui tratamento dermatológico ou procedimento clínico profissional, Aumenta a produção de colágeno — alegação terapêutica/fisiológica não permitida sem comprovação clínica registrada na ANVISA, Remove manchas e hiperpigmentação — claim de resultado medicamentoso sem respaldo regulatório para o produto nessa categoria, Fecha poros — resultado fisiológico não comprovável por uso doméstico de LED de baixa potência, )</li>
+        </ol>
+      </div>
+      <div class="bg-black text-white rounded-lg p-6 text-center">
+        <p class="text-xs text-purple-300 mb-2">CRONÔMETRO</p>
+        <div class="text-6xl font-black timer-display mb-4" id="timer1">01:00</div>
+        <div class="flex gap-2 justify-center flex-wrap">
+          <button onclick="startTimer('timer1', 60)" class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-lg font-bold">▶ Comecei</button>
+          <button onclick="resetTimer('timer1', 60)" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-lg font-bold">↻ Refazer</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- E · EVALUATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">E</div>
+      <div>
+        <h2 class="text-2xl font-bold">Evaluate — Testar</h2>
+        <p class="text-sm text-gray-500">2 minutos · Quiz</p>
+      </div>
+    </div>
+    <div id="quiz" class="space-y-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 1 / 3</p>
+        <p class="font-bold mb-4">Qual a categoria do produto?</p>
+        <div class="space-y-2">
+          
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">cosmeticos</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">eletrônico</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">moda</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">alimento</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 2 / 3</p>
+        <p class="font-bold mb-4">Qual destas frases você NUNCA pode falar?</p>
+        <div class="space-y-2">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">"em 30-60 dias você nota diferença"</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">"esse é um cosmeticos"</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 3 / 3</p>
+        <p class="font-bold mb-4">Qual o preço deste produto na live?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">R$ 118,67</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">R$ 0,00 (com cupom MASCARALIVE)</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">R$ 49</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">R$ 199</button>
+        </div>
+      </div>
+
+      <div id="quiz-score" class="hidden bg-purple-50 border-2 border-purple-300 rounded-xl p-6 text-center">
+        <p class="text-xs text-purple-600 font-bold mb-2">SEU RESULTADO</p>
+        <p id="score-text" class="text-3xl font-bold mb-2"></p>
+        <p id="score-message" class="text-sm text-gray-700"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <div class="bg-white border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-4">✅ Pode passar para o Módulo 2 se:</h3>
+      <div class="space-y-3 mb-6">
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Acertei pelo menos 2 das 3 perguntas</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Completei o drill 1.1 cobrindo os 5 pontos em ≤60s</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Sei a frase-chave de cor</span></label>
+      </div>
+      <button id="next-btn" disabled class="w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg">Marca os 3 acima</button>
+    </div>
+  </section>
+
+  <footer class="text-center text-xs text-gray-400 py-8">OnLive · Curso Selliver · Método LIVE™ · Módulo 1 de 9</footer>
+</main>
+
+<!-- Texto da narração — extraído do JSON, gerado pela IA na build -->
+<script type="text/plain" id="tts-script">
+Bem-vinda ao módulo um do seu curso.
+Hoje você vai entender o produto que vai vender amanhã.
+A regra é: não decora. Entende.
+
+Você vai apresentar um cosmeticos: Máscara LED Tratamento Facial Fototerapia Estética 7 Cores.
+86 LEDs Ativos — 86 luzes LED distribuídas para cobertura facial completa, com 7 comprimentos de onda terapêuticos distintos.
+7 Cores Terapêuticas — Vermelho (colágeno), azul (acne), verde (manchas), amarelo (luminosidade), roxo, ciano e branco — cada cor age em uma necessidade específica da pele.
+Sem Fio — USB-C — Bateria recarregável de 1200mAh com carregamento via USB Tipo C, sem necessidade de ficar plugada durante o uso.
+
+
+Para quem? Gasto com creme e não vejo resultado nenhum, minha pele tá apagada e eu não tenho dinheiro pra ficar indo em dermatologista toda semana.
+
+Atenção compliance. Você nunca vai falar:
+- Cura acne, manchas ou rugas — verbos 'cura', 'trata' e 'elimina' são proscritos para equipamentos sem registro ANVISA como dispositivo médico.
+- Substitui tratamento dermatológico ou procedimento clínico profissional.
+- Aumenta a produção de colágeno — alegação terapêutica/fisiológica não permitida sem comprovação clínica registrada na ANVISA.
+- Remove manchas e hiperpigmentação — claim de resultado medicamentoso sem respaldo regulatório para o produto nessa categoria.
+- Fecha poros — resultado fisiológico não comprovável por uso doméstico de LED de baixa potência.
+
+O que pode falar:
+- Sensação de pele mais descansada e radiante após o uso — claim de experiência sensorial, não terapêutico.
+- Ritual de autocuidado com tecnologia de fototerapia — posicionamento como rotina de beleza, não tratamento médico.
+- Confortável para uso em casa, sem necessidade de fios durante a sessão.
+- 7 modos de luz para personalizar sua rotina de skincare.
+- Design anatômico com alça ajustável para uso sentado ou deitado.
+
+
+Frase-chave pra memorizar agora:
+Máscara LED Tratamento Facial Fototerapia Estética 7 Cores 86 luzes LED distribuídas para cobertura facial completa, com 7 comprimentos de onda terapêuticos distintos para quem Gasto com creme e não vejo resultado nenhum, minha pele tá apagada e eu não tenho dinheiro pra ficar indo em dermatologista toda semana..
+
+Se decora isso, já vendeu metade.
+Vamos pro próximo passo.
+</script>
+
+<script>
+// ===== TTS (Web Speech API) =====
+let ttsUtterance=null,ttsVoices=[];
+function loadVoices(){
+  ttsVoices=speechSynthesis.getVoices();
+  const s=document.getElementById('tts-voice'),st=document.getElementById('tts-status');
+  if(!s) return;
+  if(!ttsVoices.length){st.textContent='⚠️ Nenhuma voz';return}
+  const br=ttsVoices.filter(v=>v.lang.startsWith('pt-BR')),
+        pt=ttsVoices.filter(v=>v.lang.startsWith('pt')&&!v.lang.startsWith('pt-BR')),
+        o=ttsVoices.filter(v=>!v.lang.startsWith('pt'));
+  const all=[...br,...pt,...o];
+  s.innerHTML='';
+  all.forEach(v=>{
+    const op=document.createElement('option');
+    op.value=ttsVoices.indexOf(v);
+    op.textContent=(v.lang.startsWith('pt-BR')?'🇧🇷 ':v.lang.startsWith('pt')?'🇵🇹 ':'🌐 ')+v.name;
+    s.appendChild(op);
+  });
+  st.innerHTML=br.length?`✅ ${br.length} voz(es) BR · ${br[0].name}`:'⚠️ sem voz BR';
+}
+speechSynthesis.onvoiceschanged=loadVoices;loadVoices();
+
+function ttsToggle(){
+  const b=document.getElementById('tts-play');
+  if(speechSynthesis.speaking&&!speechSynthesis.paused){speechSynthesis.pause();b.textContent='▶ Continuar';return}
+  if(speechSynthesis.paused){speechSynthesis.resume();b.textContent='⏸ Pausar';return}
+  const t=document.getElementById('tts-script').textContent.trim();
+  ttsUtterance=new SpeechSynthesisUtterance(t);
+  const i=parseInt(document.getElementById('tts-voice').value);
+  if(!isNaN(i)&&ttsVoices[i]){ttsUtterance.voice=ttsVoices[i];ttsUtterance.lang=ttsVoices[i].lang}else{ttsUtterance.lang='pt-BR'}
+  ttsUtterance.rate=parseFloat(document.getElementById('tts-rate').value);
+  ttsUtterance.onend=()=>b.textContent='▶ Tocar';
+  speechSynthesis.speak(ttsUtterance);
+  b.textContent='⏸ Pausar';
+}
+function ttsStop(){speechSynthesis.cancel();const b=document.getElementById('tts-play');if(b)b.textContent='▶ Tocar';}
+function ttsSetRate(){if(speechSynthesis.speaking)ttsStop();}
+
+// ===== TIMERS =====
+const timers={};
+function startTimer(id,sec){
+  if(timers[id])clearInterval(timers[id]);
+  let s=sec;
+  const e=document.getElementById(id);
+  const u=()=>{
+    const m=String(Math.floor(s/60)).padStart(2,'0'),x=String(s%60).padStart(2,'0');
+    e.textContent=`${m}:${x}`;
+    if(s<=0){clearInterval(timers[id]);e.classList.add('text-red-500');e.textContent='⏰ TEMPO!';navigator.vibrate&&navigator.vibrate([200,100,200])}
+    s--;
+  };
+  u();timers[id]=setInterval(u,1000);
+  e.classList.remove('text-red-500');
+}
+function resetTimer(id,sec){
+  if(timers[id])clearInterval(timers[id]);
+  const e=document.getElementById(id);
+  e.textContent=`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
+  e.classList.remove('text-red-500');
+}
+
+// ===== QUIZ =====
+let quizAnswered=0,quizCorrect=0,quizTotal=0;
+function answer(btn,ok){
+  const p=btn.parentElement;
+  if(p.dataset.answered==='true')return;
+  p.dataset.answered='true';
+  Array.from(p.children).forEach(b=>b.disabled=true);
+  if(ok){btn.classList.add('correct');quizCorrect++}
+  else{btn.classList.add('wrong');Array.from(p.children).forEach(b=>{if(b.getAttribute('onclick')?.includes('true'))b.classList.add('correct')})}
+  quizAnswered++;
+  if(quizAnswered===quizTotal)showScore();
+}
+function initQuiz(total){quizTotal=total;}
+function showScore(){
+  const b=document.getElementById('quiz-score'),t=document.getElementById('score-text'),m=document.getElementById('score-message');
+  if(!b)return;
+  b.classList.remove('hidden');
+  t.textContent=`${quizCorrect} / ${quizTotal} acertos`;
+  const passing=Math.ceil(quizTotal*0.75);
+  if(quizCorrect>=passing){t.classList.add('text-green-600');m.textContent='✓ Aprovado neste quiz.'}
+  else{t.classList.add('text-orange-600');m.textContent='✗ Refaz o módulo. Sem pressa.'}
+}
+
+// ===== APROVAÇÃO =====
+function setupApproval(nextHref){
+  document.querySelectorAll('.final-check').forEach(c=>c.addEventListener('change',()=>{
+    const all=Array.from(document.querySelectorAll('.final-check')).every(x=>x.checked);
+    const b=document.getElementById('next-btn');
+    if(!b)return;
+    if(all){
+      b.disabled=false;
+      b.className='w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-lg transition';
+      b.textContent='➜ Próximo módulo';
+      b.onclick=()=>location.href=nextHref;
+    }else{
+      b.disabled=true;
+      b.className='w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg';
+      b.textContent='Marca todos os critérios acima';
+    }
+  }));
+}
+</script>
+
+
+<script>
+  initQuiz(3);
+  setupApproval('02-A-Audiencia.html');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Módulo 08 — Plano B e Emergências · Curso Selliver OnLive</title>
+<meta name="description" content="Curso Selliver Kamille · 2026-05-12 · Hero: Sérum Facial Vitamina C 30ml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root { --p:#7547FF; --pd:#5B38CC; --ps:rgba(117,71,255,0.08); }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #FAFAFA; color: #0A0A0A; }
+  .bebas { font-family: 'Bebas Neue', 'Trebuchet MS', sans-serif; letter-spacing: 0.02em; }
+  .lora-italic { font-family: 'Lora', Georgia, serif; font-style: italic; }
+  .timer-display { font-family: 'JetBrains Mono', 'Courier New', monospace; font-variant-numeric: tabular-nums; }
+  .quiz-option { transition: all 0.15s; }
+  .quiz-option:hover { background: rgba(117,71,255,0.08); }
+  .quiz-option.correct { background: #D1FAE5; border-color: #10B981; }
+  .quiz-option.wrong { background: #FEE2E2; border-color: #EF4444; }
+  .glow { box-shadow: 0 0 0 4px rgba(117,71,255,0.15); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  /* Violeta OnLive #7547FF — override Tailwind purple */
+  .bg-purple-600,.bg-purple-500 { background-color: var(--p) !important; }
+  .hover\:bg-purple-700:hover,.hover\:bg-purple-600:hover { background-color: var(--pd) !important; }
+  .text-purple-600,.text-purple-500 { color: var(--p) !important; }
+  .text-purple-400 { color: rgba(117,71,255,0.75) !important; }
+  .text-purple-900 { color: #2d1b6b !important; }
+  .text-purple-300 { color: rgba(117,71,255,0.6) !important; }
+  .border-purple-600,.border-purple-500 { border-color: var(--p) !important; }
+  .border-purple-200,.border-purple-100 { border-color: rgba(117,71,255,0.25) !important; }
+  .bg-purple-50 { background-color: rgba(117,71,255,0.06) !important; }
+  .bg-purple-100 { background-color: rgba(117,71,255,0.12) !important; }
+  .from-purple-50 { --tw-gradient-from: rgba(117,71,255,0.06) var(--tw-gradient-from-position) !important; }
+  .to-purple-100 { --tw-gradient-to: rgba(117,71,255,0.12) var(--tw-gradient-to-position) !important; }
+  .ring-purple-500 { --tw-ring-color: var(--p) !important; }
+  .focus\:ring-purple-500:focus { --tw-ring-color: var(--p) !important; }
+  .focus\:border-purple-500:focus { border-color: var(--p) !important; }
+</style>
+
+<style>
+  .scenario-card { animation: slideIn 0.4s ease-out; }
+  @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body class="min-h-screen">
+
+<header class="bg-black text-white px-4 py-3 sticky top-0 z-10">
+  <div class="max-w-2xl mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <div class="w-3 h-3 rounded-full bg-purple-500 animate-pulse"></div>
+      <span class="font-bold text-purple-400 text-sm tracking-wider">OnLive · CURSO SELLIVER</span>
+    </div>
+    <div class="text-xs text-gray-400">Módulo 8 / 9 · Kamille</div>
+  </div>
+  <div class="max-w-2xl mx-auto mt-2 h-1 bg-gray-800 rounded">
+    <div class="h-1 bg-purple-500 rounded" style="width: 89%"></div>
+  </div>
+</header>
+
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-12">
+    <p class="text-purple-600 font-bold text-sm tracking-wider mb-2">MÓDULO 08</p>
+    <h1 class="text-4xl font-bold leading-tight mb-3">Plano B e Emergências</h1>
+    <p class="text-lg text-gray-700 mb-4">Não é "se" der ruim. É "quando". Bom Selliver não é quem nunca trava — é quem sabe destravar em 30 segundos.</p>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600"><span>⏱️ 10 min</span><span>📋 Pré: Mód 1-7</span><span>🎯 Responder cenário em ≤15s com ação + frase</span></div>
+  </div>
+
+  <!-- L · LEARN -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">L</div>
+      <div><h2 class="text-2xl font-bold">Learn — Absorver</h2><p class="text-sm text-gray-500">3 min</p></div>
+    </div>
+
+    <div class="bg-white border border-purple-100 rounded-xl p-5 mb-6 glow">
+      <div class="flex items-center gap-3 mb-3"><span class="text-2xl">🎧</span><span class="font-semibold">Narração: ~3 min</span></div>
+      <div class="bg-purple-50 rounded-lg p-4">
+        <p class="text-sm font-bold text-purple-900 mb-3">▶️ Ouvir agora</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="tts-play" onclick="ttsToggle()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold text-sm">▶ Tocar</button>
+          <button onclick="ttsStop()" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-bold text-sm">⏹ Parar</button>
+          <select id="tts-rate" onchange="ttsSetRate()" class="px-3 py-2 rounded-lg border text-sm"><option value="0.85">Devagar</option><option value="1" selected>Normal</option><option value="1.15">Rápido</option><option value="1.3">Bem rápido</option></select>
+          <select id="tts-voice" class="px-3 py-2 rounded-lg border text-sm flex-1 min-w-0"><option>Carregando...</option></select>
+        </div>
+        <div id="tts-status" class="text-xs text-gray-600">Aguardando voz BR…</div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">As 4 emergências e como responder</h3>
+
+    <div class="space-y-4 mb-6">
+      <div class="bg-white border-l-4 border-red-500 rounded-lg p-5">
+        <p class="font-bold text-red-700 mb-2">🚨 B1 · CHAT SILENCIOSO</p>
+        <p class="text-xs text-gray-600 mb-2">Sintomas: ninguém comenta há 3-4 min</p>
+        <p class="text-sm font-semibold mb-1">AÇÃO:</p>
+        <p class="text-sm text-gray-700 mb-3">Pergunta sim/não. Lê comentário antigo como se fosse novo. Pede reação simples.</p>
+        <p class="text-sm font-semibold mb-1">FRASE:</p>
+        <p class="text-sm italic text-purple-800">"Quem aqui tem Tenho pele oleosa que brilha 1h depois de me arrumar e nada que eu uso resolve. Já gastei mais de R$ 300 em produto., digita SIM no chat. Quem nunca passou por isso, digita NÃO. Quero ver."</p>
+      </div>
+
+      <div class="bg-white border-l-4 border-orange-500 rounded-lg p-5">
+        <p class="font-bold text-orange-700 mb-2">📉 B2 · VIEWERS CAINDO</p>
+        <p class="text-xs text-gray-600 mb-2">Sintomas: drop de 20-30% em 3 min</p>
+        <p class="text-sm font-semibold mb-1">AÇÃO:</p>
+        <p class="text-sm text-gray-700 mb-3">Trocar product pin. Mudar ângulo de câmera. Pegar produto de forma diferente.</p>
+        <p class="text-sm font-semibold mb-1">FRASE:</p>
+        <p class="text-sm italic text-purple-800">"Olha o detalhe que muda a decisão — esse aqui. Pra quem chegou agora: produto é Sérum Facial Vitamina C 30ml, R$ 79,00 na live, tá na sacolinha."</p>
+      </div>
+
+      <div class="bg-white border-l-4 border-yellow-500 rounded-lg p-5">
+        <p class="font-bold text-yellow-700 mb-2">⚠️ B3 · PROBLEMA TÉCNICO</p>
+        <p class="text-xs text-gray-600 mb-2">Sintomas: travou áudio/vídeo, internet caiu, app bugou</p>
+        <p class="text-sm font-semibold mb-1">AÇÃO:</p>
+        <p class="text-sm text-gray-700 mb-3">Frase de transição. Reforçar cupom no chat. Voltar em ≤1 min. Se >5 min, reiniciar live.</p>
+        <p class="text-sm font-semibold mb-1">FRASE:</p>
+        <p class="text-sm italic text-purple-800">"Pessoal, problema técnico. Volto em 1 minutinho. Enquanto isso: produto na sacolinha, cupom LIVEONLIVE15 ativo."</p>
+      </div>
+
+      <div class="bg-white border-l-4 border-purple-500 rounded-lg p-5">
+        <p class="font-bold text-purple-700 mb-2">🤡 B4 · TROLL / NEGATIVO</p>
+        <p class="text-xs text-gray-600 mb-2">Sintomas: comentário hostil, debochado, tóxico</p>
+        <p class="text-sm font-semibold mb-1">AÇÃO:</p>
+        <p class="text-sm text-gray-700 mb-3">Não responde direto. Pede moderador fixar comentário positivo por cima. Continua o ciclo.</p>
+        <p class="text-sm font-semibold mb-1">FRASE:</p>
+        <p class="text-sm italic text-gray-500">[Não há frase. Continua o roteiro como se nada acontecesse.]<br>Se a crítica é técnica e legítima: <span class="text-purple-800">"Boa pergunta. [resposta]. Quem mais tem essa dúvida?"</span></p>
+      </div>
+    </div>
+
+    <div class="bg-black text-white rounded-xl p-8 text-center">
+      <p class="text-xs text-purple-400 font-bold tracking-wider mb-4">PRINCÍPIO</p>
+      <p class="text-2xl font-bold leading-snug">"Erro não derruba a live. Pânico derruba."</p>
+    </div>
+  </section>
+
+  <!-- I · IMITATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">I</div>
+      <div><h2 class="text-2xl font-bold">Imitate — Modelar</h2><p class="text-sm text-gray-500">2 min · Cartões para imprimir</p></div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+      <p class="text-xs text-purple-600 font-bold mb-3">CARTÕES DE EMERGÊNCIA — IMPRIMA E DEIXE NO SET</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="bg-gray-100 rounded-lg p-3 text-sm">
+          <p class="font-bold text-purple-700 mb-1">🟪 Coringa 1</p>
+          <p class="italic">"Pra quem chegou agora: produto é Sérum Facial Vitamina C 30ml, resolve , R$ 79,00 na live, sacolinha aqui."</p>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-3 text-sm">
+          <p class="font-bold text-purple-700 mb-1">🟪 Coringa 2</p>
+          <p class="italic">"Vou repetir o teste pra quem entrou agora — presta atenção."</p>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-3 text-sm">
+          <p class="font-bold text-purple-700 mb-1">🟪 Coringa 3</p>
+          <p class="italic">"Comenta no chat o que você quer ver primeiro."</p>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-3 text-sm">
+          <p class="font-bold text-purple-700 mb-1">🟪 Coringa 4</p>
+          <p class="italic">"Olha o detalhe que faz a diferença — é isso aqui."</p>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-3 text-sm col-span-1 sm:col-span-2">
+          <p class="font-bold text-purple-700 mb-1">🟪 Coringa 5 (frase-mãe)</p>
+          <p class="italic">"Não compra ainda. Primeiro olha o teste."</p>
+        </div>
+      </div>
+
+      <div class="mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+        <p class="text-sm text-gray-800"><strong>Como usar na hora:</strong> deixa esses 5 escritos numa folha A5 colada do lado da câmera. Quando travar, dá pra olhar de relance e usar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- V · VERIFY — CENÁRIOS ALEATÓRIOS -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">V</div>
+      <div><h2 class="text-2xl font-bold">Verify — Cenários</h2><p class="text-sm text-gray-500">3 min · 6 cenários × 15s</p></div>
+    </div>
+
+    <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-lg font-bold mb-3">🎯 Drill 8.1 — 6 Cenários Aleatórios</h3>
+      <p class="mb-4 text-gray-700">A IA vai te dar 6 cenários de emergência. Você tem <strong>15s por cenário</strong> para responder em voz alta com:</p>
+      <ol class="text-sm space-y-1 list-decimal list-inside mb-4 text-gray-700">
+        <li>Qual emergência é (B1, B2, B3 ou B4)</li>
+        <li>Que ação tomar (1 frase)</li>
+        <li>Que frase falar (em voz alta)</li>
+      </ol>
+
+      <div id="scen-start" class="text-center bg-black text-white rounded-xl p-6">
+        <button onclick="startScenarios()" class="bg-purple-600 hover:bg-purple-700 px-8 py-4 rounded-lg font-bold text-lg">⚡ Começar cenários</button>
+      </div>
+
+      <div id="scen-active" class="hidden">
+        <div class="bg-black text-white rounded-xl p-6 mb-4">
+          <div class="flex justify-between mb-4">
+            <p class="text-sm text-purple-300">Cenário <span id="scen-num">1</span> / 6</p>
+            <p class="text-sm text-purple-300">Acertos: <span id="scen-hits">0</span></p>
+          </div>
+          <div class="bg-orange-900/50 border-2 border-orange-400 rounded-lg p-5 mb-4 scenario-card" id="scen-box">
+            <p class="text-xs text-orange-300 mb-2">SITUAÇÃO:</p>
+            <p class="text-xl font-bold" id="scen-text">"..."</p>
+          </div>
+          <div class="text-center">
+            <p class="text-xs text-gray-400 mb-2">DIAGNÓSTICA + FRASE EM VOZ ALTA</p>
+            <div class="text-7xl font-black timer-display mb-4" id="scen-timer">15</div>
+            <button onclick="skipScen()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">Tempo (avançar)</button>
+          </div>
+        </div>
+
+        <div id="scen-answer" class="hidden bg-white rounded-xl border-2 border-green-400 p-5 mb-4">
+          <p class="text-xs text-green-700 font-bold mb-2">RESPOSTA MODELO ↓</p>
+          <p class="text-sm font-bold text-purple-700 mb-1" id="scen-type"></p>
+          <p class="text-sm italic text-gray-800" id="scen-action"></p>
+          <p class="text-sm italic text-purple-800 mt-2" id="scen-phrase"></p>
+          <div class="mt-4 flex gap-2">
+            <button onclick="markScen(true)" class="flex-1 bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-bold">✓ Acertei</button>
+            <button onclick="markScen(false)" class="flex-1 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg font-bold">✗ Errei</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="scen-result" class="hidden bg-purple-50 border-2 border-purple-300 rounded-xl p-6 text-center">
+        <p class="text-xs text-purple-600 font-bold mb-2">RESULTADO</p>
+        <p id="scen-final-score" class="text-5xl font-black mb-3"></p>
+        <p id="scen-final-msg" class="text-sm text-gray-700"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- E · EVALUATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">E</div>
+      <div><h2 class="text-2xl font-bold">Evaluate</h2></div>
+    </div>
+
+    <div class="bg-white border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-4">✅ Pode passar para a Prova Final se:</h3>
+      <div class="space-y-3 mb-6">
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Acertei pelo menos 5 de 6 cenários</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Imprimi os 5 cartões coringa pra colar do lado da câmera</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Sei distinguir B1, B2, B3, B4 sem pensar</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Tô pronta pra prova final (live simulada de 30 min)</span></label>
+      </div>
+      <button id="next-btn" disabled class="w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg">Marca os 4 acima</button>
+    </div>
+  </section>
+
+  <footer class="text-center text-xs text-gray-400 py-8">OnLive · Curso Selliver · Método LIVE™ · Módulo 8 de 9</footer>
+</main>
+
+<script type="text/plain" id="tts-script">
+Bem-vinda ao módulo oito.
+Aqui você aprende algo que separa Selliver iniciante de Selliver pro: a capacidade de destravar em trinta segundos.
+
+Iniciante quando algo dá errado, entra em pânico. Para de falar. Olha pra câmera com cara assustada. Live morre.
+Pro entende: erro não derruba a live. Pânico derruba.
+
+Existem quatro emergências que SEMPRE acontecem. Você precisa saber as quatro de cor.
+
+Bê um. Chat silencioso.
+Sintomas: ninguém comenta há três, quatro minutos.
+Ação: pergunta sim ou não. Pergunta direta. Lê comentário antigo como se fosse novo.
+Frase: Quem aqui tem dor parecida com a da nossa persona, digita SIM no chat.
+
+Bê dois. Viewers caindo.
+Sintomas: drop de vinte a trinta por cento em três minutos.
+Ação: troca o product pin. Muda o ângulo da câmera. Pega o produto de outra forma.
+Frase: Olha o detalhe que muda a decisão. Pra quem chegou agora, produto é Sérum Facial Vitamina C 30ml, R$ 79,00 na live.
+
+Bê três. Problema técnico.
+Sintomas: travou áudio, vídeo, internet caiu, app bugou.
+Ação: frase de transição. Reforça o cupom no chat. Volta em até um minuto. Se passou de cinco minutos, reinicia a live.
+Frase: Pessoal, problema técnico. Volto em um minutinho. Enquanto isso, produto na sacolinha, cupom LIVEONLIVE15 ativo.
+
+Bê quatro. Troll. Comentário negativo.
+Sintomas: comentário hostil, debochado, tóxico.
+Ação: NÃO RESPONDE direto. Pede moderador fixar comentário positivo por cima. Continua o ciclo.
+Frase: não tem frase. Continua o roteiro como se nada acontecesse.
+Se a crítica é técnica e legítima: Boa pergunta, resposta, quem mais tem essa dúvida?
+
+Princípio: erro não derruba a live. Pânico derruba.
+
+Cinco frases coringa que servem em qualquer momento de travamento. Imprime e cola do lado da câmera.
+Pra quem chegou agora, produto é Sérum Facial Vitamina C 30ml, resolve, preço.
+Vou repetir o teste pra quem entrou agora.
+Comenta no chat o que você quer ver primeiro.
+Olha o detalhe que faz a diferença, é isso aqui.
+Não compra ainda, primeiro olha o teste.
+
+Agora você vai praticar com seis cenários aleatórios. Quinze segundos cada.
+Você diz qual a emergência, que ação tomar e que frase falar.
+Vamos.
+</script>
+
+<script>
+// ===== TTS (Web Speech API) =====
+let ttsUtterance=null,ttsVoices=[];
+function loadVoices(){
+  ttsVoices=speechSynthesis.getVoices();
+  const s=document.getElementById('tts-voice'),st=document.getElementById('tts-status');
+  if(!s) return;
+  if(!ttsVoices.length){st.textContent='⚠️ Nenhuma voz';return}
+  const br=ttsVoices.filter(v=>v.lang.startsWith('pt-BR')),
+        pt=ttsVoices.filter(v=>v.lang.startsWith('pt')&&!v.lang.startsWith('pt-BR')),
+        o=ttsVoices.filter(v=>!v.lang.startsWith('pt'));
+  const all=[...br,...pt,...o];
+  s.innerHTML='';
+  all.forEach(v=>{
+    const op=document.createElement('option');
+    op.value=ttsVoices.indexOf(v);
+    op.textContent=(v.lang.startsWith('pt-BR')?'🇧🇷 ':v.lang.startsWith('pt')?'🇵🇹 ':'🌐 ')+v.name;
+    s.appendChild(op);
+  });
+  st.innerHTML=br.length?`✅ ${br.length} voz(es) BR · ${br[0].name}`:'⚠️ sem voz BR';
+}
+speechSynthesis.onvoiceschanged=loadVoices;loadVoices();
+
+function ttsToggle(){
+  const b=document.getElementById('tts-play');
+  if(speechSynthesis.speaking&&!speechSynthesis.paused){speechSynthesis.pause();b.textContent='▶ Continuar';return}
+  if(speechSynthesis.paused){speechSynthesis.resume();b.textContent='⏸ Pausar';return}
+  const t=document.getElementById('tts-script').textContent.trim();
+  ttsUtterance=new SpeechSynthesisUtterance(t);
+  const i=parseInt(document.getElementById('tts-voice').value);
+  if(!isNaN(i)&&ttsVoices[i]){ttsUtterance.voice=ttsVoices[i];ttsUtterance.lang=ttsVoices[i].lang}else{ttsUtterance.lang='pt-BR'}
+  ttsUtterance.rate=parseFloat(document.getElementById('tts-rate').value);
+  ttsUtterance.onend=()=>b.textContent='▶ Tocar';
+  speechSynthesis.speak(ttsUtterance);
+  b.textContent='⏸ Pausar';
+}
+function ttsStop(){speechSynthesis.cancel();const b=document.getElementById('tts-play');if(b)b.textContent='▶ Tocar';}
+function ttsSetRate(){if(speechSynthesis.speaking)ttsStop();}
+
+// ===== TIMERS =====
+const timers={};
+function startTimer(id,sec){
+  if(timers[id])clearInterval(timers[id]);
+  let s=sec;
+  const e=document.getElementById(id);
+  const u=()=>{
+    const m=String(Math.floor(s/60)).padStart(2,'0'),x=String(s%60).padStart(2,'0');
+    e.textContent=`${m}:${x}`;
+    if(s<=0){clearInterval(timers[id]);e.classList.add('text-red-500');e.textContent='⏰ TEMPO!';navigator.vibrate&&navigator.vibrate([200,100,200])}
+    s--;
+  };
+  u();timers[id]=setInterval(u,1000);
+  e.classList.remove('text-red-500');
+}
+function resetTimer(id,sec){
+  if(timers[id])clearInterval(timers[id]);
+  const e=document.getElementById(id);
+  e.textContent=`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
+  e.classList.remove('text-red-500');
+}
+
+// ===== QUIZ =====
+let quizAnswered=0,quizCorrect=0,quizTotal=0;
+function answer(btn,ok){
+  const p=btn.parentElement;
+  if(p.dataset.answered==='true')return;
+  p.dataset.answered='true';
+  Array.from(p.children).forEach(b=>b.disabled=true);
+  if(ok){btn.classList.add('correct');quizCorrect++}
+  else{btn.classList.add('wrong');Array.from(p.children).forEach(b=>{if(b.getAttribute('onclick')?.includes('true'))b.classList.add('correct')})}
+  quizAnswered++;
+  if(quizAnswered===quizTotal)showScore();
+}
+function initQuiz(total){quizTotal=total;}
+function showScore(){
+  const b=document.getElementById('quiz-score'),t=document.getElementById('score-text'),m=document.getElementById('score-message');
+  if(!b)return;
+  b.classList.remove('hidden');
+  t.textContent=`${quizCorrect} / ${quizTotal} acertos`;
+  const passing=Math.ceil(quizTotal*0.75);
+  if(quizCorrect>=passing){t.classList.add('text-green-600');m.textContent='✓ Aprovado neste quiz.'}
+  else{t.classList.add('text-orange-600');m.textContent='✗ Refaz o módulo. Sem pressa.'}
+}
+
+// ===== APROVAÇÃO =====
+function setupApproval(nextHref){
+  document.querySelectorAll('.final-check').forEach(c=>c.addEventListener('change',()=>{
+    const all=Array.from(document.querySelectorAll('.final-check')).every(x=>x.checked);
+    const b=document.getElementById('next-btn');
+    if(!b)return;
+    if(all){
+      b.disabled=false;
+      b.className='w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-lg transition';
+      b.textContent='➜ Próximo módulo';
+      b.onclick=()=>location.href=nextHref;
+    }else{
+      b.disabled=true;
+      b.className='w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg';
+      b.textContent='Marca todos os critérios acima';
+    }
+  }));
+}
+</script>
+
+
+<script>
+const scenarios = [{"situation":"São 19h45 e o chat tá parado há 4 minutos. Ninguém comenta. Ciclo 2.","type":"B1 · CHAT SILENCIOSO","action":"Pergunta sim/não. Lê comentário antigo. Pede reação simples.","phrase":"Quem aqui tem pele oleosa, digita SIM no chat. Quem nunca passou por isso, NÃO."},{"situation":"Tinha 280 viewers no minuto 18. Agora minuto 22 só tem 190. Caindo.","type":"B2 · VIEWERS CAINDO","action":"Troca product pin + muda ângulo + pega produto de forma diferente.","phrase":"Olha o detalhe que muda a decisão. Pra quem chegou agora: Sérum Vit C, R$ 79 na live, sacolinha aqui."},{"situation":"O microfone caiu, áudio sumiu por 5 segundos. Você percebeu agora.","type":"B3 · PROBLEMA TÉCNICO","action":"Frase de transição. Cupom no chat. Volta em ≤1 min.","phrase":"Pessoal, problema técnico. Volto em 1 minutinho. Cupom LIVEONLIVE15 ativo, produto na sacolinha."},{"situation":"Comentário fixo: 'Você tá vendendo coisa cara pra quem não tem dinheiro, isso é golpe'","type":"B4 · TROLL","action":"NÃO responde direto. Pede moderador fixar positivo por cima. Continua ciclo.","phrase":"[Sem frase. Continua o roteiro como se o comentário não existisse.]"},{"situation":"Você tava no bloco de Demo, pegou o sérum errado da bancada, percebeu na hora.","type":"B3 · TÉCNICO (suave)","action":"Faz piada leve consigo, troca produto, continua. Não esconde — assume.","phrase":"Pegado errado. [troca o produto]. Esse aqui é o sérum, agora vai. Continuando."},{"situation":"Chat ativo mas perguntam: 'Esse vídeo é antigo né? Não é live de verdade'","type":"B1 → cria interação","action":"Prova ao vivo (mostra horário, faz gesto inesperado). Reativa.","phrase":"19h47, segunda. Olha o relógio aqui. Quem quer que eu faça [gesto aleatório], comenta."},{"situation":"Você esqueceu o cupom-mestre, ele saiu da sua cabeça no minuto 35.","type":"Travou","action":"Usa coringa 1. Pede moderador escrever cupom no chat fixo.","phrase":"Pra quem chegou agora: Sérum Vit C, R$ 79 na live, cupom tá fixado no chat — moderador, fixa de novo."},{"situation":"Ciclo 4, você sente que tá perdendo energia, voz baixa, frase enrolando.","type":"Energia caindo","action":"Pega água. Muda postura. Volta pro script base.","phrase":"[Bebe água]. Voltando. Pra quem chegou agora: produto é Sérum Vit C..."}];
+
+let scenState = {round:0, hits:0, current:null, tInterval:null};
+
+function startScenarios() {
+  scenState = {round:0, hits:0, current:null, tInterval:null};
+  document.getElementById('scen-start').classList.add('hidden');
+  document.getElementById('scen-active').classList.remove('hidden');
+  nextScen();
+}
+
+function nextScen() {
+  scenState.round++;
+  if (scenState.round > 6) { showScenResult(); return; }
+  document.getElementById('scen-num').textContent = scenState.round;
+  document.getElementById('scen-hits').textContent = scenState.hits;
+  const idx = Math.floor(Math.random() * scenarios.length);
+  scenState.current = scenarios[idx];
+  document.getElementById('scen-text').textContent = scenState.current.situation;
+  const box = document.getElementById('scen-box');
+  box.className = 'bg-orange-900/50 border-2 border-orange-400 rounded-lg p-5 mb-4';
+  void box.offsetWidth;
+  box.className = 'bg-orange-900/50 border-2 border-orange-400 rounded-lg p-5 mb-4 scenario-card';
+  document.getElementById('scen-answer').classList.add('hidden');
+  let s = 15;
+  document.getElementById('scen-timer').textContent = s;
+  document.getElementById('scen-timer').classList.remove('text-red-500');
+  if (scenState.tInterval) clearInterval(scenState.tInterval);
+  scenState.tInterval = setInterval(() => {
+    s--;
+    document.getElementById('scen-timer').textContent = s;
+    if (s <= 5) document.getElementById('scen-timer').classList.add('text-red-500');
+    if (s <= 0) { clearInterval(scenState.tInterval); revealScen(); }
+  }, 1000);
+}
+
+function skipScen() {
+  if (scenState.tInterval) clearInterval(scenState.tInterval);
+  revealScen();
+}
+
+function revealScen() {
+  document.getElementById('scen-type').textContent = '→ ' + scenState.current.type;
+  document.getElementById('scen-action').textContent = '🎯 Ação: ' + scenState.current.action;
+  document.getElementById('scen-phrase').textContent = '🎙️ ' + scenState.current.phrase;
+  document.getElementById('scen-answer').classList.remove('hidden');
+  navigator.vibrate && navigator.vibrate(150);
+}
+
+function markScen(hit) {
+  if (hit) scenState.hits++;
+  nextScen();
+}
+
+function showScenResult() {
+  document.getElementById('scen-active').classList.add('hidden');
+  document.getElementById('scen-result').classList.remove('hidden');
+  document.getElementById('scen-final-score').textContent = scenState.hits + ' / 6';
+  const m = document.getElementById('scen-final-msg');
+  if (scenState.hits >= 5) {
+    document.getElementById('scen-final-score').className = 'text-5xl font-black mb-3 text-green-600';
+    m.innerHTML = '<strong>✓ APROVADA.</strong> Você sabe destravar.';
+  } else {
+    document.getElementById('scen-final-score').className = 'text-5xl font-black mb-3 text-orange-500';
+    m.innerHTML = '<strong>⚠️ Refaz.</strong> Decora as 4 emergências (B1-B4) e os 5 cartões coringa.';
+  }
+}
+
+setupApproval('09-Prova-Final.html');
+</script>
+
+</body>
+</html>

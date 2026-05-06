@@ -1,0 +1,103 @@
+<script>
+// ===== TTS (Web Speech API) =====
+let ttsUtterance=null,ttsVoices=[];
+function loadVoices(){
+  ttsVoices=speechSynthesis.getVoices();
+  const s=document.getElementById('tts-voice'),st=document.getElementById('tts-status');
+  if(!s) return;
+  if(!ttsVoices.length){st.textContent='⚠️ Nenhuma voz';return}
+  const br=ttsVoices.filter(v=>v.lang.startsWith('pt-BR')),
+        pt=ttsVoices.filter(v=>v.lang.startsWith('pt')&&!v.lang.startsWith('pt-BR')),
+        o=ttsVoices.filter(v=>!v.lang.startsWith('pt'));
+  const all=[...br,...pt,...o];
+  s.innerHTML='';
+  all.forEach(v=>{
+    const op=document.createElement('option');
+    op.value=ttsVoices.indexOf(v);
+    op.textContent=(v.lang.startsWith('pt-BR')?'🇧🇷 ':v.lang.startsWith('pt')?'🇵🇹 ':'🌐 ')+v.name;
+    s.appendChild(op);
+  });
+  st.innerHTML=br.length?`✅ ${br.length} voz(es) BR · ${br[0].name}`:'⚠️ sem voz BR';
+}
+speechSynthesis.onvoiceschanged=loadVoices;loadVoices();
+
+function ttsToggle(){
+  const b=document.getElementById('tts-play');
+  if(speechSynthesis.speaking&&!speechSynthesis.paused){speechSynthesis.pause();b.textContent='▶ Continuar';return}
+  if(speechSynthesis.paused){speechSynthesis.resume();b.textContent='⏸ Pausar';return}
+  const t=document.getElementById('tts-script').textContent.trim();
+  ttsUtterance=new SpeechSynthesisUtterance(t);
+  const i=parseInt(document.getElementById('tts-voice').value);
+  if(!isNaN(i)&&ttsVoices[i]){ttsUtterance.voice=ttsVoices[i];ttsUtterance.lang=ttsVoices[i].lang}else{ttsUtterance.lang='pt-BR'}
+  ttsUtterance.rate=parseFloat(document.getElementById('tts-rate').value);
+  ttsUtterance.onend=()=>b.textContent='▶ Tocar';
+  speechSynthesis.speak(ttsUtterance);
+  b.textContent='⏸ Pausar';
+}
+function ttsStop(){speechSynthesis.cancel();const b=document.getElementById('tts-play');if(b)b.textContent='▶ Tocar';}
+function ttsSetRate(){if(speechSynthesis.speaking)ttsStop();}
+
+// ===== TIMERS =====
+const timers={};
+function startTimer(id,sec){
+  if(timers[id])clearInterval(timers[id]);
+  let s=sec;
+  const e=document.getElementById(id);
+  const u=()=>{
+    const m=String(Math.floor(s/60)).padStart(2,'0'),x=String(s%60).padStart(2,'0');
+    e.textContent=`${m}:${x}`;
+    if(s<=0){clearInterval(timers[id]);e.classList.add('text-red-500');e.textContent='⏰ TEMPO!';navigator.vibrate&&navigator.vibrate([200,100,200])}
+    s--;
+  };
+  u();timers[id]=setInterval(u,1000);
+  e.classList.remove('text-red-500');
+}
+function resetTimer(id,sec){
+  if(timers[id])clearInterval(timers[id]);
+  const e=document.getElementById(id);
+  e.textContent=`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
+  e.classList.remove('text-red-500');
+}
+
+// ===== QUIZ =====
+let quizAnswered=0,quizCorrect=0,quizTotal=0;
+function answer(btn,ok){
+  const p=btn.parentElement;
+  if(p.dataset.answered==='true')return;
+  p.dataset.answered='true';
+  Array.from(p.children).forEach(b=>b.disabled=true);
+  if(ok){btn.classList.add('correct');quizCorrect++}
+  else{btn.classList.add('wrong');Array.from(p.children).forEach(b=>{if(b.getAttribute('onclick')?.includes('true'))b.classList.add('correct')})}
+  quizAnswered++;
+  if(quizAnswered===quizTotal)showScore();
+}
+function initQuiz(total){quizTotal=total;}
+function showScore(){
+  const b=document.getElementById('quiz-score'),t=document.getElementById('score-text'),m=document.getElementById('score-message');
+  if(!b)return;
+  b.classList.remove('hidden');
+  t.textContent=`${quizCorrect} / ${quizTotal} acertos`;
+  const passing=Math.ceil(quizTotal*0.75);
+  if(quizCorrect>=passing){t.classList.add('text-green-600');m.textContent='✓ Aprovado neste quiz.'}
+  else{t.classList.add('text-orange-600');m.textContent='✗ Refaz o módulo. Sem pressa.'}
+}
+
+// ===== APROVAÇÃO =====
+function setupApproval(nextHref){
+  document.querySelectorAll('.final-check').forEach(c=>c.addEventListener('change',()=>{
+    const all=Array.from(document.querySelectorAll('.final-check')).every(x=>x.checked);
+    const b=document.getElementById('next-btn');
+    if(!b)return;
+    if(all){
+      b.disabled=false;
+      b.className='w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-lg transition';
+      b.textContent='➜ Próximo módulo';
+      b.onclick=()=>location.href=nextHref;
+    }else{
+      b.disabled=true;
+      b.className='w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg';
+      b.textContent='Marca todos os critérios acima';
+    }
+  }));
+}
+</script>

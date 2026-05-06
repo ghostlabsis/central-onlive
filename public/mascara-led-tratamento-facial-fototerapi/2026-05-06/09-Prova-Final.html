@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Módulo 09 — Prova Final — Live Simulada · Curso Selliver OnLive</title>
+<meta name="description" content="Curso Selliver Selliver · 2026-05-06 · Hero: Máscara LED Tratamento Facial Fototerapia Estética 7 Cores">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root { --p:#7547FF; --pd:#5B38CC; --ps:rgba(117,71,255,0.08); }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #FAFAFA; color: #0A0A0A; }
+  .bebas { font-family: 'Bebas Neue', 'Trebuchet MS', sans-serif; letter-spacing: 0.02em; }
+  .lora-italic { font-family: 'Lora', Georgia, serif; font-style: italic; }
+  .timer-display { font-family: 'JetBrains Mono', 'Courier New', monospace; font-variant-numeric: tabular-nums; }
+  .quiz-option { transition: all 0.15s; }
+  .quiz-option:hover { background: rgba(117,71,255,0.08); }
+  .quiz-option.correct { background: #D1FAE5; border-color: #10B981; }
+  .quiz-option.wrong { background: #FEE2E2; border-color: #EF4444; }
+  .glow { box-shadow: 0 0 0 4px rgba(117,71,255,0.15); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  /* Violeta OnLive #7547FF — override Tailwind purple */
+  .bg-purple-600,.bg-purple-500 { background-color: var(--p) !important; }
+  .hover\:bg-purple-700:hover,.hover\:bg-purple-600:hover { background-color: var(--pd) !important; }
+  .text-purple-600,.text-purple-500 { color: var(--p) !important; }
+  .text-purple-400 { color: rgba(117,71,255,0.75) !important; }
+  .text-purple-900 { color: #2d1b6b !important; }
+  .text-purple-300 { color: rgba(117,71,255,0.6) !important; }
+  .border-purple-600,.border-purple-500 { border-color: var(--p) !important; }
+  .border-purple-200,.border-purple-100 { border-color: rgba(117,71,255,0.25) !important; }
+  .bg-purple-50 { background-color: rgba(117,71,255,0.06) !important; }
+  .bg-purple-100 { background-color: rgba(117,71,255,0.12) !important; }
+  .from-purple-50 { --tw-gradient-from: rgba(117,71,255,0.06) var(--tw-gradient-from-position) !important; }
+  .to-purple-100 { --tw-gradient-to: rgba(117,71,255,0.12) var(--tw-gradient-to-position) !important; }
+  .ring-purple-500 { --tw-ring-color: var(--p) !important; }
+  .focus\:ring-purple-500:focus { --tw-ring-color: var(--p) !important; }
+  .focus\:border-purple-500:focus { border-color: var(--p) !important; }
+</style>
+
+<style>
+  .stamp-pass { background: linear-gradient(135deg, #10b981, #059669); color: white; transform: rotate(-6deg); font-family: 'Bebas Neue', 'Trebuchet MS', sans-serif; letter-spacing: 0.05em; }
+  .stamp-fail { background: linear-gradient(135deg, #ef4444, #dc2626); color: white; transform: rotate(-6deg); font-family: 'Bebas Neue', 'Trebuchet MS', sans-serif; letter-spacing: 0.05em; }
+  .pulse-bg { animation: pulse-bg 2s infinite; }
+  @keyframes pulse-bg { 0%, 100% { background-color: #1f2937; } 50% { background-color: #111827; } }
+</style>
+</head>
+<body class="min-h-screen">
+
+<header class="bg-black text-white px-4 py-3 sticky top-0 z-10">
+  <div class="max-w-2xl mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <div class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></div>
+      <span class="bebas text-red-400 text-lg tracking-wider">PROVA FINAL · LIVE SIMULADA</span>
+    </div>
+    <div class="text-xs text-gray-400">Módulo 9 / 9 · Selliver</div>
+  </div>
+  <div class="max-w-2xl mx-auto mt-2 h-1 bg-gray-800 rounded">
+    <div class="h-1 bg-gradient-to-r from-purple-500 to-red-500 rounded" style="width: 100%"></div>
+  </div>
+</header>
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-8 bg-gradient-to-br from-black to-gray-900 text-white rounded-2xl p-8">
+    <p class="bebas text-red-400 text-lg tracking-wider mb-2">MÓDULO 09 · PROVA FINAL</p>
+    <h1 class="bebas text-6xl leading-none mb-4">Live Simulada<br><span class="text-purple-400">de 30 minutos</span></h1>
+    <p class="text-lg text-gray-300 mb-4">Tudo que você aprendeu, junto, em câmera, cronometrado, com scorecard objetivo. <strong class="text-white">Aprovação: 7 de 8 critérios.</strong></p>
+    <div class="flex flex-wrap gap-3 text-sm">
+      <span class="bg-purple-900/50 px-3 py-1 rounded-full">⏱️ 30 min reais</span>
+      <span class="bg-purple-900/50 px-3 py-1 rounded-full">📋 Pré: Mód 1-8</span>
+      <span class="bg-purple-900/50 px-3 py-1 rounded-full">🎯 7/8 critérios</span>
+    </div>
+  </div>
+
+  <!-- L · LEARN -->
+  <section class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">L</div>
+      <div><h2 class="text-2xl font-bold">Como a Prova funciona</h2><p class="text-sm text-gray-500">3 min</p></div>
+    </div>
+
+    <div class="bg-white border border-purple-100 rounded-xl p-5 mb-6 glow">
+      <div class="flex items-center gap-3 mb-3"><span class="text-2xl">🎧</span><span class="font-semibold">Briefing: ~3 min</span></div>
+      <div class="bg-purple-50 rounded-lg p-4">
+        <p class="text-sm font-bold text-purple-900 mb-3">▶️ Ouvir briefing</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="tts-play" onclick="ttsToggle()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold text-sm">▶ Tocar</button>
+          <button onclick="ttsStop()" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-bold text-sm">⏹ Parar</button>
+          <select id="tts-rate" onchange="ttsSetRate()" class="px-3 py-2 rounded-lg border text-sm"><option value="0.85">Devagar</option><option value="1" selected>Normal</option><option value="1.15">Rápido</option><option value="1.3">Bem rápido</option></select>
+          <select id="tts-voice" class="px-3 py-2 rounded-lg border text-sm flex-1 min-w-0"><option>Carregando...</option></select>
+        </div>
+        <div id="tts-status" class="text-xs text-gray-600">Aguardando voz BR…</div>
+      </div>
+    </div>
+
+    <div class="bg-white border border-gray-100 rounded-xl p-6 mb-6">
+      <h3 class="text-lg font-bold mb-4">Setup (5 min antes)</h3>
+      <ul class="space-y-2 text-sm text-gray-700">
+        <li>✦ Câmera do celular ligada e gravando (vai assistir depois)</li>
+        <li>✦ Máscara LED Tratamento Facial Fototerapia Estética 7 Cores na bancada</li>
+        <li>✦ 5 cartões coringa colados do lado da câmera</li>
+        <li>✦ Água em garrafa visível</li>
+        <li>✦ Iluminação frontal sem sombra</li>
+        <li>✦ Pessoa pra fingir comentários no chat OU app de notas no celular pra você ler "comentários" virtuais</li>
+      </ul>
+    </div>
+
+    <div class="bg-orange-50 border border-orange-200 rounded-xl p-5 mb-6">
+      <h3 class="text-lg font-bold text-orange-900 mb-2">⚠️ A prova não é teatro</h3>
+      <p class="text-sm text-gray-800">Faz como se fosse a live real de 2026-05-06. Não dá pra "fazer de novo" no meio. Se você travou, usa cartão coringa e continua. Se errou, segue. A prova testa exatamente isso: como você opera quando algo dá errado.</p>
+    </div>
+  </section>
+
+  <!-- I · IMITATE — PROGRAMA 30 MIN -->
+  <section class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">I</div>
+      <div><h2 class="text-2xl font-bold">Programa de 30 min</h2><p class="text-sm text-gray-500">2 min · Estrutura da prova</p></div>
+    </div>
+
+    <div class="bg-white rounded-xl border p-6">
+      <p class="text-xs text-purple-600 font-bold mb-4">A SUA LIVE SIMULADA</p>
+
+      <div class="space-y-3">
+        <div class="flex gap-3"><div class="bg-black text-white px-3 py-1 rounded text-xs font-mono">00:00</div><div class="text-sm"><strong>Abertura.</strong> Frase inicial direta — produto na mão, posicionamento.</div></div>
+        <div class="flex gap-3"><div class="bg-red-100 text-red-700 px-3 py-1 rounded text-xs font-mono">00:00</div><div class="text-sm"><strong>Hook ciclo 1</strong> — versão pergunta-problema (Máscara LED Tratamento Facial Fototerapia Estética 7 Cores)</div></div>
+        <div class="flex gap-3"><div class="bg-amber-100 text-amber-700 px-3 py-1 rounded text-xs font-mono">02:00</div><div class="text-sm"><strong>Demo ciclo 1</strong> — PPTRI completo do Máscara LED Tratamento Facial Fototerapia Estética 7 Cores</div></div>
+        <div class="flex gap-3"><div class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded text-xs font-mono">05:00</div><div class="text-sm"><strong>Oferta ciclo 1</strong> — ancoragem + 3 níveis</div></div>
+        <div class="flex gap-3"><div class="bg-green-100 text-green-700 px-3 py-1 rounded text-xs font-mono">08:00</div><div class="text-sm"><strong>CTA ciclo 1</strong> — 3 variações + objeção respondida</div></div>
+        <div class="flex gap-3"><div class="bg-purple-100 text-purple-700 px-3 py-1 rounded text-xs font-mono">10:00</div><div class="text-sm"><strong>Reset+Gift ciclo 1</strong> — preview ciclo 2 + meta de gift</div></div>
+        <div class="flex gap-3"><div class="bg-red-100 text-red-700 px-3 py-1 rounded text-xs font-mono">12:00</div><div class="text-sm"><strong>Hook ciclo 2</strong> — versão DIFERENTE (afirmação ou comparação)</div></div>
+        <div class="flex gap-3"><div class="bg-amber-100 text-amber-700 px-3 py-1 rounded text-xs font-mono">14:00</div><div class="text-sm"><strong>Demo ciclo 2</strong> — pode trocar pro  (cross-sell) OU repetir Máscara LED Tratamento Facial Fototerapia Estética 7 Cores com ângulo novo</div></div>
+        <div class="flex gap-3"><div class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded text-xs font-mono">17:00</div><div class="text-sm"><strong>Oferta ciclo 2</strong> — destaca o COMBO desta vez</div></div>
+        <div class="flex gap-3"><div class="bg-green-100 text-green-700 px-3 py-1 rounded text-xs font-mono">20:00</div><div class="text-sm"><strong>CTA ciclo 2</strong> — repete 3× com variação</div></div>
+        <div class="flex gap-3"><div class="bg-purple-100 text-purple-700 px-3 py-1 rounded text-xs font-mono">22:00</div><div class="text-sm"><strong>Reset+Gift ciclo 2</strong></div></div>
+        <div class="flex gap-3"><div class="bg-red-100 text-red-700 px-3 py-1 rounded text-xs font-mono">24:00</div><div class="text-sm"><strong>Início ciclo 3</strong> — Hook curiosidade + Demo curta (sem completar ciclo)</div></div>
+        <div class="flex gap-3"><div class="bg-gray-100 text-gray-700 px-3 py-1 rounded text-xs font-mono">28:00</div><div class="text-sm"><strong>Encerramento.</strong> Recapitula cupom, próxima live, agradece.</div></div>
+        <div class="flex gap-3"><div class="bg-black text-white px-3 py-1 rounded text-xs font-mono">30:00</div><div class="text-sm"><strong>FIM.</strong> Para a câmera. Respira.</div></div>
+      </div>
+
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
+        <p class="text-sm text-gray-800"><strong>Bonus pontos:</strong> durante a live, peça pra alguém te jogar 2-3 objeções no chat virtual. Se responder em ≤30s, +1 critério no scorecard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- V · VERIFY — TIMER 30 MIN -->
+  <section class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-red-600 text-white font-black rounded-lg flex items-center justify-center text-xl">V</div>
+      <div><h2 class="text-2xl font-bold text-red-700">A PROVA</h2><p class="text-sm text-gray-500">30 min · cronômetro real</p></div>
+    </div>
+
+    <div class="bg-gradient-to-br from-black to-gray-900 text-white rounded-2xl p-8">
+      <p class="text-red-400 text-xs font-bold tracking-wider mb-2 text-center">CRONÔMETRO DA PROVA</p>
+      <div class="text-center mb-4">
+        <div class="text-7xl font-black timer-display mb-2" id="exam-timer">30:00</div>
+        <p class="text-sm font-bold mb-2" id="exam-phase">Aguardando início</p>
+      </div>
+      <div class="flex gap-2 justify-center flex-wrap">
+        <button onclick="startExam()" id="exam-start-btn" class="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-lg font-bold text-lg">🔴 LIGAR CÂMERA — começar</button>
+        <button onclick="resetExam()" class="bg-gray-700 px-6 py-2 rounded-lg font-bold text-sm">↻ Refazer</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- E · EVALUATE — SCORECARD -->
+  <section class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">E</div>
+      <div><h2 class="text-2xl font-bold">Scorecard — 8 critérios</h2><p class="text-sm text-gray-500">Após assistir o vídeo da prova, marca cada critério</p></div>
+    </div>
+
+    <div class="bg-white rounded-xl border-2 border-purple-200 p-6">
+      <p class="text-sm text-gray-700 mb-4"><strong>Como avaliar:</strong> assiste a gravação da sua prova. Marca cada critério como ✓ (cumprido) ou ✗ (não cumprido). Honestidade brutal — pisar no critério não-cumprido é melhor que aprovar mentindo.</p>
+
+      <div class="space-y-3" id="scorecard">
+        <label class="flex items-start gap-3 cursor-pointer bg-gray-50 p-4 rounded-lg hover:bg-gray-100">
+          <input type="checkbox" class="mt-1 score-check" data-c="1">
+          <div>
+            <p class="font-bold">1. Abertura SEM "oi gente, tudo bem?"</p>
+            <p class="text-xs text-gray-600">Comecei direto com produto + dor da Renata Souza, ou pergunta, ou prova social</p>
+          </div>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer bg-gray-50 p-4 rounded-lg hover:bg-gray-100">
+          <input type="checkbox" class="mt-1 score-check" data-c="2">
+          <div>
+            <p class="font-bold">2. Cobri os 5 blocos no ciclo 1</p>
+            <p class="text-xs text-gray-600">Hook + Demo (PPTRI) + Oferta + CTA + Reset+Gift</p>
+          </div>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer bg-gray-50 p-4 rounded-lg hover:bg-gray-100">
+          <input type="checkbox" class="mt-1 score-check" data-c="3">
+          <div>
+            <p class="font-bold">3. Repeti o CTA 3+ vezes no ciclo 1 com variação</p>
+            <p class="text-xs text-gray-600">Direto, com tira-dúvida, com objeção respondida — 3 versões diferentes</p>
+          </div>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer bg-gray-50 p-4 rounded-lg hover:bg-gray-100">
+          <input type="checkbox" class="mt-1 score-check" data-c="4">
+          <div>
+            <p class="font-bold">4. Ancorei preço ANTES de falar valor</p>
+            <p class="text-xs text-gray-600">Disse "no mercado R$ 118,67" antes de "aqui R$ 0,00"</p>
+          </div>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer bg-gray-50 p-4 rounded-lg hover:bg-gray-100">
+          <input type="checkbox" class="mt-1 score-check" data-c="5">
+          <div>
+            <p class="font-bold">5. Mantive energia constante (não caí)</p>
+            <p class="text-xs text-gray-600">Voz, postura e CTA do ciclo 2 com mesma intensidade do ciclo 1</p>
+          </div>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer bg-gray-50 p-4 rounded-lg hover:bg-gray-100">
+          <input type="checkbox" class="mt-1 score-check" data-c="6">
+          <div>
+            <p class="font-bold">6. Cumpri os 12 min do ciclo (±2 min)</p>
+            <p class="text-xs text-gray-600">Não acelerei nem demorei mais do que isso entre Hook 1 e Hook 2</p>
+          </div>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer bg-gray-50 p-4 rounded-lg hover:bg-gray-100">
+          <input type="checkbox" class="mt-1 score-check" data-c="7">
+          <div>
+            <p class="font-bold">7. NÃO usei linguagem de influencer proibida</p>
+            <p class="text-xs text-gray-600">Nada de "minha comunidade pediu", "eu uso há anos", "confia em mim", "jornada", "empoderamento"</p>
+          </div>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer bg-gray-50 p-4 rounded-lg hover:bg-gray-100">
+          <input type="checkbox" class="mt-1 score-check" data-c="8">
+          <div>
+            <p class="font-bold">8. NÃO usei claim proibido</p>
+            <p class="text-xs text-gray-600">Compliance — sem: Cura acne, manchas ou rugas — verbos 'cura', 'trata' e 'elimina' são proscritos para equipamentos sem registro ANVISA como dispositivo médico, Substitui tratamento dermatológico ou procedimento clínico profissional, Aumenta a produção de colágeno — alegação terapêutica/fisiológica não permitida sem comprovação clínica registrada na ANVISA, Remove manchas e hiperpigmentação — claim de resultado medicamentoso sem respaldo regulatório para o produto nessa categoria, Fecha poros — resultado fisiológico não comprovável por uso doméstico de LED de baixa potência, </p>
+          </div>
+        </label>
+      </div>
+
+      <div class="mt-6 bg-purple-50 rounded-xl p-6 text-center">
+        <p class="text-sm text-purple-900 mb-2 font-bold">SUA NOTA</p>
+        <p class="bebas text-7xl mb-2" id="final-score">— / 8</p>
+        <p id="final-verdict" class="text-sm"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VEREDICTO -->
+  <section id="verdict" class="hidden mb-12">
+    <!-- preenchido por JS -->
+  </section>
+
+  <footer class="text-center text-xs text-gray-400 py-8">OnLive · Curso Selliver · Método LIVE™ · Prova Final · 9 de 9</footer>
+</main>
+
+<script type="text/plain" id="tts-script">
+Bem-vinda à prova final.
+Esse é o último módulo. Aqui você junta tudo. Câmera ligada, trinta minutos cronometrados, scorecard objetivo de oito critérios. Aprovação é sete de oito.
+
+A prova não é teatro. Faz exatamente como faria a live real do dia 2026-05-06.
+
+Setup. Cinco minutos antes:
+Câmera do celular ligada, gravando. Você vai assistir depois. Máscara LED Tratamento Facial Fototerapia Estética 7 Cores na bancada. Cinco cartões coringa colados do lado da câmera. Água. Iluminação frontal.
+
+Programa.
+Trinta minutos divididos assim: doze minutos pro ciclo um completo, doze minutos pro ciclo dois completo, quatro minutos pra começar ciclo três, dois minutos pra encerrar.
+
+Ciclo um. Você apresenta o Máscara LED Tratamento Facial Fototerapia Estética 7 Cores. Faz hook, demonstração com PPTRI, oferta com ancoragem, CTA três vezes, reset com gift.
+
+Ciclo dois. Hook DIFERENTE. Mesmo produto OU cross-sell. Mesmo método.
+
+Ciclo três só começa, não termina. Hook curiosidade mais demo curta. Aí você encerra com cupom, próxima live, agradece.
+
+Importante: se você travar, USA cartão coringa. Continua. Não para.
+A prova testa exatamente isso: como você opera quando algo dá errado.
+
+Bônus: peça pra alguém te jogar duas a três objeções no chat virtual durante a prova. Se responder em trinta segundos ou menos, ponto extra.
+
+Depois de gravar, ASSISTE o vídeo. Pega o scorecard, marca cada critério com honestidade brutal. Pisar no que não cumpriu vale mais do que aprovar mentindo.
+
+Sete de oito igual aprovada, libera pra ir ao ar dia 2026-05-06.
+Seis de oito igual refaz uma vez.
+Menos de seis igual volta no módulo que falhou. Aí refaz.
+
+Não é castigo. É garantia.
+Você só vai ao ar com método — não com sorte.
+
+Aperta o botão vermelho quando estiver pronta. Vai.
+</script>
+
+<script>
+// ===== TTS (Web Speech API) =====
+let ttsUtterance=null,ttsVoices=[];
+function loadVoices(){
+  ttsVoices=speechSynthesis.getVoices();
+  const s=document.getElementById('tts-voice'),st=document.getElementById('tts-status');
+  if(!s) return;
+  if(!ttsVoices.length){st.textContent='⚠️ Nenhuma voz';return}
+  const br=ttsVoices.filter(v=>v.lang.startsWith('pt-BR')),
+        pt=ttsVoices.filter(v=>v.lang.startsWith('pt')&&!v.lang.startsWith('pt-BR')),
+        o=ttsVoices.filter(v=>!v.lang.startsWith('pt'));
+  const all=[...br,...pt,...o];
+  s.innerHTML='';
+  all.forEach(v=>{
+    const op=document.createElement('option');
+    op.value=ttsVoices.indexOf(v);
+    op.textContent=(v.lang.startsWith('pt-BR')?'🇧🇷 ':v.lang.startsWith('pt')?'🇵🇹 ':'🌐 ')+v.name;
+    s.appendChild(op);
+  });
+  st.innerHTML=br.length?`✅ ${br.length} voz(es) BR · ${br[0].name}`:'⚠️ sem voz BR';
+}
+speechSynthesis.onvoiceschanged=loadVoices;loadVoices();
+
+function ttsToggle(){
+  const b=document.getElementById('tts-play');
+  if(speechSynthesis.speaking&&!speechSynthesis.paused){speechSynthesis.pause();b.textContent='▶ Continuar';return}
+  if(speechSynthesis.paused){speechSynthesis.resume();b.textContent='⏸ Pausar';return}
+  const t=document.getElementById('tts-script').textContent.trim();
+  ttsUtterance=new SpeechSynthesisUtterance(t);
+  const i=parseInt(document.getElementById('tts-voice').value);
+  if(!isNaN(i)&&ttsVoices[i]){ttsUtterance.voice=ttsVoices[i];ttsUtterance.lang=ttsVoices[i].lang}else{ttsUtterance.lang='pt-BR'}
+  ttsUtterance.rate=parseFloat(document.getElementById('tts-rate').value);
+  ttsUtterance.onend=()=>b.textContent='▶ Tocar';
+  speechSynthesis.speak(ttsUtterance);
+  b.textContent='⏸ Pausar';
+}
+function ttsStop(){speechSynthesis.cancel();const b=document.getElementById('tts-play');if(b)b.textContent='▶ Tocar';}
+function ttsSetRate(){if(speechSynthesis.speaking)ttsStop();}
+
+// ===== TIMERS =====
+const timers={};
+function startTimer(id,sec){
+  if(timers[id])clearInterval(timers[id]);
+  let s=sec;
+  const e=document.getElementById(id);
+  const u=()=>{
+    const m=String(Math.floor(s/60)).padStart(2,'0'),x=String(s%60).padStart(2,'0');
+    e.textContent=`${m}:${x}`;
+    if(s<=0){clearInterval(timers[id]);e.classList.add('text-red-500');e.textContent='⏰ TEMPO!';navigator.vibrate&&navigator.vibrate([200,100,200])}
+    s--;
+  };
+  u();timers[id]=setInterval(u,1000);
+  e.classList.remove('text-red-500');
+}
+function resetTimer(id,sec){
+  if(timers[id])clearInterval(timers[id]);
+  const e=document.getElementById(id);
+  e.textContent=`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
+  e.classList.remove('text-red-500');
+}
+
+// ===== QUIZ =====
+let quizAnswered=0,quizCorrect=0,quizTotal=0;
+function answer(btn,ok){
+  const p=btn.parentElement;
+  if(p.dataset.answered==='true')return;
+  p.dataset.answered='true';
+  Array.from(p.children).forEach(b=>b.disabled=true);
+  if(ok){btn.classList.add('correct');quizCorrect++}
+  else{btn.classList.add('wrong');Array.from(p.children).forEach(b=>{if(b.getAttribute('onclick')?.includes('true'))b.classList.add('correct')})}
+  quizAnswered++;
+  if(quizAnswered===quizTotal)showScore();
+}
+function initQuiz(total){quizTotal=total;}
+function showScore(){
+  const b=document.getElementById('quiz-score'),t=document.getElementById('score-text'),m=document.getElementById('score-message');
+  if(!b)return;
+  b.classList.remove('hidden');
+  t.textContent=`${quizCorrect} / ${quizTotal} acertos`;
+  const passing=Math.ceil(quizTotal*0.75);
+  if(quizCorrect>=passing){t.classList.add('text-green-600');m.textContent='✓ Aprovado neste quiz.'}
+  else{t.classList.add('text-orange-600');m.textContent='✗ Refaz o módulo. Sem pressa.'}
+}
+
+// ===== APROVAÇÃO =====
+function setupApproval(nextHref){
+  document.querySelectorAll('.final-check').forEach(c=>c.addEventListener('change',()=>{
+    const all=Array.from(document.querySelectorAll('.final-check')).every(x=>x.checked);
+    const b=document.getElementById('next-btn');
+    if(!b)return;
+    if(all){
+      b.disabled=false;
+      b.className='w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-lg transition';
+      b.textContent='➜ Próximo módulo';
+      b.onclick=()=>location.href=nextHref;
+    }else{
+      b.disabled=true;
+      b.className='w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg';
+      b.textContent='Marca todos os critérios acima';
+    }
+  }));
+}
+</script>
+
+
+<script>
+// EXAM TIMER 30 MIN
+let examTimer = null;
+const phases = [
+  {at:1800, label:'⚡ ABERTURA + CICLO 1 — Hook', color:'text-red-300'},
+  {at:1680, label:'🎬 CICLO 1 — Demonstração', color:'text-amber-300'},
+  {at:1500, label:'💰 CICLO 1 — Oferta', color:'text-yellow-300'},
+  {at:1320, label:'🎯 CICLO 1 — CTA', color:'text-green-300'},
+  {at:1200, label:'🔄 CICLO 1 — Reset+Gift', color:'text-purple-300'},
+  {at:1080, label:'⚡ CICLO 2 — Hook DIFERENTE', color:'text-red-300'},
+  {at:960,  label:'🎬 CICLO 2 — Demonstração', color:'text-amber-300'},
+  {at:780,  label:'💰 CICLO 2 — Oferta (combo)', color:'text-yellow-300'},
+  {at:600,  label:'🎯 CICLO 2 — CTA', color:'text-green-300'},
+  {at:480,  label:'🔄 CICLO 2 — Reset+Gift', color:'text-purple-300'},
+  {at:360,  label:'⚡ CICLO 3 — Hook curiosidade', color:'text-red-300'},
+  {at:120,  label:'🏁 ENCERRAMENTO — gancho próxima live', color:'text-gray-300'}
+];
+
+function startExam() {
+  if (examTimer) clearInterval(examTimer);
+  let s = 1800;
+  const e = document.getElementById('exam-timer');
+  const lbl = document.getElementById('exam-phase');
+  const btn = document.getElementById('exam-start-btn');
+  btn.textContent = '🔴 GRAVANDO';
+  btn.disabled = true;
+  btn.className = 'bg-red-600/50 px-8 py-4 rounded-lg font-bold text-lg cursor-not-allowed';
+
+  const update = () => {
+    const m = String(Math.floor(s/60)).padStart(2,'0');
+    const x = String(s%60).padStart(2,'0');
+    e.textContent = `${m}:${x}`;
+    const current = phases.find(p => s <= p.at) || phases[0];
+    lbl.textContent = current.label;
+    lbl.className = `text-sm font-bold ${current.color}`;
+    if (phases.find(p => p.at === s + 1)) {
+      navigator.vibrate && navigator.vibrate(150);
+    }
+    if (s <= 0) {
+      clearInterval(examTimer);
+      e.classList.add('text-red-500');
+      e.textContent = '⏰ FIM DA PROVA!';
+      lbl.textContent = 'Para a câmera. Respira. Agora assiste o vídeo e marca o scorecard ↓';
+      lbl.className = 'text-sm font-bold text-yellow-300';
+      navigator.vibrate && navigator.vibrate([400,200,400,200,400]);
+      window.scrollTo({top: document.getElementById('scorecard').offsetTop, behavior:'smooth'});
+    }
+    s--;
+  };
+  update();
+  examTimer = setInterval(update, 1000);
+}
+
+function resetExam() {
+  if (examTimer) clearInterval(examTimer);
+  const e = document.getElementById('exam-timer');
+  e.textContent = '30:00';
+  e.classList.remove('text-red-500');
+  document.getElementById('exam-phase').textContent = 'Aguardando início';
+  document.getElementById('exam-phase').className = 'text-sm font-bold mb-2';
+  const btn = document.getElementById('exam-start-btn');
+  btn.textContent = '🔴 LIGAR CÂMERA — começar';
+  btn.disabled = false;
+  btn.className = 'bg-red-600 hover:bg-red-700 px-8 py-4 rounded-lg font-bold text-lg';
+}
+
+// SCORECARD
+document.querySelectorAll('.score-check').forEach(c => c.addEventListener('change', updateScore));
+
+function updateScore() {
+  const checks = Array.from(document.querySelectorAll('.score-check'));
+  const score = checks.filter(c => c.checked).length;
+  document.getElementById('final-score').textContent = score + ' / 8';
+  const verdict = document.getElementById('final-verdict');
+  const scoreEl = document.getElementById('final-score');
+
+  if (score >= 7) {
+    scoreEl.className = 'bebas text-7xl mb-2 text-green-600';
+    verdict.innerHTML = '<strong class="text-green-700">✅ APROVADA</strong><br><span class="text-gray-700">Você pode ir ao ar dia 2026-05-06. Boa sorte.</span>';
+    showVerdict('pass', score);
+  } else if (score >= 6) {
+    scoreEl.className = 'bebas text-7xl mb-2 text-orange-500';
+    verdict.innerHTML = '<strong class="text-orange-700">⚠️ QUASE</strong><br><span class="text-gray-700">Refaz a prova uma vez. Foca nos critérios que faltaram.</span>';
+    showVerdict('retry', score);
+  } else {
+    scoreEl.className = 'bebas text-7xl mb-2 text-red-600';
+    verdict.innerHTML = '<strong class="text-red-700">✗ NÃO APROVADA</strong><br><span class="text-gray-700">Volta nos módulos onde você falhou. Refaz drills. Não tem pressa.</span>';
+    showVerdict('fail', score);
+  }
+}
+
+function showVerdict(type, score) {
+  const v = document.getElementById('verdict');
+  v.classList.remove('hidden');
+  if (type === 'pass') {
+    v.innerHTML = `
+      <div class="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-400 rounded-2xl p-8 text-center">
+        <div class="inline-block stamp-pass px-8 py-4 rounded-lg font-black text-2xl mb-4">APROVADA</div>
+        <h2 class="text-3xl font-bold mb-3">Selliver, você passou na prova final.</h2>
+        <p class="text-gray-700 mb-6">${score} de 8 critérios cumpridos. Pode ir ao ar dia 2026-05-06 com segurança. O método agora é seu.</p>
+        <div class="bg-white rounded-xl p-5 text-left">
+          <p class="font-bold mb-2">📋 Próximos passos:</p>
+          <ol class="text-sm space-y-1 list-decimal list-inside text-gray-700">
+            <li>T-30 min antes da live: roda o Agente 8 (Checklist Pré-Live)</li>
+            <li>Durante a live: Ana abre o Agente 9 (Companheiro) no monitor paralelo</li>
+            <li>Pós-live: roda o Agente 4 em até 24h pra debrief</li>
+          </ol>
+        </div>
+        <p class="text-xs text-gray-500 mt-6">"Live é profissão." — OnLive</p>
+      </div>
+    `;
+  } else if (type === 'retry') {
+    v.innerHTML = `
+      <div class="bg-gradient-to-br from-orange-50 to-yellow-50 border-2 border-orange-400 rounded-2xl p-8 text-center">
+        <div class="inline-block bg-orange-500 text-white px-8 py-4 rounded-lg text-3xl mb-4" style="transform:rotate(-4deg);font-family:'Bebas Neue','Trebuchet MS',sans-serif;letter-spacing:0.05em">REFAZER</div>
+        <h2 class="text-2xl font-bold mb-3">Quase. ${score} de 8.</h2>
+        <p class="text-gray-700 mb-6">Faz uma segunda tentativa. Identifica nos critérios não-cumpridos qual módulo precisa reforçar:</p>
+        <div class="bg-white rounded-xl p-5 text-left text-sm">
+          <p class="mb-2">→ Critérios 1, 7, 8 falharam? Volta nos <strong>Módulos 1 e 4</strong> (produto + hooks).</p>
+          <p class="mb-2">→ Critérios 2, 3, 5, 6 falharam? Volta no <strong>Módulo 3</strong> (ciclo).</p>
+          <p>→ Critério 4 falhou? Volta no <strong>Módulo 6</strong> (oferta e preço).</p>
+        </div>
+      </div>
+    `;
+  } else {
+    v.innerHTML = `
+      <div class="bg-gradient-to-br from-red-50 to-pink-50 border-2 border-red-400 rounded-2xl p-8 text-center">
+        <div class="inline-block stamp-fail px-8 py-4 rounded-lg font-black text-2xl mb-4">REPROVADA</div>
+        <h2 class="text-2xl font-bold mb-3">${score} de 8.</h2>
+        <p class="text-gray-700 mb-4">Não é o fim. É reset.</p>
+        <p class="text-sm text-gray-700 mb-4">A live de 2026-05-06 é adiada. Você refaz os módulos críticos:</p>
+        <div class="bg-white rounded-xl p-5 text-left text-sm">
+          <p class="mb-2"><strong>1.</strong> Módulo 5 (Demonstração) — refaz drill PPTRI 3×</p>
+          <p class="mb-2"><strong>2.</strong> Módulo 7 (Sparring de objeções) — refaz até bater 9/10</p>
+          <p><strong>3.</strong> Refaz a Prova Final em 3-5 dias</p>
+        </div>
+        <p class="text-xs text-gray-500 mt-6">Selliver pro não é quem nunca reprovou. É quem não desistiu.</p>
+      </div>
+    `;
+  }
+  setTimeout(() => window.scrollTo({top: v.offsetTop, behavior:'smooth'}), 100);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Módulo 04 — Hooks que Capturam · Curso Selliver OnLive</title>
+<meta name="description" content="Curso Selliver Selliver · 2026-05-06 · Hero: Máscara LED Tratamento Facial Fototerapia Estética 7 Cores">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root { --p:#7547FF; --pd:#5B38CC; --ps:rgba(117,71,255,0.08); }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #FAFAFA; color: #0A0A0A; }
+  .bebas { font-family: 'Bebas Neue', 'Trebuchet MS', sans-serif; letter-spacing: 0.02em; }
+  .lora-italic { font-family: 'Lora', Georgia, serif; font-style: italic; }
+  .timer-display { font-family: 'JetBrains Mono', 'Courier New', monospace; font-variant-numeric: tabular-nums; }
+  .quiz-option { transition: all 0.15s; }
+  .quiz-option:hover { background: rgba(117,71,255,0.08); }
+  .quiz-option.correct { background: #D1FAE5; border-color: #10B981; }
+  .quiz-option.wrong { background: #FEE2E2; border-color: #EF4444; }
+  .glow { box-shadow: 0 0 0 4px rgba(117,71,255,0.15); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  /* Violeta OnLive #7547FF — override Tailwind purple */
+  .bg-purple-600,.bg-purple-500 { background-color: var(--p) !important; }
+  .hover\:bg-purple-700:hover,.hover\:bg-purple-600:hover { background-color: var(--pd) !important; }
+  .text-purple-600,.text-purple-500 { color: var(--p) !important; }
+  .text-purple-400 { color: rgba(117,71,255,0.75) !important; }
+  .text-purple-900 { color: #2d1b6b !important; }
+  .text-purple-300 { color: rgba(117,71,255,0.6) !important; }
+  .border-purple-600,.border-purple-500 { border-color: var(--p) !important; }
+  .border-purple-200,.border-purple-100 { border-color: rgba(117,71,255,0.25) !important; }
+  .bg-purple-50 { background-color: rgba(117,71,255,0.06) !important; }
+  .bg-purple-100 { background-color: rgba(117,71,255,0.12) !important; }
+  .from-purple-50 { --tw-gradient-from: rgba(117,71,255,0.06) var(--tw-gradient-from-position) !important; }
+  .to-purple-100 { --tw-gradient-to: rgba(117,71,255,0.12) var(--tw-gradient-to-position) !important; }
+  .ring-purple-500 { --tw-ring-color: var(--p) !important; }
+  .focus\:ring-purple-500:focus { --tw-ring-color: var(--p) !important; }
+  .focus\:border-purple-500:focus { border-color: var(--p) !important; }
+</style>
+
+</head>
+<body class="min-h-screen">
+
+<header class="bg-black text-white px-4 py-3 sticky top-0 z-10">
+  <div class="max-w-2xl mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <div class="w-3 h-3 rounded-full bg-purple-500 animate-pulse"></div>
+      <span class="font-bold text-purple-400 text-sm tracking-wider">OnLive · CURSO SELLIVER</span>
+    </div>
+    <div class="text-xs text-gray-400">Módulo 4 / 9 · Selliver</div>
+  </div>
+  <div class="max-w-2xl mx-auto mt-2 h-1 bg-gray-800 rounded">
+    <div class="h-1 bg-purple-500 rounded" style="width: 44%"></div>
+  </div>
+</header>
+
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-12">
+    <p class="text-purple-600 font-bold text-sm tracking-wider mb-2">MÓDULO 04</p>
+    <h1 class="text-4xl font-bold leading-tight mb-3">Hooks que Capturam</h1>
+    <p class="text-lg text-gray-700 mb-4">Os 3 primeiros segundos decidem se a pessoa fica ou rola. Você tem 6 tipos de hook pra escolher.</p>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+      <span>⏱️ 15 minutos</span>
+      <span>📋 Pré: Módulos 1-3</span>
+      <span>🎯 Gravar 6 hooks (1 por tipo) ≤15s cada</span>
+    </div>
+  </div>
+
+  <!-- L · LEARN -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">L</div>
+      <div>
+        <h2 class="text-2xl font-bold">Learn — Absorver</h2>
+        <p class="text-sm text-gray-500">5 minutos</p>
+      </div>
+    </div>
+
+    <div class="bg-white border border-purple-100 rounded-xl p-5 mb-6 glow">
+      <div class="flex items-center gap-3 mb-3"><span class="text-2xl">🎧</span><span class="font-semibold">Narração: ~4 minutos</span></div>
+      <div class="bg-purple-50 rounded-lg p-4 mb-3">
+        <p class="text-sm font-bold text-purple-900 mb-3">▶️ Ouvir agora</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="tts-play" onclick="ttsToggle()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold text-sm">▶ Tocar</button>
+          <button onclick="ttsStop()" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-bold text-sm">⏹ Parar</button>
+          <select id="tts-rate" onchange="ttsSetRate()" class="px-3 py-2 rounded-lg border border-gray-300 text-sm">
+            <option value="0.85">Devagar</option><option value="1" selected>Normal</option><option value="1.15">Rápido</option><option value="1.3">Bem rápido</option>
+          </select>
+          <select id="tts-voice" class="px-3 py-2 rounded-lg border border-gray-300 text-sm flex-1 min-w-0"><option>Carregando...</option></select>
+        </div>
+        <div id="tts-status" class="text-xs text-gray-600">Aguardando voz BR…</div>
+      </div>
+    </div>
+
+    <div class="bg-orange-50 border-l-4 border-orange-400 p-4 rounded-r-xl mb-6">
+      <p class="text-sm text-gray-800"><strong>Regra dos 3 segundos:</strong> se o hook não captura no mute (sem áudio) e sem contexto, é hook ruim. Espectador chega no mudo, decide pela imagem + 1 frase.</p>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">Os 6 tipos (com exemplos de Máscara LED Tratamento Facial Fototerapia Estética 7 Cores)</h3>
+
+    <div class="space-y-3 mb-8">
+      
+      <div class="bg-white border border-gray-100 rounded-lg p-4">
+        <p class="font-bold text-purple-700 text-sm">0 · pergunta-problema</p>
+        <p class="text-sm italic mt-1">"Você gasta com creme todo mês e sua pele continua apagada? Fica aqui que eu testei ao vivo algo que pode mudar essa rotina."</p>
+      </div>
+      
+      <div class="bg-white border border-gray-100 rounded-lg p-4">
+        <p class="font-bold text-purple-700 text-sm">1 · afirmacao-resultado</p>
+        <p class="text-sm italic mt-1">"Tecnologia de fototerapia que você só via em clínica de estética — testei aqui na live agora, com 7 cores diferentes de LED. Fica pra ver."</p>
+      </div>
+      
+      <div class="bg-white border border-gray-100 rounded-lg p-4">
+        <p class="font-bold text-purple-700 text-sm">2 · curiosidade</p>
+        <p class="text-sm italic mt-1">"Você sabia que cada cor de LED age de um jeito diferente na pele? Vermelho, azul, verde, amarelo… eu vou mostrar o que cada uma faz agora aqui ao vivo."</p>
+      </div>
+      
+      <div class="bg-white border border-gray-100 rounded-lg p-4">
+        <p class="font-bold text-purple-700 text-sm">3 · polemica-leve</p>
+        <p class="text-sm italic mt-1">"Muita gente acha que máscara de LED é só modinha de influencer. Fica aqui que eu vou demonstrar na prática — compare antes de comprar."</p>
+      </div>
+      
+      <div class="bg-white border border-gray-100 rounded-lg p-4">
+        <p class="font-bold text-purple-700 text-sm">4 · prova-social</p>
+        <p class="text-sm italic mt-1">"Mais de 50 unidades disponíveis pra hoje na live com cupom exclusivo. Olha o chat lotando de gente querendo testar — confia no teste que tô fazendo ao vivo."</p>
+      </div>
+      
+      <div class="bg-white border border-gray-100 rounded-lg p-4">
+        <p class="font-bold text-purple-700 text-sm">5 · comparacao-visual</p>
+        <p class="text-sm italic mt-1">"Olha a máscara aqui — 86 LEDs acesos, sem fio, carrega via USB-C igual seu celular. Agora compara com qualquer skincare que você tem em casa. A diferença é visível."</p>
+      </div>
+      
+    </div>
+
+    <div class="bg-black text-white rounded-xl p-8 text-center">
+      <p class="text-xs text-purple-400 font-bold tracking-wider mb-4">PRINCÍPIO</p>
+      <p class="text-2xl font-bold leading-snug">"Hook bom funciona no mute."</p>
+    </div>
+  </section>
+
+  <!-- I · IMITATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">I</div>
+      <div>
+        <h2 class="text-2xl font-bold">Imitate — Modelar</h2>
+        <p class="text-sm text-gray-500">3 minutos · Pegar o padrão</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+      <p class="text-xs text-purple-600 font-bold mb-3">PADRÃO COMUM AOS 6 HOOKS</p>
+      <ul class="space-y-2 text-sm">
+        <li>✦ <strong>Começam com produto na mão</strong> ou imagem visual concreta — não com a Selliver falando para a câmera</li>
+        <li>✦ <strong>Mencionam a dor da persona</strong> em palavras dela (frases reais do cotidiano)</li>
+        <li>✦ <strong>Usam pelo menos 1 número específico</strong> — não adjetivos vagos</li>
+        <li>✦ <strong>Cabem em 15 segundos</strong> falados — qualquer coisa mais longa, espectador rola</li>
+        <li>✦ <strong>Não usam saudação</strong> — nada de "oi gente, tudo bem", "olá pessoal", "bem vindos"</li>
+      </ul>
+
+      <details class="bg-purple-50 rounded-lg p-4 mt-6">
+        <summary class="font-bold text-purple-900">Plano de rotação por ciclo (6 ciclos numa live) ▼</summary>
+        <ul class="mt-4 space-y-1 text-sm">
+          
+          <li><strong>Ciclo 1 — pergunta-problema</strong></li>
+          
+          <li><strong>Ciclo 2 — afirmacao-resultado</strong></li>
+          
+          <li><strong>Ciclo 3 — curiosidade</strong></li>
+          
+          <li><strong>Ciclo 4 — polemica-leve</strong></li>
+          
+          <li><strong>Ciclo 5 — prova-social</strong></li>
+          
+          <li><strong>Ciclo 6 — comparacao-visual</strong></li>
+          
+          <li><strong>Ciclo 7 — pergunta-problema</strong></li>
+          
+          <li><strong>Ciclo 8 — afirmacao-resultado</strong></li>
+          
+          <li><strong>Ciclo 9 — curiosidade</strong></li>
+          
+          <li><strong>Ciclo 10 — polemica-leve</strong></li>
+          
+        </ul>
+        <p class="mt-3 text-xs text-purple-700">Nunca repete o mesmo hook 2 ciclos seguidos. Espectador que ficou viu — fica chato.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- V · VERIFY -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">V</div>
+      <div>
+        <h2 class="text-2xl font-bold">Verify — Drillar</h2>
+        <p class="text-sm text-gray-500">5 minutos · Gravar 6 hooks</p>
+      </div>
+    </div>
+
+    <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-lg font-bold mb-3">🎯 Drill 4.1 — Câmera + 6 hooks</h3>
+      <p class="mb-4 text-gray-700">Pega o Máscara LED Tratamento Facial Fototerapia Estética 7 Cores (ou imagina). Liga a câmera do celular. Grava 6 vídeos curtos — 1 hook de cada tipo, ≤15s cada.</p>
+
+      <div class="bg-white rounded-lg p-4 mb-4 space-y-2 text-sm">
+        
+        <p><strong class="text-purple-700">Vídeo 0:</strong> pergunta-problema</p>
+        
+        <p><strong class="text-purple-700">Vídeo 1:</strong> afirmacao-resultado</p>
+        
+        <p><strong class="text-purple-700">Vídeo 2:</strong> curiosidade</p>
+        
+        <p><strong class="text-purple-700">Vídeo 3:</strong> polemica-leve</p>
+        
+        <p><strong class="text-purple-700">Vídeo 4:</strong> prova-social</p>
+        
+        <p><strong class="text-purple-700">Vídeo 5:</strong> comparacao-visual</p>
+        
+      </div>
+
+      <div class="bg-black text-white rounded-lg p-6 text-center">
+        <p class="text-xs text-purple-300 mb-2">CRONÔMETRO POR HOOK</p>
+        <div class="text-6xl font-black timer-display mb-4" id="timer1">00:15</div>
+        <div class="flex gap-2 justify-center flex-wrap">
+          <button onclick="startTimer('timer1', 15)" class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-lg font-bold">▶ Comecei</button>
+          <button onclick="resetTimer('timer1', 15)" class="bg-gray-700 px-6 py-2 rounded-lg font-bold">↻ Refazer</button>
+        </div>
+      </div>
+
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
+        <p class="font-bold text-yellow-900 mb-2">🔇 TESTE DO MUTE (importante)</p>
+        <p class="text-sm text-gray-800">Depois de gravar, assiste cada vídeo no MUTE. Você consegue entender o que está sendo vendido só pela imagem + texto na tela? Se não consegue: refaz com produto mais visível ou texto na tela.</p>
+      </div>
+
+      <div class="mt-6">
+        <p class="font-bold mb-3">Conferi e:</p>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Gravei 6 vídeos (1 de cada tipo)</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Cada vídeo tem ≤15s</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Comecei com produto na mão (não com saudação)</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Usei pelo menos 1 número específico em cada</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Pelo menos 4 dos 6 funcionam no mute</span></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- E · EVALUATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">E</div>
+      <div>
+        <h2 class="text-2xl font-bold">Evaluate — Testar</h2>
+        <p class="text-sm text-gray-500">2 minutos</p>
+      </div>
+    </div>
+
+    <div id="quiz" class="space-y-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 1 / 4</p>
+        <p class="font-bold mb-4">Por que o hook precisa funcionar no mute?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Para acessibilidade</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Espectador chega na live mudo nos 2-3 primeiros segundos antes de ligar áudio</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Para o algoritmo do TikTok</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Para reduzir uso de dados</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 2 / 4</p>
+        <p class="font-bold mb-4">Qual desses é hook ruim?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">"Oi pessoal tudo bem? Sejam bem-vindos à live de hoje!"</button>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 3 / 4</p>
+        <p class="font-bold mb-4">Quantos hooks diferentes você precisa ter prontos numa live de 6 ciclos?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">1 (use o mesmo)</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">2 (alterna)</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">6 — um por tipo, um por ciclo</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">12 (2 por ciclo)</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 4 / 4</p>
+        <p class="font-bold mb-4">O que os 6 tipos de hook têm em comum?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Todos começam com saudação</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Todos duram mais de 30 segundos</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Produto na mão, dor real da persona, número específico, cabe em 15s</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Todos terminam com preço</button>
+        </div>
+      </div>
+
+      <div id="quiz-score" class="hidden bg-purple-50 border-2 border-purple-300 rounded-xl p-6 text-center">
+        <p class="text-xs text-purple-600 font-bold mb-2">SEU RESULTADO</p>
+        <p id="score-text" class="text-3xl font-bold mb-2"></p>
+        <p id="score-message" class="text-sm text-gray-700"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <div class="bg-white border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-4">✅ Pode passar para o Módulo 5 se:</h3>
+      <div class="space-y-3 mb-6">
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Acertei pelo menos 3 das 4 perguntas</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Gravei 6 hooks (1 de cada tipo) ≤15s cada</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Pelo menos 4 dos 6 funcionam no mute</span></label>
+      </div>
+      <button id="next-btn" disabled class="w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg">Marca os 3 acima</button>
+    </div>
+  </section>
+
+  <footer class="text-center text-xs text-gray-400 py-8">OnLive · Curso Selliver · Método LIVE™ · Módulo 4 de 9</footer>
+</main>
+
+<script type="text/plain" id="tts-script">
+Bem-vinda ao módulo quatro.
+Hoje você aprende os hooks. Os ganchos. As primeiras frases de cada ciclo.
+
+Uma regra que vai te poupar tempo a vida inteira:
+Os três primeiros segundos decidem se a pessoa fica ou rola.
+E o espectador chega na live no mute nos primeiros dois segundos. Aí ele decide se vale ligar o áudio.
+Conclusão: hook bom funciona no mute. Se você precisa de áudio pra explicar, é hook ruim.
+
+Existem seis tipos de hook. Você tem que ter 1 de cada na ponta da língua.
+
+Tipo 0. pergunta-problema.
+Exemplo: Você gasta com creme todo mês e sua pele continua apagada? Fica aqui que eu testei ao vivo algo que pode mudar essa rotina.
+
+Tipo 1. afirmacao-resultado.
+Exemplo: Tecnologia de fototerapia que você só via em clínica de estética — testei aqui na live agora, com 7 cores diferentes de LED. Fica pra ver.
+
+Tipo 2. curiosidade.
+Exemplo: Você sabia que cada cor de LED age de um jeito diferente na pele? Vermelho, azul, verde, amarelo… eu vou mostrar o que cada uma faz agora aqui ao vivo.
+
+Tipo 3. polemica-leve.
+Exemplo: Muita gente acha que máscara de LED é só modinha de influencer. Fica aqui que eu vou demonstrar na prática — compare antes de comprar.
+
+Tipo 4. prova-social.
+Exemplo: Mais de 50 unidades disponíveis pra hoje na live com cupom exclusivo. Olha o chat lotando de gente querendo testar — confia no teste que tô fazendo ao vivo.
+
+Tipo 5. comparacao-visual.
+Exemplo: Olha a máscara aqui — 86 LEDs acesos, sem fio, carrega via USB-C igual seu celular. Agora compara com qualquer skincare que você tem em casa. A diferença é visível.
+
+
+Numa live de seis ciclos, você usa um hook diferente em cada ciclo. Nunca repete dois ciclos seguidos.
+
+Plano de rotação:
+
+Ciclo 1: pergunta-problema.
+
+Ciclo 2: afirmacao-resultado.
+
+Ciclo 3: curiosidade.
+
+Ciclo 4: polemica-leve.
+
+Ciclo 5: prova-social.
+
+Ciclo 6: comparacao-visual.
+
+Ciclo 7: pergunta-problema.
+
+Ciclo 8: afirmacao-resultado.
+
+Ciclo 9: curiosidade.
+
+Ciclo 10: polemica-leve.
+
+
+Agora você vai gravar seis vídeos curtos. Um hook de cada tipo. Quinze segundos cada.
+Depois de gravar, assiste tudo no mute. Os que funcionam no mute, são bons.
+Vamos.
+</script>
+
+<script>
+// ===== TTS (Web Speech API) =====
+let ttsUtterance=null,ttsVoices=[];
+function loadVoices(){
+  ttsVoices=speechSynthesis.getVoices();
+  const s=document.getElementById('tts-voice'),st=document.getElementById('tts-status');
+  if(!s) return;
+  if(!ttsVoices.length){st.textContent='⚠️ Nenhuma voz';return}
+  const br=ttsVoices.filter(v=>v.lang.startsWith('pt-BR')),
+        pt=ttsVoices.filter(v=>v.lang.startsWith('pt')&&!v.lang.startsWith('pt-BR')),
+        o=ttsVoices.filter(v=>!v.lang.startsWith('pt'));
+  const all=[...br,...pt,...o];
+  s.innerHTML='';
+  all.forEach(v=>{
+    const op=document.createElement('option');
+    op.value=ttsVoices.indexOf(v);
+    op.textContent=(v.lang.startsWith('pt-BR')?'🇧🇷 ':v.lang.startsWith('pt')?'🇵🇹 ':'🌐 ')+v.name;
+    s.appendChild(op);
+  });
+  st.innerHTML=br.length?`✅ ${br.length} voz(es) BR · ${br[0].name}`:'⚠️ sem voz BR';
+}
+speechSynthesis.onvoiceschanged=loadVoices;loadVoices();
+
+function ttsToggle(){
+  const b=document.getElementById('tts-play');
+  if(speechSynthesis.speaking&&!speechSynthesis.paused){speechSynthesis.pause();b.textContent='▶ Continuar';return}
+  if(speechSynthesis.paused){speechSynthesis.resume();b.textContent='⏸ Pausar';return}
+  const t=document.getElementById('tts-script').textContent.trim();
+  ttsUtterance=new SpeechSynthesisUtterance(t);
+  const i=parseInt(document.getElementById('tts-voice').value);
+  if(!isNaN(i)&&ttsVoices[i]){ttsUtterance.voice=ttsVoices[i];ttsUtterance.lang=ttsVoices[i].lang}else{ttsUtterance.lang='pt-BR'}
+  ttsUtterance.rate=parseFloat(document.getElementById('tts-rate').value);
+  ttsUtterance.onend=()=>b.textContent='▶ Tocar';
+  speechSynthesis.speak(ttsUtterance);
+  b.textContent='⏸ Pausar';
+}
+function ttsStop(){speechSynthesis.cancel();const b=document.getElementById('tts-play');if(b)b.textContent='▶ Tocar';}
+function ttsSetRate(){if(speechSynthesis.speaking)ttsStop();}
+
+// ===== TIMERS =====
+const timers={};
+function startTimer(id,sec){
+  if(timers[id])clearInterval(timers[id]);
+  let s=sec;
+  const e=document.getElementById(id);
+  const u=()=>{
+    const m=String(Math.floor(s/60)).padStart(2,'0'),x=String(s%60).padStart(2,'0');
+    e.textContent=`${m}:${x}`;
+    if(s<=0){clearInterval(timers[id]);e.classList.add('text-red-500');e.textContent='⏰ TEMPO!';navigator.vibrate&&navigator.vibrate([200,100,200])}
+    s--;
+  };
+  u();timers[id]=setInterval(u,1000);
+  e.classList.remove('text-red-500');
+}
+function resetTimer(id,sec){
+  if(timers[id])clearInterval(timers[id]);
+  const e=document.getElementById(id);
+  e.textContent=`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
+  e.classList.remove('text-red-500');
+}
+
+// ===== QUIZ =====
+let quizAnswered=0,quizCorrect=0,quizTotal=0;
+function answer(btn,ok){
+  const p=btn.parentElement;
+  if(p.dataset.answered==='true')return;
+  p.dataset.answered='true';
+  Array.from(p.children).forEach(b=>b.disabled=true);
+  if(ok){btn.classList.add('correct');quizCorrect++}
+  else{btn.classList.add('wrong');Array.from(p.children).forEach(b=>{if(b.getAttribute('onclick')?.includes('true'))b.classList.add('correct')})}
+  quizAnswered++;
+  if(quizAnswered===quizTotal)showScore();
+}
+function initQuiz(total){quizTotal=total;}
+function showScore(){
+  const b=document.getElementById('quiz-score'),t=document.getElementById('score-text'),m=document.getElementById('score-message');
+  if(!b)return;
+  b.classList.remove('hidden');
+  t.textContent=`${quizCorrect} / ${quizTotal} acertos`;
+  const passing=Math.ceil(quizTotal*0.75);
+  if(quizCorrect>=passing){t.classList.add('text-green-600');m.textContent='✓ Aprovado neste quiz.'}
+  else{t.classList.add('text-orange-600');m.textContent='✗ Refaz o módulo. Sem pressa.'}
+}
+
+// ===== APROVAÇÃO =====
+function setupApproval(nextHref){
+  document.querySelectorAll('.final-check').forEach(c=>c.addEventListener('change',()=>{
+    const all=Array.from(document.querySelectorAll('.final-check')).every(x=>x.checked);
+    const b=document.getElementById('next-btn');
+    if(!b)return;
+    if(all){
+      b.disabled=false;
+      b.className='w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-lg transition';
+      b.textContent='➜ Próximo módulo';
+      b.onclick=()=>location.href=nextHref;
+    }else{
+      b.disabled=true;
+      b.className='w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg';
+      b.textContent='Marca todos os critérios acima';
+    }
+  }));
+}
+</script>
+
+
+<script>
+  initQuiz(4);
+  setupApproval('05-Demonstracao.html');
+</script>
+
+</body>
+</html>

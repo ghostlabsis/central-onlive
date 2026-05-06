@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --onlive-purple: #7C3AED;
+  --onlive-purple-dark: #5B21B6;
+  --onlive-black: #0A0A0A;
+  --onlive-cream: #FAFAFA;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: var(--onlive-cream);
+  color: var(--onlive-black);
+}

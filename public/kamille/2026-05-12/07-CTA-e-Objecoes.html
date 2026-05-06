@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Módulo 07 — CTA e Objeções · Curso Selliver OnLive</title>
+<meta name="description" content="Curso Selliver Kamille · 2026-05-12 · Hero: Sérum Facial Vitamina C 30ml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Lora:ital@1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root { --p:#7547FF; --pd:#5B38CC; --ps:rgba(117,71,255,0.08); }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #FAFAFA; color: #0A0A0A; }
+  .bebas { font-family: 'Bebas Neue', 'Trebuchet MS', sans-serif; letter-spacing: 0.02em; }
+  .lora-italic { font-family: 'Lora', Georgia, serif; font-style: italic; }
+  .timer-display { font-family: 'JetBrains Mono', 'Courier New', monospace; font-variant-numeric: tabular-nums; }
+  .quiz-option { transition: all 0.15s; }
+  .quiz-option:hover { background: rgba(117,71,255,0.08); }
+  .quiz-option.correct { background: #D1FAE5; border-color: #10B981; }
+  .quiz-option.wrong { background: #FEE2E2; border-color: #EF4444; }
+  .glow { box-shadow: 0 0 0 4px rgba(117,71,255,0.15); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  /* Violeta OnLive #7547FF — override Tailwind purple */
+  .bg-purple-600,.bg-purple-500 { background-color: var(--p) !important; }
+  .hover\:bg-purple-700:hover,.hover\:bg-purple-600:hover { background-color: var(--pd) !important; }
+  .text-purple-600,.text-purple-500 { color: var(--p) !important; }
+  .text-purple-400 { color: rgba(117,71,255,0.75) !important; }
+  .text-purple-900 { color: #2d1b6b !important; }
+  .text-purple-300 { color: rgba(117,71,255,0.6) !important; }
+  .border-purple-600,.border-purple-500 { border-color: var(--p) !important; }
+  .border-purple-200,.border-purple-100 { border-color: rgba(117,71,255,0.25) !important; }
+  .bg-purple-50 { background-color: rgba(117,71,255,0.06) !important; }
+  .bg-purple-100 { background-color: rgba(117,71,255,0.12) !important; }
+  .from-purple-50 { --tw-gradient-from: rgba(117,71,255,0.06) var(--tw-gradient-from-position) !important; }
+  .to-purple-100 { --tw-gradient-to: rgba(117,71,255,0.12) var(--tw-gradient-to-position) !important; }
+  .ring-purple-500 { --tw-ring-color: var(--p) !important; }
+  .focus\:ring-purple-500:focus { --tw-ring-color: var(--p) !important; }
+  .focus\:border-purple-500:focus { border-color: var(--p) !important; }
+</style>
+
+<style>
+  .pulse-fast { animation: pulse-fast 0.8s infinite; }
+  @keyframes pulse-fast { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  .objection-card { animation: slideIn 0.4s ease-out; }
+  @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body class="min-h-screen">
+
+<header class="bg-black text-white px-4 py-3 sticky top-0 z-10">
+  <div class="max-w-2xl mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <div class="w-3 h-3 rounded-full bg-purple-500 animate-pulse"></div>
+      <span class="font-bold text-purple-400 text-sm tracking-wider">OnLive · CURSO SELLIVER</span>
+    </div>
+    <div class="text-xs text-gray-400">Módulo 7 / 9 · Kamille</div>
+  </div>
+  <div class="max-w-2xl mx-auto mt-2 h-1 bg-gray-800 rounded">
+    <div class="h-1 bg-purple-500 rounded" style="width: 78%"></div>
+  </div>
+</header>
+
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-12">
+    <p class="text-purple-600 font-bold text-sm tracking-wider mb-2">MÓDULO 07</p>
+    <span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">SPARRING</span>
+    <h1 class="text-4xl font-bold leading-tight mb-3 mt-2">CTA e Objeções</h1>
+    <p class="text-lg text-gray-700 mb-4">Aqui é treino real de boxe. IA joga uma objeção. Você tem 10 segundos pra responder. 10 rodadas. 8 acertos = aprovada.</p>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600"><span>⏱️ 15 min</span><span>📋 Pré: Mód 1-6</span><span>🎯 Sparring: 8/10 respostas válidas em 10s cada</span></div>
+  </div>
+
+  <!-- L · LEARN -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">L</div>
+      <div><h2 class="text-2xl font-bold">Learn — Absorver</h2><p class="text-sm text-gray-500">5 min</p></div>
+    </div>
+
+    <div class="bg-white border border-purple-100 rounded-xl p-5 mb-6 glow">
+      <div class="flex items-center gap-3 mb-3"><span class="text-2xl">🎧</span><span class="font-semibold">Narração: ~4 min</span></div>
+      <div class="bg-purple-50 rounded-lg p-4">
+        <p class="text-sm font-bold text-purple-900 mb-3">▶️ Ouvir agora</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="tts-play" onclick="ttsToggle()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold text-sm">▶ Tocar</button>
+          <button onclick="ttsStop()" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-bold text-sm">⏹ Parar</button>
+          <select id="tts-rate" onchange="ttsSetRate()" class="px-3 py-2 rounded-lg border text-sm"><option value="0.85">Devagar</option><option value="1" selected>Normal</option><option value="1.15">Rápido</option><option value="1.3">Bem rápido</option></select>
+          <select id="tts-voice" class="px-3 py-2 rounded-lg border text-sm flex-1 min-w-0"><option>Carregando...</option></select>
+        </div>
+        <div id="tts-status" class="text-xs text-gray-600">Aguardando voz BR…</div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">A regra do CTA</h3>
+    <div class="bg-orange-50 border-l-4 border-orange-400 p-5 rounded-r-xl mb-6">
+      <p class="font-bold text-orange-900 mb-2">⚠️ CTA REPETE 3+ VEZES COM VARIAÇÃO</p>
+      <p class="text-sm text-gray-800 mb-3">Não é "clica na sacolinha" 3 vezes seguidas. É variar a linguagem:</p>
+      <ul class="text-sm space-y-1 text-gray-700">
+        <li>1. <strong>Direto:</strong> "Clica na sacolinha agora. Produto fixado na tela."</li>
+        <li>2. <strong>Com tira-dúvida:</strong> "Pra quem tá em dúvida: TikTok Shop tem pagamento protegido. Clica e confere."</li>
+        <li>3. <strong>Com objeção respondida:</strong> "Quem perguntou [dúvida comum]: [resposta rápida]. Tá na sacolinha."</li>
+      </ul>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">As 5 categorias de objeção</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+      <div class="bg-white border rounded-lg p-4"><p class="font-bold text-purple-700">Preço</p><p class="text-xs text-gray-600">"tá caro", "achei mais barato em outro lugar"</p></div>
+      <div class="bg-white border rounded-lg p-4"><p class="font-bold text-purple-700">Confiança</p><p class="text-xs text-gray-600">"é confiável?", "esse vendedor existe?"</p></div>
+      <div class="bg-white border rounded-lg p-4"><p class="font-bold text-purple-700">Logística</p><p class="text-xs text-gray-600">"demora?", "frete caro?"</p></div>
+      <div class="bg-white border rounded-lg p-4"><p class="font-bold text-purple-700">Funcionalidade</p><p class="text-xs text-gray-600">"funciona pra mim?", "serve pra minha situação?"</p></div>
+      <div class="bg-white border rounded-lg p-4 col-span-1 sm:col-span-2"><p class="font-bold text-purple-700">Comparação</p><p class="text-xs text-gray-600">"é igual ao outro mais barato?"</p></div>
+    </div>
+
+    <div class="bg-black text-white rounded-xl p-8 text-center">
+      <p class="text-xs text-purple-400 font-bold tracking-wider mb-4">PRINCÍPIO</p>
+      <p class="text-2xl font-bold leading-snug">"Não bate na objeção. Passa por dentro dela."</p>
+    </div>
+  </section>
+
+  <!-- I · IMITATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">I</div>
+      <div><h2 class="text-2xl font-bold">Imitate — Modelar</h2><p class="text-sm text-gray-500">3 min · respostas modelo do produto</p></div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-6 space-y-4">
+      
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "Tá caro pra um sérum, vi mais barato no Shopee"</p>
+        <p class="text-sm italic text-green-700">Entendo. Olha: no mercado, sérum equivalente é R$ 129. Aqui R$ 79 com cupom. O frasco rende 60 aplicações — dá R$ 1,30 por dia. Menos que um café. Tá na sacolinha.</p>
+      </div>
+      
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "Esse lojista é confiável mesmo?"</p>
+        <p class="text-sm italic text-green-700">Loja oficial no TikTok Shop, pagamento protegido pela plataforma. Se algo der errado, a TikTok cobre. Eu testei o produto, tá aqui na minha mão.</p>
+      </div>
+      
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "Demora muito pra chegar?"</p>
+        <p class="text-sm italic text-green-700">Prazo está na página do produto, varia por região. Pra capitais é 3-5 dias úteis. Clica na sacolinha que aparece o prazo da sua cidade.</p>
+      </div>
+      
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "Serve pra pele com rosácea?"</p>
+        <p class="text-sm italic text-green-700">Pra rosácea ativa eu sempre recomendo conversar com dermato antes. Honestidade vale mais que insistência. Pra pele oleosa e mista, sim — testei.</p>
+      </div>
+      
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "É igual ao da farmácia mais barato?"</p>
+        <p class="text-sm italic text-green-700">Tem produtos parecidos no mercado. A diferença desse: 15% de Vit C estabilizada, embalagem âmbar que não deixa oxidar, e ANVISA. Vou mostrar a embalagem.</p>
+      </div>
+      
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "Posso parcelar?"</p>
+        <p class="text-sm italic text-green-700">Sim, no checkout do TikTok Shop dá pra parcelar no cartão. Não é juros da Shop, é do seu banco. Quem prefere PIX, à vista pode sair com desconto.</p>
+      </div>
+      
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "Vai chegar antes do dia das mães?"</p>
+        <p class="text-sm italic text-green-700">Se você é capital, sim — 3 a 5 dias úteis. Pra interior pode ser 5 a 7. Clica na sacolinha que aparece o prazo da sua região.</p>
+      </div>
+      
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "Tá com pele oleosa há 10 anos, nada funciona"</p>
+        <p class="text-sm italic text-green-700">Te entendo. Esse aqui não é milagre — é processo. Em 30-60 dias você nota. Não promete cura. Promete rotina. Tá na sacolinha pra você testar.</p>
+      </div>
+      
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "Sou alérgica a Vitamina C"</p>
+        <p class="text-sm italic text-green-700">Se você tem alergia confirmada, esse produto não é pra você. Honestidade. Pode olhar a linha sem ácido — tem outras opções.</p>
+      </div>
+      
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "Tem amostra grátis?"</p>
+        <p class="text-sm italic text-green-700">Não tem amostra. Frasco de 30ml por R$ 79 com cupom. Mas tem garantia da TikTok Shop — se não te servir, troca ou devolve. Risco zero.</p>
+      </div>
+      
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "Faz tempo que tô aqui e ainda não decidi"</p>
+        <p class="text-sm italic text-green-700">Entendo. Olha: enquanto a live tá rolando, o cupom LIVEONLIVE15 tá ativo. Quando eu encerrar, o cupom sai e o preço volta a R$ 129.</p>
+      </div>
+      
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "Vocês pagam pra recomendar produto né?"</p>
+        <p class="text-sm italic text-green-700">Sou Selliver da OnLive — agência de live commerce. Recebo por hora trabalhada, não por venda específica. O produto eu testei. Confia no teste, não em mim.</p>
+      </div>
+      
+
+      <details class="bg-purple-50 rounded-lg p-4 mt-4">
+        <summary class="font-bold text-purple-900">Padrão das respostas ▼</summary>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li>✦ <strong>Reconhece a objeção</strong> — "entendo", "boa pergunta" — sem ironia</li>
+          <li>✦ <strong>Reverte com fato concreto</strong> — número, ancoragem, prova</li>
+          <li>✦ <strong>Cabe em ≤10 segundos falados</strong></li>
+          <li>✦ <strong>Não cita concorrente pelo nome</strong> — "produto equivalente", "produto comum do mercado"</li>
+          <li>✦ <strong>Fecha com ação ou sacolinha</strong></li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- V · VERIFY — SPARRING ENGINE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">V</div>
+      <div><h2 class="text-2xl font-bold">Verify — Sparring</h2><p class="text-sm text-gray-500">5 min · 10 rodadas × 10s</p></div>
+    </div>
+
+    <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-lg font-bold mb-3">🥊 Drill 7.1 — Sparring de Objeções</h3>
+      <p class="mb-4 text-gray-700">Aperta "Começar Sparring". A IA vai jogar 10 objeções aleatórias. Você tem <strong>10 segundos por objeção</strong> para responder em voz alta. Ao fim, marca se acertou ou não. Aprovação: <strong>8 acertos de 10</strong>.</p>
+
+      <div id="sparring-start" class="text-center bg-black text-white rounded-xl p-8">
+        <p class="text-purple-300 text-sm mb-4">PRONTA?</p>
+        <button onclick="startSparring()" class="bg-purple-600 hover:bg-purple-700 px-8 py-4 rounded-lg font-bold text-lg pulse-fast">🥊 Começar Sparring</button>
+      </div>
+
+      <div id="sparring-active" class="hidden">
+        <div class="bg-black text-white rounded-xl p-6 mb-4">
+          <div class="flex justify-between items-center mb-4">
+            <p class="text-sm text-purple-300">Rodada <span id="round-num">1</span> / 10</p>
+            <p class="text-sm text-purple-300">Acertos: <span id="hits-count">0</span></p>
+          </div>
+          <div class="bg-red-900/50 border-2 border-red-400 rounded-lg p-5 mb-4 objection-card" id="objection-box">
+            <p class="text-xs text-red-300 mb-2">OBJEÇÃO DA AUDIÊNCIA:</p>
+            <p class="text-2xl font-bold" id="objection-text">"..."</p>
+          </div>
+          <div class="text-center">
+            <p class="text-xs text-gray-400 mb-2">RESPONDE EM VOZ ALTA AGORA</p>
+            <div class="text-7xl font-black timer-display mb-4" id="spar-timer">10</div>
+            <button onclick="skipRound()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">Tempo acabou (avançar)</button>
+          </div>
+        </div>
+
+        <div id="model-answer" class="hidden bg-white rounded-xl border-2 border-green-400 p-5 mb-4">
+          <p class="text-xs text-green-700 font-bold mb-2">RESPOSTA MODELO ↓</p>
+          <p class="text-sm italic text-gray-800" id="model-text"></p>
+          <div class="mt-4 flex gap-2">
+            <button onclick="markRound(true)" class="flex-1 bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-bold">✓ Acertei (similar)</button>
+            <button onclick="markRound(false)" class="flex-1 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg font-bold">✗ Não consegui</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="sparring-result" class="hidden bg-purple-50 border-2 border-purple-300 rounded-xl p-6 text-center">
+        <p class="text-xs text-purple-600 font-bold mb-2">RESULTADO DO SPARRING</p>
+        <p id="spar-final-score" class="text-5xl font-black mb-3"></p>
+        <p id="spar-final-message" class="text-sm text-gray-700 mb-4"></p>
+        <button onclick="resetSparring()" class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-bold text-sm">↻ Refazer sparring</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- E · EVALUATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">E</div>
+      <div><h2 class="text-2xl font-bold">Evaluate — Auto-avaliação</h2></div>
+    </div>
+
+    <div class="bg-white border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-4">✅ Pode passar para o Módulo 8 se:</h3>
+      <div class="space-y-3 mb-6">
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Pontuei <strong>≥8 de 10</strong> no sparring</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Não citei concorrente pelo nome em nenhuma resposta</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Cada resposta minha cabe em ≤10s</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Não usei "cura", "elimina", "trata" em nenhuma resposta</span></label>
+      </div>
+      <button id="next-btn" disabled class="w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg">Marca os 4 acima</button>
+    </div>
+  </section>
+
+  <footer class="text-center text-xs text-gray-400 py-8">OnLive · Curso Selliver · Método LIVE™ · Módulo 7 de 9</footer>
+</main>
+
+<script type="text/plain" id="tts-script">
+Bem-vinda ao módulo sete. Esse é o módulo do treino de boxe.
+Aqui você não lê. Você responde. Em dez segundos. Sob pressão.
+
+Por que isso importa: na live real, objeção aparece a cada minuto. Você não tem tempo pra pensar. Tem que responder rápido, certo, e voltar pra venda.
+
+Antes do sparring, três regras.
+
+Um. CTA repete três vezes com variação.
+Não é repetir "clica na sacolinha" três vezes seguido. É variar a linguagem. Direto. Tira-dúvida. Objeção respondida.
+
+Dois. Toda objeção segue o mesmo padrão de resposta.
+Reconhece. Reverte com fato concreto. Fecha com ação.
+Reconhece — entendo, boa pergunta, sem ironia.
+Reverte — número, ancoragem, prova visível.
+Fecha — sacolinha, página do produto, ação específica.
+
+Três. Cinco categorias de objeção, todas seguem o mesmo padrão.
+Preço — ancoragem ou custo por uso.
+Confiança — TikTok Shop oficial, pagamento protegido.
+Logística — direciona pra página do produto.
+Funcionalidade — honesto sobre limites.
+Comparação — diferencia pelo detalhe técnico, sem citar marca.
+
+Princípio: não bate na objeção. Passa por dentro dela.
+Não argumenta com o cliente. Reconhece o ponto, traz fato, fecha com ação.
+
+Agora vem o sparring. Dez objeções aleatórias. Dez segundos por resposta.
+Em voz alta, mesmo se for sozinha em casa.
+Respira. Aperta começar quando estiver pronta.
+Vamos.
+</script>
+
+<script>
+// ===== TTS (Web Speech API) =====
+let ttsUtterance=null,ttsVoices=[];
+function loadVoices(){
+  ttsVoices=speechSynthesis.getVoices();
+  const s=document.getElementById('tts-voice'),st=document.getElementById('tts-status');
+  if(!s) return;
+  if(!ttsVoices.length){st.textContent='⚠️ Nenhuma voz';return}
+  const br=ttsVoices.filter(v=>v.lang.startsWith('pt-BR')),
+        pt=ttsVoices.filter(v=>v.lang.startsWith('pt')&&!v.lang.startsWith('pt-BR')),
+        o=ttsVoices.filter(v=>!v.lang.startsWith('pt'));
+  const all=[...br,...pt,...o];
+  s.innerHTML='';
+  all.forEach(v=>{
+    const op=document.createElement('option');
+    op.value=ttsVoices.indexOf(v);
+    op.textContent=(v.lang.startsWith('pt-BR')?'🇧🇷 ':v.lang.startsWith('pt')?'🇵🇹 ':'🌐 ')+v.name;
+    s.appendChild(op);
+  });
+  st.innerHTML=br.length?`✅ ${br.length} voz(es) BR · ${br[0].name}`:'⚠️ sem voz BR';
+}
+speechSynthesis.onvoiceschanged=loadVoices;loadVoices();
+
+function ttsToggle(){
+  const b=document.getElementById('tts-play');
+  if(speechSynthesis.speaking&&!speechSynthesis.paused){speechSynthesis.pause();b.textContent='▶ Continuar';return}
+  if(speechSynthesis.paused){speechSynthesis.resume();b.textContent='⏸ Pausar';return}
+  const t=document.getElementById('tts-script').textContent.trim();
+  ttsUtterance=new SpeechSynthesisUtterance(t);
+  const i=parseInt(document.getElementById('tts-voice').value);
+  if(!isNaN(i)&&ttsVoices[i]){ttsUtterance.voice=ttsVoices[i];ttsUtterance.lang=ttsVoices[i].lang}else{ttsUtterance.lang='pt-BR'}
+  ttsUtterance.rate=parseFloat(document.getElementById('tts-rate').value);
+  ttsUtterance.onend=()=>b.textContent='▶ Tocar';
+  speechSynthesis.speak(ttsUtterance);
+  b.textContent='⏸ Pausar';
+}
+function ttsStop(){speechSynthesis.cancel();const b=document.getElementById('tts-play');if(b)b.textContent='▶ Tocar';}
+function ttsSetRate(){if(speechSynthesis.speaking)ttsStop();}
+
+// ===== TIMERS =====
+const timers={};
+function startTimer(id,sec){
+  if(timers[id])clearInterval(timers[id]);
+  let s=sec;
+  const e=document.getElementById(id);
+  const u=()=>{
+    const m=String(Math.floor(s/60)).padStart(2,'0'),x=String(s%60).padStart(2,'0');
+    e.textContent=`${m}:${x}`;
+    if(s<=0){clearInterval(timers[id]);e.classList.add('text-red-500');e.textContent='⏰ TEMPO!';navigator.vibrate&&navigator.vibrate([200,100,200])}
+    s--;
+  };
+  u();timers[id]=setInterval(u,1000);
+  e.classList.remove('text-red-500');
+}
+function resetTimer(id,sec){
+  if(timers[id])clearInterval(timers[id]);
+  const e=document.getElementById(id);
+  e.textContent=`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
+  e.classList.remove('text-red-500');
+}
+
+// ===== QUIZ =====
+let quizAnswered=0,quizCorrect=0,quizTotal=0;
+function answer(btn,ok){
+  const p=btn.parentElement;
+  if(p.dataset.answered==='true')return;
+  p.dataset.answered='true';
+  Array.from(p.children).forEach(b=>b.disabled=true);
+  if(ok){btn.classList.add('correct');quizCorrect++}
+  else{btn.classList.add('wrong');Array.from(p.children).forEach(b=>{if(b.getAttribute('onclick')?.includes('true'))b.classList.add('correct')})}
+  quizAnswered++;
+  if(quizAnswered===quizTotal)showScore();
+}
+function initQuiz(total){quizTotal=total;}
+function showScore(){
+  const b=document.getElementById('quiz-score'),t=document.getElementById('score-text'),m=document.getElementById('score-message');
+  if(!b)return;
+  b.classList.remove('hidden');
+  t.textContent=`${quizCorrect} / ${quizTotal} acertos`;
+  const passing=Math.ceil(quizTotal*0.75);
+  if(quizCorrect>=passing){t.classList.add('text-green-600');m.textContent='✓ Aprovado neste quiz.'}
+  else{t.classList.add('text-orange-600');m.textContent='✗ Refaz o módulo. Sem pressa.'}
+}
+
+// ===== APROVAÇÃO =====
+function setupApproval(nextHref){
+  document.querySelectorAll('.final-check').forEach(c=>c.addEventListener('change',()=>{
+    const all=Array.from(document.querySelectorAll('.final-check')).every(x=>x.checked);
+    const b=document.getElementById('next-btn');
+    if(!b)return;
+    if(all){
+      b.disabled=false;
+      b.className='w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-lg transition';
+      b.textContent='➜ Próximo módulo';
+      b.onclick=()=>location.href=nextHref;
+    }else{
+      b.disabled=true;
+      b.className='w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg';
+      b.textContent='Marca todos os critérios acima';
+    }
+  }));
+}
+</script>
+
+
+<script>
+const objections = [{"q":"Tá caro pra um sérum, vi mais barato no Shopee","a":"Entendo. Olha: no mercado, sérum equivalente é R$ 129. Aqui R$ 79 com cupom. O frasco rende 60 aplicações — dá R$ 1,30 por dia. Menos que um café. Tá na sacolinha."},{"q":"Esse lojista é confiável mesmo?","a":"Loja oficial no TikTok Shop, pagamento protegido pela plataforma. Se algo der errado, a TikTok cobre. Eu testei o produto, tá aqui na minha mão."},{"q":"Demora muito pra chegar?","a":"Prazo está na página do produto, varia por região. Pra capitais é 3-5 dias úteis. Clica na sacolinha que aparece o prazo da sua cidade."},{"q":"Serve pra pele com rosácea?","a":"Pra rosácea ativa eu sempre recomendo conversar com dermato antes. Honestidade vale mais que insistência. Pra pele oleosa e mista, sim — testei."},{"q":"É igual ao da farmácia mais barato?","a":"Tem produtos parecidos no mercado. A diferença desse: 15% de Vit C estabilizada, embalagem âmbar que não deixa oxidar, e ANVISA. Vou mostrar a embalagem."},{"q":"Posso parcelar?","a":"Sim, no checkout do TikTok Shop dá pra parcelar no cartão. Não é juros da Shop, é do seu banco. Quem prefere PIX, à vista pode sair com desconto."},{"q":"Vai chegar antes do dia das mães?","a":"Se você é capital, sim — 3 a 5 dias úteis. Pra interior pode ser 5 a 7. Clica na sacolinha que aparece o prazo da sua região."},{"q":"Tá com pele oleosa há 10 anos, nada funciona","a":"Te entendo. Esse aqui não é milagre — é processo. Em 30-60 dias você nota. Não promete cura. Promete rotina. Tá na sacolinha pra você testar."},{"q":"Sou alérgica a Vitamina C","a":"Se você tem alergia confirmada, esse produto não é pra você. Honestidade. Pode olhar a linha sem ácido — tem outras opções."},{"q":"Tem amostra grátis?","a":"Não tem amostra. Frasco de 30ml por R$ 79 com cupom. Mas tem garantia da TikTok Shop — se não te servir, troca ou devolve. Risco zero."},{"q":"Faz tempo que tô aqui e ainda não decidi","a":"Entendo. Olha: enquanto a live tá rolando, o cupom LIVEONLIVE15 tá ativo. Quando eu encerrar, o cupom sai e o preço volta a R$ 129."},{"q":"Vocês pagam pra recomendar produto né?","a":"Sou Selliver da OnLive — agência de live commerce. Recebo por hora trabalhada, não por venda específica. O produto eu testei. Confia no teste, não em mim."}];
+
+let sparState = {round:0, hits:0, currentObj:null, timerInterval:null, results:[]};
+
+function startSparring() {
+  sparState = {round:0, hits:0, currentObj:null, timerInterval:null, results:[]};
+  document.getElementById('sparring-start').classList.add('hidden');
+  document.getElementById('sparring-active').classList.remove('hidden');
+  nextRound();
+}
+
+function nextRound() {
+  sparState.round++;
+  if (sparState.round > 10) { showFinalResult(); return; }
+  document.getElementById('round-num').textContent = sparState.round;
+  document.getElementById('hits-count').textContent = sparState.hits;
+  const idx = Math.floor(Math.random() * objections.length);
+  sparState.currentObj = objections[idx];
+  document.getElementById('objection-text').textContent = '"' + sparState.currentObj.q + '"';
+  const box = document.getElementById('objection-box');
+  box.className = 'bg-red-900/50 border-2 border-red-400 rounded-lg p-5 mb-4';
+  void box.offsetWidth;
+  box.className = 'bg-red-900/50 border-2 border-red-400 rounded-lg p-5 mb-4 objection-card';
+  document.getElementById('model-answer').classList.add('hidden');
+  let s = 10;
+  document.getElementById('spar-timer').textContent = s;
+  document.getElementById('spar-timer').classList.remove('text-red-500');
+  if (sparState.timerInterval) clearInterval(sparState.timerInterval);
+  sparState.timerInterval = setInterval(() => {
+    s--;
+    document.getElementById('spar-timer').textContent = s;
+    if (s <= 3) document.getElementById('spar-timer').classList.add('text-red-500');
+    if (s <= 0) { clearInterval(sparState.timerInterval); revealAnswer(); }
+  }, 1000);
+}
+
+function skipRound() {
+  if (sparState.timerInterval) clearInterval(sparState.timerInterval);
+  revealAnswer();
+}
+
+function revealAnswer() {
+  document.getElementById('model-text').textContent = sparState.currentObj.a;
+  document.getElementById('model-answer').classList.remove('hidden');
+  navigator.vibrate && navigator.vibrate(150);
+}
+
+function markRound(hit) {
+  sparState.results.push(hit);
+  if (hit) sparState.hits++;
+  nextRound();
+}
+
+function showFinalResult() {
+  document.getElementById('sparring-active').classList.add('hidden');
+  const res = document.getElementById('sparring-result');
+  res.classList.remove('hidden');
+  document.getElementById('spar-final-score').textContent = sparState.hits + ' / 10';
+  const msg = document.getElementById('spar-final-message');
+  if (sparState.hits >= 8) {
+    document.getElementById('spar-final-score').className = 'text-5xl font-black mb-3 text-green-600';
+    msg.innerHTML = '<strong>✓ APROVADA.</strong><br>Você consegue responder objeção em pé. Tá pronta pro próximo módulo.';
+  } else if (sparState.hits >= 6) {
+    document.getElementById('spar-final-score').className = 'text-5xl font-black mb-3 text-orange-500';
+    msg.innerHTML = '<strong>⚠️ QUASE.</strong><br>Refaz o sparring. Volta nas respostas-modelo da seção Imitate, decora o padrão (reconhece + reverte + fecha) e tenta de novo.';
+  } else {
+    document.getElementById('spar-final-score').className = 'text-5xl font-black mb-3 text-red-600';
+    msg.innerHTML = '<strong>✗ PRECISA REFAZER.</strong><br>Volta no Módulo 1 e 2 — você precisa entender mais o produto e a persona antes de responder objeção. Sem base, fica improvisando.';
+  }
+  navigator.vibrate && navigator.vibrate([300,100,300]);
+}
+
+function resetSparring() {
+  document.getElementById('sparring-result').classList.add('hidden');
+  document.getElementById('sparring-start').classList.remove('hidden');
+}
+
+setupApproval('08-Plano-B.html');
+</script>
+
+</body>
+</html>

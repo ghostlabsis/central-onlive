@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+{{> head}}
+</head>
+<body class="min-h-screen">
+
+{{> header}}
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-12">
+    <p class="text-purple-600 font-bold text-sm tracking-wider mb-2">MÓDULO {{moduleNumber module.number}}</p>
+    <h1 class="text-4xl font-bold leading-tight mb-3">{{module.title}}</h1>
+    <p class="text-lg text-gray-700 mb-4">Preço falado antes de valor estabelecido = preço caro. Sempre.</p>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+      <span>⏱️ 10 min</span>
+      <span>📋 Pré: Módulos 1-5</span>
+      <span>🎯 Apresentar oferta em 90s cobrindo ancoragem + 3 níveis + cupom</span>
+    </div>
+  </div>
+
+  <!-- L · LEARN -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">L</div>
+      <div>
+        <h2 class="text-2xl font-bold">Learn — Absorver</h2>
+        <p class="text-sm text-gray-500">3 minutos</p>
+      </div>
+    </div>
+
+    <div class="bg-white border border-purple-100 rounded-xl p-5 mb-6 glow">
+      <div class="flex items-center gap-3 mb-3"><span class="text-2xl">🎧</span><span class="font-semibold">Narração: ~3 min</span></div>
+      <div class="bg-purple-50 rounded-lg p-4">
+        <p class="text-sm font-bold text-purple-900 mb-3">▶️ Ouvir agora</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="tts-play" onclick="ttsToggle()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold text-sm">▶ Tocar</button>
+          <button onclick="ttsStop()" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-bold text-sm">⏹ Parar</button>
+          <select id="tts-rate" onchange="ttsSetRate()" class="px-3 py-2 rounded-lg border border-gray-300 text-sm">
+            <option value="0.85">Devagar</option><option value="1" selected>Normal</option><option value="1.15">Rápido</option><option value="1.3">Bem rápido</option>
+          </select>
+          <select id="tts-voice" class="px-3 py-2 rounded-lg border border-gray-300 text-sm flex-1 min-w-0"><option>Carregando...</option></select>
+        </div>
+        <div id="tts-status" class="text-xs text-gray-600">Aguardando voz BR…</div>
+      </div>
+    </div>
+
+    <div class="bg-orange-50 border-l-4 border-orange-400 p-5 rounded-r-xl mb-6">
+      <p class="font-bold text-orange-900 mb-2">⚠️ A REGRA QUE QUEBRA TUDO SE VOCÊ ERRAR</p>
+      <p class="text-sm text-gray-800">Nunca, nunca fala o preço antes de estabelecer o valor. Se você abre dizendo "esse produto custa {{formatPrice hero.price_live}}", o cérebro do espectador já julgou: caro ou barato baseado em <strong>nada</strong>. Ancore primeiro. Mostre o valor. Aí o preço aparece como vantagem.</p>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">A sequência fixa</h3>
+
+    <div class="space-y-3 mb-8">
+      <div class="bg-white rounded-xl p-5 border-l-4 border-blue-400">
+        <p class="font-bold text-blue-700 mb-1">1 · ANCORAGEM</p>
+        <p class="text-sm text-gray-700">"No mercado, produto equivalente sai {{formatPrice hero.price_full}}." — Cria referência mental para o preço da live parecer vantagem.</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 border-l-4 border-green-400">
+        <p class="font-bold text-green-700 mb-1">2 · ITEM ÚNICO</p>
+        <p class="text-sm text-gray-700">"Item sozinho, na live, {{formatPrice hero.price_live}} com cupom {{live.master_coupon}}." — Para quem só quer testar.</p>
+      </div>
+      {{#each secondary_products}}
+      {{#if bundle_with_hero}}
+      {{#if @first}}
+      <div class="bg-white rounded-xl p-5 border-l-4 border-yellow-400">
+        <p class="font-bold text-yellow-700 mb-1">3 · KIT</p>
+        <p class="text-sm text-gray-700">"{{../hero.name}} + {{name}}: kit por {{formatPrice kit_price}} (em vez de pagar separado)." — Para quem quer vantagem maior.</p>
+      </div>
+      {{/if}}
+      {{/if}}
+      {{/each}}
+      {{#each secondary_products}}
+      {{#if bundle_with_hero}}
+      {{#if @last}}
+      <div class="bg-white rounded-xl p-5 border-l-4 border-purple-400">
+        <p class="font-bold text-purple-700 mb-1">4 · COMBO PREMIUM</p>
+        <p class="text-sm text-gray-700">"Combo completo com {{../hero.name}} + todos os produtos: {{formatPrice combo_price}} (em vez de pagar tudo separado)." — Para quem quer rotina inteira.</p>
+      </div>
+      {{/if}}
+      {{/if}}
+      {{/each}}
+      <div class="bg-white rounded-xl p-5 border-l-4 border-red-400">
+        <p class="font-bold text-red-700 mb-1">5 · CONDIÇÃO DE LIVE (urgência)</p>
+        <p class="text-sm text-gray-700">"Cupom {{live.master_coupon}} só ativo enquanto a live está rolando. Fora da live, é preço cheio."</p>
+      </div>
+    </div>
+
+    <div class="bg-black text-white rounded-xl p-8 text-center">
+      <p class="text-xs text-purple-400 font-bold tracking-wider mb-4">PRINCÍPIO</p>
+      <p class="text-2xl font-bold leading-snug">"Valor primeiro, preço depois. Sempre."</p>
+    </div>
+  </section>
+
+  <!-- I · IMITATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">I</div>
+      <div>
+        <h2 class="text-2xl font-bold">Imitate — Modelar</h2>
+        <p class="text-sm text-gray-500">2 min · Script modelo</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+      <p class="text-xs text-purple-600 font-bold mb-3">SCRIPT MODELO — OFERTA EM 90 SEGUNDOS</p>
+      <div class="bg-gray-50 p-4 rounded-lg italic text-gray-800 mb-4 text-sm leading-relaxed">
+        <p class="mb-2">"Esse produto, no mercado, com a mesma qualidade e especificação, sai em torno de {{formatPrice hero.price_full}}. Aqui na live, com cupom {{live.master_coupon}} que tá ativo agora, ele sai por {{formatPrice hero.price_live}}.</p>
+        <p class="mb-2">Se você quer só testar pra ver se serve, item único, {{formatPrice hero.price_live}}.</p>
+        {{#each secondary_products}}
+        {{#if bundle_with_hero}}
+        {{#if @first}}<p class="mb-2">Se você quer maximizar o resultado, o kit com {{name}} sai {{formatPrice kit_price}} — e potencializa o resultado.</p>{{/if}}
+        {{/if}}
+        {{/each}}
+        {{#each secondary_products}}
+        {{#if bundle_with_hero}}
+        {{#if @last}}<p class="mb-2">E pra quem quer a rotina completa, o combo sai {{formatPrice combo_price}} — em vez de pagar tudo separado.</p>{{/if}}
+        {{/if}}
+        {{/each}}
+        <p>Importante: o cupom {{live.master_coupon}} só vale enquanto a live tá no ar. Fora daqui, é preço cheio {{formatPrice hero.price_full}}. Quem clicar agora trava o preço."</p>
+      </div>
+
+      <details class="bg-purple-50 rounded-lg p-4">
+        <summary class="font-bold text-purple-900">O padrão que ela executou ▼</summary>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li>✦ <strong>Ancorou ANTES do preço</strong> — disse o preço de mercado antes do preço da live</li>
+          <li>✦ <strong>Apresentou em ordem crescente</strong> — testar → kit → combo</li>
+          <li>✦ <strong>Justificou cada salto</strong> — não só preço, mas benefício adicional</li>
+          <li>✦ <strong>Criou janela de tempo</strong> — "só na live", "fora daqui preço cheio"</li>
+          <li>✦ <strong>Tudo em 90 segundos</strong> — sem enrolar</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- V · VERIFY -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">V</div>
+      <div>
+        <h2 class="text-2xl font-bold">Verify — Drillar</h2>
+        <p class="text-sm text-gray-500">3 min</p>
+      </div>
+    </div>
+
+    <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-lg font-bold mb-3">🎯 Drill 6.1 — Sua oferta em 90s</h3>
+      <p class="mb-4 text-gray-700">Apresenta a oferta completa em 90 segundos, em voz alta, cobrindo:</p>
+
+      <div class="bg-white rounded-lg p-4 mb-4">
+        <ol class="text-sm space-y-1 list-decimal list-inside">
+          <li>Ancoragem (preço de mercado: {{formatPrice hero.price_full}})</li>
+          <li>Item único: {{formatPrice hero.price_live}} com cupom {{live.master_coupon}}</li>
+          {{#each secondary_products}}
+          {{#if bundle_with_hero}}
+          {{#if @first}}<li>Kit: {{formatPrice kit_price}} (inclui {{name}})</li>{{/if}}
+          {{/if}}
+          {{/each}}
+          {{#each secondary_products}}
+          {{#if bundle_with_hero}}
+          {{#if @last}}<li>Combo: {{formatPrice combo_price}} (rotina completa)</li>{{/if}}
+          {{/if}}
+          {{/each}}
+          <li>Janela do cupom: só na live, depois preço cheio</li>
+        </ol>
+      </div>
+
+      <div class="bg-black text-white rounded-lg p-6 text-center">
+        <p class="text-xs text-purple-300 mb-2">CRONÔMETRO</p>
+        <div class="text-6xl font-black timer-display mb-4" id="timer1">01:30</div>
+        <div class="flex gap-2 justify-center flex-wrap">
+          <button onclick="startTimer('timer1', 90)" class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-lg font-bold">▶ Comecei</button>
+          <button onclick="resetTimer('timer1', 90)" class="bg-gray-700 px-6 py-2 rounded-lg font-bold">↻ Refazer</button>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <p class="font-bold mb-3">Conferi e:</p>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Falei o preço de ancoragem ANTES do preço de live</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Apresentei os 3 níveis (item / kit / combo)</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Justifiquei cada salto (não só listei preço)</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Mencionei o cupom {{live.master_coupon}} e a janela ("só na live")</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Não passei de 90s</span></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- E · EVALUATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">E</div>
+      <div>
+        <h2 class="text-2xl font-bold">Evaluate — Testar</h2>
+      </div>
+    </div>
+
+    <div id="quiz" class="space-y-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 1 / 3</p>
+        <p class="font-bold mb-4">Qual a ordem correta?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Preço da live → Ancoragem → Kit → Combo</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Ancoragem → Item único → Kit → Combo → Janela de cupom</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Combo → Kit → Item → Ancoragem</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Cupom → Item → Combo → Ancoragem</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 2 / 3</p>
+        <p class="font-bold mb-4">Por que ancorar com preço de mercado ANTES do preço de live?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Para parecer mais profissional</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Para criar referência mental — preço da live aparece como vantagem em vez de "caro"</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Para cumprir lei de transparência</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Para encher tempo</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 3 / 3</p>
+        <p class="font-bold mb-4">A "janela de cupom" deve ser:</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Permanente</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Limitada à duração da live (cria urgência real)</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Igual ao site</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Só pra primeiros 10 compradores</button>
+        </div>
+      </div>
+
+      <div id="quiz-score" class="hidden bg-purple-50 border-2 border-purple-300 rounded-xl p-6 text-center">
+        <p class="text-xs text-purple-600 font-bold mb-2">RESULTADO</p>
+        <p id="score-text" class="text-3xl font-bold mb-2"></p>
+        <p id="score-message" class="text-sm text-gray-700"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <div class="bg-white border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-4">✅ Pode passar para o Módulo 7 se:</h3>
+      <div class="space-y-3 mb-6">
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Acertei pelo menos 2 das 3 perguntas</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Apresentei oferta completa em ≤90s</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Decorei: ancoragem → item → kit → combo → janela</span></label>
+      </div>
+      <button id="next-btn" disabled class="w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg">Marca os 3 acima</button>
+    </div>
+  </section>
+
+  <footer class="text-center text-xs text-gray-400 py-8">{{brand.name}} · Curso Selliver · Método LIVE™ · Módulo {{module.number}} de {{module.total}}</footer>
+</main>
+
+<script type="text/plain" id="tts-script">
+Bem-vinda ao módulo seis. Curto, mas crítico.
+
+Aqui você aprende uma regra que, se quebrar, derruba tudo:
+Nunca fala o preço antes de estabelecer o valor.
+
+Se você abre o bloco de oferta dizendo "esse produto custa {{formatPrice hero.price_live}}", o cérebro do espectador já julgou: caro ou barato baseado em nada.
+A maioria diz: caro.
+
+A solução é a ancoragem.
+Antes de falar seu preço, você diz quanto custa similar no mercado.
+"No mercado, produto equivalente sai em torno de {{formatPrice hero.price_full}}."
+Agora o espectador tem referência. Quando você diz "aqui na live, {{formatPrice hero.price_live}}", ele compara com {{formatPrice hero.price_full}}.
+Vira vantagem, não preço solto.
+
+A sequência fixa:
+Um. Ancoragem.
+Dois. Item único, para quem só quer testar.
+Três. Kit, para quem quer mais vantagem.
+Quatro. Combo, para quem quer a rotina inteira.
+Cinco. Janela do cupom. Só na live.
+
+Cada salto entre níveis precisa de justificativa, não só preço maior.
+
+A janela de cupom cria urgência verdadeira.
+"Cupom {{live.master_coupon}} só vale enquanto a live tá no ar. Fora daqui, é preço cheio."
+Urgência sem mentir.
+
+Princípio: valor primeiro, preço depois. Sempre.
+
+Agora você vai apresentar a oferta completa em noventa segundos. Em voz alta. Cronometrado.
+Vamos.
+</script>
+
+{{> scripts-engine}}
+
+<script>
+  initQuiz(3);
+  setupApproval('07-CTA-e-Objecoes.html');
+</script>
+
+</body>
+</html>

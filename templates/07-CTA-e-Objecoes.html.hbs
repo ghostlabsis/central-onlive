@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+{{> head}}
+<style>
+  .pulse-fast { animation: pulse-fast 0.8s infinite; }
+  @keyframes pulse-fast { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  .objection-card { animation: slideIn 0.4s ease-out; }
+  @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body class="min-h-screen">
+
+{{> header}}
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-12">
+    <p class="text-purple-600 font-bold text-sm tracking-wider mb-2">MÓDULO {{moduleNumber module.number}}</p>
+    <span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">SPARRING</span>
+    <h1 class="text-4xl font-bold leading-tight mb-3 mt-2">{{module.title}}</h1>
+    <p class="text-lg text-gray-700 mb-4">Aqui é treino real de boxe. IA joga uma objeção. Você tem 10 segundos pra responder. 10 rodadas. 8 acertos = aprovada.</p>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600"><span>⏱️ 15 min</span><span>📋 Pré: Mód 1-6</span><span>🎯 Sparring: 8/10 respostas válidas em 10s cada</span></div>
+  </div>
+
+  <!-- L · LEARN -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">L</div>
+      <div><h2 class="text-2xl font-bold">Learn — Absorver</h2><p class="text-sm text-gray-500">5 min</p></div>
+    </div>
+
+    <div class="bg-white border border-purple-100 rounded-xl p-5 mb-6 glow">
+      <div class="flex items-center gap-3 mb-3"><span class="text-2xl">🎧</span><span class="font-semibold">Narração: ~4 min</span></div>
+      <div class="bg-purple-50 rounded-lg p-4">
+        <p class="text-sm font-bold text-purple-900 mb-3">▶️ Ouvir agora</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="tts-play" onclick="ttsToggle()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold text-sm">▶ Tocar</button>
+          <button onclick="ttsStop()" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-bold text-sm">⏹ Parar</button>
+          <select id="tts-rate" onchange="ttsSetRate()" class="px-3 py-2 rounded-lg border text-sm"><option value="0.85">Devagar</option><option value="1" selected>Normal</option><option value="1.15">Rápido</option><option value="1.3">Bem rápido</option></select>
+          <select id="tts-voice" class="px-3 py-2 rounded-lg border text-sm flex-1 min-w-0"><option>Carregando...</option></select>
+        </div>
+        <div id="tts-status" class="text-xs text-gray-600">Aguardando voz BR…</div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">A regra do CTA</h3>
+    <div class="bg-orange-50 border-l-4 border-orange-400 p-5 rounded-r-xl mb-6">
+      <p class="font-bold text-orange-900 mb-2">⚠️ CTA REPETE 3+ VEZES COM VARIAÇÃO</p>
+      <p class="text-sm text-gray-800 mb-3">Não é "clica na sacolinha" 3 vezes seguidas. É variar a linguagem:</p>
+      <ul class="text-sm space-y-1 text-gray-700">
+        <li>1. <strong>Direto:</strong> "Clica na sacolinha agora. Produto fixado na tela."</li>
+        <li>2. <strong>Com tira-dúvida:</strong> "Pra quem tá em dúvida: TikTok Shop tem pagamento protegido. Clica e confere."</li>
+        <li>3. <strong>Com objeção respondida:</strong> "Quem perguntou [dúvida comum]: [resposta rápida]. Tá na sacolinha."</li>
+      </ul>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">As 5 categorias de objeção</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+      <div class="bg-white border rounded-lg p-4"><p class="font-bold text-purple-700">Preço</p><p class="text-xs text-gray-600">"tá caro", "achei mais barato em outro lugar"</p></div>
+      <div class="bg-white border rounded-lg p-4"><p class="font-bold text-purple-700">Confiança</p><p class="text-xs text-gray-600">"é confiável?", "esse vendedor existe?"</p></div>
+      <div class="bg-white border rounded-lg p-4"><p class="font-bold text-purple-700">Logística</p><p class="text-xs text-gray-600">"demora?", "frete caro?"</p></div>
+      <div class="bg-white border rounded-lg p-4"><p class="font-bold text-purple-700">Funcionalidade</p><p class="text-xs text-gray-600">"funciona pra mim?", "serve pra minha situação?"</p></div>
+      <div class="bg-white border rounded-lg p-4 col-span-1 sm:col-span-2"><p class="font-bold text-purple-700">Comparação</p><p class="text-xs text-gray-600">"é igual ao outro mais barato?"</p></div>
+    </div>
+
+    <div class="bg-black text-white rounded-xl p-8 text-center">
+      <p class="text-xs text-purple-400 font-bold tracking-wider mb-4">PRINCÍPIO</p>
+      <p class="text-2xl font-bold leading-snug">"Não bate na objeção. Passa por dentro dela."</p>
+    </div>
+  </section>
+
+  <!-- I · IMITATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">I</div>
+      <div><h2 class="text-2xl font-bold">Imitate — Modelar</h2><p class="text-sm text-gray-500">3 min · respostas modelo do produto</p></div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-6 space-y-4">
+      {{#each objections_pool}}
+      <div class="border-l-4 border-red-400 pl-4">
+        <p class="text-sm font-bold text-red-700 mb-1">❓ "{{q}}"</p>
+        <p class="text-sm italic text-green-700">{{a}}</p>
+      </div>
+      {{/each}}
+
+      <details class="bg-purple-50 rounded-lg p-4 mt-4">
+        <summary class="font-bold text-purple-900">Padrão das respostas ▼</summary>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li>✦ <strong>Reconhece a objeção</strong> — "entendo", "boa pergunta" — sem ironia</li>
+          <li>✦ <strong>Reverte com fato concreto</strong> — número, ancoragem, prova</li>
+          <li>✦ <strong>Cabe em ≤10 segundos falados</strong></li>
+          <li>✦ <strong>Não cita concorrente pelo nome</strong> — "produto equivalente", "produto comum do mercado"</li>
+          <li>✦ <strong>Fecha com ação ou sacolinha</strong></li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- V · VERIFY — SPARRING ENGINE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">V</div>
+      <div><h2 class="text-2xl font-bold">Verify — Sparring</h2><p class="text-sm text-gray-500">5 min · 10 rodadas × 10s</p></div>
+    </div>
+
+    <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-lg font-bold mb-3">🥊 Drill 7.1 — Sparring de Objeções</h3>
+      <p class="mb-4 text-gray-700">Aperta "Começar Sparring". A IA vai jogar 10 objeções aleatórias. Você tem <strong>10 segundos por objeção</strong> para responder em voz alta. Ao fim, marca se acertou ou não. Aprovação: <strong>8 acertos de 10</strong>.</p>
+
+      <div id="sparring-start" class="text-center bg-black text-white rounded-xl p-8">
+        <p class="text-purple-300 text-sm mb-4">PRONTA?</p>
+        <button onclick="startSparring()" class="bg-purple-600 hover:bg-purple-700 px-8 py-4 rounded-lg font-bold text-lg pulse-fast">🥊 Começar Sparring</button>
+      </div>
+
+      <div id="sparring-active" class="hidden">
+        <div class="bg-black text-white rounded-xl p-6 mb-4">
+          <div class="flex justify-between items-center mb-4">
+            <p class="text-sm text-purple-300">Rodada <span id="round-num">1</span> / 10</p>
+            <p class="text-sm text-purple-300">Acertos: <span id="hits-count">0</span></p>
+          </div>
+          <div class="bg-red-900/50 border-2 border-red-400 rounded-lg p-5 mb-4 objection-card" id="objection-box">
+            <p class="text-xs text-red-300 mb-2">OBJEÇÃO DA AUDIÊNCIA:</p>
+            <p class="text-2xl font-bold" id="objection-text">"..."</p>
+          </div>
+          <div class="text-center">
+            <p class="text-xs text-gray-400 mb-2">RESPONDE EM VOZ ALTA AGORA</p>
+            <div class="text-7xl font-black timer-display mb-4" id="spar-timer">10</div>
+            <button onclick="skipRound()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">Tempo acabou (avançar)</button>
+          </div>
+        </div>
+
+        <div id="model-answer" class="hidden bg-white rounded-xl border-2 border-green-400 p-5 mb-4">
+          <p class="text-xs text-green-700 font-bold mb-2">RESPOSTA MODELO ↓</p>
+          <p class="text-sm italic text-gray-800" id="model-text"></p>
+          <div class="mt-4 flex gap-2">
+            <button onclick="markRound(true)" class="flex-1 bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-bold">✓ Acertei (similar)</button>
+            <button onclick="markRound(false)" class="flex-1 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg font-bold">✗ Não consegui</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="sparring-result" class="hidden bg-purple-50 border-2 border-purple-300 rounded-xl p-6 text-center">
+        <p class="text-xs text-purple-600 font-bold mb-2">RESULTADO DO SPARRING</p>
+        <p id="spar-final-score" class="text-5xl font-black mb-3"></p>
+        <p id="spar-final-message" class="text-sm text-gray-700 mb-4"></p>
+        <button onclick="resetSparring()" class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-bold text-sm">↻ Refazer sparring</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- E · EVALUATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">E</div>
+      <div><h2 class="text-2xl font-bold">Evaluate — Auto-avaliação</h2></div>
+    </div>
+
+    <div class="bg-white border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-4">✅ Pode passar para o Módulo 8 se:</h3>
+      <div class="space-y-3 mb-6">
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Pontuei <strong>≥8 de 10</strong> no sparring</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Não citei concorrente pelo nome em nenhuma resposta</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Cada resposta minha cabe em ≤10s</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Não usei "cura", "elimina", "trata" em nenhuma resposta</span></label>
+      </div>
+      <button id="next-btn" disabled class="w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg">Marca os 4 acima</button>
+    </div>
+  </section>
+
+  <footer class="text-center text-xs text-gray-400 py-8">{{brand.name}} · Curso Selliver · Método LIVE™ · Módulo {{module.number}} de {{module.total}}</footer>
+</main>
+
+<script type="text/plain" id="tts-script">
+Bem-vinda ao módulo sete. Esse é o módulo do treino de boxe.
+Aqui você não lê. Você responde. Em dez segundos. Sob pressão.
+
+Por que isso importa: na live real, objeção aparece a cada minuto. Você não tem tempo pra pensar. Tem que responder rápido, certo, e voltar pra venda.
+
+Antes do sparring, três regras.
+
+Um. CTA repete três vezes com variação.
+Não é repetir "clica na sacolinha" três vezes seguido. É variar a linguagem. Direto. Tira-dúvida. Objeção respondida.
+
+Dois. Toda objeção segue o mesmo padrão de resposta.
+Reconhece. Reverte com fato concreto. Fecha com ação.
+Reconhece — entendo, boa pergunta, sem ironia.
+Reverte — número, ancoragem, prova visível.
+Fecha — sacolinha, página do produto, ação específica.
+
+Três. Cinco categorias de objeção, todas seguem o mesmo padrão.
+Preço — ancoragem ou custo por uso.
+Confiança — TikTok Shop oficial, pagamento protegido.
+Logística — direciona pra página do produto.
+Funcionalidade — honesto sobre limites.
+Comparação — diferencia pelo detalhe técnico, sem citar marca.
+
+Princípio: não bate na objeção. Passa por dentro dela.
+Não argumenta com o cliente. Reconhece o ponto, traz fato, fecha com ação.
+
+Agora vem o sparring. Dez objeções aleatórias. Dez segundos por resposta.
+Em voz alta, mesmo se for sozinha em casa.
+Respira. Aperta começar quando estiver pronta.
+Vamos.
+</script>
+
+{{> scripts-engine}}
+
+<script>
+const objections = {{json objections_pool}};
+
+let sparState = {round:0, hits:0, currentObj:null, timerInterval:null, results:[]};
+
+function startSparring() {
+  sparState = {round:0, hits:0, currentObj:null, timerInterval:null, results:[]};
+  document.getElementById('sparring-start').classList.add('hidden');
+  document.getElementById('sparring-active').classList.remove('hidden');
+  nextRound();
+}
+
+function nextRound() {
+  sparState.round++;
+  if (sparState.round > 10) { showFinalResult(); return; }
+  document.getElementById('round-num').textContent = sparState.round;
+  document.getElementById('hits-count').textContent = sparState.hits;
+  const idx = Math.floor(Math.random() * objections.length);
+  sparState.currentObj = objections[idx];
+  document.getElementById('objection-text').textContent = '"' + sparState.currentObj.q + '"';
+  const box = document.getElementById('objection-box');
+  box.className = 'bg-red-900/50 border-2 border-red-400 rounded-lg p-5 mb-4';
+  void box.offsetWidth;
+  box.className = 'bg-red-900/50 border-2 border-red-400 rounded-lg p-5 mb-4 objection-card';
+  document.getElementById('model-answer').classList.add('hidden');
+  let s = 10;
+  document.getElementById('spar-timer').textContent = s;
+  document.getElementById('spar-timer').classList.remove('text-red-500');
+  if (sparState.timerInterval) clearInterval(sparState.timerInterval);
+  sparState.timerInterval = setInterval(() => {
+    s--;
+    document.getElementById('spar-timer').textContent = s;
+    if (s <= 3) document.getElementById('spar-timer').classList.add('text-red-500');
+    if (s <= 0) { clearInterval(sparState.timerInterval); revealAnswer(); }
+  }, 1000);
+}
+
+function skipRound() {
+  if (sparState.timerInterval) clearInterval(sparState.timerInterval);
+  revealAnswer();
+}
+
+function revealAnswer() {
+  document.getElementById('model-text').textContent = sparState.currentObj.a;
+  document.getElementById('model-answer').classList.remove('hidden');
+  navigator.vibrate && navigator.vibrate(150);
+}
+
+function markRound(hit) {
+  sparState.results.push(hit);
+  if (hit) sparState.hits++;
+  nextRound();
+}
+
+function showFinalResult() {
+  document.getElementById('sparring-active').classList.add('hidden');
+  const res = document.getElementById('sparring-result');
+  res.classList.remove('hidden');
+  document.getElementById('spar-final-score').textContent = sparState.hits + ' / 10';
+  const msg = document.getElementById('spar-final-message');
+  if (sparState.hits >= 8) {
+    document.getElementById('spar-final-score').className = 'text-5xl font-black mb-3 text-green-600';
+    msg.innerHTML = '<strong>✓ APROVADA.</strong><br>Você consegue responder objeção em pé. Tá pronta pro próximo módulo.';
+  } else if (sparState.hits >= 6) {
+    document.getElementById('spar-final-score').className = 'text-5xl font-black mb-3 text-orange-500';
+    msg.innerHTML = '<strong>⚠️ QUASE.</strong><br>Refaz o sparring. Volta nas respostas-modelo da seção Imitate, decora o padrão (reconhece + reverte + fecha) e tenta de novo.';
+  } else {
+    document.getElementById('spar-final-score').className = 'text-5xl font-black mb-3 text-red-600';
+    msg.innerHTML = '<strong>✗ PRECISA REFAZER.</strong><br>Volta no Módulo 1 e 2 — você precisa entender mais o produto e a persona antes de responder objeção. Sem base, fica improvisando.';
+  }
+  navigator.vibrate && navigator.vibrate([300,100,300]);
+}
+
+function resetSparring() {
+  document.getElementById('sparring-result').classList.add('hidden');
+  document.getElementById('sparring-start').classList.remove('hidden');
+}
+
+setupApproval('08-Plano-B.html');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+{{> head}}
+</head>
+<body class="min-h-screen">
+
+{{> header}}
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-12">
+    <p class="text-purple-600 font-bold text-sm tracking-wider mb-2">MÓDULO {{moduleNumber module.number}}</p>
+    <h1 class="text-4xl font-bold leading-tight mb-3">{{module.title}}</h1>
+    <p class="text-lg text-gray-700 mb-4">Não decora. Entende. Você vende o produto que entende — não o que tá no script.</p>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+      <span>⏱️ 15 minutos</span>
+      <span>📋 Pré-requisito: nenhum</span>
+      <span>🎯 Sair sabendo descrever o produto em 60s sem ler</span>
+    </div>
+  </div>
+
+  {{> youtube-slot}}
+
+  <!-- L · LEARN -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">L</div>
+      <div>
+        <h2 class="text-2xl font-bold">Learn — Absorver</h2>
+        <p class="text-sm text-gray-500">5 minutos · Áudio + slides</p>
+      </div>
+    </div>
+
+    {{#with (lookup . "narration_minutes_5")}}{{/with}}
+    <div class="bg-white border border-purple-100 rounded-xl p-5 mb-6 glow">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="text-2xl">🎧</span>
+        <span class="font-semibold">Narração: ~4 minutos</span>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-4 mb-3">
+        <p class="text-sm font-bold text-purple-900 mb-3">▶️ Ouvir agora (voz do navegador)</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="tts-play" onclick="ttsToggle()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold text-sm">▶ Tocar</button>
+          <button onclick="ttsStop()" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold text-sm">⏹ Parar</button>
+          <select id="tts-rate" onchange="ttsSetRate()" class="px-3 py-2 rounded-lg border border-gray-300 text-sm">
+            <option value="0.85">Devagar</option><option value="1" selected>Normal</option><option value="1.15">Rápido</option><option value="1.3">Bem rápido</option>
+          </select>
+          <select id="tts-voice" class="px-3 py-2 rounded-lg border border-gray-300 text-sm flex-1 min-w-0"><option>Carregando...</option></select>
+        </div>
+        <div id="tts-status" class="text-xs text-gray-600">Aguardando voz BR…</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 1 -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-4">
+      <div class="text-xs text-purple-600 font-bold mb-2">SLIDE 1 / 4</div>
+      <h3 class="text-xl font-bold mb-3">Quem é esse produto?</h3>
+      <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-5 mb-4">
+        <p class="font-mono text-sm text-purple-900 mb-1">PRODUTO</p>
+        <p class="text-2xl font-bold mb-3">{{hero.name}}</p>
+        <p class="font-mono text-sm text-purple-900 mb-1">CATEGORIA</p>
+        <p class="mb-3">{{hero.category}}</p>
+        {{#if compliance.anvisa_registration}}
+        <p class="font-mono text-sm text-purple-900 mb-1">REGISTRO</p>
+        <p>ANVISA {{compliance.anvisa_registration}}</p>
+        {{/if}}
+      </div>
+    </div>
+
+    <!-- SLIDE 2 — Diferenciais -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-4">
+      <div class="text-xs text-purple-600 font-bold mb-2">SLIDE 2 / 4 — DIFERENCIAL</div>
+      <h3 class="text-xl font-bold mb-3">O que torna esse produto diferente</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+        {{#each hero.differentials}}
+        <div class="bg-purple-50 p-4 rounded-lg">
+          <p class="text-2xl font-bold text-purple-600">{{label}}</p>
+          <p class="text-sm text-gray-600">{{description}}</p>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- SLIDE 3 — Compliance -->
+    {{#if compliance.forbidden_claims.length}}
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-4">
+      <div class="text-xs text-purple-600 font-bold mb-2">SLIDE 3 / 4 — COMPLIANCE</div>
+      <h3 class="text-xl font-bold mb-3">⚠️ NUNCA fala (categoria {{compliance.regulated_category}})</h3>
+      <div class="grid grid-cols-1 gap-2 mb-4">
+        {{#each compliance.forbidden_claims}}
+        <div class="bg-red-50 border border-red-200 rounded p-3 text-sm">✗ {{this}}</div>
+        {{/each}}
+      </div>
+      <h3 class="text-base font-bold mb-2 text-green-700">PODE falar:</h3>
+      <div class="grid grid-cols-1 gap-2">
+        {{#each compliance.allowed_claims}}
+        <div class="bg-green-50 border border-green-200 rounded p-3 text-sm">✓ {{this}}</div>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+
+    <!-- SLIDE 4 — Frase-chave -->
+    <div class="bg-black text-white rounded-xl p-8 text-center">
+      <p class="text-xs text-purple-400 font-bold tracking-wider mb-4">FRASE-CHAVE PARA MEMORIZAR</p>
+      <p class="text-2xl font-bold leading-snug">"{{hero.key_phrase}}"</p>
+      <p class="text-sm text-gray-400 mt-4">— se você decora isso, já vendeu metade.</p>
+    </div>
+  </section>
+
+  <!-- I · IMITATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">I</div>
+      <div>
+        <h2 class="text-2xl font-bold">Imitate — Modelar</h2>
+        <p class="text-sm text-gray-500">3 minutos · Exemplo modelo de 60s</p>
+      </div>
+    </div>
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+      <p class="text-xs text-purple-600 font-bold mb-3">EXEMPLO MODELO — 60 SEGUNDOS</p>
+      <div class="bg-gray-50 p-4 rounded-lg italic text-gray-800 mb-4">
+        <p>"Esse é um {{hero.category}} — {{#each hero.differentials}}{{label}} {{description}}{{#unless @last}}, {{/unless}}{{/each}}.
+        Para quem {{persona.main_pain_quote}}.
+        {{#if compliance.allowed_claims}}{{lookup compliance.allowed_claims 0}}{{/if}}.
+        Não promete cura — promete rotina."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- V · VERIFY -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">V</div>
+      <div>
+        <h2 class="text-2xl font-bold">Verify — Drillar</h2>
+        <p class="text-sm text-gray-500">5 minutos · Drill cronometrado</p>
+      </div>
+    </div>
+    <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-lg font-bold mb-3">🎯 Drill 1.1 — Descrição em 60 segundos</h3>
+      <p class="mb-4 text-gray-700">Sem ler. Em até 60 segundos, descreve o {{hero.name}} cobrindo:</p>
+      <div class="bg-white rounded-lg p-4 mb-4">
+        <ol class="text-sm space-y-1 list-decimal list-inside text-gray-700">
+          <li>O que é (categoria: {{hero.category}})</li>
+          <li>Para quem (persona: {{persona.fictional_name}}, {{persona.age}})</li>
+          <li>Diferencial ({{#each hero.differentials}}{{label}}{{#unless @last}}, {{/unless}}{{/each}})</li>
+          <li>Resultado realista</li>
+          <li>O que NÃO promete ({{#each compliance.forbidden_claims}}{{this}}{{#unless @last}}, {{/unless}}{{/each}})</li>
+        </ol>
+      </div>
+      <div class="bg-black text-white rounded-lg p-6 text-center">
+        <p class="text-xs text-purple-300 mb-2">CRONÔMETRO</p>
+        <div class="text-6xl font-black timer-display mb-4" id="timer1">01:00</div>
+        <div class="flex gap-2 justify-center flex-wrap">
+          <button onclick="startTimer('timer1', 60)" class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-lg font-bold">▶ Comecei</button>
+          <button onclick="resetTimer('timer1', 60)" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-lg font-bold">↻ Refazer</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- E · EVALUATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">E</div>
+      <div>
+        <h2 class="text-2xl font-bold">Evaluate — Testar</h2>
+        <p class="text-sm text-gray-500">2 minutos · Quiz</p>
+      </div>
+    </div>
+    <div id="quiz" class="space-y-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 1 / 3</p>
+        <p class="font-bold mb-4">Qual a categoria do produto?</p>
+        <div class="space-y-2">
+          {{#each hero.differentials}}{{#if @first}}{{/if}}{{/each}}
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">{{hero.category}}</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">eletrônico</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">moda</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">alimento</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 2 / 3</p>
+        <p class="font-bold mb-4">Qual destas frases você NUNCA pode falar?</p>
+        <div class="space-y-2">
+          {{#each compliance.allowed_claims}}
+          {{#if @first}}<button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">"{{this}}"</button>{{/if}}
+          {{/each}}
+          {{#each compliance.forbidden_claims}}
+          {{#if @first}}<button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">"{{this}}"</button>{{/if}}
+          {{/each}}
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">"em 30-60 dias você nota diferença"</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">"esse é um {{hero.category}}"</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 3 / 3</p>
+        <p class="font-bold mb-4">Qual o preço deste produto na live?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">{{formatPrice hero.price_full}}</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">{{formatPrice hero.price_live}} (com cupom {{live.master_coupon}})</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">R$ 49</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">R$ 199</button>
+        </div>
+      </div>
+
+      <div id="quiz-score" class="hidden bg-purple-50 border-2 border-purple-300 rounded-xl p-6 text-center">
+        <p class="text-xs text-purple-600 font-bold mb-2">SEU RESULTADO</p>
+        <p id="score-text" class="text-3xl font-bold mb-2"></p>
+        <p id="score-message" class="text-sm text-gray-700"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <div class="bg-white border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-4">✅ Pode passar para o Módulo 2 se:</h3>
+      <div class="space-y-3 mb-6">
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Acertei pelo menos 2 das 3 perguntas</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Completei o drill 1.1 cobrindo os 5 pontos em ≤60s</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Sei a frase-chave de cor</span></label>
+      </div>
+      <button id="next-btn" disabled class="w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg">Marca os 3 acima</button>
+    </div>
+  </section>
+
+  <footer class="text-center text-xs text-gray-400 py-8">{{brand.name}} · Curso Selliver · Método LIVE™ · Módulo 1 de {{module.total}}</footer>
+</main>
+
+<!-- Texto da narração — extraído do JSON, gerado pela IA na build -->
+<script type="text/plain" id="tts-script">
+Bem-vinda ao módulo um do seu curso.
+Hoje você vai entender o produto que vai vender amanhã.
+A regra é: não decora. Entende.
+
+Você vai apresentar um {{hero.category}}: {{hero.name}}.
+{{#each hero.differentials}}{{label}} — {{description}}.
+{{/each}}
+
+Para quem? {{persona.main_pain_quote}}
+
+Atenção compliance. Você nunca vai falar:
+{{#each compliance.forbidden_claims}}- {{this}}.
+{{/each}}
+O que pode falar:
+{{#each compliance.allowed_claims}}- {{this}}.
+{{/each}}
+
+Frase-chave pra memorizar agora:
+{{hero.key_phrase}}
+
+Se decora isso, já vendeu metade.
+Vamos pro próximo passo.
+</script>
+
+{{> scripts-engine}}
+
+<script>
+  initQuiz(3);
+  setupApproval('02-A-Audiencia.html');
+
+  // Hub callback — quando acessado via /portal/[selliver]
+  (function() {
+    const p = new URLSearchParams(location.search);
+    const selliverParam = p.get('selliver');
+    const productParam  = p.get('product');
+    const hubMode       = p.get('hub') === '1';
+    if (!hubMode || !selliverParam || !productParam) return;
+
+    // Observa quando a aprovação for concedida e mostra botão "Liberar Etapa 4"
+    const observer = new MutationObserver(function() {
+      const approvalEl = document.getElementById('approval-section');
+      if (!approvalEl || approvalEl.classList.contains('hidden')) return;
+      if (document.getElementById('hub-back-btn')) return;
+
+      const token = btoa(unescape(encodeURIComponent(JSON.stringify({
+        v: 1, selliver: selliverParam, product: productParam, ts: Date.now()
+      }))));
+
+      const portalBase = location.origin;
+      const btn = document.createElement('a');
+      btn.id        = 'hub-back-btn';
+      btn.href      = portalBase + '/portal/' + selliverParam + '?m1done=' + productParam;
+      btn.className = 'block mt-3 text-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-xl transition-colors';
+      btn.textContent = '✓ Módulo 1 concluído — Voltar ao Portal';
+      approvalEl.appendChild(btn);
+    });
+
+    observer.observe(document.body, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  })();
+</script>
+
+</body>
+</html>

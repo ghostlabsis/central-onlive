@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+{{> head}}
+<style>
+  .block-card { transition: all 0.2s; }
+  .block-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(117,71,255,0.15); }
+</style>
+</head>
+<body class="min-h-screen">
+
+{{> header}}
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-12">
+    <p class="text-purple-600 font-bold text-sm tracking-wider mb-2">MÓDULO {{moduleNumber module.number}}</p>
+    <h1 class="text-4xl font-bold leading-tight mb-3">{{module.title}}</h1>
+    <p class="text-lg text-gray-700 mb-4">A cada 3 minutos, metade da audiência é nova. Por isso a live é cíclica — não linear.</p>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+      <span>⏱️ 20 minutos</span>
+      <span>📋 Pré-requisito: Módulos 1 e 2</span>
+      <span>🎯 Executar 1 ciclo completo cronometrado em ≤12 min</span>
+    </div>
+  </div>
+
+  <!-- L · LEARN -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">L</div>
+      <div>
+        <h2 class="text-2xl font-bold">Learn — Absorver</h2>
+        <p class="text-sm text-gray-500">7 minutos · Anatomia do ciclo</p>
+      </div>
+    </div>
+
+    <div class="bg-white border border-purple-100 rounded-xl p-5 mb-6 glow">
+      <div class="flex items-center gap-3 mb-3"><span class="text-2xl">🎧</span><span class="font-semibold">Narração: ~6 minutos</span></div>
+      <div class="bg-purple-50 rounded-lg p-4 mb-3">
+        <p class="text-sm font-bold text-purple-900 mb-3">▶️ Ouvir agora (voz do navegador)</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="tts-play" onclick="ttsToggle()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold text-sm">▶ Tocar</button>
+          <button onclick="ttsStop()" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-bold text-sm">⏹ Parar</button>
+          <select id="tts-rate" onchange="ttsSetRate()" class="px-3 py-2 rounded-lg border border-gray-300 text-sm">
+            <option value="0.85">Devagar</option><option value="1" selected>Normal</option><option value="1.15">Rápido</option><option value="1.3">Bem rápido</option>
+          </select>
+          <select id="tts-voice" class="px-3 py-2 rounded-lg border border-gray-300 text-sm flex-1 min-w-0"><option>Carregando...</option></select>
+        </div>
+        <div id="tts-status" class="text-xs text-gray-600">Aguardando voz BR…</div>
+      </div>
+    </div>
+
+    <div class="bg-orange-50 border-l-4 border-orange-400 p-5 rounded-r-xl mb-6">
+      <p class="font-bold text-orange-900 mb-2">⚠️ POR QUE CICLO E NÃO LINEAR?</p>
+      <p class="text-sm text-gray-800 leading-relaxed">No TikTok, sua live recebe espectadores novos o tempo todo. <strong>A cada 3 minutos, metade das pessoas na sua tela são novas.</strong> Não viram seu hook. Não conhecem o produto. Não sabem o preço. Se você fizer uma "apresentação linear" que começa do início e vai até o fim, quem chega no minuto 30 não tem contexto e sai. Por isso: você reinicia tudo a cada 10-12 minutos.</p>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">Os 5 blocos do ciclo</h3>
+    <div class="space-y-4 mb-8">
+      <div class="block-card bg-white rounded-xl p-5 border-l-4 border-red-400">
+        <div class="flex items-center justify-between mb-2">
+          <p class="font-bold text-red-700">BLOCO 1 · HOOK</p>
+          <p class="text-sm text-gray-500">00:00 – 02:00</p>
+        </div>
+        <p class="text-sm font-semibold mb-2">Capturar quem chegou agora</p>
+        <p class="text-sm text-gray-700">Nada de "oi gente, tudo bem?". Começa com produto na mão + pergunta-problema OU afirmação-resultado. Tem que funcionar mesmo sem áudio (espectador chega no mute).</p>
+      </div>
+      <div class="block-card bg-white rounded-xl p-5 border-l-4 border-amber-400">
+        <div class="flex items-center justify-between mb-2">
+          <p class="font-bold text-amber-700">BLOCO 2 · DEMONSTRAÇÃO</p>
+          <p class="text-sm text-gray-500">02:00 – 05:00</p>
+        </div>
+        <p class="text-sm font-semibold mb-2">Mostrar o produto funcionando</p>
+        <p class="text-sm text-gray-700">Estrutura fixa: <strong>Problema → Produto → Teste → Resultado → Impacto</strong>. Antes/depois em ≤60s. Nunca falar mais de 30s sem mudar visual.</p>
+      </div>
+      <div class="block-card bg-white rounded-xl p-5 border-l-4 border-yellow-400">
+        <div class="flex items-center justify-between mb-2">
+          <p class="font-bold text-yellow-700">BLOCO 3 · OFERTA</p>
+          <p class="text-sm text-gray-500">05:00 – 08:00</p>
+        </div>
+        <p class="text-sm font-semibold mb-2">Apresentar preço de forma que pareça óbvio</p>
+        <p class="text-sm text-gray-700">Sequência fixa: <strong>item único → kit → combo</strong>. Ancorar valor antes do preço. Cupom-de-live é diferente do site.</p>
+      </div>
+      <div class="block-card bg-white rounded-xl p-5 border-l-4 border-green-400">
+        <div class="flex items-center justify-between mb-2">
+          <p class="font-bold text-green-700">BLOCO 4 · CTA</p>
+          <p class="text-sm text-gray-500">08:00 – 10:00</p>
+        </div>
+        <p class="text-sm font-semibold mb-2">Direcionar para sacolinha</p>
+        <p class="text-sm text-gray-700">Repetir CTA <strong>3+ vezes com variação</strong>. Responder objeções de última hora. Ação específica: "clica na sacolinha", "toca no produto fixado".</p>
+      </div>
+      <div class="block-card bg-white rounded-xl p-5 border-l-4 border-purple-400">
+        <div class="flex items-center justify-between mb-2">
+          <p class="font-bold text-purple-700">BLOCO 5 · RESET + GIFT</p>
+          <p class="text-sm text-gray-500">10:00 – 12:00</p>
+        </div>
+        <p class="text-sm font-semibold mb-2">Preparar próximo ciclo + meta de gift</p>
+        <p class="text-sm text-gray-700">Preview do próximo bloco (gancho). Meta de gift COM <strong>recompensa tangível</strong> (cupom, brinde, demonstração extra). Nunca encerrar sem dar razão para ficar.</p>
+      </div>
+    </div>
+
+    <div class="bg-black text-white rounded-xl p-8 text-center">
+      <p class="text-xs text-purple-400 font-bold tracking-wider mb-4">PRINCÍPIO FUNDAMENTAL</p>
+      <p class="text-2xl font-bold leading-snug">"Cada ciclo é uma nova live. Começa do zero. Sempre."</p>
+    </div>
+  </section>
+
+  <!-- I · IMITATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">I</div>
+      <div>
+        <h2 class="text-2xl font-bold">Imitate — Modelar</h2>
+        <p class="text-sm text-gray-500">5 minutos · Ciclo completo modelo</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+      <p class="text-xs text-purple-600 font-bold mb-3">CICLO MODELO — {{hero.name}} · 12 MINUTOS</p>
+
+      <div class="space-y-4">
+        <div class="border-l-4 border-red-400 pl-4">
+          <p class="text-xs text-red-700 font-bold">00:00 — HOOK</p>
+          {{#each hooks.by_type}}
+          {{#if @first}}
+          <p class="text-sm italic text-gray-800 mt-1">"{{text}}"</p>
+          {{/if}}
+          {{/each}}
+        </div>
+        <div class="border-l-4 border-amber-400 pl-4">
+          <p class="text-xs text-amber-700 font-bold">02:00 — DEMONSTRAÇÃO</p>
+          <p class="text-sm italic text-gray-800 mt-1">"{{hero.name}}, {{#each hero.differentials}}{{label}} — {{description}}{{#unless @last}}. {{/unless}}{{/each}}. Aplica, absorve, mostra o resultado."</p>
+        </div>
+        <div class="border-l-4 border-yellow-400 pl-4">
+          <p class="text-xs text-yellow-700 font-bold">05:00 — OFERTA</p>
+          <p class="text-sm italic text-gray-800 mt-1">"No mercado, produto equivalente sai {{formatPrice hero.price_full}}. Aqui na live, com cupom {{live.master_coupon}} que tá ativo agora, sai {{formatPrice hero.price_live}}."</p>
+        </div>
+        <div class="border-l-4 border-green-400 pl-4">
+          <p class="text-xs text-green-700 font-bold">08:00 — CTA</p>
+          <p class="text-sm italic text-gray-800 mt-1">"Clica na sacolinha agora. O produto fixado tá na tela. Pagamento protegido pela TikTok Shop. Toca no ícone embaixo, abre, finaliza."</p>
+        </div>
+        <div class="border-l-4 border-purple-400 pl-4">
+          <p class="text-xs text-purple-700 font-bold">10:00 — RESET + GIFT</p>
+          <p class="text-sm italic text-gray-800 mt-1">"Quem chegou agora: nessa live tô mostrando {{hero.name}}. Em 2 minutos vou repetir a demo. Antes disso: se a gente chegar em 30 gifts, libero cupom EXTRA pra todo mundo — soma com {{live.master_coupon}}. Continua aí."</p>
+        </div>
+      </div>
+
+      <details class="bg-purple-50 rounded-lg p-4 mt-6">
+        <summary class="font-bold text-purple-900">O que você vai imitar ▼</summary>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li>✦ <strong>Bloco 1 abre com a dor da persona</strong> e apresenta o produto na mesma frase.</li>
+          <li>✦ <strong>Bloco 2 segue a estrutura</strong> Problema → Produto → Teste → Resultado → Impacto.</li>
+          <li>✦ <strong>Bloco 3 ancora antes do preço</strong> — primeiro o preço de mercado, depois o da live.</li>
+          <li>✦ <strong>Bloco 4 dá ação específica</strong> + responde 2 objeções sem o chat ter perguntado.</li>
+          <li>✦ <strong>Bloco 5 reabre o ciclo</strong> com preview + meta de gift COM recompensa tangível.</li>
+          <li>✦ <strong>Total: 12 minutos.</strong> Daí começa de novo, com hook diferente.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- V · VERIFY -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">V</div>
+      <div>
+        <h2 class="text-2xl font-bold">Verify — Drillar</h2>
+        <p class="text-sm text-gray-500">12 minutos · Ciclo completo cronometrado</p>
+      </div>
+    </div>
+
+    <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-lg font-bold mb-3">🎯 Drill 3.1 — 1 ciclo completo de {{hero.name}}</h3>
+      <p class="mb-4 text-gray-700">Sem cortar, sem pausar. Câmera ligada (do celular mesmo). Você executa os 5 blocos cronometrados em 12 minutos. Use o roteiro modelo acima como referência — não leia.</p>
+
+      <div class="bg-white rounded-lg p-4 mb-4">
+        <p class="text-sm font-bold mb-2">Sinos a cada bloco (você vai ouvir):</p>
+        <div class="grid grid-cols-1 sm:grid-cols-5 gap-2 text-xs">
+          <div class="bg-red-50 p-2 rounded text-center"><strong>0:00</strong><br>Hook</div>
+          <div class="bg-amber-50 p-2 rounded text-center"><strong>2:00</strong><br>Demo</div>
+          <div class="bg-yellow-50 p-2 rounded text-center"><strong>5:00</strong><br>Oferta</div>
+          <div class="bg-green-50 p-2 rounded text-center"><strong>8:00</strong><br>CTA</div>
+          <div class="bg-purple-50 p-2 rounded text-center"><strong>10:00</strong><br>Reset</div>
+        </div>
+      </div>
+
+      <div class="bg-black text-white rounded-lg p-6 text-center">
+        <p class="text-xs text-purple-300 mb-2">CRONÔMETRO DE CICLO</p>
+        <div class="text-6xl font-black timer-display mb-2" id="timer1">12:00</div>
+        <p class="text-xs text-gray-400 mb-4" id="block-label">Aguardando início</p>
+        <div class="flex gap-2 justify-center flex-wrap">
+          <button onclick="startCycleTimer()" class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-lg font-bold">▶ Comecei o ciclo</button>
+          <button onclick="resetCycleTimer()" class="bg-gray-700 px-6 py-2 rounded-lg font-bold">↻ Refazer</button>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <p class="font-bold mb-3">Conferi e:</p>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Cobri os 5 blocos sem pular nenhum</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Cumpri o tempo de cada bloco (±30s)</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Repeti o CTA pelo menos 3 vezes no bloco 4</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Ancorei o preço antes de falar valor</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>Não falei "oi gente, tudo bem" no bloco 1</span></label>
+        <label class="flex items-start gap-2 mb-2 cursor-pointer"><input type="checkbox" class="mt-1"><span>A meta de gift teve recompensa tangível (não foi só "obrigada")</span></label>
+      </div>
+      <p class="mt-4 text-sm text-purple-700 italic">⚡ Não conseguiu na primeira? Refaz. Não passa pro próximo módulo até bater 6/6 acima.</p>
+    </div>
+  </section>
+
+  <!-- E · EVALUATE -->
+  <section class="mb-16">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 bg-purple-600 text-white font-black rounded-lg flex items-center justify-center text-xl">E</div>
+      <div>
+        <h2 class="text-2xl font-bold">Evaluate — Testar</h2>
+        <p class="text-sm text-gray-500">2 minutos · Quiz de 5 perguntas</p>
+      </div>
+    </div>
+
+    <div id="quiz" class="space-y-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 1 / 5</p>
+        <p class="font-bold mb-4">Por que a live é cíclica e não linear?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Para a Selliver não cansar</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">A cada 3 min, metade da audiência é nova e precisa do contexto inteiro</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Porque o algoritmo do TikTok prefere ciclos</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Por estética visual</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 2 / 5</p>
+        <p class="font-bold mb-4">Qual a sequência correta dos 5 blocos?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">CTA → Hook → Demo → Oferta → Gift</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Hook → Demo → Oferta → CTA → Reset+Gift</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Demo → Hook → Oferta → Gift → CTA</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Oferta → CTA → Demo → Hook → Reset</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 3 / 5</p>
+        <p class="font-bold mb-4">Qual a estrutura interna do bloco de Demonstração?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Apresentação → Marca → Preço → Promoção</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Problema → Produto → Teste → Resultado → Impacto</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Hook → CTA → Oferta → Repetir</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">História pessoal → Produto → Convite</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 4 / 5</p>
+        <p class="font-bold mb-4">Quantas vezes você repete o CTA no bloco 4?</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">1 vez, no fim</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">2 vezes</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">3+ vezes com variação de linguagem</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">10 vezes seguidas</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-gray-100">
+        <p class="text-xs text-purple-600 font-bold mb-2">PERGUNTA 5 / 5</p>
+        <p class="font-bold mb-4">A meta de gift no bloco 5 precisa ter:</p>
+        <div class="space-y-2">
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Apenas um agradecimento bonito</button>
+          <button onclick="answer(this, true)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Recompensa tangível para a audiência (cupom, brinde, demo extra)</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Uma promessa vaga de "vai ter surpresa"</button>
+          <button onclick="answer(this, false)" class="quiz-option w-full text-left p-3 border border-gray-200 rounded-lg">Apelo emocional</button>
+        </div>
+      </div>
+
+      <div id="quiz-score" class="hidden bg-purple-50 border-2 border-purple-300 rounded-xl p-6 text-center">
+        <p class="text-xs text-purple-600 font-bold mb-2">SEU RESULTADO</p>
+        <p id="score-text" class="text-3xl font-bold mb-2"></p>
+        <p id="score-message" class="text-sm text-gray-700"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <div class="bg-white border-2 border-purple-200 rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-4">✅ Pode passar para o Módulo 4 se:</h3>
+      <div class="space-y-3 mb-6">
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Acertei pelo menos 4 das 5 perguntas</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Completei 1 ciclo de 12 min cobrindo os 5 blocos</span></label>
+        <label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" class="mt-1 final-check"><span>Sei a sequência de cor: Hook → Demo → Oferta → CTA → Reset+Gift</span></label>
+      </div>
+      <button id="next-btn" disabled class="w-full bg-gray-300 text-gray-500 cursor-not-allowed font-bold py-4 rounded-lg">Marca os 3 acima para liberar próximo módulo</button>
+    </div>
+  </section>
+
+  <footer class="text-center text-xs text-gray-400 py-8">{{brand.name}} · Curso Selliver · Método LIVE™ · Módulo {{module.number}} de {{module.total}}</footer>
+</main>
+
+<script type="text/plain" id="tts-script">
+Bem-vinda ao módulo três.
+Esse é o módulo mais importante do curso. Se você sair daqui entendendo o ciclo, sabe fazer live.
+
+Antes de eu te dar a estrutura, presta atenção no problema que ela resolve.
+Você liga a câmera. Tem dez pessoas. Você fala. Cinco minutos depois tem trinta pessoas — vinte são novas.
+Mais dez minutos, tem cinquenta pessoas — quarenta são novas.
+Se você tratar a live como uma apresentação linear, quem chegou no minuto vinte não tem contexto. Não sabe o produto. Não sabe o preço. E sai.
+
+A solução é o ciclo. Você refaz a apresentação completa a cada dez a doze minutos.
+Cada ciclo é uma nova live. Decora isso.
+
+O ciclo tem cinco blocos.
+
+Bloco um. HOOK. Zero a dois minutos.
+Sua função: capturar quem chegou agora.
+Nada de oi gente tudo bem. Você começa com o produto na mão. Funciona até no mute.
+
+Bloco dois. DEMONSTRAÇÃO. Dois a cinco minutos.
+Sua função: mostrar o produto funcionando. Não descrever — mostrar.
+Estrutura fixa: Problema, Produto, Teste, Resultado, Impacto. Decora essa sequência.
+
+Bloco três. OFERTA. Cinco a oito minutos.
+Sua função: apresentar o preço de forma que pareça óbvio.
+Sequência: item único, depois kit, depois combo. Sempre nessa ordem.
+Antes do preço, ANCORA. Diz quanto custa similar no mercado.
+
+Bloco quatro. CTA. Oito a dez minutos.
+Sua função: levar pra sacolinha.
+Repete o CTA três vezes com variação. Ação específica: clica na sacolinha.
+
+Bloco cinco. RESET MAIS GIFT. Dez a doze minutos.
+Sua função: preparar o próximo ciclo e ativar gift.
+Preview do que vem. Meta de gift COM RECOMPENSA TANGÍVEL. Não é "obrigada" — é cupom extra ou demonstração extra.
+
+Doze minutos. Reinicia.
+Próximo ciclo, hook diferente. Mesmo produto, mesma estrutura, abordagem nova.
+
+Frase pra memorizar: cada ciclo é uma nova live. Começa do zero. Sempre.
+
+Agora você vai executar um ciclo cronometrado em câmera. Doze minutos. Sem pular blocos.
+Vamos.
+</script>
+
+{{> scripts-engine}}
+
+<script>
+  initQuiz(5);
+  setupApproval('04-Hooks.html');
+
+  function startCycleTimer() {
+    if (timers.timer1) clearInterval(timers.timer1);
+    let s = 720;
+    const e = document.getElementById('timer1');
+    const lbl = document.getElementById('block-label');
+    const blocks = [
+      {at:720, label:'BLOCO 1 · HOOK', color:'text-red-300'},
+      {at:600, label:'BLOCO 2 · DEMONSTRAÇÃO', color:'text-amber-300'},
+      {at:420, label:'BLOCO 3 · OFERTA', color:'text-yellow-300'},
+      {at:240, label:'BLOCO 4 · CTA', color:'text-green-300'},
+      {at:120, label:'BLOCO 5 · RESET + GIFT', color:'text-purple-300'}
+    ];
+    const u = () => {
+      const m = String(Math.floor(s/60)).padStart(2,'0'), x = String(s%60).padStart(2,'0');
+      e.textContent = `${m}:${x}`;
+      const current = blocks.find(b => s <= b.at) || blocks[0];
+      lbl.textContent = current.label;
+      lbl.className = `text-sm font-bold mb-4 ${current.color}`;
+      if (blocks.find(b => b.at === s+1)) { navigator.vibrate && navigator.vibrate(150); }
+      if (s <= 0) {
+        clearInterval(timers.timer1);
+        e.classList.add('text-red-500');
+        e.textContent = '⏰ FIM DO CICLO!';
+        lbl.textContent = 'Repete cobrindo todos os 5 blocos.';
+        navigator.vibrate && navigator.vibrate([300,100,300,100,300]);
+      }
+      s--;
+    };
+    u();
+    timers.timer1 = setInterval(u, 1000);
+  }
+
+  function resetCycleTimer() {
+    if (timers.timer1) clearInterval(timers.timer1);
+    const e = document.getElementById('timer1');
+    e.textContent = '12:00';
+    e.classList.remove('text-red-500');
+    document.getElementById('block-label').textContent = 'Aguardando início';
+    document.getElementById('block-label').className = 'text-xs text-gray-400 mb-4';
+  }
+</script>
+
+</body>
+</html>

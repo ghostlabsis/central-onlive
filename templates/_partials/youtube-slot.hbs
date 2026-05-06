@@ -1,0 +1,36 @@
+<!-- Slot de vídeo YouTube — auto-carrega de videos.json -->
+<div id="yt-slot" class="mb-8 hidden">
+  <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <div class="px-5 py-3 bg-gradient-to-r from-purple-50 to-pink-50 border-b">
+      <p class="text-xs text-purple-600 font-bold tracking-wider">🎥 VÍDEO — {{module.title}}</p>
+    </div>
+    <div class="aspect-video bg-black" id="yt-iframe-wrap"></div>
+  </div>
+</div>
+
+<div id="yt-empty" class="mb-8 bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hidden">
+  <p class="text-3xl mb-2">📹</p>
+  <p class="text-sm text-gray-600">Vídeo ainda não disponível para esse módulo.</p>
+  <p class="text-xs text-gray-400 mt-1">Continua com a narração e slides abaixo — o vídeo é complementar.</p>
+</div>
+
+<script>
+(function() {
+  const moduleNum = '{{module.number_padded}}';
+  fetch('videos.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : {})
+    .then(videos => {
+      const url = videos[moduleNum] || '';
+      const ytId = (url.match(/(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/) || [])[1];
+      if (ytId) {
+        document.getElementById('yt-slot').classList.remove('hidden');
+        document.getElementById('yt-iframe-wrap').innerHTML =
+          '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' + ytId + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      } else {
+        // Quando deploy estável: mostra o "vazio". Durante MVP, esconde tudo
+        // document.getElementById('yt-empty').classList.remove('hidden');
+      }
+    })
+    .catch(() => {});
+})();
+</script>
