@@ -16,7 +16,7 @@
     }
   ],
   "functions": {
-    "api/generate-course.ts": {
+    "pages/api/generate-course.ts": {
       "maxDuration": 300
     }
   }
