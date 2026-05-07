@@ -18,7 +18,12 @@ const DEFAULT_DATA = {
   ],
 };
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  // Se x-admin-password está presente, valida antes de retornar
+  const pass = req.headers.get('x-admin-password');
+  if (pass && pass !== process.env.ADMIN_PASSWORD) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401, headers: CORS });
+  }
   try {
     const { blobs } = await list({ prefix: BLOB_KEY });
     if (!blobs.length) return NextResponse.json(DEFAULT_DATA, { headers: CORS });
