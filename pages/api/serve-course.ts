@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { head } from '@vercel/blob';
+import { list } from '@vercel/blob';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { selliver, data, module: mod } = req.query;
@@ -16,7 +16,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const blobPath = `courses/${slug}/${date}/${rawFile}`;
 
   try {
-    const blob = await head(blobPath).catch(() => null);
+    // list() aceita pathname como prefix — head() exige URL completa do blob
+    const { blobs } = await list({ prefix: blobPath, limit: 1 });
+    const blob = blobs.find((b) => b.pathname === blobPath);
+
     if (!blob) {
       return res.status(404).send(`Arquivo não encontrado: ${blobPath}`);
     }
