@@ -1,0 +1,662 @@
+{
+  "$schema": "../schemas/course-data.json",
+  "version": "1.0",
+  "template_version": "v1.0",
+  "generated_at": "2026-05-07T01:31:01.382Z",
+  "selliver": {
+    "slug": "kerollen",
+    "name": "Kerollen",
+    "level": "iniciante",
+    "previous_lives": 0,
+    "whatsapp": "+5511977777777"
+  },
+  "live": {
+    "date": "2026-05-07",
+    "time": "19:00",
+    "duration_min": 90,
+    "context": "regular",
+    "master_coupon": "MASCARALIVE",
+    "schedule": [
+      {
+        "d": -5,
+        "label": "T-5d",
+        "modules": [
+          1,
+          2
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -4,
+        "label": "T-4d",
+        "modules": [
+          3
+        ],
+        "duration_min": 20
+      },
+      {
+        "d": -3,
+        "label": "T-3d",
+        "modules": [
+          4,
+          5
+        ],
+        "duration_min": 35
+      },
+      {
+        "d": -2,
+        "label": "T-2d",
+        "modules": [
+          6,
+          7
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -1,
+        "label": "T-1d",
+        "modules": [
+          8,
+          9
+        ],
+        "duration_min": 40
+      }
+    ]
+  },
+  "hero": {
+    "name": "Máscara LED Facial 7 Cores Fototerapia Tratamento De Pele",
+    "category": "cosmeticos",
+    "price_full": 139.94,
+    "price_live": 132,
+    "extra_coupon": "",
+    "stock": 50,
+    "differentials": [
+      {
+        "label": "7 Comprimentos de Onda",
+        "description": "7 cores LED distintas (630nm vermelho, 470nm azul, 590nm amarelo, 520nm verde, roxo, ciano e branco) — cada uma com função específica para a pele"
+      },
+      {
+        "label": "Sem Fio e Recarregável",
+        "description": "Carregamento USB, design leve e sem cabos — permite uso livre durante o descanso sem prender a usuária a uma tomada"
+      },
+      {
+        "label": "Sessão de 10–15 min",
+        "description": "Temporizador automático integrado para sessões de 10 a 15 minutos, 3–4x por semana, com resultados visíveis sugeridos entre 4 e 8 semanas de uso consistente"
+      }
+    ],
+    "main_objection": "Funciona mesmo ou é só luz colorida que não faz nada?",
+    "key_phrase": "Máscara LED Facial 7 Cores Fototerapia Tratamento De Pele 7 cores LED distintas (630nm vermelho, 470nm azul, 590nm amarelo, 520nm verde, roxo, ciano e branco) — cada uma com função específica para a pele para quem Minha pele tá apagada. Não é problema sério, mas ela perdeu o viço que tinha. Tô cansada de comprar produto e não ver diferença.."
+  },
+  "secondary_products": [],
+  "persona": {
+    "fictional_name": "Fernanda",
+    "age": 37,
+    "city": "São Paulo, SP — Zona Sul",
+    "class": "C+ | B-",
+    "occupation": "Analista administrativa em empresa de médio porte, home office 3x por semana",
+    "income_monthly": 4800,
+    "kids": 1,
+    "routine": "Acorda às 6h30, leva filho à escola, trabalha das 8h às 17h30. Skincare básico: sabonete + vitamina C + protetor solar de manhã. À noite: cansaço vence a rotina 3 em cada 5 dias. Assiste TikTok das 20h às 22h na cama. Compra online todo mês — confia em review e prefere ver produto em uso antes de comprar.",
+    "main_pain_quote": "Minha pele tá apagada. Não é problema sério, mas ela perdeu o viço que tinha. Tô cansada de comprar produto e não ver diferença.",
+    "phrases_that_resonate": [
+      "Sem sair de casa e sem gastar com clínica",
+      "Dez minutos e já era — coloca e esquece",
+      "Não é promessa, é o que a ciência diz que pode acontecer",
+      "Compara antes de comprar — vê aqui ao vivo"
+    ],
+    "phrases_to_avoid": [
+      "Revolução na sua pele",
+      "Resultados surpreendentes em poucos dias",
+      "Você merece se cuidar"
+    ],
+    "buying_triggers": [
+      "Ver o produto sendo usado ao vivo por alguém real — não modelo",
+      "Comparativo de custo vs clínica — perceber que é mais barato no longo prazo",
+      "Honestidade sobre o que não funciona — quando o vendedor fala o que o produto NÃO faz, ela confia mais"
+    ],
+    "best_live_time": "20h às 22h em dias úteis — especialmente terça a quinta"
+  },
+  "hooks": {
+    "by_type": [
+      {
+        "type": "pergunta-problema",
+        "text": "Sua pele tá fazendo o que você manda ou tá no piloto automático há meses? A máscara LED aqui é pra quem quer dar um próximo passo de verdade — fica aqui 3 minutos."
+      },
+      {
+        "type": "afirmacao-resultado",
+        "text": "Fototerapia LED saiu dos consultórios. Sete comprimentos de onda, sem fio, dez minutos, em casa. Eu testei ao vivo — deixa eu mostrar o que cada cor faz."
+      },
+      {
+        "type": "curiosidade",
+        "text": "Por que 630nm e não 650nm? A diferença de 20 nanômetros muda o que acontece dentro da célula da pele. Explico em 60 segundos."
+      },
+      {
+        "type": "polemica-leve",
+        "text": "Máscara LED não faz nada — já ouvi isso. Quem fala isso nunca viu a ficha técnica do comprimento de onda. Vem comparar ao vivo."
+      },
+      {
+        "type": "prova-social",
+        "text": "Cinquenta unidades em estoque hoje. Não é urgência inventada — quando acabar, não sei quando volta. Testei ao vivo pra você decidir com informação."
+      },
+      {
+        "type": "comparacao-visual",
+        "text": "Olha aqui: sessão de fototerapia em clínica, R$150 por sessão. Essa máscara, R$132 uma vez. Você vê a diferença — agora deixa eu mostrar o que ela faz ao vivo."
+      }
+    ],
+    "rotation_plan": [
+      {
+        "cycle": 1,
+        "type": "pergunta-problema"
+      },
+      {
+        "cycle": 2,
+        "type": "afirmacao-resultado"
+      },
+      {
+        "cycle": 3,
+        "type": "comparacao-visual"
+      },
+      {
+        "cycle": 4,
+        "type": "polemica-leve"
+      },
+      {
+        "cycle": 5,
+        "type": "curiosidade"
+      },
+      {
+        "cycle": 6,
+        "type": "prova-social"
+      },
+      {
+        "cycle": 7,
+        "type": "pergunta-problema"
+      }
+    ]
+  },
+  "objections_pool": [
+    {
+      "q": "Funciona mesmo ou é só efeito placebo?",
+      "a": "Fototerapia LED tem mecanismo biológico documentado — citocromo c oxidase mitocondrial absorve o fóton. Não é placebo, é fotobiologia. Pesquisa 'LLLT skin PubMed' e confere."
+    },
+    {
+      "q": "É caro demais pra uma máscara",
+      "a": "Uma sessão em clínica custa R$150+. Aqui são R$132 uma vez pra quantas sessões quiser. Faz a conta."
+    },
+    {
+      "q": "Demora quanto pra chegar?",
+      "a": "Prazo de entrega tá na página do produto. TikTok Shop tem rastreio — acompanha pelo app."
+    },
+    {
+      "q": "E se não funcionar pra mim?",
+      "a": "Resultado estético varia por pessoa — não existe garantia de resultado igual pra todo mundo. Política de devolução tá no TikTok Shop se o produto vier com defeito."
+    },
+    {
+      "q": "Tem igual mais barato no Shopee",
+      "a": "Pode ter. Compara o comprimento de onda declarado em nm e se tem nota fiscal. Produto sem especificação técnica não é o mesmo produto."
+    },
+    {
+      "q": "Queima a pele?",
+      "a": "LED de baixa intensidade não aquece nem queima pele saudável. Olhos: usa o protetor que vem no kit. Pele com ferida aberta: não usa."
+    },
+    {
+      "q": "Posso usar todo dia?",
+      "a": "Protocolo recomendado é 3 a 4 vezes por semana, não todo dia. Consistência no protocolo certo é o que importa."
+    },
+    {
+      "q": "Serve pra acne?",
+      "a": "Pode auxiliar no aspecto estético da pele oleosa — não é tratamento de acne. Acne como condição: precisa de dermatologista."
+    },
+    {
+      "q": "Posso usar grávida?",
+      "a": "Não há estudos de segurança suficientes para uso na gravidez. Por precaução: não recomendo sem autorização do médico."
+    },
+    {
+      "q": "A bateria dura quanto tempo?",
+      "a": "Autonomia por carga — verificar com o fornecedor e testar ao vivo. Carregamento USB igual ao celular."
+    },
+    {
+      "q": "Qual cor eu uso pra manchas?",
+      "a": "Sem indicação terapêutica específica por cor pra manchas — esse é claim que vai além do cosmético. Verde e amarelo são usados em protocolos estéticos de uniformidade de tom."
+    },
+    {
+      "q": "Tem garantia?",
+      "a": "Garantia conforme política do TikTok Shop e CDC — defeito de fabricação coberto. Tá na página do produto."
+    }
+  ],
+  "scenarios_pool": [
+    {
+      "situation": "Ninguém mandou mensagem no chat há 2 minutos",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Fazer pergunta direta e simples que exige só uma palavra de resposta",
+      "phrase": "Faz uma coisa pra mim: manda aqui no chat, você já ouviu falar em fototerapia LED antes? Só responde sim ou não."
+    },
+    {
+      "situation": "Visualizações caíram de repente no meio da live",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Mudar de demo imediatamente e recomeçar o contexto do zero como se a audiência fosse nova",
+      "phrase": "Pra quem acabou de chegar: eu tô testando ao vivo uma máscara LED de 7 cores aqui. Deixa eu mostrar o que cada cor faz em 60 segundos."
+    },
+    {
+      "situation": "Alguém pergunta sobre comprimento de onda específico e mecanismo celular",
+      "type": "B3 · TÉCNICO",
+      "action": "Responder com o mecanismo real sem exagerar — citar citocromo c oxidase e remeter a PubMed",
+      "phrase": "Boa pergunta técnica. O 630nm é absorvido pelo citocromo c oxidase nas mitocôndrias — isso aumenta produção de ATP celular. Pesquisa 'LLLT cytochrome c oxidase' no PubMed, tá publicado."
+    },
+    {
+      "situation": "Pessoa diz 'isso é golpe' ou 'é produto falso' no chat",
+      "type": "B4 · TROLL",
+      "action": "Responder uma vez com calm e redirecionar para a demo — não entrar em debate",
+      "phrase": "Entendo a desconfiança — é o certo fazer. Nota fiscal na compra, especificação técnica na página. Quem quiser conferir, confere. Eu sigo mostrando ao vivo."
+    },
+    {
+      "situation": "Muitas perguntas sobre resultado rápido / 'em quantos dias funciona'",
+      "type": "B3 · TÉCNICO",
+      "action": "Pausar a demo e endereçar expectativa de tempo com honestidade antes de continuar",
+      "phrase": "Vou parar aqui e ser direta: resultado em 1 semana não é real. Protocolo honesto é 4 a 8 semanas de uso consistente. Quem tá disposta a isso, vale o teste. Quem quer resultado rápido, este produto não é pra você."
+    },
+    {
+      "situation": "Pico de audiência — muita gente chegando ao mesmo tempo",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Voltar ao hook zero e apresentar o produto do começo para a nova audiência",
+      "phrase": "Muita gente chegando agora — vou recomeçar. Estou testando ao vivo uma máscara LED facial de 7 comprimentos de onda. Cada cor age diferente na pele. Deixa eu mostrar."
+    },
+    {
+      "situation": "Alguém pede comparação direta com marca famosa pelo nome",
+      "type": "B3 · TÉCNICO",
+      "action": "Não citar o nome da marca — fazer comparação técnica genérica",
+      "phrase": "Não vou citar marca específica aqui — o que eu posso comparar é a ficha técnica. 7 comprimentos de onda calibrados em nm, timer automático, sem fio, nessa faixa de preço. Compara a especificação, não o nome."
+    },
+    {
+      "situation": "Silêncio total após anunciar o preço",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Fazer ancoragem de preço imediata com comparativo de clínica antes que a audiência saia",
+      "phrase": "Eu sei o que tá passando na cabeça de vocês. R$132. Deixa eu colocar em perspectiva: uma sessão de fototerapia em clínica custa R$150. Só uma. Aqui são quantas sessões você quiser em casa. Manda no chat: faz sentido ou não faz?"
+    }
+  ],
+  "pss10": {
+    "dim1_identidade": {
+      "nome_oficial": "Máscara LED Facial 7 Cores Fototerapia Tratamento De Pele",
+      "marca": {
+        "nome": "[verificar com fornecedor]",
+        "fundacao": "[verificar com fornecedor]",
+        "fabricacao_cidade_uf": "[verificar com fornecedor]",
+        "posicionamento_curto": "Dispositivo de fototerapia doméstica com 7 comprimentos de onda para cuidados estéticos da pele"
+      },
+      "categoria_tiktok_shop": "Beauty > Skincare > Dispositivos & Ferramentas",
+      "registro_regulatorio": {
+        "tipo": "ANVISA",
+        "categoria": "Equipamento eletromédico de uso doméstico para fins estéticos — verificar se enquadrado como cosmético ou equipamento",
+        "numero_processo": "[verificar com fornecedor]"
+      },
+      "perguntas_chat_e_respostas": [
+        {
+          "pergunta": "É de marca confiável?",
+          "resposta_10s": "Fabricante verificado antes de eu trazer aqui. Número ANVISA tá na descrição do produto — confere lá."
+        },
+        {
+          "pergunta": "Tem ANVISA?",
+          "resposta_10s": "Produto de uso estético doméstico. Registro regulatório no link — abre a descrição e vê você mesmo."
+        },
+        {
+          "pergunta": "Onde é feito?",
+          "resposta_10s": "Origem confirmada com o fornecedor — informação completa na página do produto. Compra só com essa info clara."
+        }
+      ]
+    },
+    "dim2_ciencia": {
+      "ativo_principal": {
+        "nome_tecnico": "Fototerapia LED de baixa intensidade (LLLT — Low-Level Light Therapy)",
+        "nome_popular": "Luz LED terapêutica para pele",
+        "concentracao": "7 comprimentos de onda: 630nm (vermelho), 470nm (azul), 590nm (amarelo), 520nm (verde), ~400+630nm (roxo), ~470+590nm (ciano), luz branca de espectro amplo"
+      },
+      "por_que_essa_concentracao": "Em fototerapia, o que importa não é concentração química mas o comprimento de onda (nm) e a densidade de potência. Faixa abaixo de 600nm (azul, 470nm) penetra camadas superficiais — atinge sebáceas. Faixa de 600–700nm (vermelho, 630nm) penetra até 2–3mm — alcança derme superficial onde estão fibroblastos. Acima de 700nm (infravermelho próximo) vai mais fundo — esta máscara opera na faixa visível sem IR. O 630nm é o comprimento de onda com maior evidência publicada para estímulo fibroblástico em uso doméstico. A máscara cobre o espectro completo visível, permitindo alternar protocolos por cor conforme o objetivo da sessão.",
+      "forma_quimica": "Emissão fotônica direta via LEDs semicondutores — não há substância química ativa; o mecanismo é fotobiológico: fótons de comprimento de onda específico são absorvidos por fotorreceptores celulares (principalmente citocromo c oxidase nas mitocôndrias), desencadeando cascatas bioquímicas intracelulares.",
+      "por_que_essa_embalagem": "Design máscara facial rígida cobre toda a superfície do rosto de forma uniforme, garantindo exposição simultânea de testa, bochechas, nariz e queixo. Sem fio e recarregável via USB elimina dependência de tomada durante os 10–15 min de sessão. Material leve reduz desconforto pelo tempo de uso.",
+      "mecanismo_de_acao": {
+        "tecnico_1_frase": "Fótons dos LEDs são absorvidos pelo citocromo c oxidase mitocondrial, aumentando a produção de ATP celular e modulando espécies reativas de oxigênio, o que pode estimular proliferação de fibroblastos e reduzir marcadores inflamatórios em tecido dérmico.",
+        "popular_pra_persona": "A luz entra na pele, estimula as células a trabalharem mais — elas produzem mais energia, o que pode deixar a pele com aspecto mais firme e uniforme ao longo do tempo. Cada cor age numa camada diferente."
+      },
+      "tempo_ate_resultado_visivel": [
+        {
+          "marco": "1-7 dias",
+          "o_que_acontece": "Sensação imediata de relaxamento durante a sessão; possível sensação de pele mais suave logo após (efeito circulatório local). Nenhuma mudança estrutural ainda."
+        },
+        {
+          "marco": "30 dias",
+          "o_que_acontece": "RESULTADO MENSURÁVEL: Com uso consistente de 3-4x por semana, estudos de LLLT doméstica relatam percepção de melhora na uniformidade do tom e redução de aspecto de oleosidade. Alguns usuários reportam aparência de linhas finas menos marcadas."
+        },
+        {
+          "marco": "60 dias",
+          "o_que_acontece": "Protocolo completo de 8 semanas: janela de tempo citada em literatura de dispositivos domésticos de LED para percepção de melhora de textura e aspecto geral de luminosidade. Manutenção requer uso contínuo — o efeito não é permanente."
+        }
+      ],
+      "limites_do_produto": [
+        "NÃO trata acne como condição médica — pode auxiliar no aspecto estético, não substitui dermatologista",
+        "NÃO elimina rugas — auxilia na aparência de suavização de linhas finas com uso regular",
+        "NÃO substitui procedimentos clínicos como laser fracionado, radiofrequência profissional ou peelings médicos",
+        "NÃO tem efeito permanente — resultado depende de uso contínuo e rotina de skincare complementar",
+        "NÃO funciona igual para todos os fototipos e condições de pele — resultados variam"
+      ],
+      "frase_coringa_se_questionarem": "Pesquisa em PubMed por 'low level light therapy skin fibroblast' se quiser conferir os estudos publicados."
+    },
+    "dim3_experiencia_selliver_template": {
+      "instrucao": "Kerollen preenche após 30 dias de teste pessoal — IA não inventa nenhum número ou sensação",
+      "campos_obrigatorios": [
+        "dias_de_teste",
+        "onde_aplicou (rosto inteiro / testa / bochechas / queixo)",
+        "frequencia (quantas vezes por semana e qual cor usou mais)",
+        "foto_d0_url (foto frente, luz natural, sem filtro)",
+        "foto_d30_url (mesma condição de luz)",
+        "o_que_mudou_mensuravel (3-5 itens: ex. pele pareceu mais uniforme / oleosidade aparente reduziu / linhas menos marcadas — ser específica e honesta)",
+        "o_que_NAO_mudou (HONESTIDADE · 2-3 itens: ex. manchas profundas continuaram iguais / poro não fechou visivelmente)",
+        "sensorial_textura (descrever como a máscara encosta no rosto — peso, pressão, conforto)",
+        "sensorial_cheiro (produto não tem cheiro? confirmar)",
+        "sensorial_temperatura_led (aquecer? fria? neutra?)",
+        "sensorial_visao_com_mascara (dá pra ver alguma coisa com os olhos fechados? intensidade da luz)",
+        "rendimento_carga_por_sessao (quantas sessões por carga USB antes de precisar recarregar)"
+      ]
+    },
+    "dim4_para_quem_e_nao_e": {
+      "persona_alvo_1_frase": "Mulher de 30-50 anos com rotina de skincare estabelecida que quer complementar os cuidados em casa sem sair para clínica toda semana.",
+      "3_perfis_que_vao_amar": [
+        {
+          "perfil": "Quem já faz skincare básico e quer dar um próximo passo sem gastar com clínica",
+          "por_que": "A máscara encaixa na rotina existente como passo extra de 10-15 min, sem comprar mais produto topico"
+        },
+        {
+          "perfil": "Quem tem pele oleosa e quer aparência mais uniforme sem produtos comedogênicos",
+          "por_que": "Luz azul (470nm) e amarela (590nm) são usadas em protocolos estéticos para pele oleosa sem adicionar substância à pele"
+        },
+        {
+          "perfil": "Quem viaja ou tem agenda apertada e não quer depender de agenda de clínica",
+          "por_que": "Sem fio, cabe na mala, sessão de 10 min — usa em casa, hotel, qualquer lugar com USB"
+        }
+      ],
+      "2_perfis_que_NAO_vao": [
+        {
+          "perfil": "Quem tem acne inflamatória severa ou rosácea diagnosticada",
+          "alternativa_recomendada": "Consultar dermatologista antes de qualquer dispositivo de luz — o profissional vai indicar o protocolo certo para o grau da condição"
+        },
+        {
+          "perfil": "Quem espera resultado rápido em 1-2 semanas e não tem disciplina de uso regular",
+          "alternativa_recomendada": "Produto não é pra essa expectativa — buscar tratamento clínico pontual é mais adequado para quem não vai manter rotina"
+        }
+      ],
+      "restricao_medica_explicita": [
+        "Não usar sobre pele com feridas abertas, queimaduras ou lesões ativas",
+        "Fotossensibilidade medicamentosa: quem usa retinóides, doxiciclina ou outros fotossensibilizantes deve consultar médico antes",
+        "Epilepsia fotossensível: luz pulsada pode ser contraindica — verificar com médico",
+        "Gravidez: não há estudos de segurança suficientes — evitar por precaução",
+        "Olhos: nunca usar sem os protetores oculares incluídos no kit — nunca apontar LEDs diretamente para os olhos"
+      ],
+      "frase_demonstracao_decorar": "Esse aqui não é pra todo mundo. Pra quem já tem rotina de skincare e quer o próximo nível em casa, vale o teste. Pra quem tem acne severa ou condição dermatológica ativa, primeiro o dermatologista."
+    },
+    "dim5_5_pontos_de_venda": {
+      "pontos": [
+        {
+          "n": 1,
+          "beneficio": "7 comprimentos de onda em um único dispositivo — não é só 'luz vermelha'",
+          "prova_concreta": "630nm vermelho (fibroblasto dérmico) · 470nm azul (superficial sebáceo) · 590nm amarelo (aspecto de uniformidade) · 520nm verde · roxo · ciano · branco — cada um com função publicada em literatura de fototerapia",
+          "demo_associada": "Demo 1 — Apresentação das 7 cores ao vivo com câmera close na máscara"
+        },
+        {
+          "n": 2,
+          "beneficio": "Sem fio e recarregável — liberdade total durante os 10-15 min de sessão",
+          "prova_concreta": "Carregamento USB igual ao celular. Testei ao vivo: coloco a máscara, ando pela casa, deito, sem cabo prendendo em lugar nenhum.",
+          "demo_associada": "Demo 2 — Uso ao vivo com movimento livre sem cabo"
+        },
+        {
+          "n": 3,
+          "beneficio": "Temporizador automático — não precisa ficar olhando no relógio",
+          "prova_concreta": "Liga, coloca no rosto, ele desliga sozinho em 10-15 min. Consistência é o que garante resultado em fototerapia — o timer ajuda a não pular.",
+          "demo_associada": "Demo 3 — Ligar e mostrar o timer funcionando"
+        },
+        {
+          "n": 4,
+          "beneficio": "Cobre todo o rosto simultaneamente — nenhuma área esquecida",
+          "prova_concreta": "Design máscara rígida: testa, bochechas, nariz e queixo recebem luz ao mesmo tempo. Compare ao vivo com um dispositivo pontual — aqui não precisa ficar passando.",
+          "demo_associada": "Demo 4 — Colocar a máscara ao vivo e mostrar cobertura total"
+        },
+        {
+          "n": 5,
+          "beneficio": "Complementa qualquer rotina de skincare sem substituir o que já funciona",
+          "prova_concreta": "Usa depois da limpeza, antes do hidratante. Não adiciona produto na pele. Encaixa em 15 min numa rotina que já existe.",
+          "demo_associada": "Demo 5 — Mostrar a sequência: limpeza → máscara LED → hidratante"
+        }
+      ],
+      "frase_ancora_8_palavras": "Sete cores, uma máscara, resultado que dá pra ver."
+    },
+    "dim6_plano_de_demo": {
+      "demos": [
+        {
+          "n": 1,
+          "nome": "As 7 cores ao vivo — o que cada uma faz",
+          "duracao_segundos": 90,
+          "ciclo_da_live": 1,
+          "setup": "Máscara carregada na mão, câmera em close frontal. Ligar cada cor separadamente e apontar para câmera.",
+          "script_bullets": [
+            "Segura a máscara virada pra câmera — vocês vão ver cada cor",
+            "Vermelho 630nm — essa é a profunda. É a cor com mais pesquisa publicada pra fibroblasto dérmico",
+            "Azul 470nm — essa trabalha superficial. É o protocolo clássico pra pele oleosa",
+            "Amarelo 590nm — sensação de uniformidade e aspecto de luminosidade",
+            "Verde, roxo, ciano, branco — espectro completo. Não é luz decorativa, cada uma tem função",
+            "Confia no teste: eu vou usar ao vivo agora mesmo"
+          ],
+          "frase_chave_decorar": "Não é só luz colorida. Cada nanômetro tem função. Testei ao vivo pra vocês verem.",
+          "angulo_camera": "Close frontal na máscara mostrando emissão de luz de cada cor separadamente",
+          "erro_a_evitar": "Não ligar todas as cores de uma vez sem explicar — perde o ponto de venda do 7 em 1"
+        },
+        {
+          "n": 2,
+          "nome": "Uso ao vivo — coloca e mostra movimento sem cabo",
+          "duracao_segundos": 60,
+          "ciclo_da_live": 2,
+          "setup": "Máscara carregada. Protetores oculares incluídos (se houver). Câmera aberta mostrando corpo inteiro ou meio corpo.",
+          "script_bullets": [
+            "Vou colocar ao vivo pra vocês verem como encaixa no rosto",
+            "Olha: sem cabo. Posso andar, deitar, mexer o braço — não prende em lugar nenhum",
+            "Timer automático já tá rodando — 10 a 15 minutos e desliga sozinho",
+            "Isso é o que permite consistência: você coloca e esquece",
+            "Três a quatro vezes por semana, esse é o protocolo"
+          ],
+          "frase_chave_decorar": "Coloco, esqueço por 10 minutos, tiro. É assim que mantém a consistência sem esforço.",
+          "angulo_camera": "Câmera afastada mostrando máscara no rosto e movimento livre dos braços sem cabo visível",
+          "erro_a_evitar": "Não ficar parada como estátua — mostrar que é sem fio implica mostrar movimento"
+        },
+        {
+          "n": 3,
+          "nome": "Timer automático — consistência sem depender de você",
+          "duracao_segundos": 45,
+          "ciclo_da_live": 3,
+          "setup": "Máscara na mão. Ligar e mostrar o temporizador funcionando.",
+          "script_bullets": [
+            "Fototerapia depende de consistência — isso todo estudo confirma",
+            "O que quebra consistência? Esquecer de tirar, não saber quanto tempo ficou",
+            "O timer resolve isso: você liga, coloca, ele desliga sozinho",
+            "Compara ao vivo: cronômetro do celular vs timer integrado — qual você vai lembrar de usar?"
+          ],
+          "frase_chave_decorar": "A tecnologia tira a responsabilidade de você lembrar. Liga e esquece.",
+          "angulo_camera": "Close no dispositivo mostrando o indicador de tempo ou o desligamento automático",
+          "erro_a_evitar": "Não afirmar que o timer garante resultado — ele garante consistência de uso, não resultado"
+        },
+        {
+          "n": 4,
+          "nome": "Cobertura facial total — compare com pontual",
+          "duracao_segundos": 60,
+          "ciclo_da_live": 4,
+          "setup": "Máscara no rosto + um objeto pequeno (caneta, batom) pra simular dispositivo pontual. Câmera frontal.",
+          "script_bullets": [
+            "Com dispositivo pontual você trata uma área de cada vez",
+            "Com a máscara: testa, bochechas, nariz e queixo ao mesmo tempo",
+            "Mesmos 10 minutos — mas cobertura total vs cobertura parcial",
+            "Pra resultado uniforme no rosto inteiro, cobertura completa faz diferença",
+            "Coloca a máscara ao vivo — vocês veem o encaixe"
+          ],
+          "frase_chave_decorar": "Dez minutos, rosto inteiro. Não tem área esquecida.",
+          "angulo_camera": "Frontal mostrando a máscara cobrindo toda a face ao ser colocada",
+          "erro_a_evitar": "Não citar marca de dispositivo pontual — comparação genérica apenas"
+        },
+        {
+          "n": 5,
+          "nome": "Integração na rotina de skincare — sequência ao vivo",
+          "duracao_segundos": 75,
+          "ciclo_da_live": 5,
+          "setup": "Mesa com sabonete facial + máscara LED + hidratante. Câmera lateral ou frontal mostrando os três.",
+          "script_bullets": [
+            "A dúvida que mais aparece: quando uso na rotina?",
+            "Sequência testada ao vivo: limpeza facial → máscara LED → hidratante",
+            "A máscara não adiciona produto. Não cozinha nada na pele. É só luz",
+            "Depois da limpeza, pele preparada. Depois da máscara, hidratante sela",
+            "Quinze minutos no total da sequência — isso é o próximo passo da rotina de skincare em casa"
+          ],
+          "frase_chave_decorar": "Não substitui o que você já usa. Adiciona um passo que a sua pele vai perceber.",
+          "angulo_camera": "Lateral mostrando os três produtos na sequência de uso",
+          "erro_a_evitar": "Não prometer que a sequência vai 'potencializar' o hidratante — claim não comprovado para esse dispositivo"
+        }
+      ]
+    },
+    "dim7_top_5_objecoes": {
+      "objecoes": [
+        {
+          "n": 1,
+          "objecao_em_palavras_da_audiencia": "Funciona mesmo ou é só luz colorida que não faz nada?",
+          "resposta_10s_chat": "Fototerapia LED tem estudos publicados no PubMed. Não é decoração — cada comprimento de onda (nm) age num receptor celular diferente. Pesquisa 'LLLT skin' e confere você mesmo.",
+          "resposta_30s_cta": "Entendo a dúvida — eu tive a mesma. A ciência por trás é fototerapia de baixa intensidade, estudada há décadas em contexto clínico. O que esta máscara traz é o mesmo princípio em formato doméstico. O mecanismo: fótons do LED são absorvidos pelas mitocôndrias das células da pele e estimulam produção de energia celular. Não é claim meu — é o mecanismo documentado. Resultado estético varia por pessoa e exige consistência de 3-4x por semana por pelo menos 4 semanas. Compare antes de decidir: tá no link lá em cima.",
+          "demo_de_fechamento": "Demo 1 — As 7 cores ao vivo explicando cada comprimento de onda"
+        },
+        {
+          "n": 2,
+          "objecao_em_palavras_da_audiencia": "R$132 é caro pra uma máscara de LED",
+          "resposta_10s_chat": "Sessão de fototerapia em clínica parte de R$150 por sessão. Protocolo recomendado é 4 semanas. Faz a conta e compara.",
+          "resposta_30s_cta": "Vou ser direta: R$132 não é barato. Mas compara com o que substitui. Sessão estética de fototerapia em clínica: R$150 a R$300 por sessão. Protocolo de 8 semanas, 3x por semana: isso é mais de R$3.600 em clínica. A máscara é R$132 uma vez, e você usa quantas sessões quiser em casa. Se você fizer 4 sessões no mês, o custo por sessão é menos de R$10. Abre o link e compara antes de comprar.",
+          "demo_de_fechamento": "Demo 5 — Mostrar sequência completa de uso doméstico evidenciando o valor da praticidade"
+        },
+        {
+          "n": 3,
+          "objecao_em_palavras_da_audiencia": "Quanto tempo leva pra ver resultado? Não quero comprar e não ver nada",
+          "resposta_10s_chat": "Fototerapia não é resultado imediato — qualquer produto que promete isso mente. Protocolo real: 3-4x por semana, 4 a 8 semanas. Resultado estético percebido, não garantido.",
+          "resposta_30s_cta": "Honestidade total: resultado em 1 semana não vai acontecer. Quem promete isso tá mentindo pra você. Fototerapia é protocolo de consistência. A literatura cita 4 a 8 semanas de uso regular de 3-4x por semana como janela de percepção de melhora. O que você pode perceber antes: pele com sensação mais relaxada logo depois da sessão, aspecto de uniformidade ao longo das semanas. O que pode não mudar: manchas profundas, condições dermatológicas ativas — esses precisam de dermatologista. Compra sabendo o que é real, não o que é promessa.",
+          "demo_de_fechamento": "Demo 3 — Timer automático reforçando o protocolo de consistência"
+        },
+        {
+          "n": 4,
+          "objecao_em_palavras_da_audiencia": "Tenho medo de queimar a pele ou machucar os olhos",
+          "resposta_10s_chat": "LED de baixa intensidade não aquece nem queima pele saudável. Olhos: o kit inclui proteção — nunca usa sem ela. Pele com ferida aberta ou fotossensibilidade medicamentosa: não usa.",
+          "resposta_30s_cta": "Segurança primeiro, então vou ser clara. LED de baixa intensidade não emite UV e não aquece o tecido — é diferente de laser ablativo. O risco real para os olhos existe se você olhar direto para os LEDs sem proteção — por isso o kit inclui óculos ou protetor. Usa sempre. Quem tem condição de pele ativa, rosácea severa, ou toma medicamento fotossensibilizante como doxiciclina ou isotretinoína: consulta o médico antes de usar qualquer dispositivo de luz. Isso não é alarmismo — é o uso responsável do produto.",
+          "demo_de_fechamento": "Demo 2 — Uso ao vivo mostrando o protocolo correto de colocação com proteção ocular"
+        },
+        {
+          "n": 5,
+          "objecao_em_palavras_da_audiencia": "Vi mais barato em outro lugar / tem igual mais barato",
+          "resposta_10s_chat": "Pode ter. A diferença está nos LEDs: quantidade, comprimento de onda calibrado e potência por cm². Não é toda máscara de LED que é igual — compara a ficha técnica, não só o preço.",
+          "resposta_30s_cta": "Tem versão mais barata no mercado, não vou fingir que não tem. A pergunta certa não é qual é mais barato — é qual entrega os 7 comprimentos de onda calibrados com a especificação técnica correta. Versão genérica de farmácia ou importado sem nota: você não sabe o nm real dos LEDs, a densidade de potência ou se o timer funciona. Aqui você tem a ficha técnica, a especificação por cor e compra com nota. Se encontrar igual com toda a especificação por menos, compra lá. Mas compara direito antes.",
+          "demo_de_fechamento": "Demo 1 — As 7 cores ao vivo reforçando especificação técnica"
+        }
+      ]
+    },
+    "dim8_concorrentes": {
+      "tabela_comparativa": [
+        {
+          "concorrente": "Máscara LED genérica de marketplace sem especificação técnica",
+          "preco": "R$ 40–70",
+          "diferencial": "Preço de entrada muito baixo",
+          "embalagem": "Sem caixa padronizada, sem manual em PT-BR",
+          "onde_VENCEMOS": "Especificação técnica dos 7 comprimentos de onda declarados em nm · Timer automático · Sem fio com carregamento USB · Nota fiscal e garantia",
+          "onde_PERDEMOS": "Preço — é mais caro. Para quem só quer experimentar sem compromisso, o genérico é a escolha de menor risco financeiro"
+        },
+        {
+          "concorrente": "Dispositivo de LED pontual (caneta ou mini-painel) nacional",
+          "preco": "R$ 80–150",
+          "diferencial": "Tratamento localizado e preciso em uma área específica",
+          "embalagem": "Compacto, fácil de guardar",
+          "onde_VENCEMOS": "Cobertura facial total simultânea em 10-15 min vs tratamento pontual que exige passar área por área",
+          "onde_PERDEMOS": "Para tratamento de área muito específica (ex: só ao redor dos olhos), o pontual pode ser mais preciso"
+        },
+        {
+          "concorrente": "Máscara LED premium importada com 3-4 cores",
+          "preco": "R$ 300–800",
+          "diferencial": "Marca com histórico de pesquisa clínica própria e suporte técnico",
+          "embalagem": "Premium, com manual técnico detalhado",
+          "onde_VENCEMOS": "Preço acessível · 7 cores vs 3-4 · Sem fio recarregável USB",
+          "onde_PERDEMOS": "Estudos clínicos próprios do fabricante · suporte dermatológico · potência por cm² provavelmente superior"
+        }
+      ],
+      "frase_comparativa_decorar": "Mais barato existe. Mais completo em 7 comprimentos de onda calibrados com timer, sem fio, nessa faixa de preço — testei ao vivo e é o que eu trago aqui.",
+      "honestidade_publica_se_questionarem": "Se você encontrou um com a mesma especificação técnica por menos, me manda no chat — quero ver. O que eu não aceito é comparar preço sem comparar a ficha técnica do LED. São produtos diferentes."
+    },
+    "dim9_pricing_oferta": {
+      "camadas": [
+        {
+          "camada": "Máscara LED solo",
+          "preco": 132,
+          "funcao": "atração — entrada da live com cupom MASCARALIVE"
+        },
+        {
+          "camada": "Kit máscara + sérum ou produto complementar de skincare",
+          "preco": 0,
+          "funcao": "AOV up — [verificar com fornecedor se há produto complementar disponível para bundle]"
+        },
+        {
+          "camada": "Combo completo (máscara + linha de skincare compatível)",
+          "preco": 0,
+          "funcao": "lucro real — [verificar disponibilidade de combo no Seller Center]"
+        }
+      ],
+      "cupons": [
+        {
+          "codigo": "MASCARALIVE",
+          "desconto_pct": 6,
+          "janela": "Toda a live de 90 min",
+          "trigger": "Mencionar a cada bloco de 3 min · reforçar sempre que mostrar o link"
+        }
+      ],
+      "ancoragem_5_frases": [
+        "vs clínica: sessão de fototerapia estética parte de R$150 por visita. Com R$132 você compra o dispositivo e faz quantas sessões quiser em casa",
+        "vs delivery: um pedido de delivery no fim de semana custa R$70-100 — duas semanas de pedido é o preço da máscara",
+        "vs custo/sessão: se usar 3x por semana por um mês, são 12 sessões. R$132 dividido por 12 = R$11 por sessão",
+        "vs aparelho de massagem facial: muitos custam R$150-200 e não têm a especificação técnica de comprimento de onda",
+        "vs custo/mês: divide R$132 por 12 meses de uso = R$11 por mês para ter o dispositivo disponível toda semana"
+      ]
+    },
+    "dim10_dados_historicos_template": {
+      "instrucao": "Kerollen ou responsável pelo Seller Center preenche manualmente — IA não tem acesso ao painel de vendas",
+      "campos_obrigatorios": [
+        "esgotou_quantas_vezes_30d (quantas vezes o estoque zerou no último mês)",
+        "volume_medio_mensal (unidades vendidas por mês nos últimos 3 meses)",
+        "estoque_atual (confirmado no dia da live — informado como 50 unidades)",
+        "top_3_reviews_positivos_literais (copiar as 3 avaliações mais detalhadas de 4-5 estrelas palavra por palavra)",
+        "1_review_negativo_literal (copiar a crítica mais relevante palavra por palavra — usar para antecipar objeção)",
+        "recompra_pct_90d (percentual de clientes que compraram novamente em 90 dias)",
+        "devolucao_pct_60d (percentual de devoluções nos últimos 60 dias e principais motivos)"
+      ]
+    }
+  },
+  "compliance": {
+    "regulated_category": "cosmeticos",
+    "forbidden_claims": [
+      "Cura, trata ou elimina acne — qualquer afirmação terapêutica de tratamento de doença de pele",
+      "'Equipamento médico', 'uso clínico' ou comparação com procedimentos dermatológicos profissionais",
+      "Resultados garantidos em X dias — prometer prazo fixo e resultado certo é proibido pelo CONAR/ANVISA para cosméticos",
+      "'Elimina rugas', 'rejuvenesce' ou qualquer claim de efeito permanente e irreversível na estrutura da pele"
+    ],
+    "allowed_claims": [
+      "Auxilia na aparência de firmeza e suavização de linhas finas — resultado estético percebido, não terapêutico",
+      "Proporciona sensação de equilíbrio da oleosidade e aspecto de viço à pele",
+      "Produto de uso cosmético doméstico para cuidados e bem-estar da pele",
+      "Ajuda a complementar a rotina de skincare em casa com praticidade e comodidade",
+      "Sensação de pele mais uniforme e luminosa com uso regular de 3 a 4 vezes por semana"
+    ],
+    "anvisa_registration": ""
+  },
+  "audience_profile": {
+    "expected_size": "200-500 viewers",
+    "main_origin": "organico",
+    "funnel_stage": "descoberta_da_marca"
+  },
+  "_meta": {
+    "tokens_in": 3786,
+    "tokens_out": 11581,
+    "cost_usd_estimate": 0.185073
+  }
+}
