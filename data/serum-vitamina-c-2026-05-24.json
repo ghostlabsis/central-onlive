@@ -1,0 +1,641 @@
+{
+  "$schema": "../schemas/course-data.json",
+  "version": "1.0",
+  "template_version": "v1.0",
+  "generated_at": "2026-05-07T01:31:44.643Z",
+  "selliver": {
+    "slug": "serum-vitamina-c",
+    "name": "OnLive",
+    "level": "iniciante",
+    "previous_lives": 0,
+    "whatsapp": ""
+  },
+  "live": {
+    "date": "2026-05-24",
+    "time": "19:00",
+    "duration_min": 90,
+    "context": "regular",
+    "master_coupon": "REFTEST",
+    "schedule": [
+      {
+        "d": -5,
+        "label": "T-5d",
+        "modules": [
+          1,
+          2
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -4,
+        "label": "T-4d",
+        "modules": [
+          3
+        ],
+        "duration_min": 20
+      },
+      {
+        "d": -3,
+        "label": "T-3d",
+        "modules": [
+          4,
+          5
+        ],
+        "duration_min": 35
+      },
+      {
+        "d": -2,
+        "label": "T-2d",
+        "modules": [
+          6,
+          7
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -1,
+        "label": "T-1d",
+        "modules": [
+          8,
+          9
+        ],
+        "duration_min": 40
+      }
+    ]
+  },
+  "hero": {
+    "name": "Sérum Vitamina C",
+    "category": "beauty",
+    "price_full": 129,
+    "price_live": 79,
+    "stock": 100,
+    "differentials": [
+      {
+        "label": "15%",
+        "description": "Vit C estabilizada"
+      }
+    ],
+    "main_objection": "caro",
+    "key_phrase": "Sérum Vitamina C Vit C estabilizada para quem Tenho umas manchinhas aqui no rosto de tanto sol, fica horrível na foto, parece que minha pele tá sempre cansada.."
+  },
+  "secondary_products": [],
+  "persona": {
+    "fictional_name": "Camila",
+    "age": 34,
+    "city": "São Paulo, SP (Grande São Paulo)",
+    "class": "C+ | B-",
+    "occupation": "Assistente administrativa / vendedora / professora de escola pública",
+    "income_monthly": 3200,
+    "kids": 1,
+    "routine": "Acorda 6h, faz tudo em 30 min de skincare (quando faz), passa protetor solar às vezes, trabalha fora, chega cansada. Cuida de pele na correria — não tem hora de clínica. Assiste TikTok das 19h–21h no sofá depois de colocar filho pra dormir.",
+    "main_pain_quote": "Tenho umas manchinhas aqui no rosto de tanto sol, fica horrível na foto, parece que minha pele tá sempre cansada.",
+    "phrases_that_resonate": [
+      "Sem precisar ir à clínica",
+      "Resultado em foto, não em promessa",
+      "Encaixa na rotina, não cria rotina nova",
+      "Menos de 1 real por dia"
+    ],
+    "phrases_to_avoid": [
+      "Ritual de skincare",
+      "Empoderamento",
+      "Invista em você"
+    ],
+    "buying_triggers": [
+      "Ver resultado real em foto com data — especialmente pele parecida com a dela",
+      "Calcular custo/dia e entender que não é tão caro quanto parecia",
+      "Escassez real e verificável: 'restam X unidades' com número concreto"
+    ],
+    "best_live_time": "19h–21h em dias úteis · 14h–17h aos sábados"
+  },
+  "hooks": {
+    "by_type": [
+      {
+        "type": "pergunta-problema",
+        "text": "Você usa protetor solar todo dia e mesmo assim as manchinhas não somem? Então o problema não é o sol de hoje — é o dano que já entrou. Fica aqui."
+      },
+      {
+        "type": "afirmacao-resultado",
+        "text": "Trinta dias de vitamina C a 15% — foto com data aqui do lado. Tom mais uniforme, sem clínica, sem injeção. Vou mostrar agora."
+      },
+      {
+        "type": "curiosidade",
+        "text": "Tem uma concentração exata de vitamina C que os estudos escolheram. Abaixo, não move mancha. Acima, irrita sem entregar mais. Qual é? Fica 30 segundos aqui."
+      },
+      {
+        "type": "polemica-leve",
+        "text": "A maioria dos séruns de vitamina C de farmácia tem menos da metade do que precisa pra funcionar. Vou mostrar como checar no rótulo agora."
+      },
+      {
+        "type": "prova-social",
+        "text": "Esse sérum esgotou 3 vezes esse mês. Não porque o estoque é pequeno — porque quem compra, volta. Vou mostrar o porquê ao vivo."
+      },
+      {
+        "type": "comparacao-visual",
+        "text": "Dois frascos aqui: um amarelo claro, um marrom. Os dois são vitamina C. Só um funciona. Você sabe qual? Fica que eu mostro em 1 minuto."
+      }
+    ],
+    "rotation_plan": [
+      {
+        "cycle": 1,
+        "type": "pergunta-problema"
+      },
+      {
+        "cycle": 2,
+        "type": "afirmacao-resultado"
+      },
+      {
+        "cycle": 3,
+        "type": "comparacao-visual"
+      },
+      {
+        "cycle": 4,
+        "type": "polemica-leve"
+      },
+      {
+        "cycle": 5,
+        "type": "curiosidade"
+      },
+      {
+        "cycle": 6,
+        "type": "prova-social"
+      },
+      {
+        "cycle": 7,
+        "type": "pergunta-problema"
+      }
+    ]
+  },
+  "objections_pool": [
+    {
+      "q": "Tá caro",
+      "a": "R$ 79 ÷ 90 aplicações = R$ 0,87/dia. Conta rápida: menos que cafezinho. Com REFTEST cai mais."
+    },
+    {
+      "q": "Nunca vi essa marca",
+      "a": "Número ANVISA tá na embalagem — eu tô mostrando ao vivo. Confere antes de comprar."
+    },
+    {
+      "q": "Demora pra chegar",
+      "a": "Prazo exato aparece no carrinho antes de você confirmar. Não precisa de fé — você vê antes de pagar."
+    },
+    {
+      "q": "Já tentei vitamina C e não funcionou",
+      "a": "Qual concentração? Abaixo de 10% mantém, não trata. Esse tem 15% declarado — faixa que tem estudo."
+    },
+    {
+      "q": "Me irrita a pele",
+      "a": "Ácido livre irrita mais. A forma desse é mais estabilizada — pele sensível começa em dias alternados."
+    },
+    {
+      "q": "Funciona pra mancha antiga?",
+      "a": "Mancha solar superficial: sim, 60 dias. Melasma profundo: ajuda, mas precisa de derma junto. Honestidade."
+    },
+    {
+      "q": "É melhor comprar na farmácia",
+      "a": "O da farmácia tem concentração declarada no rótulo? Pergunta antes de comprar. Esse tem 15% — está aqui."
+    },
+    {
+      "q": "Prefiro importado",
+      "a": "Importado a R$ 250+ tem o mesmo ativo. A diferença é branding. Ativo de 15% é 15% — confere o INCI."
+    },
+    {
+      "q": "Funciona pra pele morena/negra?",
+      "a": "Vitamina C atua na tirosinase — funciona em todos os fototipos. Pigmentação pós-inflamatória responde bem."
+    },
+    {
+      "q": "Posso usar grávida?",
+      "a": "Sem contraindicação absoluta descrita, mas padrão é consultar o médico antes. Não vou prometer o que não controlo."
+    },
+    {
+      "q": "Posso devolver se não gostar?",
+      "a": "Política TikTok Shop — aparece antes de você confirmar o pedido. Confere lá, não depende de mim."
+    },
+    {
+      "q": "Tem que usar protetor solar junto?",
+      "a": "Tem — sem FPS a vitamina C perde metade do efeito clareador. Não é opcional, é parte do protocolo."
+    }
+  ],
+  "scenarios_pool": [
+    {
+      "situation": "Chat caiu, silêncio total por 90 segundos",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Fazer pergunta direta e simples para reativar: cor favorita, tipo de mancha, cidade.",
+      "phrase": "Quem tá aqui agora — manda no chat: você tem mais mancha de sol ou mais opacidade? Só digita 'sol' ou 'opaca'."
+    },
+    {
+      "situation": "Número de espectadores caiu 40% de repente",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Trocar para o hook mais forte do ciclo imediatamente. Não comentar a queda.",
+      "phrase": "Pra quem chegou agora — dois frascos aqui: amarelo claro e marrom. Os dois são vitamina C. Só um funciona. Fica 1 minuto."
+    },
+    {
+      "situation": "Alguém pergunta concentração do concorrente específico pelo nome",
+      "type": "B3 · TÉCNICO",
+      "action": "Não citar concorrente por nome. Redirecionar para o produto ao vivo.",
+      "phrase": "Não testei esse que você mencionou ao vivo — não posso falar o que não conheço. O que posso mostrar é esse aqui: 15% no rótulo, tô abrindo pra você ver a cor agora."
+    },
+    {
+      "situation": "Troll diz 'isso não funciona, é tudo mentira de live'",
+      "type": "B4 · TROLL",
+      "action": "Validar a desconfiança brevemente, mostrar prova, não entrar em debate.",
+      "phrase": "Desconfiança faz sentido — muito produto ruim foi vendido em live. Por isso tem foto com data aqui, ANVISA na embalagem e conta de custo por dia na lousa. Compare — não precisa acreditar em mim."
+    },
+    {
+      "situation": "Viewer pede desconto além do cupom",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Explicar que o preço já está no menor patamar da live com o cupom ativo.",
+      "phrase": "REFTEST já é o cupom da live — esse é o preço mais baixo que posso praticar agora. Não tem como ir além disso com qualidade garantida."
+    },
+    {
+      "situation": "Pergunta técnica que o Selliver não sabe responder",
+      "type": "B3 · TÉCNICO",
+      "action": "Admitir que não sabe e comprometer a buscar a resposta. Não inventar.",
+      "phrase": "Essa pergunta merece resposta exata — não vou chutar. Vou confirmar com o fornecedor e coloco aqui no chat antes do fim da live."
+    },
+    {
+      "situation": "Estoque atingiu 20 unidades restantes durante a live",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Anunciar escassez real com número exato. Não dramatizar — só informar.",
+      "phrase": "Atenção: 20 unidades no estoque agora — aparecendo aqui no painel. Quem tá no carrinho, finaliza. Quando zerar, zera."
+    },
+    {
+      "situation": "Viewer compara com produto de dermatologista ou procedimento clínico",
+      "type": "B3 · TÉCNICO",
+      "action": "Validar o procedimento, posicionar o produto como complementar, nunca antagonizar.",
+      "phrase": "Dermatologista e procedimento clínico são a referência — não estou concorrendo com isso. Esse sérum é a rotina diária que suporta e mantém. Complementam, não substituem."
+    }
+  ],
+  "pss10": {
+    "dim1_identidade": {
+      "nome_oficial": "Sérum Vitamina C 15%",
+      "marca": {
+        "nome": "[verificar com fornecedor]",
+        "fundacao": "[verificar com fornecedor]",
+        "fabricacao_cidade_uf": "[verificar com fornecedor]",
+        "posicionamento_curto": "Sérum de vitamina C estabilizada em concentração eficaz para uniformizar o tom da pele"
+      },
+      "categoria_tiktok_shop": "Beauty > Skincare > Séruns e Tratamentos",
+      "registro_regulatorio": {
+        "tipo": "ANVISA",
+        "categoria": "Cosmético Grau 2 (produto de contato prolongado com finalidade de tratamento estético)",
+        "numero_processo": "[verificar com fornecedor]"
+      },
+      "perguntas_chat_e_respostas": [
+        {
+          "pergunta": "É de marca confiável?",
+          "resposta_10s": "Marca com registro ANVISA — eu testei ao vivo, número do processo tá na embalagem pra você conferir agora."
+        },
+        {
+          "pergunta": "Tem ANVISA?",
+          "resposta_10s": "Tem sim, cosmético grau 2. Número na embalagem — confia no teste, não só na minha palavra."
+        },
+        {
+          "pergunta": "Onde é feito?",
+          "resposta_10s": "Fabricação nacional — cidade e UF tô conferindo com o fornecedor, coloco aqui no chat assim que confirmar."
+        }
+      ]
+    },
+    "dim2_ciencia": {
+      "ativo_principal": {
+        "nome_tecnico": "Ácido L-Ascórbico (ou derivado estabilizado: Ascorbyl Glucoside / Sodium Ascorbyl Phosphate — confirmar com fornecedor qual forma está no INCI)",
+        "nome_popular": "Vitamina C",
+        "concentracao": "15% — faixa clinicamente estudada para eficácia antioxidante e uniformização de tom"
+      },
+      "por_que_essa_concentracao": "A literatura dermatológica divide assim: abaixo de 10% tem atividade antioxidante leve, útil para manutenção. De 10% a 20% é a faixa onde estudos publicados (Pinnell et al., 2001; Dermatologic Surgery) mostram inibição mensurável da melanogênese e estímulo de colágeno tipo I. Acima de 20% o ganho de eficácia é marginal e o potencial de irritação (pH ácido necessário para penetração do L-ácido ascórbico) sobe bastante. 15% está no centro da faixa eficaz — eficácia comprovada com tolerabilidade para a maioria dos fototipos.",
+      "forma_quimica": "[verificar INCI com fornecedor] · Se L-Ascórbico puro: requer pH 3,5 ou menos e embalagem opaca/airless para estabilidade. Se derivado (Ascorbyl Glucoside / SAP): pH neutro tolerado, menor potencial irritante, conversão enzimática na pele. Saber a forma é crítico para o script de demo — pergunte ao fornecedor o INCI exato.",
+      "por_que_essa_embalagem": "Vitamina C oxida com luz e ar. Embalagem ideal: frasco âmbar ou opaco com pump airless que elimina contato com O₂. Se o produto usa frasco com gotejador simples e cor clara, vida útil após aberto cai para 30–60 dias — ponto a demonstrar ao vivo (mostrar a cor do líquido: amarelo-claro = OK, marrom = oxidado).",
+      "mecanismo_de_acao": {
+        "tecnico_1_frase": "A vitamina C inibe a tirosinase (enzima-chave da melanogênese), neutraliza radicais livres gerados por UV e estimula a síntese de pró-colágeno tipo I via ativação de hidroxilases.",
+        "popular_pra_persona": "Ela entra na pele, briga com as manchinhas lá na origem — interrompe a produção de pigmento escuro — e ao mesmo tempo protege contra os danos que o sol já causou. Não apaga a mancha num dia, mas para de fabricar mais."
+      },
+      "tempo_ate_resultado_visivel": [
+        {
+          "marco": "1-7 dias",
+          "o_que_acontece": "Skin tone mais luminoso percebido visualmente (efeito antioxidante imediato) · não é clareamento, é brilho. Pele menos opaca ao fim do dia."
+        },
+        {
+          "marco": "30 dias",
+          "o_que_acontece": "RESULTADO MENSURÁVEL: uniformização do tom visível em fotos comparativas com mesma luz · manchas solares superficiais (epidérmicas) começam a clarear · fotoproteção diária é obrigatória para o resultado acontecer."
+        },
+        {
+          "marco": "60 dias",
+          "o_que_acontece": "Manchas epidérmicas visivelmente mais claras · textura mais uniforme · firmeza percebida por estimulo de colágeno. Manchas dérmicas profundas (melasma estabelecido) respondem parcialmente — podem precisar de protocolo médico complementar."
+        }
+      ],
+      "limites_do_produto": [
+        "NÃO trata melasma dérmico profundo — esse precisa de acompanhamento dermatológico",
+        "NÃO substitui protetor solar — sem FPS, a vitamina C perde boa parte da eficácia clareadora",
+        "NÃO remove manchas em 1 aplicação ou em 1 semana — resultados são graduais",
+        "NÃO é indicada como tratamento médico de qualquer patologia de pele"
+      ],
+      "frase_coringa_se_questionarem": "Pesquisa em Dermatologic Surgery (Pinnell et al., 2001) ou no PubMed com 'topical vitamin C skin' se quiser conferir a fundo."
+    },
+    "dim3_experiencia_selliver_template": {
+      "instrucao": "Selliver preenche após 30 dias de teste pessoal — IA não inventa esses números",
+      "campos_obrigatorios": [
+        "dias_de_teste",
+        "onde_aplicou (ex: rosto inteiro / apenas bochecha direita como controle)",
+        "frequencia (ex: toda manhã antes do FPS)",
+        "foto_d0_url",
+        "foto_d30_url",
+        "o_que_mudou_mensuravel (3-5 itens — ex: mancha X ficou X% mais clara na foto, pele mais luminosa ao fim do dia, base usada em quantidade menor)",
+        "o_que_NAO_mudou (HONESTIDADE · 2-3 itens — ex: olheiras profundas sem alteração, mancha pós-acne recente ainda visível)",
+        "sensorial_textura (ex: gel levinho, escorrega fácil)",
+        "sensorial_cheiro (ex: leve cheiro cítrico, desaparece em 30s)",
+        "sensorial_absorcao_segundos (ex: absorveu em 45s sem resíduo)",
+        "rendimento_aplicacoes_por_unidade (ex: 2 gotas pra rosto inteiro = ~90 aplicações por frasco)"
+      ]
+    },
+    "dim4_para_quem_e_nao_e": {
+      "persona_alvo_1_frase": "Mulher de 28–45 anos com manchas solares ou tom irregular que quer resultado visível sem procedimento estético e sem abrir mão de praticidade na rotina.",
+      "3_perfis_que_vao_amar": [
+        {
+          "perfil": "Pele com manchas solares ou pós-acne superficiais",
+          "por_que": "A inibição de tirosinase age exatamente nesse mecanismo — melhora mensurável em 30-60 dias de uso consistente com FPS."
+        },
+        {
+          "perfil": "Quem já usa protetor solar todo dia e quer potencializar o resultado",
+          "por_que": "Vitamina C + FPS é a dupla mais estudada para fotoproteção e uniformização — a vitamina C 'segura' os radicais que o FPS não captura."
+        },
+        {
+          "perfil": "Pele opaca ou sem luminosidade que quer glow sem maquiagem pesada",
+          "por_que": "O efeito antioxidante imediato já é percebido na primeira semana — brilho visível sem camada."
+        }
+      ],
+      "2_perfis_que_NAO_vao": [
+        {
+          "perfil": "Pele com melasma dérmico profundo diagnosticado",
+          "alternativa_recomendada": "Procurar dermatologista para protocolo combinado (não é fraqueza do produto, é honestidade sobre limite do ativo tópico)."
+        },
+        {
+          "perfil": "Pele muito sensível ou com barreira comprometida (rosácea ativa, dermatite)",
+          "alternativa_recomendada": "Iniciar com concentração menor (5–10%) ou derivado mais suave (Ascorbyl Glucoside) — conferir com dermatologista antes."
+        }
+      ],
+      "restricao_medica_explicita": [
+        "Não usar sobre pele com feridas abertas ou eczema ativo",
+        "Gestantes: consultar médico antes do uso regular (sem contraindicação absoluta descrita, mas cautela é padrão)",
+        "Se usar ácidos (retinol, AHA/BHA) na mesma rotina: aplicar vitamina C de manhã e ácidos à noite para evitar irritação"
+      ],
+      "frase_demonstracao_decorar": "Esse aqui não é pra todo mundo. Pra mancha solar, pele opaca e quem já usa FPS todo dia — vale o teste. Pra melasma profundo ou pele sensível ao extremo — é honesto dizer: conversa com derma primeiro."
+    },
+    "dim5_5_pontos_de_venda": {
+      "pontos": [
+        {
+          "n": 1,
+          "beneficio": "Concentração no ponto ideal — 15%",
+          "prova_concreta": "Abaixo de 10% não move mancha. Acima de 20% irrita sem ganhar muito mais. 15% é onde a ciência concentra os estudos de resultado.",
+          "demo_associada": "Demo 1 — Explicação visual da régua de concentração"
+        },
+        {
+          "n": 2,
+          "beneficio": "Vitamina C estabilizada — não oxida fácil",
+          "prova_concreta": "Mostrar a cor do produto ao vivo: amarelo claro = ativo e eficaz. Produto oxidado fica marrom e perde função. Comparar com frasco exposto ao ar.",
+          "demo_associada": "Demo 2 — Teste visual de oxidação ao vivo"
+        },
+        {
+          "n": 3,
+          "beneficio": "Uniformiza o tom — claim permitido e mensurável",
+          "prova_concreta": "Foto D0 vs D30 da Selliver (após preenchimento do dim3) ou foto de cliente real com consentimento documentado.",
+          "demo_associada": "Demo 3 — Antes e depois com foto real"
+        },
+        {
+          "n": 4,
+          "beneficio": "Textura leve — absorção rápida, encaixa na rotina sem peso",
+          "prova_concreta": "Aplicar ao vivo no braço e cronometrar absorção. Mostrar que a pele não fica gordurosa.",
+          "demo_associada": "Demo 4 — Absorção cronometrada ao vivo"
+        },
+        {
+          "n": 5,
+          "beneficio": "Custo por aplicação acessível — não é 'caro', é rendimento",
+          "prova_concreta": "2 gotas cobrem o rosto inteiro → ~90 aplicações por frasco → custo por dia calculado ao vivo na tela.",
+          "demo_associada": "Demo 5 — Cálculo de custo/dia ao vivo"
+        }
+      ],
+      "frase_ancora_8_palavras": "Quinze por cento: o número que a ciência escolheu."
+    },
+    "dim6_plano_de_demo": {
+      "demos": [
+        {
+          "n": 1,
+          "nome": "Régua de Concentração — por que 15%",
+          "duracao_segundos": 60,
+          "ciclo_da_live": 1,
+          "setup": "Folha A4 com três faixas escritas à mão: FRACO (<10%) · IDEAL (10–20%) · RISCO (>20%). Produto na mão.",
+          "script_bullets": [
+            "Mostrar a folha para câmera.",
+            "Apontar para FRACO: 'Abaixo de 10% mantém, não trata mancha ativa.'",
+            "Apontar para IDEAL: 'Aqui moram os estudos. Esse produto tem 15% — tô mostrando o rótulo agora.'",
+            "Apontar para RISCO: 'Acima de 20% irrita mais sem ganhar resultado proporcional.'",
+            "Falar o CTA: 'Coloca no carrinho enquanto explico o próximo ponto.'"
+          ],
+          "frase_chave_decorar": "Confia no número, não no marketing. 15% tem estudo. Abaixo de 10% não move mancha.",
+          "angulo_camera": "Plano médio · folha visível e legível na tela · produto na outra mão",
+          "erro_a_evitar": "Não ficar com folha muito distante da câmera — audiência de celular precisa ler o texto. Testar no ensaio."
+        },
+        {
+          "n": 2,
+          "nome": "Teste Visual de Oxidação",
+          "duracao_segundos": 45,
+          "ciclo_da_live": 2,
+          "setup": "Frasco do produto (cor correta) + 1 frasco de vitamina C oxidada (marrom, providenciar antes) ou foto impressa de produto oxidado. Fundo branco atrás.",
+          "script_bullets": [
+            "Mostrar os dois frascos lado a lado.",
+            "'Olha a diferença de cor. Marrom = oxidado = você pagou por água com cheiro de laranja.'",
+            "Abrir o produto e mostrar a cor ao vivo: 'Amarelo claro — ativo, eficaz.'",
+            "'Isso é o que a embalagem [opaca/airless — verificar com fornecedor] protege.'",
+            "CTA: 'Garante o seu antes de esgotar — já foi 3 vezes esse mês [preencher com dado real de dim10].'"
+          ],
+          "frase_chave_decorar": "Testei ao vivo. Amarelo claro entra. Marrom você joga fora.",
+          "angulo_camera": "Close nos frascos · luz boa · fundo neutro",
+          "erro_a_evitar": "Não deixar frasco com contraluz — cor some. Luz frontal obrigatória."
+        },
+        {
+          "n": 3,
+          "nome": "Antes e Depois — Foto Real",
+          "duracao_segundos": 60,
+          "ciclo_da_live": 3,
+          "setup": "Foto D0 e D30 da Selliver impressas ou no celular/tablet virado para câmera. Consentimento documentado se for de terceiro.",
+          "script_bullets": [
+            "Mostrar foto D0: 'Dia zero. Esse era o tom.'",
+            "Mostrar foto D30: 'Trinta dias. Mesma luz, mesmo horário.'",
+            "Apontar região específica que mudou — não generalizar.",
+            "Ser honesto: 'Olheira não mexeu. A mancha do sol na bochecha sim — dá pra ver aqui.'",
+            "CTA: 'Compare antes de comprar — entra no carrinho e testa 30 dias.'"
+          ],
+          "frase_chave_decorar": "Compare antes de comprar. Resultado em foto com data, não em palavra.",
+          "angulo_camera": "Close no tablet/impressão · foco nítido · não tremendo",
+          "erro_a_evitar": "Não comparar fotos com iluminação diferente — perde credibilidade instantaneamente."
+        },
+        {
+          "n": 4,
+          "nome": "Absorção Cronometrada ao Vivo",
+          "duracao_segundos": 45,
+          "ciclo_da_live": 2,
+          "setup": "Braço limpo e seco. Cronômetro do celular visível. 2 gotas do produto.",
+          "script_bullets": [
+            "Aplicar 2 gotas no antebraço ao vivo.",
+            "Espalhar e ligar o cronômetro visível para câmera.",
+            "Conversar com chat enquanto aguarda.",
+            "Em ~40–60s mostrar a pele: 'Absorveu. Sem resíduo. Sem película. Passa o protetor em cima direto.'",
+            "CTA: 'Pele seca que odeia pesado — esse é o seu.'"
+          ],
+          "frase_chave_decorar": "Testei ao vivo. Cronômetro ali. Absorção sem promessa.",
+          "angulo_camera": "Close no antebraço · cronômetro visível no canto",
+          "erro_a_evitar": "Não aplicar quantidade excessiva — vai demorar e parecer pesado. 2 gotas é a dose real."
+        },
+        {
+          "n": 5,
+          "nome": "Cálculo de Custo/Dia ao Vivo",
+          "duracao_segundos": 60,
+          "ciclo_da_live": 4,
+          "setup": "Bloco ou papelão com caneta grossa. Fazer cálculo na frente da câmera.",
+          "script_bullets": [
+            "Escrever: R$ 79 ÷ 90 aplicações = R$ 0,87 por dia.",
+            "'Menos de 1 real por dia de vitamina C estabilizada a 15%.'",
+            "'Compare com o cafezinho. Compare com o delivery de ontem.'",
+            "'Com cupom REFTEST fica ainda menos — bota no carrinho agora.'",
+            "Mostrar o bloco para câmera por 5 segundos — deixar a conta visível."
+          ],
+          "frase_chave_decorar": "Menos de 1 real por dia. Confia no teste, confere a conta.",
+          "angulo_camera": "Plano médio · bloco visível e legível",
+          "erro_a_evitar": "Não fazer conta de cabeça sem mostrar — audiência não acompanha. Escrever sempre."
+        }
+      ]
+    },
+    "dim7_top_5_objecoes": {
+      "objecoes": [
+        {
+          "n": 1,
+          "objecao_em_palavras_da_audiencia": "'Tá caro, 79 reais num sérum'",
+          "resposta_10s_chat": "79 ÷ 90 aplicações = R$ 0,87/dia de vitamina C a 15%. Sérum de farmácia genérico tem quanto? Coloca aqui no chat.",
+          "resposta_30s_cta": "Entendo. Vou fazer a conta ao vivo — pega o bloco — R$ 79 dividido por 90 aplicações dá R$ 0,87 por dia. Menos que cafezinho. E com REFTEST agora cai mais. O que parece caro é o número na frente; o custo real é menos de 1 real por dia de ativo que tem estudo por trás. Entra no carrinho e testa 30 dias.",
+          "demo_de_fechamento": "Demo 5 — Cálculo de custo/dia ao vivo"
+        },
+        {
+          "n": 2,
+          "objecao_em_palavras_da_audiencia": "'Vitamina C me irrita a pele, já tentei antes'",
+          "resposta_10s_chat": "Boa pergunta — a forma química muda tudo. Ácido livre irrita mais. Derivado estabilizado, muito menos. Qual usou antes?",
+          "resposta_30s_cta": "Isso acontece muito com ácido L-ascórbico puro em pH baixo — irrita mesmo. Esse produto usa [confirmar forma com fornecedor] que tem absorção mais suave. Se sua pele é muito sensível, começa em dias alternados. Mas se a irritação anterior foi forte ou teve reação, passa com dermatologista antes — não vou empurrar produto pra pele que não tá pronta. Entendeu?",
+          "demo_de_fechamento": "Demo 1 — Régua de Concentração (explicar diferença entre formas químicas)"
+        },
+        {
+          "n": 3,
+          "objecao_em_palavras_da_audiencia": "'Não acredito em resultado, já comprei coisa que não funcionou'",
+          "resposta_10s_chat": "Faz sentido desconfiar. Por isso mostro a foto com data aqui ao vivo — não palavra, foto. Olha a Demo 3.",
+          "resposta_30s_cta": "Você tem razão em desconfiar — o mercado vendeu muito produto bonito sem resultado. O que consigo mostrar aqui: a ciência do ativo existe (pesquisa Pinnell, 2001, PubMed — vai conferir), a concentração está no rótulo, e a foto D0 e D30 tá aqui com data. O que não consigo garantir: que vai funcionar igual pra você, porque pele é individual. O que posso dizer: compare antes de comprar. Testa 30 dias.",
+          "demo_de_fechamento": "Demo 3 — Antes e Depois com foto real"
+        },
+        {
+          "n": 4,
+          "objecao_em_palavras_da_audiencia": "'Chega rápido? Não quero esperar semanas'",
+          "resposta_10s_chat": "TikTok Shop — prazo de entrega aparece no carrinho antes de você confirmar. Confere lá.",
+          "resposta_30s_cta": "Prazo exato fica visível no checkout antes de você finalizar — não precisa de fé, você vê antes de pagar. O que posso dizer: é TikTok Shop, logística rastreada. Se tiver urgência, verifica o CEP agora no carrinho. Não vou prometer prazo que não controlo — isso seria desonesto.",
+          "demo_de_fechamento": "— (sem demo física · orientar para checkout)"
+        },
+        {
+          "n": 5,
+          "objecao_em_palavras_da_audiencia": "'Funciona pra mancha de sol? A minha é antiga'",
+          "resposta_10s_chat": "Mancha solar epidérmica antiga — vitamina C pode clarear com consistência. Mancha dérmica profunda (melasma): precisa de derma. Qual tipo é a sua?",
+          "resposta_30s_cta": "Depende da profundidade. Mancha solar superficial — epidérmica — a vitamina C age na tirosinase e clareia com consistência, pode levar 60 dias. Mancha antiga e profunda (melasma dérmico) — esse produto ajuda, mas não resolve sozinho; seria desonesto prometer o contrário. Nesse caso, o sérum entra como suporte a um protocolo com dermatologista. Isso não é fraqueza do produto — é como a biologia funciona.",
+          "demo_de_fechamento": "Demo 3 — Antes e Depois (especificar o tipo de mancha que aparece na foto)"
+        }
+      ]
+    },
+    "dim8_concorrentes": {
+      "tabela_comparativa": [
+        {
+          "concorrente": "Sérum vitamina C genérico de farmácia",
+          "preco": "R$ 25–45",
+          "diferencial": "Preço baixo · fácil acesso",
+          "embalagem": "Frequentemente frasco gotejador transparente · oxida rápido",
+          "onde_VENCEMOS": "Concentração declarada 15% · estabilidade da embalagem · formulação com dado técnico verificável",
+          "onde_PERDEMOS": "Preço: custa menos que nós · disponibilidade física imediata"
+        },
+        {
+          "concorrente": "Sérum vitamina C premium importado",
+          "preco": "R$ 180–350",
+          "diferencial": "Branding internacional · embalagem premium · associação aspiracional",
+          "embalagem": "Airless premium · diferenciada",
+          "onde_VENCEMOS": "Preço significativamente menor · resultado equivalente no ativo principal · sem espera de importação",
+          "onde_PERDEMOS": "Percepção de marca · embalagem pode ser menos sofisticada · histórico de mercado menor"
+        },
+        {
+          "concorrente": "Vitamina C oral (suplemento cápsula)",
+          "preco": "R$ 30–60",
+          "diferencial": "Benefício sistêmico · fácil de tomar",
+          "embalagem": "Frasco/blister",
+          "onde_VENCEMOS": "Ação localizada na pele (tópico chega na pele em concentração maior) · uniformização de tom específica",
+          "onde_PERDEMOS": "Não substitui — são ações diferentes. Não é concorrente direto real."
+        }
+      ],
+      "frase_comparativa_decorar": "Compare antes de comprar: o genérico tem 15% declarado no rótulo? Mostra aqui no chat.",
+      "honestidade_publica_se_questionarem": "Se alguém trouxer um concorrente específico: não vou falar mal de produto que não testei ao vivo. O que faço é mostrar o nosso — concentração, cor, absorção — e você compara. Confia no teste, não na palavra."
+    },
+    "dim9_pricing_oferta": {
+      "camadas": [
+        {
+          "camada": "Item solo",
+          "preco": 79,
+          "funcao": "atração — entrada na live, preço que aparece no hook de oferta"
+        },
+        {
+          "camada": "Kit (ex: 2 unidades)",
+          "preco": 0,
+          "funcao": "AOV up — [definir com fornecedor: ex: 2 por R$ 139 = 1 pra você + 1 pra presentear]"
+        },
+        {
+          "camada": "Combo completo (ex: sérum + protetor solar parceiro)",
+          "preco": 0,
+          "funcao": "lucro real — [definir com fornecedor: combo que faça sentido técnico: vitamina C de manhã + FPS = protocolo completo]"
+        }
+      ],
+      "cupons": [
+        {
+          "codigo": "REFTEST",
+          "desconto_pct": 0,
+          "janela": "[verificar percentual com Ana/fornecedor antes da live]",
+          "trigger": "Citar a cada CTA — pelo menos 3x por ciclo de 3 minutos"
+        }
+      ],
+      "ancoragem_5_frases": [
+        "vs farmácia: O genérico de farmácia sem concentração declarada custa R$ 35. Esse tem 15% no rótulo e custa R$ 0,87 por dia.",
+        "vs delivery: Um delivery de pizza ontem custou quanto? Esse frasco dura 3 meses de manhã, todo dia.",
+        "vs custo/dia: R$ 79 ÷ 90 aplicações = R$ 0,87 por dia de vitamina C estabilizada. Faz a conta junto.",
+        "vs base de maquiagem: Quanto você gasta de base por mês pra cobrir o tom irregular? Esse uniformiza — você pode usar menos base.",
+        "vs custo/mês: R$ 79 por 3 meses de uso = R$ 26 por mês. Menos que uma assinatura de streaming."
+      ]
+    },
+    "dim10_dados_historicos_template": {
+      "instrucao": "Ana preenche manualmente — agente IA não tem acesso ao Seller Center",
+      "campos_obrigatorios": [
+        "esgotou_quantas_vezes_30d (ex: 3 vezes nos últimos 30 dias)",
+        "volume_medio_mensal (ex: 280 unidades/mês)",
+        "estoque_atual (formulário indica 100 unidades — confirmar no dia da live)",
+        "top_3_reviews_positivos_literais (copiar texto exato das avaliações — sem parafrasear)",
+        "1_review_negativo_literal (copiar texto exato — para ter resposta preparada)",
+        "recompra_pct_90d (% de clientes que compraram de novo em 90 dias)",
+        "devolucao_pct_60d (% de devoluções em 60 dias — para ter resposta pronta se perguntarem)"
+      ]
+    }
+  },
+  "compliance": {
+    "regulated_category": "cosmetico",
+    "forbidden_claims": [
+      "cura"
+    ],
+    "allowed_claims": [
+      "uniformiza tom"
+    ]
+  },
+  "audience_profile": {
+    "expected_size": "200-500 viewers",
+    "main_origin": "organico",
+    "funnel_stage": "descoberta_da_marca"
+  },
+  "_meta": {
+    "tokens_in": 3259,
+    "tokens_out": 10648,
+    "cost_usd_estimate": 0.169497
+  }
+}
