@@ -51,6 +51,16 @@ Produto uni-feature (sem diferenciais técnicos):
 - Use 2 contextos de uso diferentes para o mesmo benefício
 - PRINCIPAL: contexto com maior dor emocional do público-alvo
 
+REGRA CRÍTICA — Feature ≠ Variante ≠ Spec:
+- COR e TAMANHO disponíveis → NÃO são features · são variantes do mesmo produto
+  ❌ "Azul, vermelho e preto" não é feature de camiseta
+  ✅ "Caimento oversized" é feature de camiseta (mecanismo diferente do fit regular)
+- DOSE, PESO, VOLUME → NÃO são features · são specs operacionais
+  ❌ "10g por dose" não é feature de suplemento
+  ✅ "Sabor neutro" é feature de suplemento (resolve dor específica: enjoo de paladar)
+- Feature VÁLIDA = característica com MECANISMO ou RESULTADO diferente pra persona diferente
+  Teste: "serve pra mesma pessoa pela mesma razão?" → se sim, é variante, não feature
+
 ═══════════════════════════════════════════════════════════════
 R1 · COMPLIANCE BLOQUEIO (PRIORIDADE MÁXIMA)
 ═══════════════════════════════════════════════════════════════
@@ -320,7 +330,8 @@ JSON OUTPUT (retorne EXCLUSIVAMENTE JSON válido, sem texto antes ou depois)
     "feature_map_preenchido": true,
     "demo_principal_definida": true,
     "concorrente_mapeado": true
-  }
+  },
+  "fonte_qualidade": "alta | media | baixa"
 }
 
 Regras absolutas:
@@ -328,6 +339,8 @@ Regras absolutas:
 - Differentials: dados concretos, nunca genérico ("boa qualidade" não serve — "15% vitamina C estabilizada" serve)
 - Forbidden/allowed claims: ≤ 8 palavras cada · específicos da regulação brasileira
 - gate5.sinal: "Hero candidate" só se demo_vel_30s + compliance_ok + preco_impulso_br + bundle_aov80 = todos true
+- gate5.sinal: suplementos / alimentos funcionais / produtos de saúde → máximo "Trending candidate" (nunca Hero sem ANVISA verificado)
+- fonte_qualidade: "alta" se havia conteúdo real da página · "baixa" se análise baseada só em URL/conhecimento geral
 - Tudo em português do Brasil real`;
 
 async function fetchProductContent(url: string): Promise<string> {
@@ -391,13 +404,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const pageContent = await fetchProductContent(url);
 
+    const hasRealContent = pageContent.length > 150 && !pageContent.startsWith('[');
+    const hasExtraContext = (extra_context ?? '').trim().length > 20;
+    const sourceQuality = hasRealContent ? 'alta' : hasExtraContext ? 'media' : 'baixa';
+
     const userPrompt = [
       `URL do produto: ${url}`,
       '',
-      pageContent
+      hasRealContent
         ? `Conteúdo extraído da página:\n${pageContent}`
-        : '(Página não acessível — analise pelo URL e use seu conhecimento sobre o tipo de produto)',
-      extra_context ? `\nInformações adicionais:\n${extra_context}` : '',
+        : hasExtraContext
+          ? `⚠️ PÁGINA NÃO ACESSÍVEL (URL bloqueado ou JS-rendered). Análise baseada nas informações adicionais fornecidas. Defina fonte_qualidade como "media".`
+          : `⚠️ PÁGINA NÃO ACESSÍVEL E SEM INFORMAÇÕES ADICIONAIS. Analise apenas pelo URL e conhecimento geral sobre o tipo de produto. Seja CONSERVADOR: use preços zerados, gate5.sinal máximo "Avaliar", fonte_qualidade "baixa".`,
+      extra_context?.trim() ? `\nInformações adicionais fornecidas:\n${extra_context.trim()}` : '',
+      `\nFonte qualidade detectada: ${sourceQuality} — confirme no campo fonte_qualidade do JSON.`,
       '\nRetorne o JSON completo de análise.',
     ].join('\n');
 

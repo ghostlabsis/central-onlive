@@ -28,6 +28,7 @@ type ProductAnalysis = {
   bundle_natural?: { descricao: string; preco_estimado: number; angulo: string };
   gate5?: { demo_vel_30s: boolean; compliance_ok: boolean; preco_impulso_br: boolean; bundle_aov80: boolean; sinal: string };
   checklist_entrega?: Record<string, boolean>;
+  fonte_qualidade?: 'alta' | 'media' | 'baixa';
 };
 
 type FormState = {
@@ -271,7 +272,7 @@ export default function NovaLivePage() {
                   value={extraContext}
                   onChange={(e) => setExtraContext(e.target.value)}
                   rows={4}
-                  placeholder="Cole aqui ficha técnica, ingredientes, resultados de testes, informações do fornecedor, observações sobre o público ou qualquer detalhe que enriquece a análise…"
+                  placeholder="Nome · categoria · preço · ingredientes ativos · diferenciais · público-alvo…&#10;&#10;⚡ TikTok Shop, Shopee, Instagram não abrem automaticamente — cole os dados do produto aqui."
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm font-mono focus:border-purple-500 focus:outline-none transition-colors resize-none"
                 />
               </div>
@@ -314,6 +315,33 @@ export default function NovaLivePage() {
         {/* ── STEP 2: REVIEW ────────────────────────────────────────────── */}
         {step === 'review' && analysis && (
           <form onSubmit={handleSubmit} className="space-y-5">
+
+            {/* Source quality warning */}
+            {analysis.fonte_qualidade === 'baixa' && (
+              <div className="bg-yellow-50 border-2 border-yellow-300 rounded-xl p-4 flex items-start gap-3">
+                <span className="text-xl flex-shrink-0">⚠️</span>
+                <div>
+                  <p className="font-bold text-yellow-900 text-sm">Página não acessível — análise baseada em conhecimento geral</p>
+                  <p className="text-xs text-yellow-700 mt-1">
+                    O link não retornou conteúdo (TikTok Shop, Shopee e Instagram bloqueiam scrapers).
+                    Cole os dados do produto no campo <strong>"Contexto adicional"</strong> e reanalize para melhor resultado.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setStep('url')}
+                    className="mt-2 text-xs font-bold text-yellow-800 underline"
+                  >
+                    ← Voltar e adicionar contexto
+                  </button>
+                </div>
+              </div>
+            )}
+            {analysis.fonte_qualidade === 'media' && (
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 flex items-center gap-2 text-sm text-blue-700">
+                <span>ℹ️</span>
+                <span>Análise baseada nas informações que você forneceu — página não acessível diretamente.</span>
+              </div>
+            )}
 
             {/* Analysis card */}
             <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-2xl overflow-hidden shadow-lg">
