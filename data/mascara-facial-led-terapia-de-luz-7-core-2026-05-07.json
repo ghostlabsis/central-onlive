@@ -1,0 +1,786 @@
+{
+  "$schema": "../schemas/course-data.json",
+  "version": "2.0",
+  "template_version": "v3.0",
+  "generated_at": "2026-05-07T04:20:17.596Z",
+  "selliver": {
+    "slug": "mascara-facial-led-terapia-de-luz-7-core",
+    "name": "OnLive",
+    "level": "iniciante",
+    "previous_lives": 0,
+    "whatsapp": ""
+  },
+  "live": {
+    "date": "2026-05-07",
+    "time": "19:00",
+    "duration_min": 90,
+    "context": "regular",
+    "master_coupon": "MASCARALIVE",
+    "schedule": [
+      {
+        "d": -5,
+        "label": "T-5d",
+        "modules": [
+          1,
+          2
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -4,
+        "label": "T-4d",
+        "modules": [
+          3
+        ],
+        "duration_min": 20
+      },
+      {
+        "d": -3,
+        "label": "T-3d",
+        "modules": [
+          4,
+          5
+        ],
+        "duration_min": 35
+      },
+      {
+        "d": -2,
+        "label": "T-2d",
+        "modules": [
+          6,
+          7
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -1,
+        "label": "T-1d",
+        "modules": [
+          8,
+          9
+        ],
+        "duration_min": 40
+      }
+    ]
+  },
+  "hero": {
+    "name": "Máscara Facial LED Terapia de Luz 7 Cores RPC",
+    "category": "cosmeticos",
+    "price_full": 0,
+    "price_live": 0,
+    "extra_coupon": "",
+    "stock": 50,
+    "differentials": [
+      {
+        "label": "7 Comprimentos de Onda",
+        "description": "7 cores LED (vermelho 630nm, azul 415nm, verde, amarelo, ciano, roxo, branco) — cada uma com mecanismo de ação distinto para diferentes necessidades de pele"
+      },
+      {
+        "label": "Cobertura Facial Total",
+        "description": "Máscara rígida com LEDs distribuídos em toda a superfície — fronte, bochechas, nariz, queixo cobertos simultaneamente em 10-20 min"
+      },
+      {
+        "label": "Uso Domiciliar",
+        "description": "Requer apenas conexão USB — sem fio elétrico convencional, sem necessidade de profissional, uso ilimitado após compra única"
+      }
+    ],
+    "main_objection": "Parece brinquedo barato, não vai funcionar de verdade",
+    "key_phrase": "LED. Casa. Pele pronta."
+  },
+  "secondary_products": [],
+  "score_onlive": {
+    "total": 71,
+    "classificacao": "Trending / Profit",
+    "d1_viralidade": 82,
+    "d2_precificacao": 45,
+    "d3_supply": 52,
+    "d4_ajuste": 80,
+    "d5_gift": 75,
+    "justificativa": "Produto altamente demonstrável em câmera — 7 cores iluminadas no rosto gera before/after visual instantâneo e retêm audiência. Pontuação D1 alta. D2 penalizado porque price_full e price_live vieram zerados — selliver precisa definir precificação antes da live. D3 penalizado por estoque de apenas 50 unidades (abaixo do mínimo recomendado de 200) e fornecedor único inferido. D4 forte: terapia LED caseira é uma das categorias de maior tração no TikTok BR em 2025-2026, persona de classe B/C+ busca equivalente domiciliar de tratamentos de clínica. D5 forte: máscara acesa no rosto gera comentário orgânico e gift de 'cor favorita' é gamificação natural."
+  },
+  "catchphrase_5_palavras": "LED. Casa. Pele pronta.",
+  "hooks_3s": [
+    {
+      "angulo": "pattern-interrupt",
+      "framework": "PAS",
+      "text": "Clínica cobra R$300 por sessão de LED. Esse aparelho faz a mesma luz em casa. Para sempre."
+    },
+    {
+      "angulo": "curiosity-gap",
+      "framework": "AIDA",
+      "text": "Tem um número escondido nessa máscara — 630 — e ele é o motivo pelo qual dermatologistas usam LED vermelho há 20 anos."
+    },
+    {
+      "angulo": "polemica",
+      "framework": "PAS",
+      "text": "Esquece sérum de R$400. A luz vermelha de 630nm chega onde o ingrediente ativo não consegue: dentro da célula."
+    },
+    {
+      "angulo": "prova-social",
+      "framework": "AIDA",
+      "text": "A NASA usou fototerapia LED para cicatrização dos astronautas nos anos 90. Esse comprimento de onda não é modinha — é ciência de 30 anos."
+    },
+    {
+      "angulo": "before-after",
+      "framework": "BAB",
+      "text": "Lado esquerdo: sem nada. Lado direito: 10 minutos de LED vermelho. Olha a diferença de aparência no tom — ao vivo agora."
+    }
+  ],
+  "decoy_pricing": {
+    "anchor": {
+      "label": "Máscara Solo",
+      "preco": 129,
+      "itens": [
+        "1x Máscara LED 7 Cores RPC",
+        "Cabo USB"
+      ],
+      "funcao": "anchor"
+    },
+    "decoy": {
+      "label": "Kit Cuidado",
+      "preco": 189,
+      "itens": [
+        "1x Máscara LED 7 Cores RPC",
+        "Cabo USB",
+        "1x Headband de proteção"
+      ],
+      "funcao": "decoy"
+    },
+    "target": {
+      "label": "Kit Completo Rotina LED",
+      "preco": 219,
+      "itens": [
+        "1x Máscara LED 7 Cores RPC",
+        "Cabo USB",
+        "1x Headband de proteção",
+        "1x Guia de Protocolos por Cor (PDF)",
+        "Frete prioritário incluso"
+      ],
+      "funcao": "target",
+      "percent_vendas_esperado": 60
+    }
+  },
+  "micro_momentos_timeline": [],
+  "authority_transfer": {
+    "expert": "Dr. Michael Hamblin — Harvard Medical School, Wellman Center for Photomedicine",
+    "dado": "Hamblin publicou mais de 400 estudos sobre fotobiomodulação. Luz vermelha entre 630nm e 670nm penetra 2 a 3mm na derme e estimula a cadeia respiratória mitocondrial — especificamente o citocromo c oxidase — aumentando produção de ATP celular.",
+    "como_usar_na_live": "Um pesquisador de Harvard chamado Michael Hamblin publicou mais de 400 estudos sobre exatamente esse comprimento de onda — 630nm — e o mecanismo é real: a luz entra na célula, ativa a mitocôndria e ela produz mais energia. Não é magia. É fotobiomodulação. Pesquisa lá: Wellman Center for Photomedicine."
+  },
+  "vulnerability_moment": "Não vou mentir pra você: resultado consistente leva pelo menos 30 dias de uso regular, três a quatro vezes por semana. No dia 1 você não vai acordar diferente. Mas olha o que acontece no dia 30 quando você usa direito.",
+  "encaixe_sazonal": {
+    "data": "Dia das Mães · 11 maio 2026",
+    "contexto": "A live está marcada para 07 de maio de 2026 — quatro dias antes do Dia das Mães. Momento de altíssima intenção de compra para presentes de autocuidado feminino.",
+    "copy_sazonal": "Dia das Mães é semana que vem. Imagina presentear sua mãe com clínica de LED em casa — pra vida toda, não só uma sessão. Pega o Kit Completo, coloca o cupom MASCARALIVE e chega antes do domingo."
+  },
+  "venda_gift_integrado": {
+    "balance": {
+      "venda_pct": 70,
+      "gift_pct": 20,
+      "close_pct": 10
+    },
+    "gift_triggers_na_live": [
+      {
+        "min": "5-7",
+        "trigger": "Boas-vindas e aquecimento de sala",
+        "recompensa": "Guia digital gratuito 'Qual cor LED para o seu objetivo?' enviado no chat para quem mandar o emoji 💡",
+        "frase_pronta": "Manda o emoji de lâmpada aqui no chat — 💡 — que eu vou soltar agora o guia de qual cor LED serve pra cada objetivo de pele. Zero custo, só por estar aqui."
+      },
+      {
+        "min": "30-32",
+        "trigger": "Escalada pré-decoy: conectar gift ao cupom extra",
+        "recompensa": "Cupom extra de R$10 de desconto adicional para quem mandar 'QUERO LED' no chat durante os próximos 60 segundos",
+        "frase_pronta": "Próximos 60 segundos — manda QUERO LED aqui no chat. Quem mandar dentro do tempo ganha R$10 a mais de desconto sobre o cupom MASCARALIVE. Já tô olhando o chat."
+      },
+      {
+        "min": "55-60",
+        "trigger": "Prova social: reconhecer quem comprou",
+        "recompensa": "Shoutout ao vivo com nome de quem comprou — gera pressão social positiva e urgência nos indecisos",
+        "frase_pronta": "Deixa eu falar os nomes de quem já garantiu o Kit Completo aqui na live — [lê nomes do painel]. Vocês acertaram. Pra quem ainda tá na dúvida: o estoque é de 50 unidades e não repõe hoje."
+      },
+      {
+        "min": "75-80",
+        "trigger": "Close com ranking gift e produto físico como recompensa",
+        "recompensa": "Top 3 do ranking de gift ganham 1 unidade da Máscara Solo gratuitamente — anunciar ao vivo e pedir print de tela",
+        "frase_pronta": "Tô revelando agora o top 3 do ranking de gift desta live. Quem tiver nos três primeiros ganhou uma Máscara LED pra presentear — tira print agora porque vou passar direto. [Lê top 3]. Parabéns. O restante do estoque — últimas unidades — tá com cupom MASCARALIVE até a live fechar."
+      }
+    ]
+  },
+  "persona": {
+    "fictional_name": "Renata",
+    "age": 36,
+    "city": "Campinas",
+    "class": "B-",
+    "occupation": "Coordenadora administrativa em clínica médica",
+    "income_monthly": 4800,
+    "kids": 1,
+    "routine": "Acorda às 6h, leva filho de 8 anos na escola, trabalha das 8h às 17h30 em ambiente com ar-condicionado o dia todo. Almoça na mesa. Chega em casa às 18h30, faz jantar, dá banho na criança. Tem uns 40 minutos livres entre 21h e 21h40 antes de dormir. Nesses 40 minutos assiste TikTok e às vezes compra online. Já fez limpeza de pele em clínica duas vezes no ano passado, mas achou caro para manter a frequência. Usa filtro solar todo dia mas a rotina de skincare é básica — hidratante e sérum barato de farmácia.",
+    "main_pain_quote": "Fiz limpeza de pele mês passado, gastei R$180. Semana seguinte meu chefe me perguntou se eu tava cansada. Eu não tava. Só queria que a pele parecesse descansada sem precisar explicar nada pra ninguém.",
+    "dor_com_cena": "Renata estava no banheiro na sexta-feira à noite, iluminação do espelho ligada, tentando entender por que a pele parecia opaca mesmo depois da limpeza cara. Ela passou o hidratante, olhou de novo, e sentiu aquela frustração silenciosa de ter gasto dinheiro e não ver diferença. Não é vaidade — é a sensação de que ela faz o certo e o resultado não aparece. E ela não tem tempo de fazer mais do que isso.",
+    "phrases_that_resonate": [
+      "Quero resultado sem precisar sair de casa toda semana",
+      "Não tenho tempo pra rotina complicada mas quero que funcione",
+      "Se vou gastar, quero que dure — não uma sessão",
+      "Pele viçosa não precisa ser privilégio de clínica cara"
+    ],
+    "phrases_to_avoid": [
+      "Amor próprio começa por você",
+      "Você merece se cuidar",
+      "Jornada de autoconhecimento"
+    ],
+    "buying_triggers": [
+      "Ver demonstração ao vivo com resultado visual imediato",
+      "Sentir que o preço compensa pelo uso ilimitado vs sessão avulsa",
+      "Prazo de entrega antes do Dia das Mães para presentear ou usar"
+    ],
+    "best_live_time": "Quinta ou sexta entre 20h e 21h30 — filho já deitou, jantar feito, celular na mão"
+  },
+  "hooks": {
+    "by_type": [
+      {
+        "type": "pergunta-problema",
+        "text": "Você já fez sessão de LED na clínica e ficou com dó de não poder repetir toda semana por causa do preço?"
+      },
+      {
+        "type": "afirmacao-resultado",
+        "text": "10 minutos de luz vermelha em casa e a pele aparece mais uniforme — sem sair do sofá."
+      },
+      {
+        "type": "curiosidade",
+        "text": "Por que dermatologistas usam exatamente 630nm e não outra frequência? Tem um motivo físico — e está nessa máscara."
+      },
+      {
+        "type": "polemica-leve",
+        "text": "Clínica de LED é o mesmo comprimento de onda. A diferença é quem cobra a sessão."
+      },
+      {
+        "type": "prova-social",
+        "text": "Fototerapia com LED é usada em protocolos de dermatologia clínica há mais de 20 anos — agora cabe no orçamento doméstico."
+      },
+      {
+        "type": "comparacao-visual",
+        "text": "Olha essa máscara acesa no meu rosto agora — 7 cores diferentes, cada uma com função. Não é decoração. É comprimento de onda específico."
+      }
+    ],
+    "rotation_plan": [
+      {
+        "cycle": 1,
+        "type": "pergunta-problema"
+      },
+      {
+        "cycle": 2,
+        "type": "afirmacao-resultado"
+      },
+      {
+        "cycle": 3,
+        "type": "comparacao-visual"
+      },
+      {
+        "cycle": 4,
+        "type": "polemica-leve"
+      },
+      {
+        "cycle": 5,
+        "type": "curiosidade"
+      },
+      {
+        "cycle": 6,
+        "type": "prova-social"
+      },
+      {
+        "cycle": 7,
+        "type": "pergunta-problema"
+      }
+    ]
+  },
+  "objections_pool": [
+    {
+      "q": "Parece brinquedo. Será que funciona mesmo?",
+      "a": "A dúvida é legítima — tem muito produto ruim no mercado. O que diferencia é o comprimento de onda. 630nm vermelho é o mesmo usado em protocolos clínicos. O aparelho só precisa emitir a frequência correta — e esse emite. Testa ao vivo aqui."
+    },
+    {
+      "q": "Tá caro pra mim agora",
+      "a": "Entendo. Uma sessão de LED em clínica custa entre R$80 e R$200. Esse kit você usa infinitas vezes. Calcula: se usar duas vezes por semana, em 30 dias já empatou com o preço de duas sessões avulsas."
+    },
+    {
+      "q": "Não tem ANVISA — não confio",
+      "a": "Ponto justo. Aparelhos de uso cosmético domiciliar de baixa potência se enquadram como equipamento de estética não invasivo — categoria diferente de medicamento. O que valida é o comprimento de onda documentado e a emissão segura, não um registro de medicamento."
+    },
+    {
+      "q": "Vai chegar antes do Dia das Mães?",
+      "a": "A live é dia 07 de maio. Dia das Mães é dia 11. Frete prioritário incluso no Kit Completo — compra hoje, probabilidade alta de chegar até sexta-feira. Confirma o CEP no checkout."
+    },
+    {
+      "q": "Funciona pra pele negra também?",
+      "a": "Sim. A fototerapia LED age na mitocôndria da célula — o mecanismo não depende de tom de pele. Luz vermelha e azul têm estudos em fototipo III ao VI. Só evitar uso se tiver sensibilidade a luz por condição médica."
+    },
+    {
+      "q": "E se eu não gostar? Tem devolução?",
+      "a": "TikTok Shop tem política de devolução em até 7 dias pelo Código de Defesa do Consumidor. Se chegar diferente do anunciado, abre disputa na plataforma — é coberto."
+    },
+    {
+      "q": "Precisa de produto junto ou só a máscara já basta?",
+      "a": "Só a máscara já funciona na pele limpa e seca. Mas se quiser potencializar, hidratante leve antes da sessão de LED ajuda a pele a absorver melhor depois. Não precisa comprar mais nada específico."
+    },
+    {
+      "q": "Quanto tempo leva pra ver resultado?",
+      "a": "Honestidade: resultado visual consistente aparece em 30 dias de uso regular — três a quatro sessões por semana de 10 a 20 minutos. Não é magia de noite. É acúmulo de estimulação celular."
+    },
+    {
+      "q": "É igual ao genérico barato de farmácia?",
+      "a": "A diferença está no número de LEDs, distribuição e quais comprimentos de onda estão presentes. Genérico de farmácia normalmente tem 1 ou 2 cores com poucos LEDs. Esse tem 7 comprimentos de onda com cobertura total do rosto simultaneamente."
+    },
+    {
+      "q": "Posso usar todos os dias?",
+      "a": "Sim, mas o protocolo recomendado é de três a quatro sessões semanais de 10 a 20 minutos. Uso diário não causa dano — mas o descanso entre sessões permite o ciclo de resposta celular completar."
+    },
+    {
+      "q": "Qual cor eu uso pra quê?",
+      "a": "Rápido: vermelho 630nm para aparência de firmeza e vitalidade. Azul 415nm para auxiliar aspecto de oleosidade. Verde para aparência de tom uniforme. O guia completo está no kit. Manda 💡 no chat que eu solto agora."
+    },
+    {
+      "q": "Frete demora quanto?",
+      "a": "TikTok Shop — depende do CEP. Capitais geralmente 2 a 5 dias úteis. Kit Completo sai com frete prioritário incluso. Coloca o CEP no checkout que aparece o prazo exato antes de finalizar."
+    }
+  ],
+  "scenarios_pool": [
+    {
+      "situation": "Chat parado, ninguém respondendo",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Fazer pergunta de múltipla escolha simples e esperar 10 segundos em silêncio",
+      "phrase": "Me fala uma coisa — você já fez sessão de LED em clínica alguma vez? Manda 1 se já fez e achou caro repetir. Manda 2 se nunca fez mas quer tentar. Quero ver quem tá aqui."
+    },
+    {
+      "situation": "Audiência caindo durante demo longa",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Interromper demo, anunciar mini-gift surpresa e retomar depois",
+      "phrase": "Peraí — deixa eu pausar aqui porque acabou de entrar gente nova. Manda LED no chat agora que eu tô contando quem chega nos próximos 30 segundos para um cupom extra. Depois eu termino a demo."
+    },
+    {
+      "situation": "Problema técnico — máscara não acende ao vivo",
+      "type": "B3 · TÉCNICO",
+      "action": "Admitir ao vivo, trocar para segundo aparelho ou mudar para explicação de comprimentos de onda com imagem",
+      "phrase": "Tá com problema aqui no USB — vou trocar o cabo ao vivo pra vocês verem que é simples de resolver. Isso acontece com qualquer aparelho USB. Já viu? Voltou. Confia no teste."
+    },
+    {
+      "situation": "Troll no chat dizendo que é fraude ou que não funciona",
+      "type": "B4 · TROLL",
+      "action": "Nomear a objeção, validar, responder com dado e seguir sem dar mais atenção",
+      "phrase": "Alguém aqui no chat tá dizendo que não funciona — respeito a dúvida. Olha o número: 630nm. Pesquisa Michael Hamblin, Harvard, fotobiomodulação. Não precisa confiar em mim. Pesquisa o dado. Continuando a demo."
+    },
+    {
+      "situation": "Estoque baixo — menos de 15 unidades restantes",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Anunciar contagem ao vivo e criar urgência real sem falsa escassez",
+      "phrase": "Olha o painel — [número] unidades. Não vou inventar escassez aqui. Quando zerar, zera. Quem tá decidido, coloca o cupom MASCARALIVE agora. Já vi vender em 8 minutos antes."
+    },
+    {
+      "situation": "Pergunta técnica que Selliver não sabe responder",
+      "type": "B3 · TÉCNICO",
+      "action": "Admitir o limite, prometer verificar e redirecionar para o que sabe",
+      "phrase": "Essa pergunta específica eu prefiro não chutar — vou verificar com o fornecedor e respondo no comentário do produto. O que eu sei com certeza é [dado concreto que conhece]. Honestidade vale mais que resposta errada."
+    },
+    {
+      "situation": "Muitas perguntas sobre Dia das Mães e prazo de entrega",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Criar bloco dedicado de 60 segundos só sobre logística e repetir CTA com urgência sazonal",
+      "phrase": "Tô vendo muita pergunta sobre entrega para o Dia das Mães. Resposta direta: hoje é dia 07, Dia das Mães é dia 11. Kit Completo tem frete prioritário incluso. Coloca o CEP no checkout — o prazo aparece antes de pagar. Não arrisca deixar pra depois."
+    },
+    {
+      "situation": "Pico de audiência — muita gente nova chegando ao mesmo tempo",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Resetar o contexto em 30 segundos e repetir hook de abertura adaptado",
+      "phrase": "Entrou muita gente nova agora — bem-vindos. Em 10 segundos: isso aqui é uma máscara com 7 comprimentos de onda LED diferentes. Cada cor tem uma função específica para a pele. Preço de sessão clínica você paga uma vez e usa pra sempre em casa. Cupom MASCARALIVE. Continua aí que vai ter demo ao vivo."
+    }
+  ],
+  "pss10": {
+    "dim1_identidade": {
+      "nome_oficial": "Máscara Facial LED Terapia de Luz 7 Cores RPC",
+      "marca": {
+        "nome": "RPC",
+        "fundacao": "[verificar com fornecedor]",
+        "fabricacao_cidade_uf": "[verificar com fornecedor]",
+        "posicionamento_curto": "Aparelho de fototerapia LED domiciliar com 7 comprimentos de onda para rotina de skincare em casa"
+      },
+      "categoria_tiktok_shop": "Beauty > Skincare > Dispositivos e Ferramentas de Skincare",
+      "registro_regulatorio": {
+        "tipo": "ANVISA",
+        "categoria": "Equipamento de uso estético não invasivo — verificar enquadramento como produto para saúde classe I ou cosmético funcional",
+        "numero_processo": "[verificar com fornecedor]"
+      },
+      "perguntas_chat_e_respostas": [
+        {
+          "pergunta": "É de marca confiável?",
+          "resposta_10s": "A marca é RPC — especializada em aparelhos de fototerapia domiciliar. O que valida o produto não é só a marca: é o comprimento de onda emitido. 630nm vermelho é documentado em literatura científica. Compra pelo TikTok Shop que tem proteção de comprador."
+        },
+        {
+          "pergunta": "Tem ANVISA?",
+          "resposta_10s": "Número de registro: [verificar com fornecedor]. Aparelhos de uso estético domiciliar de baixa potência têm enquadramento próprio na ANVISA — diferente de medicamento. Confirma o número no site da ANVISA pelo código do produto."
+        },
+        {
+          "pergunta": "Onde é feito?",
+          "resposta_10s": "[Verificar com fornecedor — origem de fabricação]. O que importa pra performance é a especificação técnica dos LEDs: comprimento de onda calibrado, não voltagem bruta."
+        }
+      ]
+    },
+    "dim2_ciencia": {
+      "ativo_principal": {
+        "nome_tecnico": "Fototerapia de baixo nível (LLLT) — Light Emitting Diode Photobiomodulation",
+        "nome_popular": "Terapia de luz LED",
+        "concentracao": "7 comprimentos de onda: vermelho 630nm, azul 415nm, verde ~520nm, amarelo ~590nm, ciano ~490nm, roxo ~400-420nm combinado, branco (espectro amplo)"
+      },
+      "por_que_essa_concentracao": "Cada comprimento de onda tem profundidade de penetração e receptor celular diferente. 630nm penetra 2-3mm atingindo derme superficial. 415nm tem absorção pelo porfirinas bacterianas na camada superficial. Outros comprimentos modulam melanócitos, fibroblastos e microcirculação em camadas distintas.",
+      "forma_quimica": "Emissão fotônica de estado sólido via semicondutor LED — não é laser, não é UV. Radiação não ionizante de baixa potência.",
+      "por_que_essa_embalagem": "Máscara rígida moldada ao contorno facial garante distância constante dos LEDs à pele (tipicamente 1-2cm) — essencial para manter a intensidade de irradiância dentro da janela terapêutica. Aplicação de mão livre treme e varia a distância comprometendo a dose entregue.",
+      "mecanismo_de_acao": {
+        "tecnico_1_frase": "Fótons de 630nm são absorvidos pelo citocromo c oxidase na cadeia respiratória mitocondrial, elevando produção de ATP e modulando espécies reativas de oxigênio — processo denominado fotobiomodulação.",
+        "popular_pra_persona": "A luz vermelha entra na célula da sua pele e ativa a mitocôndria — que é a usina de energia da célula. Com mais energia, a célula funciona melhor: produz mais colágeno, se regenera mais rápido. Não é calor, não é queimadura — é estímulo."
+      },
+      "tempo_ate_resultado_visivel": [
+        {
+          "marco": "1-7 dias",
+          "o_que_acontece": "Sensação de pele mais hidratada e levemente mais uniforme ao toque — efeito circulatório imediato da vasodilatação superficial. Nenhuma mudança estrutural ainda."
+        },
+        {
+          "marco": "30 dias",
+          "o_que_acontece": "RESULTADO MENSURÁVEL: aparência de poros visualmente minimizada, tom de pele mais uniforme visível em fotografia com mesma iluminação. Ciclo de renovação epidérmica (28 dias) completo com estimulação LED regular."
+        },
+        {
+          "marco": "60 dias",
+          "o_que_acontece": "Aparência de firmeza facial consistente com uso continuado. Pele com aspecto mais viçoso e textura mais uniforme — efeito cumulativo de estimulação de fibroblastos ao longo de dois ciclos de renovação."
+        }
+      ],
+      "limites_do_produto": [
+        "NÃO trata acne clinicamente — auxilia na aparência de oleosidade superficial",
+        "NÃO elimina rugas — melhora aparência de textura com uso continuado",
+        "NÃO substitui tratamento dermatológico para condições como rosácea ou dermatite",
+        "NÃO tem efeito equivalente a laser fracionado ou peelings profundos",
+        "NÃO é indicado para quem usa medicamentos fotossensibilizantes sem orientação médica"
+      ],
+      "frase_coringa_se_questionarem": "Pesquisa em PubMed: 'LED photobiomodulation skin' se quiser conferir os estudos."
+    },
+    "dim3_experiencia_selliver_template": {
+      "instrucao": "Selliver preenche após 30 dias de teste pessoal",
+      "campos_obrigatorios": [
+        "dias_de_teste",
+        "onde_aplicou",
+        "frequencia",
+        "foto_d0_url",
+        "foto_d30_url",
+        "o_que_mudou_mensuravel (3-5 itens)",
+        "o_que_NAO_mudou (HONESTIDADE · 2-3 itens)",
+        "sensorial_textura",
+        "sensorial_cheiro",
+        "sensorial_absorcao_segundos",
+        "rendimento_aplicacoes_por_unidade"
+      ]
+    },
+    "dim4_para_quem_e_nao_e": {
+      "persona_alvo_1_frase": "Mulher de 28 a 45 anos que já fez ou quer fazer fototerapia LED em clínica mas não consegue manter a frequência pelo custo ou pela logística.",
+      "3_perfis_que_vao_amar": [
+        {
+          "perfil": "Quem faz limpeza de pele ou LED em clínica 1-2x por ano por questão de custo",
+          "por_que": "Calcula em 3 meses que a máscara paga o custo de uma sessão avulsa e passa a usar ilimitadamente"
+        },
+        {
+          "perfil": "Mãe com rotina apertada que tem 15-20 minutos livres à noite",
+          "por_que": "Produto não exige deslocamento, profissional ou preparo especial — encaixa no tempo ocioso antes de dormir"
+        },
+        {
+          "perfil": "Quem quer presente funcional e não descartável para o Dia das Mães",
+          "por_que": "Aparelho com utilidade real e aparência premium — percepção de valor alta, preço abaixo de uma sessão clínica"
+        }
+      ],
+      "2_perfis_que_NAO_vao": [
+        {
+          "perfil": "Quem tem epilepsia fotossensível ou usa medicamentos fotossensibilizantes como isotretinoína",
+          "alternativa_recomendada": "Consultar dermatologista antes — existem protocolos adaptados mas não é decisão de balcão"
+        },
+        {
+          "perfil": "Quem busca resultado equivalente a procedimento dermatológico invasivo como laser ablativo",
+          "alternativa_recomendada": "Clínica dermatológica com equipamento de alta potência é a indicação correta para esse objetivo"
+        }
+      ],
+      "restricao_medica_explicita": [
+        "Não usar sobre pele com lesão ativa, ferida aberta ou infecção",
+        "Não usar durante gravidez sem orientação médica",
+        "Não usar se em uso de medicamentos fotossensibilizantes",
+        "Não apontar diretamente para os olhos — usar óculos de proteção inclusos ou fechar os olhos durante uso"
+      ],
+      "frase_demonstracao_decorar": "Esse aqui não é pra todo mundo. Pra quem quer resultado de LED sem sair de casa toda semana, vale o teste. Pra quem tem condição médica fotossensível, consulta o médico antes."
+    },
+    "dim5_5_pontos_de_venda": {
+      "pontos": [
+        {
+          "n": 1,
+          "beneficio": "7 comprimentos de onda em um aparelho só",
+          "prova_concreta": "Vermelho 630nm, azul 415nm, verde, amarelo, ciano, roxo e branco — cada LED calibrado para frequência específica, não cor decorativa",
+          "demo_associada": "Demo 1 — Acender cada cor ao vivo e nomear a função"
+        },
+        {
+          "n": 2,
+          "beneficio": "Cobertura total do rosto simultânea em 10-20 minutos",
+          "prova_concreta": "Máscara rígida cobre fronte, bochechas, nariz e queixo ao mesmo tempo — sem precisar mover o aparelho",
+          "demo_associada": "Demo 2 — Colocar a máscara no rosto ao vivo e mostrar cobertura"
+        },
+        {
+          "n": 3,
+          "beneficio": "Uso ilimitado após compra única",
+          "prova_concreta": "Sem recarga, sem refil, sem assinatura. Conexão USB padrão — funciona com qualquer carregador de celular",
+          "demo_associada": "Demo 3 — Mostrar conexão USB ao vivo e calcular custo por sessão"
+        },
+        {
+          "n": 4,
+          "beneficio": "Sensação de pele mais uniforme e viçosa com uso regular",
+          "prova_concreta": "Ciclo de renovação epidérmica de 28 dias — resultado visual documentável com foto D0 vs D30 em mesma iluminação",
+          "demo_associada": "Demo 4 — Mostrar foto D0 vs D30 da Selliver (após preenchimento do dim3)"
+        },
+        {
+          "n": 5,
+          "beneficio": "Complementa qualquer rotina de skincare existente",
+          "prova_concreta": "Não substitui hidratante nem sérum — adiciona camada de estimulação celular que produto tópico não consegue sozinho por barreira cutânea",
+          "demo_associada": "Demo 5 — Mostrar rotina completa: limpeza + LED + hidratante em sequência"
+        }
+      ],
+      "frase_ancora_8_palavras": "Sete cores. Uma máscara. Clínica de LED em casa."
+    },
+    "dim6_plano_de_demo": {
+      "demos": [
+        {
+          "n": 1,
+          "nome": "Apresentação das 7 Cores ao Vivo",
+          "duracao_segundos": 60,
+          "ciclo_da_live": 1,
+          "setup": "Máscara conectada ao USB, câmera frontal próxima, ambiente com pouca luz ambiente para as cores LED aparecerem nítidas em câmera",
+          "script_bullets": [
+            "Segura a máscara de frente pra câmera com LEDs acesos",
+            "Troca cada cor e nomeia: vermelho 630nm — aparência de firmeza e vitalidade",
+            "Azul 415nm — auxilia na aparência de oleosidade",
+            "Verde — aparência de tom uniforme",
+            "Fala que amarelo, ciano, roxo e branco estão no guia incluso no kit",
+            "CTA: cupom MASCARALIVE no chat"
+          ],
+          "frase_chave_decorar": "Olha o número — 630nm. Não é só vermelho bonito. É o comprimento de onda.",
+          "angulo_camera": "Câmera a 30cm da máscara, ângulo frontal ligeiramente de cima para mostrar todos os LEDs acesos",
+          "erro_a_evitar": "Não trocar as cores rápido demais — parar 3 segundos em cada para a câmera registrar a diferença"
+        },
+        {
+          "n": 2,
+          "nome": "Colocação ao Vivo — Mostra Cobertura Real",
+          "duracao_segundos": 45,
+          "ciclo_da_live": 2,
+          "setup": "Câmera com selfie view, máscara já conectada e acesa no vermelho, Selliver com pele limpa e sem maquiagem pesada",
+          "script_bullets": [
+            "Coloca a máscara no rosto ao vivo devagar",
+            "Vira levemente pros dois lados mostrando que cobre têmporas e queixo",
+            "Fala: 10 minutos assim — sem segurar, sem mover, sem profissional",
+            "Remove a máscara e mostra o rosto — pele levemente rosada pela circulação",
+            "CTA: quem quer o guia de cores manda 💡 no chat"
+          ],
+          "frase_chave_decorar": "Coloca, liga, descansa. Dez minutos. Tira. Olha o número.",
+          "angulo_camera": "Selfie frontal com boa iluminação — luz de ring light por cima para não competir com os LEDs",
+          "erro_a_evitar": "Não usar maquiagem pesada na demo — a pele precisa aparecer ao vivo antes e depois"
+        },
+        {
+          "n": 3,
+          "nome": "Cálculo de Custo ao Vivo — Âncora de Preço",
+          "duracao_segundos": 45,
+          "ciclo_da_live": 3,
+          "setup": "Câmera mostrando a máscara e uma calculadora ou papel para fazer conta ao vivo",
+          "script_bullets": [
+            "Fala o preço de uma sessão de LED em clínica (R$80 a R$200 — dado de mercado público)",
+            "Faz a conta ao vivo: Kit Completo R$219 ÷ sessões semanais por um ano = custo por sessão",
+            "Compara: R$219 vs R$200 por mês em clínica",
+            "Mostra que em menos de 2 sessões clínicas o aparelho se paga",
+            "CTA: Kit Completo com cupom MASCARALIVE"
+          ],
+          "frase_chave_decorar": "Uma sessão de clínica. Esse aparelho. Você faz as contas ao vivo aqui.",
+          "angulo_camera": "Câmera frontal mostrando Selliver fazendo a conta — papel ou tela de calculadora visível",
+          "erro_a_evitar": "Não inventar preço de clínica — usar a faixa pública de R$80 a R$200 como referência de mercado"
+        },
+        {
+          "n": 4,
+          "nome": "Resposta ao Vivo à Objeção Maior: Parece Brinquedo",
+          "duracao_segundos": 60,
+          "ciclo_da_live": 4,
+          "setup": "Máscara acesa no vermelho, câmera próxima mostrando o aparelho com LEDs visíveis",
+          "script_bullets": [
+            "Valida: entendo — aparência plástica gera dúvida",
+            "Cita Michael Hamblin, Harvard, fotobiomodulação — não precisa confiar em mim, pesquisa",
+            "Mostra o aparelho de perto: conta os LEDs visíveis, ressalta que são comprimentos de onda distintos",
+            "Fala: o que importa não é a embalagem cara — é o número que sai do LED",
+            "CTA: compare antes de comprar"
+          ],
+          "frase_chave_decorar": "Não precisa confiar em mim. Pesquisa 630nm e Harvard. O número não mente.",
+          "angulo_camera": "Close nos LEDs acesos — câmera a 10-15cm mostrando a intensidade da luz",
+          "erro_a_evitar": "Não ficar na defensiva sobre a embalagem — ir direto para o dado técnico"
+        },
+        {
+          "n": 5,
+          "nome": "Rotina Completa Integrada — 3 Passos",
+          "duracao_segundos": 90,
+          "ciclo_da_live": 5,
+          "setup": "Mesa com: demaquilante ou água micelar + máscara LED + hidratante leve",
+          "script_bullets": [
+            "Passo 1: pele limpa — mostra demaquilante rápido ou fala para usar após higienização normal",
+            "Passo 2: máscara LED 10-20 minutos — colocar ao vivo por 30 segundos para demonstrar",
+            "Passo 3: hidratante leve logo depois — pele receptiva pós-LED absorve melhor",
+            "Cronometra ao vivo: prep + LED + hidratante = menos de 25 minutos no total",
+            "CTA: Kit Completo tem guia de rotina incluso — cupom MASCARALIVE"
+          ],
+          "frase_chave_decorar": "Vinte e cinco minutos. Pele pronta. Sem sair de casa.",
+          "angulo_camera": "Câmera lateral mostrando os três produtos na mesa e Selliver executando cada passo",
+          "erro_a_evitar": "Não fazer o passo de LED durar mais de 30 segundos ao vivo — manter ritmo de demo"
+        }
+      ]
+    },
+    "dim7_top_5_objecoes": {
+      "objecoes": [
+        {
+          "n": 1,
+          "objecao_em_palavras_da_audiencia": "Parece brinquedo barato — não vai funcionar de verdade",
+          "resposta_10s_chat": "Entendo a dúvida — embalagem não é garantia. O que valida é o comprimento de onda: 630nm vermelho tem mais de 400 estudos publicados em fotobiomodulação. Pesquisa Michael Hamblin, Harvard. O número não mente.",
+          "resposta_30s_cta": "Essa é a objeção mais honesta que recebo. Olha: embalagem plástica barata não é sinônimo de LED ineficaz. O que importa é o comprimento de onda emitido. 630nm é o mesmo usado em clínicas de fototerapia. A diferença de um aparelho bom para um ruim não está na carcaça — está na calibragem do LED. Esse aqui emite 630nm documentado. Compare antes de comprar. Kit Completo com cupom MASCARALIVE.",
+          "demo_de_fechamento": "Demo 4 — Resposta ao vivo à objeção maior"
+        },
+        {
+          "n": 2,
+          "objecao_em_palavras_da_audiencia": "Não sei se vai chegar antes do Dia das Mães",
+          "resposta_10s_chat": "Live é dia 07 de maio. Dia das Mães é dia 11. Kit Completo tem frete prioritário incluso. Coloca o CEP no checkout — prazo aparece antes de pagar. Não deixa pra amanhã.",
+          "resposta_30s_cta": "Escuta: hoje é dia 07 de maio. Dia das Mães é domingo dia 11. São quatro dias. Kit Completo inclui frete prioritário — é o que temos de mais rápido disponível. TikTok Shop mostra o prazo exato pelo CEP antes de você confirmar o pedido. Se não der tempo, você decide antes de pagar. Mas quem deixar pra amanhã já arrisca. Coloca o cupom MASCARALIVE e confere o prazo agora.",
+          "demo_de_fechamento": "— (urgência logística · sem demo associada)"
+        },
+        {
+          "n": 3,
+          "objecao_em_palavras_da_audiencia": "Não tem ANVISA ou regulamentação — não confio",
+          "resposta_10s_chat": "Ponto legítimo. Número de registro ANVISA: [verificar com fornecedor]. Aparelhos de uso estético não invasivo têm enquadramento próprio — diferente de medicamento. Confirma no site da ANVISA pelo código.",
+          "resposta_30s_cta": "Regulamentação importa — você está certa em perguntar. Aparelhos de fototerapia LED domiciliar de baixa potência são enquadrados pela ANVISA como equipamentos de uso estético não invasivo — diferente de remédio, diferente de dispositivo médico de alta potência. O número de registro é [verificar com fornecedor] — confirma direto no site da ANVISA. Compra pelo TikTok Shop que tem proteção de comprador em caso de qualquer problema. Cupom MASCARALIVE.",
+          "demo_de_fechamento": "— (confiança regulatória · sem demo associada)"
+        },
+        {
+          "n": 4,
+          "objecao_em_palavras_da_audiencia": "Quanto tempo leva para ver resultado? Não quero comprar e não ver nada",
+          "resposta_10s_chat": "Honestidade: 30 dias de uso regular — três a quatro sessões por semana. Não é resultado de noite. É acúmulo de estimulação celular. Quem usa uma vez por semana não vai ver o mesmo resultado.",
+          "resposta_30s_cta": "Não vou mentir: você não vai acordar amanhã diferente. Fototerapia LED funciona por acúmulo — o ciclo de renovação da epiderme dura 28 dias. Resultado visual consistente aparece em 30 dias de uso regular, três a quatro vezes por semana de 10 a 20 minutos. Quem usa esporádico, resultado esporádico. Quem usa com consistência, aparência de pele mais uniforme e viçosa em um mês. Foto D0 e foto D30 com mesma iluminação — aí você compara. Cupom MASCARALIVE para começar essa conta hoje.",
+          "demo_de_fechamento": "Demo 5 — Rotina completa integrada com cronometragem"
+        },
+        {
+          "n": 5,
+          "objecao_em_palavras_da_audiencia": "É igual a qualquer genérico barato — por que pagar mais?",
+          "resposta_10s_chat": "Diferença real: número de LEDs, distribuição na máscara e quantos comprimentos de onda estão presentes. Genérico de farmácia normalmente tem 1 ou 2 cores. Esse tem 7 comprimentos de onda calibrados com cobertura total do rosto.",
+          "resposta_30s_cta": "Comparação justa. Genérico de baixo custo costuma ter LEDs de 1 ou 2 cores, concentrados em pequena área, sem cobertura total. Esse tem 7 comprimentos de onda distintos distribuídos por toda a superfície da máscara — fronte, bochechas, nariz e queixo simultaneamente. A diferença não é marca — é a dose de luz entregue por centímetro quadrado de pele. Mais cobertura, mais comprimentos de onda, mais estímulo por sessão. Compare as especificações antes de comprar. Cupom MASCARALIVE.",
+          "demo_de_fechamento": "Demo 1 — Apresentação das 7 Cores ao Vivo"
+        }
+      ]
+    },
+    "dim8_concorrentes": {
+      "tabela_comparativa": [
+        {
+          "concorrente": "Genérico de farmácia (1-2 cores, handheld)",
+          "preco": "R$ 39-79",
+          "diferencial": "Preço baixo, disponível imediatamente",
+          "embalagem": "Handheld pequeno, não cobre o rosto inteiro",
+          "onde_VENCEMOS": "7 comprimentos de onda vs 1-2 · cobertura facial total vs área pontual · uso mãos-livres",
+          "onde_PERDEMOS": "Preço de entrada menor no concorrente · disponível em loja física imediata"
+        },
+        {
+          "concorrente": "Premium importado (marca americana/coreana, 3-5 cores)",
+          "preco": "R$ 450-1200",
+          "diferencial": "Branding forte, embalagem premium, certificações internacionais",
+          "embalagem": "Rígida premium, materiais de acabamento superior",
+          "onde_VENCEMOS": "Preço 3-5x menor · mesmos comprimentos de onda funcionais · acessível para classe B/C+",
+          "onde_PERDEMOS": "Acabamento de embalagem inferior · menos reconhecimento de marca · menos certificações documentadas"
+        },
+        {
+          "concorrente": "Sessão em clínica de estética (aparelho profissional)",
+          "preco": "R$ 80-200 por sessão",
+          "diferencial": "Equipamento profissional de alta potência, acompanhamento de esteticista",
+          "embalagem": "Não aplicável — serviço presencial",
+          "onde_VENCEMOS": "Custo total: R$219 vs R$200/mês em clínica · conveniência domiciliar · sem agendamento · uso ilimitado",
+          "onde_PERDEMOS": "Potência de irradiância inferior ao equipamento clínico profissional · sem acompanhamento especializado"
+        }
+      ],
+      "frase_comparativa_decorar": "Mesmo comprimento de onda da clínica. Sem mensalidade. Sem agendamento. Uma compra.",
+      "honestidade_publica_se_questionarem": "Se você tem condição de investir no premium importado e quer o acabamento e as certificações internacionais, ele é melhor em embalagem e documentação. Se quer o mesmo comprimento de onda em casa com preço acessível, esse aqui entrega."
+    },
+    "dim9_pricing_oferta": {
+      "camadas": [
+        {
+          "camada": "Item solo",
+          "preco": 129,
+          "funcao": "atração"
+        },
+        {
+          "camada": "Kit",
+          "preco": 189,
+          "funcao": "AOV up"
+        },
+        {
+          "camada": "Combo completo",
+          "preco": 219,
+          "funcao": "lucro real"
+        }
+      ],
+      "cupons": [
+        {
+          "codigo": "MASCARALIVE",
+          "desconto_pct": 10,
+          "janela": "Duração total da live — 90 minutos",
+          "trigger": "CTA principal · repetir a cada bloco de 15 minutos"
+        },
+        {
+          "codigo": "QUERLED",
+          "desconto_pct": 5,
+          "janela": "60 segundos · min 30-32",
+          "trigger": "Gift trigger de escala pré-decoy — quem manda QUERO LED no chat"
+        }
+      ],
+      "ancoragem_5_frases": [
+        "vs clínica de LED: uma sessão custa até R$200. Esse kit você usa pra sempre por R$219.",
+        "vs delivery de skincare: gasta R$80 por mês em produto. Aqui é uma compra e estimulação celular que nenhum tópico faz.",
+        "vs custo/dia: R$219 dividido por 365 dias = menos de R$0,60 por dia de rotina de LED.",
+        "vs base de maquiagem: uma base boa custa R$120 e acaba em 3 meses. Esse aparelho não acaba.",
+        "vs custo/mês: quem vai à clínica 2x por mês gasta R$400. Kit Completo com cupom MASCARALIVE sai por R$197."
+      ]
+    },
+    "dim10_dados_historicos_template": {
+      "instrucao": "Ana preenche manualmente · agente IA não tem acesso ao Seller Center",
+      "campos_obrigatorios": [
+        "esgotou_quantas_vezes_30d",
+        "volume_medio_mensal",
+        "estoque_atual",
+        "top_3_reviews_positivos_literais",
+        "1_review_negativo_literal",
+        "recompra_pct_90d",
+        "devolucao_pct_60d"
+      ]
+    }
+  },
+  "compliance": {
+    "regulated_category": "cosmeticos",
+    "forbidden_claims": [
+      "Trata acne clinicamente comprovada",
+      "Elimina rugas e manchas definitivamente",
+      "Rejuvenesce a pele como cirurgia",
+      "Cura dermatite ou rosácea",
+      "Aprovado por dermatologista"
+    ],
+    "allowed_claims": [
+      "Sensação de pele mais uniforme e viçosa",
+      "Auxilia na aparência de oleosidade",
+      "Rotina de cuidado com luz LED em casa",
+      "Minimiza aparência de poros dilatados",
+      "Complemento para rotina de skincare diária"
+    ],
+    "anvisa_registration": ""
+  },
+  "audience_profile": {
+    "expected_size": "200-500 viewers",
+    "main_origin": "organico",
+    "funnel_stage": "descoberta_da_marca"
+  },
+  "_meta": {
+    "tokens_in": 7496,
+    "tokens_out": 13634,
+    "cost_usd_estimate": 0.226998
+  }
+}
