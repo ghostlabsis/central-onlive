@@ -51,6 +51,7 @@ export async function buildCourseFromData(courseData: Record<string, unknown>): 
       access: 'public',
       contentType,
       addRandomSuffix: false,
+      allowOverwrite: true,
     });
 
     uploadedPaths.push(`/${slug}/${date}/${fileName}`);
