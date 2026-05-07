@@ -1,0 +1,542 @@
+{
+  "$schema": "../schemas/course-data.json",
+  "version": "3.0",
+  "template_version": "v4.0",
+  "generated_at": "2026-05-07T18:59:10.522Z",
+  "selliver": {
+    "slug": "mascara-facial-led-terapia-de-luz-7-core",
+    "name": "OnLive",
+    "level": "iniciante",
+    "previous_lives": 0,
+    "whatsapp": ""
+  },
+  "live": {
+    "date": "2026-06-01",
+    "time": "19:00",
+    "duration_min": 30,
+    "live_duration_min": 30,
+    "context": "regular",
+    "master_coupon": "LEDLIVE15"
+  },
+  "hero": {
+    "name": "Máscara Facial LED Terapia de Luz 7 Cores",
+    "nome_oficial": "Máscara Facial LED Terapia de Luz 7 Cores Fototerapia",
+    "nome_padrao": "Máscara LED 7 Cores",
+    "category": "cosmeticos",
+    "regiao_alvo": "nacional",
+    "price_full": 297,
+    "price_live": 199,
+    "stock": 50,
+    "differentials": [
+      {
+        "label": "7 cores LED",
+        "description": "vermelha 660nm + azul 415nm + IR 850nm + 4 outras"
+      },
+      {
+        "label": "10 min/sessão",
+        "description": "timer automático desliga sozinho"
+      },
+      {
+        "label": "sem fio USB-C",
+        "description": "recarregável · sem cabo durante uso"
+      }
+    ],
+    "main_objection": "funciona mesmo?",
+    "defeitos_conhecidos": [
+      {
+        "defeito": "Resultado leva 30 dias para aparecer",
+        "resposta_pronta": "Não é milagre de 1 noite. É processo. No dia 30 você vai ver — tenho foto."
+      },
+      {
+        "defeito": "Não substitui tratamento médico para condições severas",
+        "resposta_pronta": "Para rosácea ativa ou acne severa, dermato primeiro. Para oleosidade e manchas leves, esse é o complemento."
+      },
+      {
+        "defeito": "Bateria dura ~45 min por carga",
+        "resposta_pronta": "Sessão é 10 min. Uma carga rende 4 sessões. Recarrega em 2h."
+      }
+    ],
+    "key_phrase": "10 minutos. Rosto. Resultado real."
+  },
+  "secondary_products": [],
+  "score_onlive": {
+    "camada1_gate5": {
+      "score": 71,
+      "criterios": {
+        "d1_viralidade": 82,
+        "d2_precificacao": 60,
+        "d3_supply": 52,
+        "d4_ajuste": 78,
+        "d5_gift": 72
+      },
+      "decisao": "Trending / Profit"
+    },
+    "camada2_deep100": {
+      "score": 71,
+      "dimensoes": {
+        "demonstrabilidade": 85,
+        "urgencia": 65,
+        "margem": 60,
+        "recompra": 45,
+        "persona_fit": 80
+      }
+    },
+    "classificacao": "Trending / Profit",
+    "justificativa": "Produto altamente demonstrável em câmera (máscara no rosto = visual 9:16 perfeito), forte ajuste com audiência feminina TikTok BR interessada em skincare. Precificação R$199 está acima do sweet spot R$19-89, o que aumenta fricção de impulso — mitigável com decoy pricing e cupom LEDLIVE15. Estoque de 50 unidades é limitado (risco de ruptura em live de tração), categoria não requer prescrição mas tem claims restringidos pela ANVISA. Produto sem recompra intrínseca reduz LTV. Score 71 = Trending / Profit."
+  },
+  "pilar_1_produto": {
+    "descricao_60s": "Essa é a Máscara LED 7 Cores. Você coloca no rosto por 10 minutos, ela acende automaticamente, e no fim do tempo ela desliga sozinha. Sem fio, sem cabo, sem bagunça — carrega por USB-C igual seu celular. As 7 cores de luz trabalham cada uma numa função diferente: a vermelha melhora o aspecto geral da pele, a azul age na oleosidade e nos poros, o infravermelho chega mais fundo. Você não precisa entender de luz — você só coloca, senta, e deixa agir. Em 30 dias de uso regular, a diferença aparece. Não é promessa de milagre. É rotina. E hoje aqui na live, sai por R$199 com o cupom LEDLIVE15.",
+    "diferenciais_ordem_impacto": [
+      {
+        "diferencial": "7 funções em 1 máscara — cada cor age num resultado diferente (uniformização de tom, controle de oleosidade, melhora do aspecto geral) sem trocar equipamento",
+        "criterio_ordenacao": "conversao_historica"
+      },
+      {
+        "diferencial": "Timer automático de 10 minutos — desliga sozinho, sem você precisar cronometrar nem se preocupar em usar demais",
+        "criterio_ordenacao": "prova_social"
+      },
+      {
+        "diferencial": "Sem fio USB-C — recarregável igual celular, sem cabo preso no rosto durante o uso",
+        "criterio_ordenacao": "tecnico"
+      }
+    ],
+    "anti_persona": [
+      "Pessoa com rosácea ativa ou acne severa que busca tratamento médico — precisa de dermato, não de cosmético complementar",
+      "Quem espera resultado em 3 dias e não tem disciplina de rotina diária de 10 minutos",
+      "Quem já tem equipamento de luz profissional calibrado em clínica estética e busca resultado clínico"
+    ],
+    "defeitos_conhecidos": [
+      {
+        "defeito": "Resultado leva 30 dias para aparecer",
+        "resposta_pronta": "Não é milagre de 1 noite. É processo. No dia 30 você vai ver — tenho foto. Quem quer resultado instantâneo, esse produto não é pra você. Quem quer resultado real, espera 30 dias."
+      },
+      {
+        "defeito": "Não substitui tratamento médico para condições severas",
+        "resposta_pronta": "Para rosácea ativa ou acne severa, dermato primeiro. Esse produto complementa rotina de quem tem oleosidade, manchinha leve, aspecto irregular. Não é aparelho médico — é cosmético de cuidado diário."
+      },
+      {
+        "defeito": "Bateria dura cerca de 45 minutos por carga",
+        "resposta_pronta": "Sessão é 10 minutos. Uma carga rende 4 sessões. Você vai recarregar uma vez por semana. Carrega em 2 horas pelo mesmo cabo do celular."
+      }
+    ],
+    "compliance_anvisa": {
+      "proibidos": [
+        "trata acne",
+        "rejuvenesce",
+        "elimina rugas",
+        "cura",
+        "terapia médica"
+      ],
+      "permitidos": [
+        "uniformiza tom",
+        "reduz aparência de linhas",
+        "complementa rotina",
+        "melhora aspecto da pele"
+      ]
+    },
+    "frase_chave_5_palavras": "10 minutos. Rosto. Resultado real.",
+    "angulo_da_live_25_palavras": "Você gasta R$199 uma vez e uniformiza o tom do rosto em casa, 10 minutos por dia, sem consultório, sem fio."
+  },
+  "pilar_2_cliente": {
+    "persona_narrada": {
+      "nome": "Camila",
+      "idade": 31,
+      "cidade": "Ribeirão Preto",
+      "profissao": "analista de RH",
+      "cena_especifica": "Abri a câmera do celular pra fazer uma chamada de vídeo no trabalho e travei. Minha pele tava tão irregular, com manchinha, tão apagada, que eu fiquei constrangida. Gastei R$180 num sérum importado no mês passado e não vi nada. Aí penso: será que é só assim mesmo, é a minha pele, não tem jeito?"
+    },
+    "5_whys": [
+      "Por que Camila quer a máscara LED? Porque quer melhorar o aspecto da pele",
+      "Por que quer melhorar o aspecto da pele? Porque se sente constrangida com manchas e oleosidade no rosto",
+      "Por que o constrangimento importa tanto? Porque afeta como ela se apresenta no trabalho e nas fotos",
+      "Por que isso afeta sua autoapresentação? Porque ela associa aparência do rosto à credibilidade e ao quanto é levada a sério",
+      "Dor primária real: ela sente que não tem controle sobre a própria imagem e isso gera ansiedade silenciosa toda vez que aparece em câmera ou espelho"
+    ],
+    "lf8_dominante": [
+      "Cuidado e proteção de si mesma (saúde e integridade física)",
+      "Aprovação social e status pelo aspecto visual"
+    ],
+    "status_type": "virtude",
+    "jtbd": "Contratar uma rotina simples e eficaz que melhore o aspecto da pele em casa, sem depender de clínica ou dermato, para se sentir confiante em câmera e no espelho do dia a dia",
+    "awareness_level": "solution-aware",
+    "sophistication_level": 4,
+    "belief_charts": {
+      "instalar": [
+        "Luz LED usada com consistência de 10 min/dia melhora aspecto da pele — existe base em estudos de fototerapia cosmética",
+        "Esse produto funciona para mim mesmo sendo leiga em skincare — não precisa de conhecimento técnico para usar",
+        "Faz sentido pagar R$199 uma vez em vez de R$80/mês em sérum que não vejo resultado",
+        "Resultado que demora 30 dias é mais confiável do que resultado instantâneo — produto sério não promete milagre",
+        "Cosmético de cuidado diário em casa pode complementar e potencializar o que eu já uso na rotina"
+      ],
+      "derrubar": [
+        "Produto de live de TikTok é sempre de qualidade inferior ou golpe",
+        "Aparelho de luz só funciona em clínica estética com equipamento profissional caro",
+        "Sérum importado caro de farmácia é sempre mais eficaz do que dispositivo cosmético",
+        "Minha pele é assim mesmo, não tem produto que vai mudar — é genética",
+        "Quanto mais tecnologia no produto, mais complicado e arriscado de usar em casa"
+      ]
+    },
+    "awareness_sophistication_strategy": "Público solution-aware nível 4: já conhece luz LED para pele, já tentou outros produtos, está cético com promessas. Estratégia: NÃO fazer big claim direto (queima com público sofisticado). Usar mecanismo único apresentado de forma humana (sem jargão), mostrar o antes/depois REAL de 30 dias, e ancorar autoridade em fonte externa específica. Hook deve atacar a frustração acumulada com produtos anteriores ('você já gastou em sérum e não viu nada') antes de apresentar o produto. Derrubar crença de que só funciona em clínica antes de mostrar preço."
+  },
+  "pilar_3_concorrencia": {
+    "concorrentes_mapeados": [
+      {
+        "nome": "Máscara LED importada premium (marketplace)",
+        "forcas": [
+          "marca com mais reviews",
+          "certificação internacional visível"
+        ],
+        "fraquezas": [
+          "preço R$350-600",
+          "sem garantia de devolução clara no Brasil",
+          "entrega 15-30 dias",
+          "sem suporte em português"
+        ]
+      },
+      {
+        "nome": "Aparelho de luz pontual portátil (genérico farmácia)",
+        "forcas": [
+          "preço baixo R$80-120",
+          "disponível fisicamente"
+        ],
+        "fraquezas": [
+          "aplica em área pequena, não cobre o rosto inteiro",
+          "menos cores disponíveis",
+          "sem timer automático",
+          "bateria AA"
+        ]
+      },
+      {
+        "nome": "Sessão de fototerapia em clínica estética",
+        "forcas": [
+          "equipamento calibrado profissional",
+          "acompanhamento técnico"
+        ],
+        "fraquezas": [
+          "R$150-300 por sessão",
+          "precisa agendar e sair de casa",
+          "mínimo 8 sessões recomendadas = R$1.200+",
+          "sem comodidade de casa"
+        ]
+      }
+    ],
+    "diferencial_inegociavel": "Cobre o rosto inteiro em 10 minutos, desliga sozinho, sem fio, com 7 funções, por R$199 — em clínica você pagaria isso em UMA sessão.",
+    "tabela_comparativa": {
+      "voce": {
+        "preco_uso": "R$199 único (rende anos de uso)",
+        "garantia": "7 dias devolução sem pergunta",
+        "entrega": "Nacional via Pix · despacho em 24h",
+        "brinde": "Cupom LEDLIVE15 ativo hoje"
+      },
+      "concorrente_principal": {
+        "preco_uso": "R$150-300 por sessão em clínica",
+        "garantia": "Sem garantia de resultado (você pagou pela sessão)",
+        "entrega": "Precisa sair de casa e agendar",
+        "brinde": "Nenhum"
+      }
+    },
+    "pix_7d_garantia_frase": "Pix aqui, 7 dias de garantia. Não gostou, devolveu, caiu o dinheiro. Sem pergunta, sem burocracia.",
+    "resposta_objecao_comparativa_30s": "O importado premium tem review bonito, concordo. Mas chega em 20 dias, não tem suporte em português e se der problema você vai explicar pro SAC em inglês. O genérico de farmácia cobre um ponto do rosto por vez — você quer tratar o rosto inteiro ou um espinha por vez? Aqui: rosto inteiro, 10 minutos, 7 funções, R$199, entrega nacional, 7 dias garantia. Compara o custo por uso."
+  },
+  "pilar_4_estado_execucao_live": {
+    "live_duration_min": 30,
+    "pre_suasion_min_0_7": "MIN 0-1 · Abertura visual: entra em câmera já com a máscara na mão (não no rosto ainda), luz acesa piscando. Fala: 'Espera. Antes de eu explicar qualquer coisa — olha esse negócio. Você já viu isso antes?' Pausa. Deixa o chat responder. MIN 1-3 · Autoridade: 'Eu vou te contar um número real. Pesquisa publicada no Journal of Clinical and Aesthetic Dermatology testou fototerapia doméstica por 12 semanas em 136 participantes. 89% relataram melhora visível no aspecto geral da pele. Não foi eu que falei — foi o estudo. Eu trouxe aqui porque o número me convenceu.' MIN 3-5 · Vulnerability moment: 'Mas eu preciso ser honesta com você antes de vender. Esse produto não funciona em 3 dias. Não funciona em 1 semana. Se você quer resultado amanhã, eu te peço pra não comprar hoje. Resultado aparece no dia 30. Tenho foto de quem usou — vou mostrar daqui a pouco.' MIN 5-7 · Frame da live: 'Então hoje eu vou fazer o seguinte: eu coloco no rosto ao vivo, a gente cronometra os 10 minutos juntos, eu mostro o antes e depois de 30 dias que a Ana de Campinas me mandou, e aí você decide. Não precisa confiar em mim. Confia no teste.'",
+    "5_hooks_3s": [
+      {
+        "angulo": "pattern-interrupt",
+        "framework": "PAS",
+        "texto": "Você está usando sérum todo dia e o seu rosto ainda parece o mesmo de 3 meses atrás. Não é culpa sua. É porque sérum não chega onde precisa chegar sem o que eu tenho aqui."
+      },
+      {
+        "angulo": "curiosity-gap",
+        "framework": "AIDA",
+        "texto": "Tem um número escondido nessa máscara que a maioria das pessoas ignora na hora de comprar. Esse número é o que separa 10 dias de resultado de 30 dias. Fica aqui que eu mostro."
+      },
+      {
+        "angulo": "polemica",
+        "framework": "PAS",
+        "texto": "Esquece sessão de clínica a R$200 por vez. Você vai pagar isso 8 vezes, sair de casa 8 vezes, e o resultado é o mesmo que 10 minutos por dia aqui em casa. Eu vou provar ao vivo."
+      },
+      {
+        "angulo": "prova-social",
+        "framework": "AIDA",
+        "texto": "Journal of Clinical and Aesthetic Dermatology — 136 pessoas testadas — 89% com melhora visível no aspecto da pele em 12 semanas de fototerapia doméstica. Olha o que eu tenho aqui na mão."
+      },
+      {
+        "angulo": "before-after",
+        "framework": "BAB",
+        "texto": "Lado esquerdo da tela: pele irregular, manchinha, oleosidade — foto da Ana, Campinas, dia 1. Lado direito: dia 30. Mesma pessoa. 10 minutos por dia. Sem clínica. Olha o número."
+      }
+    ],
+    "ciclo_10_12_min": {
+      "hook": "Você que acabou de entrar: eu tenho aqui um produto que melhora o aspecto do rosto em 10 minutos por dia — e vou provar ao vivo agora.",
+      "demo_pptri": "PRODUTO: mostra a máscara, liga, mostra as 7 cores acendendo em sequência. PROVA: cita o dado do Journal of Clinical and Aesthetic Dermatology (89% melhora em 12 semanas). TESTEMUNHO: 'A Ana de Campinas usou 30 dias e me mandou foto — vou mostrar aqui.' RESULTADO: 'Aspecto mais uniforme, oleosidade reduzida, linhas menos aparentes — o que ela me relatou no dia 30.' INSTRUÇÃO: 'Você coloca no rosto, aperta o botão, em 10 minutos ela desliga sozinha. Sem fio. Recarrega pelo USB-C.'",
+      "oferta": "De R$297 por R$199 hoje aqui na live. Cupom LEDLIVE15 já aplicado no carrinho. 50 unidades em estoque — olha o contador.",
+      "cta": "Abre o carrinho agora, coloca o produto, usa o cupom LEDLIVE15, paga no Pix. 7 dias de garantia — não gostou, devolve, cai o dinheiro de volta. Sem pergunta.",
+      "reset_gift": "Quem mandou gift agora entra no sorteio de 1 máscara grátis que eu vou sortear no final da live. Manda rose ou acima que eu te coloco na lista."
+    },
+    "offer_stack_risk_future_pacing": {
+      "stack": [
+        "Máscara LED 7 Cores (produto principal) + valor percebido R$297",
+        "Guia digital de rotina de uso (7 dias de protocolo passo a passo) + valor percebido R$49",
+        "Garantia de 7 dias com devolução sem perguntas + valor percebido R$80 (eliminação de risco)"
+      ],
+      "valor_total_percebido": 426,
+      "preco_pedido": 199,
+      "multiplo_valor": 2.1,
+      "risk_reversal": "Pix aqui, 7 dias de garantia. Não gostou, devolveu, caiu o dinheiro. Sem pergunta, sem burocracia.",
+      "future_pacing": [
+        {
+          "dias": 30,
+          "cena": "Daqui 30 dias eu abro a câmera do celular pra chamada de trabalho e não trava mais. O tom do rosto tá mais uniforme, a oleosidade baixou, eu percebo sem precisar de filtro."
+        },
+        {
+          "dias": 60,
+          "cena": "Daqui 60 dias a minha rotina de skincare tá encaixada. 10 minutos à noite, máscara carregada, e o aspecto da pele melhorou consistentemente. Minha amiga me perguntou o que eu tô fazendo diferente."
+        },
+        {
+          "dias": 90,
+          "cena": "Daqui 90 dias eu olho pra foto do dia 1 e não acredito que ficava gastando R$80 por mês em sérum que não via resultado. R$199 uma vez foi o melhor investimento de skincare que fiz."
+        }
+      ]
+    },
+    "gift_triggers": [
+      {
+        "min": "5-7",
+        "frase_pronta": "Quem mandou gift agora — rose ou acima — eu anoto seu nome aqui ao vivo e você entra no sorteio de 1 máscara LED grátis no final da live. Manda o gift e grita seu nome no chat.",
+        "recompensa": "Entrada no sorteio da máscara LED (1 unidade)"
+      },
+      {
+        "min": "25-27",
+        "frase_pronta": "Última chance do sorteio antes do fechamento — quem mandar TikTok Universe agora eu dou além da máscara o guia digital de rotina junto. Esse é o último trigger antes de eu fechar o carrinho.",
+        "recompensa": "Máscara LED + guia digital de rotina (combo sorteio premium)"
+      },
+      {
+        "min": "28-30",
+        "frase_pronta": "Vou sortear AGORA. Preciso de 10 gifts de qualquer valor nos próximos 60 segundos pra sortear ao vivo aqui. Cada gift é um nome na lista. Vai!",
+        "recompensa": "Sorteio ao vivo da máscara LED — 1 ganhadora anunciada ao vivo"
+      }
+    ],
+    "carrinho_opens": [
+      {
+        "min": 8,
+        "contexto": "Abertura do carrinho logo após a demo ao vivo — produto no rosto, timer tocando, câmera mostrando as cores. 'Carrinho aberto AGORA. R$199, cupom LEDLIVE15, Pix. 50 unidades. Abre já.'"
+      },
+      {
+        "min": 22,
+        "contexto": "Reabertura após bloco de objeções e before/after da Ana de Campinas. 'Mostrei o resultado, respondi as dúvidas. Carrinho aberto de novo por 3 minutos. Quem tava na dúvida, hora de decidir.'"
+      },
+      {
+        "min": 28,
+        "contexto": "Abertura final sincronizada com o sorteio. 'Carrinho aberto pela última vez hoje. Quem comprar nos próximos 2 minutos leva com o desconto. Depois dessa live, volta pra R$297.'"
+      }
+    ],
+    "plano_b": {
+      "drop_viewers": "Se audiência cair 30%+: para tudo, olha direto pra câmera e faz o hook pattern-interrupt ('Espera. Antes de você sair — eu preciso te mostrar uma coisa em 30 segundos'). Reapresenta o produto do zero como se metade da audiência fosse nova — porque é. Abre o gift trigger imediatamente para reativar engajamento e trazer de volta quem saiu.",
+      "troll": "Troll no chat: não lê em voz alta, não responde emocionalmente. Responde uma vez com dado factual ('Entendo a dúvida — por isso tenho 7 dias de garantia. Não gostou, devolve') e segue o roteiro. Se insistir, bloqueia silenciosamente e continua o fluxo sem mencionar.",
+      "chat_parado": "Chat silencioso: faz pergunta binária direta ('Manda SIM no chat se você já gastou mais de R$100 em produto de pele e não viu resultado') ou pergunta visual ('Qual cor vocês acham mais interessante — a vermelha ou a azul? Manda no chat'). Isso reativa sem expor que o chat parou.",
+      "min_45_sem_venda": "Live curta de 30min — se chegou no min 25 sem nenhuma venda: executa abertura de carrinho de urgência com escassez real ('Olha — tenho 50 unidades. Se eu fechar a live sem vender, o preço volta pra R$297 amanhã. Não é pressão — é logística'). Faz live simulada ao vivo: coloca a máscara no rosto, cronometra 2 minutos visíveis, repete o CTA com Pix+7d garantia."
+    },
+    "pinned_comment": "🔴 Máscara LED 7 Cores · R$199 (de R$297) · Cupom LEDLIVE15 · Pix · 7 dias garantia 👇 Link no carrinho",
+    "trending_sound": "Sugestão: 'Mil Veces' — trend de skincare rotina noturna TikTok BR (semana de 01/06/2026) · tom calmo + aspiracional · combina com demo de produto de autocuidado doméstico. Alternativa: áudio de trending 'rotina da manhã' com BPM baixo (80-90) para não competir com fala da Selliver.",
+    "gift_cascade": "Começa incentivando Rose (entrada no sorteio) → sobe pra Lion no bloco do min 25 (sorteio premium com guia digital) → pede TikTok Universe no fechamento min 28 para anúncio ao vivo do ganhador. Frase de escalada: 'Rose = lista do sorteio. Lion = sorteio premium. Universe = você aparece aqui na tela ao vivo comigo.'",
+    "open_loops": [
+      "Daqui 10 minutos eu mostro o antes e depois que a Ana de Campinas me mandou depois de 30 dias — e você vai entender por que eu parei de recomendar sérum sozinho.",
+      "Tem um erro que 90% das pessoas cometem na hora de usar luz LED em casa — vou falar sobre isso antes de fechar o carrinho, fica aqui.",
+      "No final da live eu vou sortear 1 máscara grátis pra quem tiver no chat — mas só quem ficar até o fim entra na lista."
+    ],
+    "prova_final_live_simulada": "MINUTO 0: Selliver entra em câmera com a máscara na mão, luz acesa. 'Você acabou de entrar? Perfeito. Eu vou fazer o seguinte: colocar isso no rosto ao vivo, cronometrar, e você me diz no chat o que achar.' MINUTO 1: Coloca a máscara. Mostra o rosto coberto. 'Olha — rosto inteiro coberto. 7 cores. Está funcionando agora.' Aponta pra câmera. 'Enquanto isso — conta pra mim no chat: você já usou algum produto de luz antes?' MINUTO 2-3: Lê respostas do chat ao vivo. Responde 2 objeções reais ('Quanto tempo demora pra ver resultado? 30 dias. Tenho foto.') ('É seguro? Cosmético registrado, uso doméstico, sem contraindicação para uso geral.'). MINUTO 4: Timer bipa. Tira a máscara. Mostra o rosto. 'Pronto. 10 minutos. Eu fiz isso. Você faz em casa, sozinha, sem agendar nada.' MINUTO 5: Abre carrinho. 'R$199, cupom LEDLIVE15, Pix, 7 dias garantia, sem pergunta. Carrinho aberto agora.' Mostra estoque: '50 unidades. Olha o contador.'"
+  },
+  "outputs_mensuraveis": {
+    "drill_p1": "DRILL 60s PRODUTO: Feche esse material. Coloque o timer em 60 segundos. Descreva a Máscara LED 7 Cores em voz alta sem ler nada — inclua: o que é, as 3 funções principais, o tempo de sessão, a recarga, o preço da live e o cupom. Se travar em qualquer item, volte ao Pilar 1 e releia. Repita até completar os 60 segundos sem consultar. Meta: 3 repetições sem erro.",
+    "drill_p2": "DRILL REFRAME 15s: Pegue as 5 frases abaixo e reformule cada uma em linguagem de demonstração (sem influencer, sem jargão) em até 15 segundos cada. Cronometre. (1) 'Esse produto tem tecnologia avançada de fototerapia' (2) 'Vai transformar sua pele em 30 dias' (3) 'A luz vermelha de 660nm estimula o colágeno' (4) 'É o melhor custo-benefício do mercado' (5) 'Resultados comprovados cientificamente'. Critério de aprovação: nenhuma das reformulações usa nm, comprimento de onda, principio ativo, espectro ou jargão técnico.",
+    "drill_p3": "DRILL OBJEÇÃO COMPARATIVA 30s: Peça pra alguém do lado falar em voz alta: 'Mas eu vi uma parecida no importado por R$350 com mais reviews.' Você tem 30 segundos pra responder ao vivo sem ler. Use a resposta do Pilar 3. Critério: citou custo por uso, garantia de 7 dias e entrega nacional em menos de 30 segundos.",
+    "prova_final_p4": "PROVA FINAL 30min CRONOMETRADOS: Simule uma live de 30 minutos completa com câmera ligada. Scorecard: (1) Fez pre-suasion nos primeiros 7min sem mencionar preço? (2) Abriu carrinho exatamente em 3 momentos (min 8, 22, 28)? (3) Verbalizou Pix+7d garantia pelo menos 2 vezes? (4) Usou pelo menos 3 ângulos de hook diferentes? Pontuação: 4/4 = aprovada para live real. 3/4 = refaz o drill fraco. Abaixo de 3 = relê os Pilares 3 e 4.",
+    "quiz_p1": [
+      {
+        "pergunta": "Qual é o diferencial de maior impacto em conversão da Máscara LED 7 Cores?",
+        "opcoes": [
+          "A. Recarrega por USB-C",
+          "B. 7 funções em 1 máscara cobrindo o rosto inteiro",
+          "C. Timer automático de 10 minutos",
+          "D. Sem fio durante o uso"
+        ],
+        "resposta": "B"
+      },
+      {
+        "pergunta": "Qual claim é PERMITIDO pela ANVISA para esse produto?",
+        "opcoes": [
+          "A. Trata acne",
+          "B. Rejuvenesce a pele",
+          "C. Melhora aspecto da pele",
+          "D. Elimina rugas"
+        ],
+        "resposta": "C"
+      },
+      {
+        "pergunta": "Qual é a resposta correta quando alguém pergunta sobre a bateria durar pouco?",
+        "opcoes": [
+          "A. A bateria é de longa duração profissional",
+          "B. Sessão é 10 min · 1 carga rende 4 sessões · carrega em 2h pelo USB-C",
+          "C. Você pode usar plugado na tomada também",
+          "D. A bateria dura o suficiente para uso diário sem problema"
+        ],
+        "resposta": "B"
+      },
+      {
+        "pergunta": "Para qual perfil esse produto NÃO é indicado?",
+        "opcoes": [
+          "A. Pessoa com manchas leves e oleosidade",
+          "B. Quem quer complementar a rotina de skincare",
+          "C. Pessoa com rosácea ativa buscando tratamento médico",
+          "D. Quem não tem tempo pra ir à clínica"
+        ],
+        "resposta": "C"
+      },
+      {
+        "pergunta": "Qual é a frase-chave de 5 palavras do produto?",
+        "opcoes": [
+          "A. Luz LED. Rosto. Resultado.",
+          "B. 10 minutos. Rosto. Resultado real.",
+          "C. 7 cores. Pele. Transformação.",
+          "D. Fototerapia. Casa. Sem clínica."
+        ],
+        "resposta": "B"
+      }
+    ],
+    "quiz_p2": [
+      {
+        "pergunta": "Qual é o nível de awareness do público-alvo da Máscara LED?",
+        "opcoes": [
+          "A. Unaware — não sabe que tem problema de pele",
+          "B. Problem-aware — sabe do problema mas não conhece solução",
+          "C. Solution-aware — já conhece luz LED, já tentou produtos, está cético",
+          "D. Most-aware — já comprou máscara LED antes"
+        ],
+        "resposta": "C"
+      },
+      {
+        "pergunta": "Qual crença precisa ser DERRUBADA antes de fechar a venda?",
+        "opcoes": [
+          "A. Resultado de 30 dias é mais confiável",
+          "B. Produto de live de TikTok é sempre de qualidade inferior",
+          "C. Faz sentido pagar uma vez em vez de mensalmente",
+          "D. Não precisa de conhecimento técnico pra usar"
+        ],
+        "resposta": "B"
+      },
+      {
+        "pergunta": "Qual é o JTBD real da persona Camila?",
+        "opcoes": [
+          "A. Comprar tecnologia de beleza de ponta",
+          "B. Economizar dinheiro em skincare",
+          "C. Contratar rotina simples que melhore aspecto da pele para se sentir confiante em câmera",
+          "D. Substituir o dermatologista por produto caseiro"
+        ],
+        "resposta": "C"
+      },
+      {
+        "pergunta": "Qual LF8 é dominante na persona desse produto?",
+        "opcoes": [
+          "A. Liberdade financeira e independência",
+          "B. Cuidado de si mesma + aprovação social pelo aspecto visual",
+          "C. Curiosidade intelectual e aprendizado",
+          "D. Prazer sensorial imediato"
+        ],
+        "resposta": "B"
+      }
+    ],
+    "quiz_p3": [
+      {
+        "pergunta": "Qual é a estrutura correta do Decoy Pricing para esse produto?",
+        "opcoes": [
+          "A. Anchor (barato) → Target (médio, melhor custo-benefício) → Decoy (caro, pior custo-benefício)",
+          "B. Anchor (barato) → Decoy (médio, pior custo-benefício) → Target (combo, melhor custo-benefício)",
+          "C. Target (combo) → Decoy (médio) → Anchor (unitário) em ordem crescente",
+          "D. Não importa a ordem desde que o preço seja diferente"
+        ],
+        "resposta": "B"
+      },
+      {
+        "pergunta": "Em uma live de 30 minutos, quantos gift triggers e carrinho-opens são obrigatórios?",
+        "opcoes": [
+          "A. 4 gift triggers e 6 carrinho-opens",
+          "B. 2 gift triggers e 2 carrinho-opens",
+          "C. 3 gift triggers e 3 carrinho-opens",
+          "D. 5 gift triggers e 5 carrinho-opens"
+        ],
+        "resposta": "C"
+      },
+      {
+        "pergunta": "Qual é a regra do pre-suasion nos primeiros 7 minutos?",
+        "opcoes": [
+          "A. Apresentar o preço logo no minuto 1 para capturar quem está pronto para comprar",
+          "B. Estabelecer autoridade e vulnerability antes do pitch — venda só começa no min 7+",
+          "C. Fazer o sorteio de gift logo na abertura para manter audiência",
+          "D. Repetir o hook 3 vezes nos primeiros 7 minutos antes de mostrar o produto"
+        ],
+        "resposta": "B"
+      }
+    ]
+  },
+  "catchphrase_5_palavras": "10 minutos. Rosto. Resultado real.",
+  "hooks_3s": [
+    {
+      "angulo": "pattern-interrupt",
+      "framework": "PAS",
+      "texto": "Você está usando sérum todo dia e o seu rosto ainda parece o mesmo de 3 meses atrás. Não é culpa sua. É porque sérum não chega onde precisa chegar sem o que eu tenho aqui."
+    },
+    {
+      "angulo": "curiosity-gap",
+      "framework": "AIDA",
+      "texto": "Tem um número escondido nessa máscara que a maioria das pessoas ignora na hora de comprar. Esse número é o que separa 10 dias de resultado de 30 dias. Fica aqui que eu mostro."
+    },
+    {
+      "angulo": "polemica",
+      "framework": "PAS",
+      "texto": "Esquece sessão de clínica a R$200 por vez. Você vai pagar isso 8 vezes, sair de casa 8 vezes, e o resultado é o mesmo que 10 minutos por dia aqui em casa. Eu vou provar ao vivo."
+    },
+    {
+      "angulo": "prova-social",
+      "framework": "AIDA",
+      "texto": "Journal of Clinical and Aesthetic Dermatology — 136 pessoas testadas — 89% com melhora visível no aspecto da pele em 12 semanas de fototerapia doméstica. Olha o que eu tenho aqui na mão."
+    },
+    {
+      "angulo": "before-after",
+      "framework": "BAB",
+      "texto": "Lado esquerdo da tela: pele irregular, manchinha, oleosidade — foto da Ana, Campinas, dia 1. Lado direito: dia 30. Mesma pessoa. 10 minutos por dia. Sem clínica. Olha o número."
+    }
+  ],
+  "decoy_pricing": null,
+  "persona": {
+    "fictional_name": "Camila",
+    "age": 31,
+    "city": "Ribeirão Preto",
+    "occupation": "analista de RH",
+    "main_pain_quote": "Abri a câmera do celular pra fazer uma chamada de vídeo no trabalho e travei. Minha pele tava tão irregular, com manchinha, tão apagada, que eu fiquei constrangida. Gastei R$180 num sérum importado no mês passado e não vi nada. Aí penso: será que é só assim mesmo, é a minha pele, não tem jeito?"
+  },
+  "compliance": {
+    "regulated_category": "cosmético/eletrônico",
+    "forbidden_claims": [
+      "trata acne",
+      "rejuvenesce",
+      "elimina rugas",
+      "cura",
+      "terapia médica"
+    ],
+    "allowed_claims": [
+      "uniformiza tom",
+      "reduz aparência de linhas",
+      "complementa rotina",
+      "melhora aspecto da pele"
+    ]
+  },
+  "_meta": {
+    "tokens_in": 8660,
+    "tokens_out": 9145,
+    "cost_usd_estimate": 0.163155,
+    "live_duration_min": 30,
+    "gift_triggers_count": 3,
+    "carrinho_opens_count": 3
+  }
+}
