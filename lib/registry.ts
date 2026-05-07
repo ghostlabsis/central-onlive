@@ -1,4 +1,4 @@
-import { put, head, del } from '@vercel/blob';
+import { put, list, del } from '@vercel/blob';
 
 const REGISTRY_BLOB_PATH = 'registry/products.json';
 
@@ -25,10 +25,11 @@ interface Registry {
 
 async function readRegistry(): Promise<Registry> {
   try {
-    const existing = await head(REGISTRY_BLOB_PATH).catch(() => null);
-    if (!existing) return { version: 1, products: [] };
+    const { blobs } = await list({ prefix: REGISTRY_BLOB_PATH, limit: 1 });
+    const blob = blobs.find((b) => b.pathname === REGISTRY_BLOB_PATH);
+    if (!blob) return { version: 1, products: [] };
 
-    const res = await fetch(existing.url);
+    const res = await fetch(blob.url);
     if (!res.ok) return { version: 1, products: [] };
     return await res.json();
   } catch {
@@ -88,4 +89,21 @@ export async function getProductsForSelliver(selliver: string): Promise<ProductE
 export async function getAllProducts(): Promise<ProductEntry[]> {
   const { products } = await readRegistry();
   return products;
+}
+
+export async function deleteProduct(id: string): Promise<boolean> {
+  const registry = await readRegistry();
+  const idx = registry.products.findIndex((p) => p.id === id);
+  if (idx < 0) return false;
+  registry.products.splice(idx, 1);
+  await writeRegistry(registry);
+  return true;
+}
+
+export async function deleteCourseBlobs(slug: string, date: string): Promise<void> {
+  const prefix = `courses/${slug}/${date}/`;
+  const { blobs } = await list({ prefix });
+  if (blobs.length > 0) {
+    await del(blobs.map((b) => b.url));
+  }
 }

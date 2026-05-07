@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import { SELLIVERS } from '@/data/sellivers';
 
 const MODULES = [
   { num: '01', file: '01-O-Produto', title: 'O Produto' },
@@ -33,6 +34,19 @@ export default function EditCoursePage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [savedAt, setSavedAt] = useState<Date | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const indexUrl = `/${slug}/${date}/00-INDICE.html`;
+  const selliver = SELLIVERS.find((s) => s.slug === slug);
+  const wppUrl = selliver
+    ? `https://wa.me/${selliver.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(`Oi ${selliver.nome}! Seu curso pré-live tá pronto: ${typeof window !== 'undefined' ? window.location.origin : ''}${indexUrl}`)}`
+    : null;
+
+  async function copyIndexUrl() {
+    await navigator.clipboard.writeText(`${window.location.origin}${indexUrl}`);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   // Carrega videos.json e course data
   useEffect(() => {
@@ -78,6 +92,36 @@ export default function EditCoursePage() {
         <p className="text-sm text-purple-600 font-bold tracking-wider">CONFIGURAR CURSO</p>
         <h1 className="text-3xl font-bold mt-1">{courseData?.selliver?.name ?? slug} · {date}</h1>
         <p className="text-gray-600 mt-1">{courseData?.hero?.name}</p>
+      </div>
+
+      {/* Acesso rápido — URL e WhatsApp */}
+      <div className="mb-6 bg-white border rounded-xl p-4 flex flex-wrap items-center gap-3">
+        <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">Curso:</span>
+        <code className="text-xs bg-gray-100 px-2 py-1 rounded font-mono text-gray-700 flex-1 min-w-0 truncate">{indexUrl}</code>
+        <a
+          href={indexUrl}
+          target="_blank"
+          rel="noopener"
+          className="inline-flex items-center gap-1 text-xs font-bold text-purple-600 border border-purple-200 px-3 py-1.5 rounded-lg hover:bg-purple-50 transition-colors"
+        >
+          Abrir
+        </a>
+        <button
+          onClick={copyIndexUrl}
+          className="inline-flex items-center gap-1 text-xs font-bold text-gray-600 border border-gray-200 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          {copied ? '✓ Copiado' : 'Copiar link'}
+        </button>
+        {wppUrl && (
+          <a
+            href={wppUrl}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-1 text-xs font-bold text-green-700 border border-green-200 px-3 py-1.5 rounded-lg hover:bg-green-50 transition-colors"
+          >
+            Enviar WhatsApp para {selliver?.nome}
+          </a>
+        )}
       </div>
 
       {/* Status save */}
