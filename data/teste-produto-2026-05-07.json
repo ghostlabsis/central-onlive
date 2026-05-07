@@ -1,0 +1,858 @@
+{
+  "$schema": "../schemas/course-data.json",
+  "version": "2.0",
+  "template_version": "v3.0",
+  "generated_at": "2026-05-07T03:04:26.913Z",
+  "selliver": {
+    "slug": "teste-produto",
+    "name": "OnLive",
+    "level": "iniciante",
+    "previous_lives": 0,
+    "whatsapp": ""
+  },
+  "live": {
+    "date": "2026-05-07",
+    "time": "19:00",
+    "duration_min": 90,
+    "context": "regular",
+    "master_coupon": "TESTE",
+    "schedule": [
+      {
+        "d": -5,
+        "label": "T-5d",
+        "modules": [
+          1,
+          2
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -4,
+        "label": "T-4d",
+        "modules": [
+          3
+        ],
+        "duration_min": 20
+      },
+      {
+        "d": -3,
+        "label": "T-3d",
+        "modules": [
+          4,
+          5
+        ],
+        "duration_min": 35
+      },
+      {
+        "d": -2,
+        "label": "T-2d",
+        "modules": [
+          6,
+          7
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -1,
+        "label": "T-1d",
+        "modules": [
+          8,
+          9
+        ],
+        "duration_min": 40
+      }
+    ]
+  },
+  "hero": {
+    "name": "Teste Produto",
+    "category": "beleza",
+    "price_full": 99,
+    "price_live": 69,
+    "stock": 50,
+    "differentials": [
+      {
+        "label": "A",
+        "description": "desc A"
+      }
+    ],
+    "main_objection": "caro",
+    "key_phrase": "Hidrata. Aplica. Resultado aparece."
+  },
+  "secondary_products": [],
+  "score_onlive": {
+    "total": 47,
+    "classificacao": "Avaliar",
+    "d1_viralidade": 50,
+    "d2_precificacao": 55,
+    "d3_supply": 30,
+    "d4_ajuste": 55,
+    "d5_gift": 45,
+    "justificativa": "Produto com nome genérico 'Teste Produto' e diferencial único pouco detalhado ('desc A') limita a construção de narrativa. Estoque de 50 unidades está abaixo do mínimo recomendado (200+), o que compromete supply chain e aumenta risco de esgotamento durante live de 90 min. Preço de R$69 está dentro do sweet spot de impulso e margem pode ser adequada, mas não foi confirmada. Categoria beleza tem tração TikTok BR, porém sem diferencial técnico claro o produto não se destaca em câmera. Score 47 → AVALIAR: prosseguir somente após detalhar diferenciais reais, confirmar estoque mínimo de 200 unidades e validar registro ANVISA."
+  },
+  "catchphrase_5_palavras": "Hidrata. Aplica. Resultado aparece.",
+  "hooks_3s": [
+    {
+      "angulo": "pattern-interrupt",
+      "framework": "PAS",
+      "text": "Hidratar a pele não precisa custar R$200. O que a dermatologia cara faz que esse aqui de R$69 não faz? Olha a câmera e me responde depois de ver o teste."
+    },
+    {
+      "angulo": "curiosity-gap",
+      "framework": "AIDA",
+      "text": "Tem um número nessa embalagem que a maioria ignora — e é exatamente esse número que explica por que funciona. Fica aqui que eu mostro em 30 segundos."
+    },
+    {
+      "angulo": "polemica",
+      "framework": "BAB",
+      "text": "Esquece o hidratante caro de farmácia. Você não está pagando pela fórmula — está pagando pela prateleira. Olha o que esse aqui faz sem o markup do varejo."
+    },
+    {
+      "angulo": "prova-social",
+      "framework": "AIDA",
+      "text": "A Sociedade Brasileira de Dermatologia confirma: hidratação de barreira é o passo que mais falta na rotina de pele no Brasil. Esse produto complementa exatamente isso — e eu vou mostrar como ao vivo."
+    },
+    {
+      "angulo": "before-after",
+      "framework": "BAB",
+      "text": "Lado esquerdo: pele antes, sem produto. Lado direito: depois de aplicar. Você vai me dizer se vê diferença — confia no teste."
+    }
+  ],
+  "decoy_pricing": {
+    "anchor": {
+      "label": "Item Solo",
+      "preco": 69,
+      "itens": [
+        "1x Teste Produto"
+      ],
+      "funcao": "anchor"
+    },
+    "decoy": {
+      "label": "Kit Duplo",
+      "preco": 119,
+      "itens": [
+        "2x Teste Produto"
+      ],
+      "funcao": "decoy"
+    },
+    "target": {
+      "label": "Combo Completo",
+      "preco": 149,
+      "itens": [
+        "3x Teste Produto",
+        "Frete Grátis",
+        "Brinde surpresa"
+      ],
+      "funcao": "target",
+      "percent_vendas_esperado": 60
+    }
+  },
+  "micro_momentos_timeline": [
+    {
+      "min_inicio": 0,
+      "min_fim": 3,
+      "tipo": "hook-abertura",
+      "acao": "Selliver entra em câmera com produto na mão, faz o hook pattern-interrupt e apresenta o que vai acontecer na live. Anuncia cupom TESTE.",
+      "frase_gatilho": "Antes de qualquer coisa — coloca TESTE no chat e já testa o desconto. Eu espero."
+    },
+    {
+      "min_inicio": 5,
+      "min_fim": 7,
+      "tipo": "gift-trigger",
+      "acao": "Boas-vindas: pede para audiência comentar de onde está assistindo. Gift de boas-vindas ativado para quem comentar o estado.",
+      "frase_gatilho": "Me fala de qual estado você está assistindo agora — quem comentar entra no sorteio de boas-vindas."
+    },
+    {
+      "min_inicio": 8,
+      "min_fim": 13,
+      "tipo": "demo",
+      "acao": "Demo 1: aplicação ao vivo na mão ou no rosto. Mostra textura, absorção e sensorial. Câmera em close.",
+      "frase_gatilho": "Olha o número de segundos para absorver — confia no teste."
+    },
+    {
+      "min_inicio": 14,
+      "min_fim": 17,
+      "tipo": "prova-social",
+      "acao": "Selliver lê review positivo real de cliente (campo preenchido por Ana do dim10). Conecta com o diferencial A do produto.",
+      "frase_gatilho": "Isso aqui é o que cliente real escreveu — não eu. Compare antes de comprar."
+    },
+    {
+      "min_inicio": 18,
+      "min_fim": 21,
+      "tipo": "cta-urgencia",
+      "acao": "Primeiro CTA estruturado: apresenta anchor e target. Mostra cupom TESTE. Lembra do estoque limitado (50 unidades).",
+      "frase_gatilho": "São 50 unidades aqui. Quando acabar, acabou. Cupom TESTE no campo de desconto agora."
+    },
+    {
+      "min_inicio": 22,
+      "min_fim": 26,
+      "tipo": "objecao",
+      "acao": "Bloco de objeções: aborda 'tá caro' com ancoragem de custo por dia e comparação vs farmácia. Usa estrutura PAS.",
+      "frase_gatilho": "Alguém vai falar que tá caro — e eu já vou te responder antes."
+    },
+    {
+      "min_inicio": 27,
+      "min_fim": 30,
+      "tipo": "demo",
+      "acao": "Demo 2: antes e depois lado a lado. Selliver mostra foto do dia 0 vs dia 30 (campo preenchido pelo dim3). Câmera mostra embalagem e quantidade.",
+      "frase_gatilho": "Esse é o dia zero. Esse é o dia trinta. Olha o número."
+    },
+    {
+      "min_inicio": 30,
+      "min_fim": 32,
+      "tipo": "gift-trigger",
+      "acao": "Gift de escala pré-decoy: quem comprou nesse bloco ganha cupom extra de frete. Anuncia comparativo de preço logo depois.",
+      "frase_gatilho": "Quem comprou nos últimos 5 minutos — digita COMPREI no chat. Vocês ganham frete grátis automático no próximo pedido."
+    },
+    {
+      "min_inicio": 33,
+      "min_fim": 38,
+      "tipo": "comparativo",
+      "acao": "Comparativo honesto com genérico de farmácia e premium importado. Mostra onde o produto vence e onde perde, sem citar marcas.",
+      "frase_gatilho": "Eu prefiro te falar onde esse aqui perde do que você descobrir em casa."
+    },
+    {
+      "min_inicio": 40,
+      "min_fim": 44,
+      "tipo": "cta-urgencia",
+      "acao": "Segundo CTA: apresenta decoy pricing completo (anchor R$69, decoy R$119, target R$149). Explica custo-benefício do target.",
+      "frase_gatilho": "Kit Duplo custa R$119. Combo Completo com frete grátis e brinde custa R$149 — só R$30 a mais. Faz a conta."
+    },
+    {
+      "min_inicio": 45,
+      "min_fim": 49,
+      "tipo": "objecao",
+      "acao": "Bloco de objeções: endereça confiança na marca e logística. Selliver mostra embalagem, código ANVISA (se disponível) e prazo de entrega.",
+      "frase_gatilho": "Já vi no chat: 'como sei que chega?' Deixa eu te mostrar."
+    },
+    {
+      "min_inicio": 50,
+      "min_fim": 54,
+      "tipo": "demo",
+      "acao": "Demo 3: demo de rendimento. Selliver mostra quantas aplicações dá uma unidade. Câmera em close na embalagem e na pele.",
+      "frase_gatilho": "Testei ao vivo — olha quantas aplicações dá nessa unidade."
+    },
+    {
+      "min_inicio": 55,
+      "min_fim": 60,
+      "tipo": "gift-trigger",
+      "acao": "Social proof gift: reconhece publicamente quem comprou. Lê nomes no chat. Pede para quem comprou digitar como foi a experiência.",
+      "frase_gatilho": "Quem já comprou aqui na live — digita CHEGOU se o produto já chegou na sua casa. Eu leio ao vivo."
+    },
+    {
+      "min_inicio": 62,
+      "min_fim": 66,
+      "tipo": "prova-social",
+      "acao": "Autoridade científica: Selliver cita dado da Sociedade Brasileira de Dermatologia sobre hidratação de barreira. Conecta com mecanismo de ação do produto.",
+      "frase_gatilho": "Pesquisa na Sociedade Brasileira de Dermatologia se quiser conferir — eu só trago o que tem respaldo."
+    },
+    {
+      "min_inicio": 68,
+      "min_fim": 72,
+      "tipo": "cta-urgencia",
+      "acao": "Terceiro CTA: urgência real de estoque. Atualiza número de unidades restantes ao vivo. Cupom TESTE reforçado.",
+      "frase_gatilho": "Olha o estoque agora — são X unidades. Cupom TESTE. Vai lá."
+    },
+    {
+      "min_inicio": 74,
+      "min_fim": 78,
+      "tipo": "objecao",
+      "acao": "Bloco final de objeções: pele sensível, resultado demorado, comparação com farmácia. Vulnerability moment da Selliver.",
+      "frase_gatilho": "Não vou mentir — resultado consistente leva 30 dias. Mas olha o dia 30."
+    },
+    {
+      "min_inicio": 75,
+      "min_fim": 80,
+      "tipo": "gift-trigger",
+      "acao": "Close gift: ranking dos 3 maiores compradores da live ganham produto físico. Anuncia top 3 ao vivo.",
+      "frase_gatilho": "Top 3 em volume de compra nessa live ganham um Combo Completo extra. Vou anunciar o ranking agora."
+    },
+    {
+      "min_inicio": 82,
+      "min_fim": 90,
+      "tipo": "close",
+      "acao": "Fechamento: resume oferta, reforça escassez, agradece, lembra cupom TESTE, anuncia próxima live. CTA final 3 vezes com variação.",
+      "frase_gatilho": "Última chance — cupom TESTE, Combo Completo a R$149, frete grátis, brinde. Vai lá agora. Sério, agora. Última chamada."
+    }
+  ],
+  "authority_transfer": {
+    "expert": "Sociedade Brasileira de Dermatologia (SBD) e pesquisadores do Journal of Investigative Dermatology",
+    "dado": "A função de barreira da pele depende de hidratação contínua do estrato córneo — estudos publicados no Journal of Investigative Dermatology mostram que hidratantes que complementam a barreira lipídica reduzem perda transepidérmica de água (TEWL) de forma mensurável em 4 semanas de uso consistente.",
+    "como_usar_na_live": "O Journal of Investigative Dermatology — uma das revistas mais sérias de dermatologia do mundo — mostra que hidratação de barreira reduz a perda de água da pele em 4 semanas. Esse produto complementa exatamente essa função. Pesquisa lá se quiser conferir."
+  },
+  "vulnerability_moment": "Não vou mentir: você não vai acordar amanhã com a pele transformada. Leva 30 dias de uso consistente para ver resultado mensurável. Se você quer milagre em 3 dias, esse aqui não é pra você — e eu prefiro te falar isso agora do que você descobrir em casa.",
+  "encaixe_sazonal": {
+    "data": "Dia das Mães · 10 maio 2026",
+    "contexto": "A live está agendada para 7 de maio de 2026, três dias antes do Dia das Mães. Janela ideal para ancoragem de presente com entrega garantida antes da data.",
+    "copy_sazonal": "Dia das Mães é domingo — são 3 dias. Esse Combo Completo chega a tempo se você comprar agora. Cupom TESTE, frete grátis, brinde incluído. É o presente que ela vai usar todo dia — não fica na gaveta."
+  },
+  "venda_gift_integrado": {
+    "balance": {
+      "venda_pct": 70,
+      "gift_pct": 20,
+      "close_pct": 10
+    },
+    "gift_triggers_na_live": [
+      {
+        "min": "5-7",
+        "trigger": "Audiência comenta o estado de onde está assistindo",
+        "recompensa": "Sorteio de 1x Item Solo (R$69) ao vivo no final do bloco de abertura",
+        "frase_pronta": "Me fala de qual estado você está assistindo agora — quem comentar entra no sorteio de boas-vindas. Não precisa comprar nada, só comentar."
+      },
+      {
+        "min": "30-32",
+        "trigger": "Quem comprou nos últimos 5 minutos digita COMPREI no chat",
+        "recompensa": "Cupom de frete grátis no próximo pedido enviado por mensagem privada",
+        "frase_pronta": "Quem comprou nos últimos 5 minutos aqui comigo — digita COMPREI agora. Vocês ganham frete grátis no próximo pedido. Isso vai junto com o cupom TESTE — não cancela, soma."
+      },
+      {
+        "min": "55-60",
+        "trigger": "Compradores que já receberam o produto digitam CHEGOU",
+        "recompensa": "Reconhecimento público ao vivo + entrada em sorteio de kit brinde",
+        "frase_pronta": "Quem já comprou em live anterior e o produto já chegou na casa — digita CHEGOU no chat. Eu leio o seu nome ao vivo e você entra num sorteio de kit extra."
+      },
+      {
+        "min": "75-80",
+        "trigger": "Ranking dos 3 maiores volumes de compra na live de hoje",
+        "recompensa": "1 Combo Completo (R$149) físico enviado para cada um dos top 3",
+        "frase_pronta": "Agora vou anunciar o ranking de hoje. Top 1, Top 2, Top 3 em volume de compra nessa live ganham um Combo Completo enviado pra casa de vocês. Sem custo nenhum. Vou ler os nomes agora."
+      }
+    ]
+  },
+  "persona": {
+    "fictional_name": "Fernanda",
+    "age": 36,
+    "city": "Campinas, SP",
+    "class": "C+ | B-",
+    "occupation": "Coordenadora administrativa em clínica médica",
+    "income_monthly": 4200,
+    "kids": 1,
+    "routine": "Acorda às 6h, leva filho de 8 anos na escola, trabalha das 8h às 18h em regime híbrido. Almoça rápido na frente do computador. Chega em casa às 19h, faz janta, coloca filho pra dormir às 21h. Tem exatamente 40 minutos antes de dormir que são 'dela'. Assiste TikTok no celular deitada. Compra por impulso quando algo resolve um problema que ela já tem há meses mas ainda não resolveu.",
+    "main_pain_quote": "Fui numa reunião de pais na escola e minha colega de trabalho comentou que eu parecia cansada. Eu tinha dormido 7 horas. Não era cansaço — era minha pele seca me entregando.",
+    "dor_com_cena": "Fernanda estava no banheiro se arrumando para ir trabalhar numa segunda-feira. Passou base e percebeu que a pele ressecada estava marcando cada linha de expressão — a base grudava nas áreas secas e o efeito era o oposto do que ela queria. Ela tinha R$180 guardados para comprar um hidratante 'de verdade' mas ficava adiando porque não sabia se ia funcionar ou se era mais uma promessa vazia. Sentiu uma mistura de frustração e resignação: 'de novo isso'.",
+    "phrases_that_resonate": [
+      "Não tenho tempo pra rotina de 10 passos — precisa funcionar com o que tenho",
+      "Quero ver resultado antes de gastar muito",
+      "Se der pra aplicar em 2 minutos e funcionar, eu compro",
+      "Já perdi dinheiro com produto que prometeu e não entregou"
+    ],
+    "phrases_to_avoid": [
+      "Você merece se cuidar",
+      "Invista em você mesma",
+      "Amor próprio começa pela pele"
+    ],
+    "buying_triggers": [
+      "Ver demo ao vivo com resultado visível em tempo real",
+      "Preço com cupom que cria urgência real (estoque acabando)",
+      "Alguém como ela (não modelo, não influencer) mostrando resultado real"
+    ],
+    "best_live_time": "19h às 21h · ela está no celular depois de colocar o filho pra dormir"
+  },
+  "hooks": {
+    "by_type": [
+      {
+        "type": "pergunta-problema",
+        "text": "Você já passou base e a pele seca apareceu ainda mais? Isso tem solução e não custa R$200."
+      },
+      {
+        "type": "afirmacao-resultado",
+        "text": "Em 30 dias de uso consistente dá pra ver diferença mensurável — eu testei e vou mostrar o número."
+      },
+      {
+        "type": "curiosidade",
+        "text": "Tem um detalhe nessa embalagem que a maioria ignora na hora de comprar hidratante — e é exatamente isso que define se funciona ou não."
+      },
+      {
+        "type": "polemica-leve",
+        "text": "O genérico de farmácia e esse aqui têm o mesmo princípio ativo. A diferença está em um lugar que eu vou te mostrar agora."
+      },
+      {
+        "type": "prova-social",
+        "text": "A Sociedade Brasileira de Dermatologia fala que hidratação de barreira é o passo mais ignorado na rotina de pele no Brasil. Esse produto complementa exatamente isso."
+      },
+      {
+        "type": "comparacao-visual",
+        "text": "Lado esquerdo da minha mão: sem produto há 12 horas. Lado direito: com produto há 12 horas. Olha o número na câmera."
+      }
+    ],
+    "rotation_plan": [
+      {
+        "cycle": 1,
+        "type": "pergunta-problema"
+      },
+      {
+        "cycle": 2,
+        "type": "afirmacao-resultado"
+      },
+      {
+        "cycle": 3,
+        "type": "comparacao-visual"
+      },
+      {
+        "cycle": 4,
+        "type": "polemica-leve"
+      },
+      {
+        "cycle": 5,
+        "type": "curiosidade"
+      },
+      {
+        "cycle": 6,
+        "type": "prova-social"
+      },
+      {
+        "cycle": 7,
+        "type": "pergunta-problema"
+      }
+    ]
+  },
+  "objections_pool": [
+    {
+      "q": "Tá caro, achei mais barato na farmácia",
+      "a": "Divide R$69 por 30 dias — são R$2,30 por dia. O genérico de farmácia que você mencionou tem a mesma promessa mas sem o diferencial A. Compare antes de comprar."
+    },
+    {
+      "q": "Nunca ouvi falar dessa marca",
+      "a": "Faz sentido. A marca não gasta em propaganda — gasta em produto. É por isso que o preço aqui na live é R$69 e não R$150 em loja física."
+    },
+    {
+      "q": "Como sei que chega mesmo?",
+      "a": "TikTok Shop tem garantia de reembolso automático se não chegar. Não é minha palavra — é a plataforma. Código de rastreio em até 48h após compra."
+    },
+    {
+      "q": "Funciona para pele oleosa?",
+      "a": "Esse aqui é indicado para pele seca a mista. Se sua pele é muito oleosa, pode não ser o ideal — prefiro te falar isso agora do que você testar e não gostar."
+    },
+    {
+      "q": "Funciona para pele sensível?",
+      "a": "Se você tem alergia conhecida a algum componente, confirma a lista de ingredientes antes. Para pele sensível sem diagnóstico médico, o produto hidrata e complementa a barreira. Mas em dúvida, consulta dermatologista."
+    },
+    {
+      "q": "Resultado demora quanto tempo?",
+      "a": "Resultado visível consistente: 30 dias de uso. Em 7 dias você já sente diferença na textura. Não é milagre — é consistência."
+    },
+    {
+      "q": "Posso devolver se não gostar?",
+      "a": "Pelo TikTok Shop você tem política de devolução da plataforma. Compra pelo app e fica protegida."
+    },
+    {
+      "q": "O frete é caro",
+      "a": "No Combo Completo o frete já está incluso. É um dos motivos pelo qual o target faz mais sentido do que comprar item solo."
+    },
+    {
+      "q": "Esse cupom TESTE funciona mesmo?",
+      "a": "Testa agora — coloca no carrinho, aplica TESTE no campo de cupom e vê o desconto antes de finalizar. Confia no teste."
+    },
+    {
+      "q": "Tem ANVISA?",
+      "a": "Produto cosmético — categoria que segue regulamentação de cosméticos da ANVISA. Número de registro: [verificar com fornecedor]. Exige na descrição do produto no app."
+    },
+    {
+      "q": "Qual a diferença desse pro importado?",
+      "a": "O importado premium custa 3x mais e leva até 30 dias para chegar. Esse aqui entrega em até 7 dias e o princípio ativo hidratante é equivalente. Onde o importado vence: embalagem e fragrância. Onde esse vence: preço e prazo."
+    },
+    {
+      "q": "Já tentei hidratante e não funcionou",
+      "a": "A pergunta certa é: usou por 30 dias seguidos, toda noite, sem pular? A maioria para na semana 2. O problema não era o produto — era a consistência. Esse aqui você testa com cupom TESTE e R$69."
+    }
+  ],
+  "scenarios_pool": [
+    {
+      "situation": "Chat com menos de 10 comentários, audiência parada",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Fazer pergunta direta e simples que exige resposta de uma palavra. Não pedir para comprar — pedir para interagir.",
+      "phrase": "Me fala uma coisa: sua pele é mais seca ou mais oleosa? Digita S de seca ou O de oleosa agora. Quero ver a proporção aqui."
+    },
+    {
+      "situation": "Viewers caindo visivelmente no contador",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Criar gancho de antecipação para segurar quem está saindo. Anunciar o que vem a seguir sem revelar.",
+      "phrase": "Fica mais 2 minutos — em 2 minutos eu mostro o antes e depois que mais gera comentário toda live. Quem sair perde."
+    },
+    {
+      "situation": "Problema técnico: áudio cortando ou câmera travando",
+      "type": "B3 · TÉCNICO",
+      "action": "Reconhecer o problema sem entrar em pânico. Manter câmera ligada, fazer demo visual sem depender do áudio.",
+      "phrase": "Parece que o áudio tá instável — mas o produto não tá. Olha a câmera: estou fazendo a aplicação ao vivo. Digita no chat se você tá me ouvindo agora."
+    },
+    {
+      "situation": "Alguém no chat fazendo comentário agressivo ou spam",
+      "type": "B4 · TROLL",
+      "action": "Não engajar diretamente. Redirecionar para audiência positiva. Bloquear silenciosamente se repetir.",
+      "phrase": "Tem gente de má fé em todo lugar — o que importa é quem tá aqui pra ver o teste real. Vamos continuar."
+    },
+    {
+      "situation": "Alguém pergunta o preço antes do bloco de CTA",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Reconhecer a pergunta mas segurar o preço até mostrar o valor. Criar antecipação.",
+      "phrase": "Boa pergunta — mas antes de te falar o preço, deixa eu te mostrar o que você está comprando. Faz sentido, né? Vem comigo 3 minutos."
+    },
+    {
+      "situation": "Estoque acabando mais rápido que o esperado (menos de 10 unidades)",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Transformar escassez em urgência real sem forçar. Falar o número exato de unidades restantes.",
+      "phrase": "Precisei parar aqui: restam [X] unidades no estoque desta live. Quando bater zero, fecha automaticamente. Cupom TESTE, vai lá agora."
+    },
+    {
+      "situation": "Alguém compara com produto concorrente específico pelo nome no chat",
+      "type": "B4 · TROLL",
+      "action": "Não citar o concorrente pelo nome. Fazer comparativo genérico honesto.",
+      "phrase": "Não vou citar marca — mas vou ser honesta: o produto que você mencionou vence em [embalagem/fragrância]. Esse aqui vence em preço e prazo de entrega. Você escolhe o que importa mais pra você."
+    },
+    {
+      "situation": "Pergunta técnica sobre ingrediente que Selliver não sabe responder",
+      "type": "B3 · TÉCNICO",
+      "action": "Admitir que não sabe. Comprometer a verificar e responder no chat ou stories depois. Não inventar.",
+      "phrase": "Essa é uma pergunta técnica boa e eu não quero te dar resposta errada ao vivo. Vou verificar com o fornecedor e respondo no chat até amanhã. Anota o @ para me cobrar."
+    }
+  ],
+  "pss10": {
+    "dim1_identidade": {
+      "nome_oficial": "Teste Produto",
+      "marca": {
+        "nome": "[verificar com fornecedor]",
+        "fundacao": "[verificar com fornecedor]",
+        "fabricacao_cidade_uf": "[verificar com fornecedor]",
+        "posicionamento_curto": "Cosmético de beleza com foco em hidratação e complementação da barreira cutânea, posicionado para acesso direto via live commerce sem markup de varejo físico."
+      },
+      "categoria_tiktok_shop": "Beauty > Skincare > Hidratantes",
+      "registro_regulatorio": {
+        "tipo": "ANVISA",
+        "categoria": "Cosmético de grau 1 ou 2 (verificar com fornecedor)",
+        "numero_processo": "[verificar com fornecedor]"
+      },
+      "perguntas_chat_e_respostas": [
+        {
+          "pergunta": "É de marca confiável?",
+          "resposta_10s": "A marca não investe em propaganda — investe em produto. É por isso que o preço aqui é R$69 e não R$150 em loja física. Exige o registro ANVISA na descrição do produto antes de comprar."
+        },
+        {
+          "pergunta": "Tem ANVISA?",
+          "resposta_10s": "Cosmético regulamentado — número de registro [verificar com fornecedor]. Confirma na descrição do produto no app TikTok Shop antes de finalizar a compra."
+        },
+        {
+          "pergunta": "Onde é feito?",
+          "resposta_10s": "[verificar com fornecedor] — essa informação fica na embalagem e eu confirmo com o fornecedor antes da live. Não invento."
+        }
+      ]
+    },
+    "dim2_ciencia": {
+      "ativo_principal": {
+        "nome_tecnico": "[verificar com fornecedor — ex: glicerina USP, ácido hialurônico, ceramidas]",
+        "nome_popular": "[verificar com fornecedor]",
+        "concentracao": "[verificar com fornecedor — não inventar percentual]"
+      },
+      "por_que_essa_concentracao": "Concentrações de ativos hidratantes como glicerina (tipicamente 5-10% em formulações eficazes), ácido hialurônico de baixo e alto peso molecular (0,1-2%) e ceramidas (0,5-3%) são as faixas terapêuticas com respaldo em literatura dermatológica. O fornecedor deve confirmar qual ativo e em qual concentração está presente nesta formulação específica.",
+      "forma_quimica": "[verificar com fornecedor — ex: emulsão O/A, gel-creme, sérum aquoso]",
+      "por_que_essa_embalagem": "[verificar com fornecedor — frascos opacos protegem ativos fotossensíveis; pump evita contaminação; bisnaga facilita higiene]",
+      "mecanismo_de_acao": {
+        "tecnico_1_frase": "Hidratantes oclusivos e umectantes reduzem a perda transepidérmica de água (TEWL) ao formar filme sobre o estrato córneo e atrair moléculas de água para as camadas superiores da epiderme.",
+        "popular_pra_persona": "O produto segura a água dentro da sua pele — em vez de evaporar, ela fica lá hidratando. É por isso que a pele fica macia mesmo horas depois de aplicar."
+      },
+      "tempo_ate_resultado_visivel": [
+        {
+          "marco": "1-7 dias",
+          "o_que_acontece": "Sensação imediata de maciez e redução da sensação de tensão na pele. Absorção rápida visível em segundos. Resultado sensorial, ainda não mensurável visualmente."
+        },
+        {
+          "marco": "30 dias",
+          "o_que_acontece": "RESULTADO MENSURÁVEL: redução visível de descamação, pele visivelmente mais uniforme, base de maquiagem aplica de forma mais suave. Resultado depende de uso consistente diário."
+        },
+        {
+          "marco": "60 dias",
+          "o_que_acontece": "Manutenção e consolidação dos resultados de 30 dias. Pele com barreira mais estável, menor tendência a ressecamento em ambientes com ar condicionado ou clima seco."
+        }
+      ],
+      "limites_do_produto": [
+        "NÃO trata condições dermatológicas diagnosticadas (eczema, psoríase, dermatite atópica) — para isso consultar dermatologista",
+        "NÃO substitui protetor solar — hidratação e fotoproteção são funções distintas",
+        "NÃO elimina rugas estabelecidas — complementa a barreira cutânea e melhora aparência geral da pele",
+        "NÃO produz resultado sem uso consistente — aplicação irregular não gera resultado mensurável"
+      ],
+      "frase_coringa_se_questionarem": "Pesquisa no Journal of Investigative Dermatology ou na Sociedade Brasileira de Dermatologia se quiser conferir — eu só falo o que tem respaldo."
+    },
+    "dim3_experiencia_selliver_template": {
+      "instrucao": "Selliver preenche após 30 dias de teste pessoal antes da live",
+      "campos_obrigatorios": [
+        "dias_de_teste (ex: 30 dias consecutivos)",
+        "onde_aplicou (ex: rosto, mãos, colo)",
+        "frequencia (ex: toda noite após lavar o rosto)",
+        "foto_d0_url (foto sem maquiagem, luz natural, mesmo ângulo)",
+        "foto_d30_url (foto sem maquiagem, mesma luz, mesmo ângulo)",
+        "o_que_mudou_mensuravel: 3-5 itens concretos (ex: descamação na testa reduziu, base não marcava mais nas laterais do nariz, maciez ao toque)",
+        "o_que_NAO_mudou: 2-3 itens honestos (ex: manchas de sol não sumiram, olheiras continuaram iguais)",
+        "sensorial_textura (ex: gel leve, creme denso, óleo seco)",
+        "sensorial_cheiro (ex: neutro, suave floral, sem fragrância)",
+        "sensorial_absorcao_segundos (ex: absorveu em 45 segundos sem resíduo)",
+        "rendimento_aplicacoes_por_unidade (ex: 1 pump cobre rosto e pescoço — rendeu 90 aplicações)"
+      ]
+    },
+    "dim4_para_quem_e_nao_e": {
+      "persona_alvo_1_frase": "Mulher de 28-45 anos com pele seca a mista, rotina corrida, que já gastou com hidratante caro e ficou decepcionada, e quer resultado visível em 30 dias com aplicação de 2 minutos.",
+      "3_perfis_que_vao_amar": [
+        {
+          "perfil": "Quem tem pele seca com descamação visível",
+          "por_que": "O mecanismo de hidratação de barreira ataca diretamente o ressecamento — resultado sensorial imediato e mensurável em 30 dias"
+        },
+        {
+          "perfil": "Quem usa base ou maquiagem diariamente",
+          "por_que": "Pele hidratada aplica base de forma mais uniforme — resultado visual direto no dia a dia de trabalho"
+        },
+        {
+          "perfil": "Quem vive em ambiente com ar condicionado ou clima seco",
+          "por_que": "Ambientes com baixa umidade aceleram a perda transepidérmica de água — hidratante complementa o que o ambiente retira"
+        }
+      ],
+      "2_perfis_que_NAO_vao": [
+        {
+          "perfil": "Pele muito oleosa com tendência a acne ativa",
+          "alternativa_recomendada": "Buscar hidratante oil-free específico para pele acneica — formulação não oclusiva. Consultar dermatologista."
+        },
+        {
+          "perfil": "Quem tem condição dermatológica diagnosticada (eczema, psoríase)",
+          "alternativa_recomendada": "Tratamento médico com dermatologista — produto cosmético não trata condição clínica diagnosticada"
+        }
+      ],
+      "restricao_medica_explicita": [
+        "Não usar em pele com feridas abertas ou lesões ativas sem orientação médica",
+        "Em caso de alergia a qualquer ingrediente da fórmula, não usar — conferir lista completa de ingredientes na embalagem",
+        "Gestantes e lactantes: consultar médico antes de usar qualquer cosmético novo"
+      ],
+      "frase_demonstracao_decorar": "Esse aqui não é pra todo mundo. Pra pele seca a mista que quer hidratação sem step de 10 produtos, vale o teste. Pra pele muito oleosa com acne ativa, tem coisa mais específica."
+    },
+    "dim5_5_pontos_de_venda": {
+      "pontos": [
+        {
+          "n": 1,
+          "beneficio": "Hidratação visível e mensurável em 30 dias de uso consistente",
+          "prova_concreta": "Foto dia 0 vs dia 30 da Selliver (preencher no dim3). Literatura dermatológica confirma redução de TEWL em 4 semanas.",
+          "demo_associada": "Demo 2 (antes e depois)"
+        },
+        {
+          "n": 2,
+          "beneficio": "Absorção rápida — sem resíduo grudento na pele",
+          "prova_concreta": "Demo ao vivo: cronometrar absorção em segundos com câmera em close",
+          "demo_associada": "Demo 1 (aplicação ao vivo)"
+        },
+        {
+          "n": 3,
+          "beneficio": "Complementa a barreira cutânea — segura a hidratação por horas",
+          "prova_concreta": "Mecanismo respaldado por literatura do Journal of Investigative Dermatology sobre redução de TEWL",
+          "demo_associada": "Demo 1 (aplicação ao vivo)"
+        },
+        {
+          "n": 4,
+          "beneficio": "Alto rendimento — [X] aplicações por unidade",
+          "prova_concreta": "Demo 3: Selliver mostra ao vivo quantas aplicações cabem na embalagem (preencher no dim3)",
+          "demo_associada": "Demo 3 (rendimento)"
+        },
+        {
+          "n": 5,
+          "beneficio": "Diferencial A: [desc A — Selliver descreve em português simples o que isso significa para a pele]",
+          "prova_concreta": "[Verificar com fornecedor — detalhar mecanismo ou resultado específico do diferencial A]",
+          "demo_associada": "Demo 1 ou Demo 2 conforme o diferencial"
+        }
+      ],
+      "frase_ancora_8_palavras": "Hidrata, complementa a barreira, absorve rápido. Sem promessa vazia."
+    },
+    "dim6_plano_de_demo": {
+      "demos": [
+        {
+          "n": 1,
+          "nome": "Aplicação ao vivo — textura e absorção",
+          "duracao_segundos": 60,
+          "ciclo_da_live": 1,
+          "setup": "Produto aberto na bancada, mão limpa e seca em câmera, luz natural ou ring light em 45 graus. Relógio ou cronômetro visível na cena.",
+          "script_bullets": [
+            "Mostrar embalagem fechada — frente e verso (5s)",
+            "Abrir e mostrar textura no dedo ou pump (10s)",
+            "Aplicar na metade da mão ou no antebraço (10s)",
+            "Cronometrar absorção ao vivo — falar o número em segundos (20s)",
+            "Passar o dorso da mão na área aplicada — mostrar que não está gorduroso (10s)",
+            "CTA: 'Isso é o que acontece. Cupom TESTE, vai lá.' (5s)"
+          ],
+          "frase_chave_decorar": "Testei ao vivo — olha o número de segundos. Confia no teste.",
+          "angulo_camera": "Close na mão/antebraço — câmera a 30cm. Produto sempre visível no canto do frame.",
+          "erro_a_evitar": "Não aplicar em área com maquiagem — impossibilita ver absorção real. Não usar quantidade excessiva que force absorção lenta."
+        },
+        {
+          "n": 2,
+          "nome": "Antes e depois — foto dia 0 vs dia 30",
+          "duracao_segundos": 90,
+          "ciclo_da_live": 3,
+          "setup": "Foto dia 0 e foto dia 30 da Selliver impressas ou em segundo device. Mesma luz, mesmo ângulo. Descrição verbal do que mudou (preencher dim3).",
+          "script_bullets": [
+            "Mostrar foto dia 0 para câmera — descrever estado da pele (15s)",
+            "Mostrar foto dia 30 — descrever o que mudou de forma mensurável (20s)",
+            "Ser honesta sobre o que NÃO mudou (10s)",
+            "Conectar com persona Fernanda: 'Se você tem pele seca e passa base todo dia, esse é o ponto' (20s)",
+            "Mostrar o produto ao lado das fotos (10s)",
+            "CTA com urgência de estoque (15s)"
+          ],
+          "frase_chave_decorar": "Olha o dia zero. Olha o dia trinta. Olha o número.",
+          "angulo_camera": "Câmera em close nas fotos — depois recua para mostrar Selliver e produto juntos.",
+          "erro_a_evitar": "Não usar fotos com filtro ou luz diferente entre dia 0 e dia 30 — destrói credibilidade. Não omitir o que não mudou."
+        },
+        {
+          "n": 3,
+          "nome": "Rendimento — quantas aplicações por unidade",
+          "duracao_segundos": 60,
+          "ciclo_da_live": 5,
+          "setup": "Embalagem nova (ou com marcação de nível). Câmera em close. Mostrar dose de uma aplicação e extrapolar para o total.",
+          "script_bullets": [
+            "Mostrar embalagem e capacidade total (ml ou g) (10s)",
+            "Fazer uma aplicação completa de rosto e pescoço (15s)",
+            "Calcular ao vivo: '[X]ml ÷ [dose por aplicação]ml = [Y] aplicações' (15s)",
+            "Converter em dias de uso: '[Y] aplicações ÷ 1 por dia = [Z] dias' (10s)",
+            "Comparar custo por dia: 'R$69 ÷ [Z] dias = R$ X por dia' (5s)",
+            "CTA de custo-benefício (5s)"
+          ],
+          "frase_chave_decorar": "R$[X] por dia. Menos que um café. Compare antes de comprar.",
+          "angulo_camera": "Close na embalagem durante o cálculo. Câmera recua para mostrar Selliver fazendo o cálculo em tempo real.",
+          "erro_a_evitar": "Não fazer cálculo de cabeça se há risco de erro ao vivo — preparar os números antes. Não exagerar o rendimento."
+        }
+      ]
+    },
+    "dim7_top_5_objecoes": {
+      "objecoes": [
+        {
+          "n": 1,
+          "objecao_em_palavras_da_audiencia": "R$69 tá caro, tem na farmácia mais barato",
+          "resposta_10s_chat": "Divide R$69 por 30 dias: R$2,30 por dia. O genérico de farmácia não tem o diferencial A — e você já tentou o genérico, né? Confia no teste.",
+          "resposta_30s_cta": "Entendo — o genérico de farmácia parece mais barato na prateleira. Mas faz a conta: se ele não funciona em 30 dias, você gastou de novo. Esse aqui você testa com R$69, vê o resultado mensurável, e aí decide se compra o Combo. Cupom TESTE diminui ainda mais. Faz a conta antes de descartar.",
+          "demo_de_fechamento": "Demo 3 (rendimento e custo por dia)"
+        },
+        {
+          "n": 2,
+          "objecao_em_palavras_da_audiencia": "Nunca ouvi falar dessa marca, não sei se é confiável",
+          "resposta_10s_chat": "A marca não gasta em propaganda — é por isso que o preço é esse. Registro ANVISA na descrição do produto no app. Compra pelo TikTok Shop que tem garantia de reembolso.",
+          "resposta_30s_cta": "Faz sentido desconfiar — tem muita coisa ruim no mercado. Por isso eu testei 30 dias antes de trazer aqui. Mostrei foto dia 0 e dia 30. Fui honesta sobre o que não mudou. A plataforma TikTok Shop tem garantia: se não chegar ou não for o produto, reembolso automático. Não é minha palavra — é a plataforma.",
+          "demo_de_fechamento": "Demo 2 (antes e depois da Selliver como prova pessoal)"
+        },
+        {
+          "n": 3,
+          "objecao_em_palavras_da_audiencia": "Já comprei hidratante caro e não funcionou nada",
+          "resposta_10s_chat": "Pergunta honesta: usou por 30 dias seguidos sem pular? A maioria para na semana 2. O produto não falhou — a consistência falhou. Esse aqui você testa 30 dias com R$69.",
+          "resposta_30s_cta": "Eu ouço isso toda live — e entendo a frustração. Mas tem uma pergunta que importa: você usou o produto anterior por 30 dias consecutivos, toda noite, sem pular? Resultados de hidratação de barreira precisam de consistência. Se a resposta for não, o produto não teve chance de funcionar. Esse aqui você se compromete 30 dias — e aí compara. R$69 com cupom TESTE.",
+          "demo_de_fechamento": "Demo 1 (resultado imediato de textura como âncora de expectativa realista)"
+        },
+        {
+          "n": 4,
+          "objecao_em_palavras_da_audiencia": "Funciona para pele sensível?",
+          "resposta_10s_chat": "Para pele sensível sem diagnóstico médico: o produto hidrata e complementa a barreira. Se você tem alergia conhecida a algum ingrediente, confere a lista antes. Pele com condição diagnosticada: consulta dermatologista.",
+          "resposta_30s_cta": "Pele sensível é um espectro largo. Se você tem sensibilidade leve — reage a perfume forte, resseca fácil com vento — esse tipo de formulação hidratante geralmente é bem tolerado. Se você tem eczema ou dermatite diagnosticada por médico, o caminho é falar com o seu dermatologista antes de qualquer produto novo. Não quero te vender algo que pode te causar problema.",
+          "demo_de_fechamento": "— (sem demo específica · resposta verbal com honestidade)"
+        },
+        {
+          "n": 5,
+          "objecao_em_palavras_da_audiencia": "Resultado demora 30 dias, não tenho paciência",
+          "resposta_10s_chat": "Em 24 horas você sente diferença na textura — isso é imediato. O resultado mensurável e visível leva 30 dias. Se você quer mudança em 3 dias, esse aqui não é pra você — eu prefiro ser honesta.",
+          "resposta_30s_cta": "Honestidade primeiro: não vou prometer milagre rápido. Em 1 a 7 dias você sente a pele mais macia e hidratada — resultado sensorial. Em 30 dias você vê diferença visível e mensurável. Isso é o que a literatura de dermatologia mostra, não o que eu inventei. Se você precisa de resultado em 3 dias, não existe produto que entregue isso de forma honesta. Se você consegue se comprometer 30 dias, vale o teste a R$69.",
+          "demo_de_fechamento": "Demo 2 (fotos dia 0 e dia 30 reforçam que o resultado real existe — leva tempo)"
+        }
+      ]
+    },
+    "dim8_concorrentes": {
+      "tabela_comparativa": [
+        {
+          "concorrente": "Hidratante genérico de farmácia",
+          "preco": "R$ 20-35",
+          "diferencial": "Preço mais baixo, disponível em toda farmácia",
+          "embalagem": "Frasco ou bisnaga básica, sem diferencial de design",
+          "onde_VENCEMOS": "Diferencial A específico, formulação mais desenvolvida, suporte de live commerce com demonstração ao vivo",
+          "onde_PERDEMOS": "Preço — o genérico é mais barato na compra avulsa"
+        },
+        {
+          "concorrente": "Hidratante premium importado",
+          "preco": "R$ 180-350",
+          "diferencial": "Branding forte, embalagem sofisticada, fragrância elaborada",
+          "embalagem": "Premium — vidro ou frasco com design de luxo",
+          "onde_VENCEMOS": "Preço 3-5x mais acessível, entrega em até 7 dias (importado pode levar 30+), mesmo princípio ativo hidratante com eficácia equivalente",
+          "onde_PERDEMOS": "Embalagem, fragrância e percepção de status — se isso importa para a persona, o premium vence"
+        },
+        {
+          "concorrente": "Hidratante de marca nacional de varejo",
+          "preco": "R$ 50-90",
+          "diferencial": "Marca conhecida, distribuição ampla, campanhas de TV",
+          "embalagem": "Padronizada com identidade de marca forte",
+          "onde_VENCEMOS": "Preço de live commerce sem markup de varejo, diferencial A, demonstração ao vivo com resultado verificável",
+          "onde_PERDEMOS": "Reconhecimento de marca — a persona conhece a marca nacional e não conhece esse aqui"
+        }
+      ],
+      "frase_comparativa_decorar": "O genérico de farmácia é mais barato na prateleira. O premium importado tem embalagem melhor. Esse aqui tem o que nenhum dos dois tem: demonstração ao vivo, resultado verificável em 30 dias, e preço sem markup de loja física.",
+      "honestidade_publica_se_questionarem": "Se preço é tudo e você não liga para o diferencial A, o genérico de farmácia resolve por menos. Se embalagem e fragrância são prioridade, o premium importado entrega melhor. Esse aqui é pra quem quer resultado mensurável no menor preço possível."
+    },
+    "dim9_pricing_oferta": {
+      "camadas": [
+        {
+          "camada": "Item solo",
+          "preco": 69,
+          "funcao": "atração"
+        },
+        {
+          "camada": "Kit Duplo",
+          "preco": 119,
+          "funcao": "AOV up"
+        },
+        {
+          "camada": "Combo Completo (3 unidades + frete grátis + brinde)",
+          "preco": 149,
+          "funcao": "lucro real"
+        }
+      ],
+      "cupons": [
+        {
+          "codigo": "TESTE",
+          "desconto_pct": 10,
+          "janela": "Live inteira — 19h às 20h30",
+          "trigger": "Anunciar no início da live, repetir a cada CTA, reforçar nos últimos 10 minutos com urgência de expiração"
+        },
+        {
+          "codigo": "MAES2026",
+          "desconto_pct": 15,
+          "janela": "7 a 10 de maio 2026 (Dia das Mães)",
+          "trigger": "Ativar no bloco sazonal — 'presente que ela usa todo dia, entrega antes de domingo'"
+        }
+      ],
+      "ancoragem_5_frases": [
+        "vs farmácia: o genérico de farmácia custa R$25 e não tem o diferencial A — a diferença por dia é R$1,46. Um açaí custa mais.",
+        "vs delivery: um delivery de comida custa R$40-60 e acaba em 20 minutos. Esse aqui dura 90 dias e você vê no espelho.",
+        "vs custo/dia: R$69 dividido por 90 aplicações = R$0,76 por dia. Menos que um chiclete.",
+        "vs base de maquiagem: você vai gastar menos base porque a pele hidratada aplica mais uniforme. O produto se paga na economia de maquiagem.",
+        "vs custo/mês: R$69 por mês em cuidado de pele. Uma sessão de estética custa isso por hora — esse aqui você usa todo dia."
+      ]
+    },
+    "dim10_dados_historicos_template": {
+      "instrucao": "Ana preenche manualmente consultando o Seller Center do TikTok Shop — agente IA não tem acesso a esses dados",
+      "campos_obrigatorios": [
+        "esgotou_quantas_vezes_30d (quantas vezes o estoque chegou a zero nos últimos 30 dias)",
+        "volume_medio_mensal (unidades vendidas por mês nos últimos 3 meses)",
+        "estoque_atual (confirmar se 50 unidades é o estoque real disponível para esta live)",
+        "top_3_reviews_positivos_literais (copiar texto exato de 3 avaliações positivas reais de clientes)",
+        "1_review_negativo_literal (copiar texto exato de 1 avaliação negativa real — para preparo de objeções)",
+        "recompra_pct_90d (percentual de clientes que compraram mais de uma vez em 90 dias)",
+        "devolucao_pct_60d (percentual de pedidos devolvidos nos últimos 60 dias)"
+      ]
+    }
+  },
+  "compliance": {
+    "regulated_category": "cosmetico",
+    "forbidden_claims": [
+      "cura",
+      "trata"
+    ],
+    "allowed_claims": [
+      "hidrata",
+      "complementa"
+    ]
+  },
+  "audience_profile": {
+    "expected_size": "200-500 viewers",
+    "main_origin": "organico",
+    "funnel_stage": "descoberta_da_marca"
+  },
+  "_meta": {
+    "tokens_in": 7120,
+    "tokens_out": 14601,
+    "cost_usd_estimate": 0.240375
+  }
+}
