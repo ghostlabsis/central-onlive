@@ -252,7 +252,7 @@ export default function NovaLivePage() {
                 <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🔗</div>
                 <div>
                   <h2 className="text-xl font-bold">Link do produto</h2>
-                  <p className="text-sm text-gray-500 mt-0.5">TikTok Shop, Shopee, Mercado Livre, site da marca — qualquer URL funciona</p>
+                  <p className="text-sm text-gray-500 mt-0.5">Cole o link e a IA analisa o produto automaticamente</p>
                 </div>
               </div>
 
@@ -260,21 +260,50 @@ export default function NovaLivePage() {
                 type="text"
                 value={productUrl}
                 onChange={(e) => setProductUrl(e.target.value)}
-                placeholder="https://www.tiktok.com/shop/products/... ou qualquer link"
+                placeholder="https://produto.mercadolivre.com.br/... ou qualquer link"
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-base focus:border-purple-500 focus:outline-none transition-colors"
               />
 
-              <div className="mt-5">
+              {/* URL quality guide */}
+              <div className="mt-3 rounded-xl border border-gray-100 bg-gray-50 divide-y divide-gray-100 text-xs">
+                <div className="px-4 py-2.5 flex items-center gap-3">
+                  <span className="text-green-500 font-bold text-sm">✓</span>
+                  <div>
+                    <span className="font-semibold text-gray-700">Links que abrem bem</span>
+                    <span className="text-gray-400 ml-2">— análise de qualidade alta</span>
+                  </div>
+                </div>
+                <div className="px-4 py-2 flex flex-wrap gap-2">
+                  {['Mercado Livre', 'Amazon', 'Site da marca', 'Shopee web', 'Magalu', 'Americanas'].map(s => (
+                    <span key={s} className="bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">{s}</span>
+                  ))}
+                </div>
+                <div className="px-4 py-2.5 flex items-center gap-3">
+                  <span className="text-yellow-500 font-bold text-sm">⚡</span>
+                  <div>
+                    <span className="font-semibold text-gray-700">Links que bloqueiam scraper</span>
+                    <span className="text-gray-400 ml-2">— cole os dados no campo abaixo</span>
+                  </div>
+                </div>
+                <div className="px-4 py-2 flex flex-wrap gap-2 pb-3">
+                  {['TikTok Shop', 'Shopee app', 'Instagram', 'WhatsApp Catálogo', 'Shein'].map(s => (
+                    <span key={s} className="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full font-medium">{s}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-4">
                 <label className="block text-sm font-bold text-gray-700 mb-2">
-                  Contexto adicional <span className="font-normal text-gray-400">(opcional)</span>
+                  Dados do produto <span className="font-normal text-gray-400">(obrigatório para TikTok Shop · recomendado sempre)</span>
                 </label>
                 <textarea
                   value={extraContext}
                   onChange={(e) => setExtraContext(e.target.value)}
                   rows={4}
-                  placeholder="Nome · categoria · preço · ingredientes ativos · diferenciais · público-alvo…&#10;&#10;⚡ TikTok Shop, Shopee, Instagram não abrem automaticamente — cole os dados do produto aqui."
+                  placeholder="Nome · preço cheio · preço live · ingredientes ou diferenciais técnicos · público-alvo · qualquer info da página…"
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm font-mono focus:border-purple-500 focus:outline-none transition-colors resize-none"
                 />
+                <p className="text-xs text-gray-400 mt-1.5">Quanto mais dados você colar, mais precisa e completa fica a análise da IA.</p>
               </div>
 
               {analyzeError && (
