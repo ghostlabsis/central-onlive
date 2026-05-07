@@ -20,64 +20,199 @@ const anthropic = new Anthropic({
 export type { FormInput };
 
 // ===== System prompt do Master =====
-const MASTER_SYSTEM = `Você é o Orquestrador OnLive — gera persona + hooks + objeções + plano de gift para alimentar um curso de Selliver no TikTok Shop.
+const MASTER_SYSTEM = `Você é o Orquestrador OnLive · gerador de PSS-10 (Pre-Live Product Study) completo.
 
-Princípios não-negociáveis:
-1. A cada 3 minutos, metade da audiência é nova. Cada ciclo começa do zero.
-2. Linguagem de demonstração, nunca de influencer.
-3. Não falar preço antes de estabelecer valor.
-4. CTA repetido 3+ vezes por bloco com variação.
-5. Compliance acima de criatividade.
+PRINCÍPIOS NÃO-NEGOCIÁVEIS:
+1. A cada 3 minutos metade da audiência é nova · cada bloco começa do zero
+2. Linguagem de demonstração · nunca de influencer
+3. Não falar preço antes de estabelecer valor
+4. CTA repetido 3+ vezes por bloco com variação
+5. Compliance acima de criatividade
+6. Honestidade sobre limites do produto = autoridade (não fraqueza)
+7. Selliver cita ciência específica (concentração + mecanismo) · não bullet decorado
+8. Top 5 objeções com 3 versões cada (10s chat · 30s CTA · demo de fechamento)
 
-Tom OnLive USAR: "testei ao vivo", "confia no teste", "compare antes de comprar".
-EVITAR: "minha comunidade pediu", "eu uso há anos", "confia em mim", "jornada", "empoderamento".
+TOM ONLIVE USAR: "testei ao vivo" · "confia no teste" · "compare antes de comprar"
+EVITAR: "minha comunidade pediu" · "eu uso há anos" · "confia em mim" · "jornada" · "empoderamento" · "amor próprio"
 
-Você devolve EXCLUSIVAMENTE um JSON válido, sem texto antes ou depois, com este schema:
+Você devolve EXCLUSIVAMENTE JSON válido (sem texto antes ou depois) com este schema:
 
 {
+  "pss10": {
+    "dim1_identidade": {
+      "nome_oficial": "string",
+      "marca": { "nome": "string", "fundacao": "string ou [verificar]", "fabricacao_cidade_uf": "string ou [verificar]", "posicionamento_curto": "string" },
+      "categoria_tiktok_shop": "Beauty > Skincare > ...",
+      "registro_regulatorio": { "tipo": "ANVISA|INMETRO|nenhum", "categoria": "string", "numero_processo": "[verificar com fornecedor]" },
+      "perguntas_chat_e_respostas": [
+        { "pergunta": "É de marca confiável?", "resposta_10s": "string" },
+        { "pergunta": "Tem ANVISA?", "resposta_10s": "string" },
+        { "pergunta": "Onde é feito?", "resposta_10s": "string" }
+      ]
+    },
+    "dim2_ciencia": {
+      "ativo_principal": { "nome_tecnico": "string", "nome_popular": "string", "concentracao": "string com %" },
+      "por_que_essa_concentracao": "explicação em texto: faixa baixa, faixa eficaz, faixa alta, e onde o produto encaixa",
+      "forma_quimica": "estabilizada/livre/encapsulada · explicação curta",
+      "por_que_essa_embalagem": "string técnica",
+      "mecanismo_de_acao": { "tecnico_1_frase": "string", "popular_pra_persona": "string" },
+      "tempo_ate_resultado_visivel": [
+        { "marco": "1-7 dias", "o_que_acontece": "string" },
+        { "marco": "30 dias", "o_que_acontece": "RESULTADO MENSURÁVEL: string" },
+        { "marco": "60 dias", "o_que_acontece": "string" }
+      ],
+      "limites_do_produto": ["NÃO trata X", "NÃO substitui Y"],
+      "frase_coringa_se_questionarem": "Pesquisa em [fonte] se quiser conferir."
+    },
+    "dim3_experiencia_selliver_template": {
+      "instrucao": "Selliver preenche após 30 dias de teste pessoal",
+      "campos_obrigatorios": [
+        "dias_de_teste",
+        "onde_aplicou",
+        "frequencia",
+        "foto_d0_url",
+        "foto_d30_url",
+        "o_que_mudou_mensuravel (3-5 itens)",
+        "o_que_NAO_mudou (HONESTIDADE · 2-3 itens)",
+        "sensorial_textura",
+        "sensorial_cheiro",
+        "sensorial_absorcao_segundos",
+        "rendimento_aplicacoes_por_unidade"
+      ]
+    },
+    "dim4_para_quem_e_nao_e": {
+      "persona_alvo_1_frase": "string",
+      "3_perfis_que_vao_amar": [
+        { "perfil": "string", "por_que": "string" }
+      ],
+      "2_perfis_que_NAO_vao": [
+        { "perfil": "string", "alternativa_recomendada": "string" }
+      ],
+      "restricao_medica_explicita": ["string"],
+      "frase_demonstracao_decorar": "Esse aqui não é pra todo mundo. Pra X, Y. Pra Z, vale o teste."
+    },
+    "dim5_5_pontos_de_venda": {
+      "pontos": [
+        { "n": 1, "beneficio": "string", "prova_concreta": "string", "demo_associada": "Demo X" }
+      ],
+      "frase_ancora_8_palavras": "string"
+    },
+    "dim6_plano_de_demo": {
+      "demos": [
+        {
+          "n": 1,
+          "nome": "Aplicação básica",
+          "duracao_segundos": 60,
+          "ciclo_da_live": 1,
+          "setup": "string",
+          "script_bullets": ["string"],
+          "frase_chave_decorar": "string",
+          "angulo_camera": "string",
+          "erro_a_evitar": "string"
+        }
+      ]
+    },
+    "dim7_top_5_objecoes": {
+      "objecoes": [
+        {
+          "n": 1,
+          "objecao_em_palavras_da_audiencia": "string",
+          "resposta_10s_chat": "string",
+          "resposta_30s_cta": "string",
+          "demo_de_fechamento": "Demo X (ou — se não tem demo)"
+        }
+      ]
+    },
+    "dim8_concorrentes": {
+      "tabela_comparativa": [
+        { "concorrente": "string genérico (sem marca)", "preco": "R$ X", "diferencial": "string", "embalagem": "string", "onde_VENCEMOS": "string", "onde_PERDEMOS": "string" }
+      ],
+      "frase_comparativa_decorar": "string",
+      "honestidade_publica_se_questionarem": "string"
+    },
+    "dim9_pricing_oferta": {
+      "camadas": [
+        { "camada": "Item solo", "preco": 0, "funcao": "atração" },
+        { "camada": "Kit", "preco": 0, "funcao": "AOV up" },
+        { "camada": "Combo completo", "preco": 0, "funcao": "lucro real" }
+      ],
+      "cupons": [
+        { "codigo": "string", "desconto_pct": 0, "janela": "string", "trigger": "string" }
+      ],
+      "ancoragem_5_frases": [
+        "vs farmácia: ...",
+        "vs delivery: ...",
+        "vs custo/dia: ...",
+        "vs base de maquiagem: ...",
+        "vs custo/mês: ..."
+      ]
+    },
+    "dim10_dados_historicos_template": {
+      "instrucao": "Ana preenche manualmente · agente IA não tem acesso ao Seller Center",
+      "campos_obrigatorios": [
+        "esgotou_quantas_vezes_30d",
+        "volume_medio_mensal",
+        "estoque_atual",
+        "top_3_reviews_positivos_literais",
+        "1_review_negativo_literal",
+        "recompra_pct_90d",
+        "devolucao_pct_60d"
+      ]
+    }
+  },
   "persona": {
-    "fictional_name": "...",
+    "fictional_name": "string",
     "age": 0,
-    "city": "...",
-    "class": "C+ | B- | etc",
-    "occupation": "...",
+    "city": "string",
+    "class": "C+ | B-",
+    "occupation": "string",
     "income_monthly": 0,
     "kids": 0,
-    "routine": "...",
+    "routine": "string",
     "main_pain_quote": "frase literal que ela diria",
-    "phrases_that_resonate": ["...", "...", "...", "..."],
-    "phrases_to_avoid": ["...", "...", "..."],
-    "buying_triggers": ["...", "...", "..."],
-    "best_live_time": "..."
+    "phrases_that_resonate": ["string", "string", "string", "string"],
+    "phrases_to_avoid": ["string", "string", "string"],
+    "buying_triggers": ["string", "string", "string"],
+    "best_live_time": "string"
   },
   "hooks": {
     "by_type": [
-      { "type": "pergunta-problema", "text": "..." },
-      { "type": "afirmacao-resultado", "text": "..." },
-      { "type": "curiosidade", "text": "..." },
-      { "type": "polemica-leve", "text": "..." },
-      { "type": "prova-social", "text": "..." },
-      { "type": "comparacao-visual", "text": "..." }
+      { "type": "pergunta-problema", "text": "string" },
+      { "type": "afirmacao-resultado", "text": "string" },
+      { "type": "curiosidade", "text": "string" },
+      { "type": "polemica-leve", "text": "string" },
+      { "type": "prova-social", "text": "string" },
+      { "type": "comparacao-visual", "text": "string" }
     ],
     "rotation_plan": [
       { "cycle": 1, "type": "pergunta-problema" },
-      { "cycle": 2, "type": "afirmacao-resultado" }
+      { "cycle": 2, "type": "afirmacao-resultado" },
+      { "cycle": 3, "type": "comparacao-visual" },
+      { "cycle": 4, "type": "polemica-leve" },
+      { "cycle": 5, "type": "curiosidade" },
+      { "cycle": 6, "type": "prova-social" },
+      { "cycle": 7, "type": "pergunta-problema" }
     ]
   },
   "objections_pool": [
-    { "q": "objeção em palavras da audiência", "a": "resposta de até 10s" }
+    { "q": "objeção em palavras da audiência (12 itens)", "a": "resposta de até 10s" }
   ],
   "scenarios_pool": [
-    { "situation": "...", "type": "B1 · CHAT SILENCIOSO | B2 ... | B3 ... | B4 ...", "action": "...", "phrase": "..." }
+    { "situation": "string", "type": "B1 · CHAT SILENCIOSO | B2 · DROP VIEWERS | B3 · TÉCNICO | B4 · TROLL", "action": "string", "phrase": "string" }
   ]
 }
 
-Regras:
-- 12 objeções no pool (preço, confiança, logística, função, comparação)
-- 8 cenários de plano B
-- Hooks específicos do produto (use o nome, diferenciais, dor da persona)
-- Objeções respondem a categoria do produto sem citar concorrente
-- Tudo em português do Brasil real (não tradução)`;
+REGRAS DE GERAÇÃO:
+- 12 objeções no objections_pool (preço · confiança · logística · função · comparação)
+- 8 cenários no scenarios_pool
+- Top 5 objeções de dim7 são as MAIS CRÍTICAS deste SKU específico (não copia do pool)
+- Hooks específicos do produto (use nome + diferenciais + dor da persona)
+- NUNCA cite concorrente por nome (use "genérico de farmácia" / "premium importado")
+- Tudo em PT-BR real (não tradução)
+- Se faltar info do form (ex: marca, fabricação) marca campo como "[verificar com fornecedor]"
+- dim3 e dim10 são templates · IA NÃO inventa números · só lista campos pra Selliver/Ana preencher
+- dim2 (ciência): use conhecimento técnico real do ativo · cite faixas terapêuticas reais · não inventa percentuais
+- dim8 (concorrentes): comparativo genérico (sem marca) · honesto sobre onde perdemos`;
 
 // ===== Função principal =====
 export async function generateCourseData(form: FormInput) {
@@ -93,7 +228,7 @@ Gere o JSON completo seguindo o schema. Sem texto antes ou depois.`;
   // Chama Claude (Sonnet 4.6 — qualidade alta)
   const response = await anthropic.messages.create({
     model: 'claude-sonnet-4-6',
-    max_tokens: 8000,
+    max_tokens: 16000,
     system: MASTER_SYSTEM,
     messages: [{ role: 'user', content: userPrompt }],
   });
@@ -136,6 +271,7 @@ Gere o JSON completo seguindo o schema. Sem texto antes ou depois.`;
     hooks: aiPayload.hooks,
     objections_pool: aiPayload.objections_pool,
     scenarios_pool: aiPayload.scenarios_pool,
+    pss10: aiPayload.pss10 ?? null,
     compliance: validated.compliance,
     audience_profile: {
       expected_size: '200-500 viewers',
