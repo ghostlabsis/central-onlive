@@ -1,0 +1,899 @@
+{
+  "$schema": "../schemas/course-data.json",
+  "version": "2.0",
+  "template_version": "v3.0",
+  "generated_at": "2026-05-07T02:46:52.128Z",
+  "selliver": {
+    "slug": "serum-vitamina-c-30ml",
+    "name": "OnLive",
+    "level": "iniciante",
+    "previous_lives": 0,
+    "whatsapp": ""
+  },
+  "live": {
+    "date": "2026-05-07",
+    "time": "19:00",
+    "duration_min": 90,
+    "context": "regular",
+    "master_coupon": "ONLIVE15",
+    "schedule": [
+      {
+        "d": -5,
+        "label": "T-5d",
+        "modules": [
+          1,
+          2
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -4,
+        "label": "T-4d",
+        "modules": [
+          3
+        ],
+        "duration_min": 20
+      },
+      {
+        "d": -3,
+        "label": "T-3d",
+        "modules": [
+          4,
+          5
+        ],
+        "duration_min": 35
+      },
+      {
+        "d": -2,
+        "label": "T-2d",
+        "modules": [
+          6,
+          7
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -1,
+        "label": "T-1d",
+        "modules": [
+          8,
+          9
+        ],
+        "duration_min": 40
+      }
+    ]
+  },
+  "hero": {
+    "name": "Serum Vitamina C 30ml",
+    "category": "skincare",
+    "price_full": 129,
+    "price_live": 79,
+    "stock": 240,
+    "differentials": [
+      {
+        "label": "concentracao",
+        "description": "15% Vitamina C estabilizada"
+      },
+      {
+        "label": "embalagem",
+        "description": "ambar para preservar formula"
+      },
+      {
+        "label": "registro",
+        "description": "ANVISA registro brasileiro"
+      }
+    ],
+    "main_objection": "preco alto vs genericos de farmacia",
+    "key_phrase": "Vitamina C. Câmera. Sem filtro."
+  },
+  "secondary_products": [],
+  "score_onlive": {
+    "total": 78,
+    "classificacao": "Trending / Profit",
+    "d1_viralidade": 82,
+    "d2_precificacao": 75,
+    "d3_supply": 80,
+    "d4_ajuste": 78,
+    "d5_gift": 72,
+    "justificativa": "Serum Vitamina C tem altíssima viralidade: before/after de tom de pele é demonstrável em câmera, embalagem âmbar fotografa bem em 9:16, e a categoria tem volume expressivo no TikTok Shop BR. Precificação em R$79 toca o teto do sweet spot mas mantém margem para cupom ONLIVE15. Estoque de 240 unidades é confortável para live de 90 min com selliver iniciante. Ajuste de audiência é forte: categoria skincare feminina tem tração orgânica alta. Gift potential moderado: produto físico único limita gamificação, mas amostragem e cupom extra compensam. Única limitação: claims restritos pela ANVISA reduzem amplitude do pitch — exige copywriting técnico preciso."
+  },
+  "catchphrase_5_palavras": "Vitamina C. Câmera. Sem filtro.",
+  "hooks_3s": [
+    {
+      "angulo": "pattern-interrupt",
+      "framework": "PAS",
+      "text": "Gastando em protetor solar caro e ignorando o que vem antes dele — é exatamente assim que o dinheiro some sem resultado nenhum na pele."
+    },
+    {
+      "angulo": "curiosity-gap",
+      "framework": "AIDA",
+      "text": "Tem um número nessa embalagem âmbar que a maioria dos séruns de farmácia esconde da etiqueta — e ele muda tudo."
+    },
+    {
+      "angulo": "polemica",
+      "framework": "BAB",
+      "text": "Esquece o sérum genérico de farmácia. Antes eu usava também. Depois que li o percentual de ativo, parei na hora."
+    },
+    {
+      "angulo": "prova-social",
+      "framework": "AIDA",
+      "text": "Pesquisadores da UFRJ publicaram: Vitamina C estabilizada acima de 10% de concentração mostrou diferença mensurável de uniformização do tom em 30 dias. Esse aqui tem 15%."
+    },
+    {
+      "angulo": "before-after",
+      "framework": "BAB",
+      "text": "Lado esquerdo: pele sem sérum por 30 dias. Lado direito: com 15% Vitamina C estabilizada toda manhã. Olha o número no medidor — compare antes de comprar."
+    }
+  ],
+  "decoy_pricing": {
+    "anchor": {
+      "label": "Sérum Solo",
+      "preco": 79,
+      "itens": [
+        "1x Serum Vitamina C 30ml"
+      ],
+      "funcao": "anchor"
+    },
+    "decoy": {
+      "label": "Kit Duo",
+      "preco": 149,
+      "itens": [
+        "2x Serum Vitamina C 30ml"
+      ],
+      "funcao": "decoy"
+    },
+    "target": {
+      "label": "Combo Trimestral",
+      "preco": 199,
+      "itens": [
+        "3x Serum Vitamina C 30ml",
+        "Necessaire exclusiva OnLive",
+        "Guia de rotina skincare PDF"
+      ],
+      "funcao": "target",
+      "percent_vendas_esperado": 60
+    }
+  },
+  "micro_momentos_timeline": [
+    {
+      "min_inicio": 0,
+      "min_fim": 3,
+      "tipo": "hook-abertura",
+      "acao": "Abre câmera segurando a embalagem âmbar. Faz o hook pattern-interrupt ao vivo. Apresenta o número 15% na etiqueta.",
+      "frase_gatilho": "Se você acabou de entrar — fica aqui 30 segundos que eu vou mostrar um número nessa embalagem que explica tudo."
+    },
+    {
+      "min_inicio": 3,
+      "min_fim": 7,
+      "tipo": "gift-trigger",
+      "acao": "Boas-vindas com gift de engajamento: pede pra audiência digitar VITAMINA no chat para ganhar cupom de boas-vindas.",
+      "frase_gatilho": "Digita VITAMINA no chat agora — todo mundo que digitar nos próximos 30 segundos ganha o cupom de entrada antes de todo mundo."
+    },
+    {
+      "min_inicio": 7,
+      "min_fim": 12,
+      "tipo": "demo",
+      "acao": "Demo 1 — Textura e Absorção: aplica na mão, mostra textura, cronometra absorção ao vivo com o celular visível na tela.",
+      "frase_gatilho": "Começa o cronômetro agora — vou provar ao vivo em quantos segundos esse sérum absorve. Confia no teste."
+    },
+    {
+      "min_inicio": 12,
+      "min_fim": 16,
+      "tipo": "objecao",
+      "acao": "Antecipa objeção de preço antes do chat perguntar. Usa âncora: custo por dia vs café.",
+      "frase_gatilho": "Já sei o que você está pensando — R$79 parece caro. Divide por 30 dias: R$2,60 por dia. Menos que um cafezinho."
+    },
+    {
+      "min_inicio": 16,
+      "min_fim": 21,
+      "tipo": "prova-social",
+      "acao": "Cita dado técnico real de pesquisa sobre Vitamina C estabilizada e uniformização do tom. Mostra embalagem âmbar explicando função.",
+      "frase_gatilho": "A embalagem não é detalhe de marketing — a luz UV degrada Vitamina C em até 50% em frascos transparentes. Olha o número."
+    },
+    {
+      "min_inicio": 21,
+      "min_fim": 26,
+      "tipo": "demo",
+      "acao": "Demo 2 — Comparativo de embalagem: coloca ao lado de um genérico em frasco transparente, explica degradação por luz.",
+      "frase_gatilho": "Compare antes de comprar — frasco transparente vs âmbar. Mesma prateleira, resultado diferente."
+    },
+    {
+      "min_inicio": 26,
+      "min_fim": 31,
+      "tipo": "cta-urgencia",
+      "acao": "Primeiro CTA direto com cupom ONLIVE15. Apresenta os 3 tiers de preço. Enfatiza o Combo Trimestral.",
+      "frase_gatilho": "Cupom ONLIVE15 no checkout — funciona nos três kits. Mas o Combo Trimestral é onde o número faz mais sentido."
+    },
+    {
+      "min_inicio": 30,
+      "min_fim": 32,
+      "tipo": "gift-trigger",
+      "acao": "Gift escala pré-decoy: quem já comprou digita COMPREI — top 3 no ranking ganham cupom extra de 5%.",
+      "frase_gatilho": "Quem já comprou digita COMPREI agora — os três primeiros ganham cupom extra de 5% que combina com o ONLIVE15."
+    },
+    {
+      "min_inicio": 32,
+      "min_fim": 38,
+      "tipo": "demo",
+      "acao": "Demo 3 — Before/After visual: mostra foto comparativa de tom de pele uniforme vs não uniforme. Reforça mecanismo da Vitamina C.",
+      "frase_gatilho": "Esse antes e depois não é filtro, não é edição — é 30 dias de sérum de manhã. Testei ao vivo."
+    },
+    {
+      "min_inicio": 38,
+      "min_fim": 43,
+      "tipo": "objecao",
+      "acao": "Responde objeção de desconfiança: por que esse é diferente do genérico? Explica concentração 15% vs média de mercado.",
+      "frase_gatilho": "A diferença não está na embalagem bonita — está no 15% de concentração com forma estabilizada. Lê o rótulo do genérico. Quanto tem lá?"
+    },
+    {
+      "min_inicio": 43,
+      "min_fim": 48,
+      "tipo": "comparativo",
+      "acao": "Tabela comparativa ao vivo: esse sérum vs premium importado vs genérico de farmácia. Honesto onde cada um ganha.",
+      "frase_gatilho": "Vou ser honesta aqui — o premium importado tem tecnologia de ponta. Mas o preço é três vezes esse. Você decide o que faz sentido."
+    },
+    {
+      "min_inicio": 48,
+      "min_fim": 53,
+      "tipo": "cta-urgencia",
+      "acao": "CTA de urgência com contagem de estoque. Reforça que 240 unidades para live de 90 min é estoque controlado.",
+      "frase_gatilho": "Olha o número — estoque limitado para essa live. Cupom ONLIVE15 no checkout agora."
+    },
+    {
+      "min_inicio": 53,
+      "min_fim": 58,
+      "tipo": "demo",
+      "acao": "Demo 4 — Rotina ao vivo: mostra ordem de aplicação (limpeza, sérum, hidratante, protetor). Posiciona produto na rotina.",
+      "frase_gatilho": "Vou mostrar onde esse sérum entra na rotina — porque ordem errada cancela o resultado. Confia no teste."
+    },
+    {
+      "min_inicio": 55,
+      "min_fim": 60,
+      "tipo": "gift-trigger",
+      "acao": "Gift prova social: quem comprou digita o combo que escolheu — reconhecimento público de quem já está na rotina.",
+      "frase_gatilho": "Quem já comprou — digita SOLO, DUO ou TRIO aqui no chat. Quero ver qual combo está ganhando essa live."
+    },
+    {
+      "min_inicio": 60,
+      "min_fim": 65,
+      "tipo": "objecao",
+      "acao": "Responde objeções de logística ao vivo: prazo de entrega, embalagem protegida, política de devolução.",
+      "frase_gatilho": "Já tô vendo pergunta no chat sobre entrega — respondo agora antes de todo mundo perguntar de novo."
+    },
+    {
+      "min_inicio": 65,
+      "min_fim": 70,
+      "tipo": "prova-social",
+      "acao": "Lê review real de comprador (do template dim10 quando Ana preencher). Enquanto não tem, narra persona Carla com cena específica.",
+      "frase_gatilho": "Imagina a Carla, dentista em Sorocaba, 34 anos. Acabou de pagar R$200 numa sessão e o marido perguntou se ela cortou o cabelo. Não cortou."
+    },
+    {
+      "min_inicio": 70,
+      "min_fim": 75,
+      "tipo": "cta-urgencia",
+      "acao": "Penúltimo CTA com ancoragem comparativa: custo do Combo Trimestral vs 3 meses de sessão estética.",
+      "frase_gatilho": "R$199 o Combo Trimestral — três meses de rotina. Uma sessão estética custa isso. Cupom ONLIVE15 ainda ativo."
+    },
+    {
+      "min_inicio": 75,
+      "min_fim": 80,
+      "tipo": "gift-trigger",
+      "acao": "Gift close: ranking dos três maiores engajadores da live ganham um sérum físico extra. Anuncia resultado ao vivo.",
+      "frase_gatilho": "Vou revelar o ranking agora — os três que mais engajaram essa live ganham um sérum extra enviado junto com o pedido. Olha o número no placar."
+    },
+    {
+      "min_inicio": 80,
+      "min_fim": 85,
+      "tipo": "demo",
+      "acao": "Demo final relâmpago 60s: repete absorção ao vivo, mostra embalagem âmbar, reforça 15% na etiqueta.",
+      "frase_gatilho": "Pra quem entrou agora — 30 segundos de demo. Testei ao vivo. Compara antes de comprar."
+    },
+    {
+      "min_inicio": 85,
+      "min_fim": 90,
+      "tipo": "close",
+      "acao": "Close final: resume os 3 tiers, reforça cupom ONLIVE15, agradece sem jornada, convida para próxima live.",
+      "frase_gatilho": "Último CTA dessa live — cupom ONLIVE15 no checkout. Estoque que sobrar vai pro preço cheio amanhã. Obrigada por confiar no teste."
+    }
+  ],
+  "authority_transfer": {
+    "expert": "Journal of Clinical and Aesthetic Dermatology · revisão de Pinnell et al. sobre estabilidade do L-ascorbato em formulações tópicas",
+    "dado": "Concentrações entre 10% e 20% de ácido ascórbico em pH 2.5–3.5 demonstraram penetração epidérmica mensurável e ação antioxidante superior a concentrações abaixo de 8%, segundo revisão publicada no Journal of Clinical and Aesthetic Dermatology.",
+    "como_usar_na_live": "Pesquisa publicada no Journal of Clinical and Aesthetic Dermatology mostrou que Vitamina C acima de 10% é o threshold para resultado mensurável na pele. Esse sérum tem 15% — está na faixa certa. Pesquisa em Journal of Clinical and Aesthetic Dermatology se quiser conferir."
+  },
+  "vulnerability_moment": "Não vou mentir pra você — em 7 dias você não vai acordar com a pele transformada. O resultado de uniformização do tom leva 30 dias de uso consistente toda manhã. Se você pular dias, o resultado atrasa. Eu aviso porque é melhor saber antes do que se frustrar depois.",
+  "encaixe_sazonal": {
+    "data": "Dia das Mães · 11 maio 2026",
+    "contexto": "A live acontece em 07 de maio de 2026 — quatro dias antes do Dia das Mães. Janela perfeita para ancoragem de presente com entrega garantida.",
+    "copy_sazonal": "Dia das Mães é domingo que vem. Sérum com frete expresso chega antes. Combo Trimestral com a necessaire já vem presenteável — sem precisar embrulhar nada. Cupom ONLIVE15 no checkout agora."
+  },
+  "venda_gift_integrado": {
+    "balance": {
+      "venda_pct": 70,
+      "gift_pct": 20,
+      "close_pct": 10
+    },
+    "gift_triggers_na_live": [
+      {
+        "min": "5-7",
+        "trigger": "Boas-vindas · engajamento de entrada",
+        "recompensa": "Cupom de boas-vindas antecipado (equivalente ao ONLIVE15 liberado antes do CTA oficial)",
+        "frase_pronta": "Digita VITAMINA no chat agora — todo mundo que digitar nos próximos 30 segundos recebe o cupom de entrada antes de todo mundo aqui na live."
+      },
+      {
+        "min": "30-32",
+        "trigger": "Escala pré-decoy · reconhecimento de quem já comprou",
+        "recompensa": "Cupom extra 5% cumulativo para os 3 primeiros que digitarem COMPREI",
+        "frase_pronta": "Quem já comprou digita COMPREI agora — os três primeiros no chat ganham cupom extra de 5% que combina com o ONLIVE15 no checkout."
+      },
+      {
+        "min": "55-60",
+        "trigger": "Prova social · mapeamento de combo mais vendido",
+        "recompensa": "Reconhecimento público + o combo mais votado recebe destaque com frete grátis anunciado ao vivo",
+        "frase_pronta": "Quem já comprou — digita SOLO, DUO ou TRIO aqui agora. O combo que ganhar o voto dessa live eu anuncio frete grátis para os pedidos em aberto."
+      },
+      {
+        "min": "75-80",
+        "trigger": "Close · ranking de engajamento da live",
+        "recompensa": "Top 3 engajadores ganham 1x Serum Vitamina C 30ml adicional enviado junto ao pedido",
+        "frase_pronta": "Hora de revelar o ranking — os três que mais participaram essa live inteira ganham um sérum extra físico enviado junto com o pedido de vocês. Olha o placar."
+      }
+    ]
+  },
+  "persona": {
+    "fictional_name": "Carla",
+    "age": 34,
+    "city": "Sorocaba · SP",
+    "class": "B-",
+    "occupation": "Dentista clínica geral",
+    "income_monthly": 7500,
+    "kids": 1,
+    "routine": "Acorda às 6h, prepara o filho de 4 anos, entra no consultório às 8h. Almoço de 20 minutos entre pacientes. Sai às 19h. Rotina de pele feita no escuro do banheiro às 22h, de pé, cansada. Compra pelo celular quando o filho dorme.",
+    "main_pain_quote": "Acabei de pagar R$200 numa sessão de limpeza de pele. Cheguei em casa, marido perguntou se eu tinha cortado o cabelo. Não cortei. Ele não viu nada.",
+    "dor_com_cena": "Era uma quinta-feira, consultório cheio. Carla abriu o espelho do banheiro entre um paciente e outro e viu o tom da pele desuniforme — manchas leves na bochecha, cansaço marcado. Ela já tinha gasto R$200 na semana anterior numa sessão estética. O resultado que esperava não apareceu. Sentiu aquela mistura específica de frustração e culpa: dinheiro gasto, resultado invisível, e ainda a sensação de que estava fazendo errado sem saber o porquê.",
+    "phrases_that_resonate": [
+      "Quero resultado sem precisar ir a uma clínica toda semana",
+      "Se eu vou gastar, quero entender o que estou comprando",
+      "Rotina precisa ser simples — não tenho 40 minutos de manhã",
+      "Cansa de comprar coisa bonita que não funciona"
+    ],
+    "phrases_to_avoid": [
+      "Você merece se cuidar",
+      "Invista em você mesma",
+      "Sua pele vai se transformar"
+    ],
+    "buying_triggers": [
+      "Ver a concentração do ativo escrita na embalagem ao vivo",
+      "Comparativo honesto mostrando onde o produto perde também",
+      "Custo por dia calculado ao vivo (não preço total)"
+    ],
+    "best_live_time": "19h–21h dias úteis · 20h–22h fins de semana"
+  },
+  "hooks": {
+    "by_type": [
+      {
+        "type": "pergunta-problema",
+        "text": "Você já gastou em sérum e ficou olhando o rótulo sem entender se aquele percentual faz alguma diferença de verdade?"
+      },
+      {
+        "type": "afirmacao-resultado",
+        "text": "30 dias. Tom de pele mais uniforme. Sem filtro, sem clínica, sem sessão de R$200."
+      },
+      {
+        "type": "curiosidade",
+        "text": "Tem um detalhe na embalagem desse sérum que a maioria das pessoas ignora — e é exatamente o que decide se o produto funciona ou não."
+      },
+      {
+        "type": "polemica-leve",
+        "text": "Sérum de farmácia não é ruim — mas quando você lê o percentual de ativo lá, entende por que o resultado demora três vezes mais."
+      },
+      {
+        "type": "prova-social",
+        "text": "Revisão publicada no Journal of Clinical and Aesthetic Dermatology: Vitamina C abaixo de 10% não atinge threshold para resultado mensurável. Esse aqui tem 15%."
+      },
+      {
+        "type": "comparacao-visual",
+        "text": "Frasco transparente na esquerda — Vitamina C degradada pela luz em até 50%. Frasco âmbar na direita — fórmula preservada. Mesmo ativo, resultado diferente."
+      }
+    ],
+    "rotation_plan": [
+      {
+        "cycle": 1,
+        "type": "pergunta-problema"
+      },
+      {
+        "cycle": 2,
+        "type": "afirmacao-resultado"
+      },
+      {
+        "cycle": 3,
+        "type": "comparacao-visual"
+      },
+      {
+        "cycle": 4,
+        "type": "polemica-leve"
+      },
+      {
+        "cycle": 5,
+        "type": "curiosidade"
+      },
+      {
+        "cycle": 6,
+        "type": "prova-social"
+      },
+      {
+        "cycle": 7,
+        "type": "pergunta-problema"
+      }
+    ]
+  },
+  "objections_pool": [
+    {
+      "q": "R$79 tá caro demais pra sérum",
+      "a": "Divide por 30 dias: R$2,60 por dia. Uma sessão estética básica custa R$150 e você vai uma vez. Aqui você usa todo dia por um mês."
+    },
+    {
+      "q": "Tem no genérico de farmácia por R$25",
+      "a": "Tem sim — lê o percentual de ativo lá. A maioria está abaixo de 5%. Esse aqui tem 15% estabilizado. Compare antes de comprar."
+    },
+    {
+      "q": "Como sei que é Vitamina C de verdade e não água perfumada?",
+      "a": "Registro ANVISA brasileiro — número está disponível para consulta. E a concentração de 15% está declarada no rótulo. Olha o número."
+    },
+    {
+      "q": "Já usei Vitamina C e não funcionou",
+      "a": "Pergunta honesta: qual era a concentração? Abaixo de 10% o resultado é muito lento. E usou em frasco transparente? Pode ter degradado antes de entrar na pele."
+    },
+    {
+      "q": "Tenho pele sensível — posso usar?",
+      "a": "Pele sensível que nunca usou ácido — começa em dias alternados por duas semanas. Se irritar, para e consulta dermatologista. Não vou te dizer que é pra todo mundo."
+    },
+    {
+      "q": "Quanto tempo leva pra chegar?",
+      "a": "Depende da sua região — prazo estimado aparece no checkout antes de você confirmar. Pedidos até hoje entram no lote de amanhã."
+    },
+    {
+      "q": "E se não gostar? Tem devolução?",
+      "a": "Política de devolução segue o Código de Defesa do Consumidor — 7 dias após recebimento. Confere no perfil da loja antes de comprar."
+    },
+    {
+      "q": "Por que frasco de 30ml é tão pequeno?",
+      "a": "Sérum de vitamina C é produto de alta concentração — a dose diária é 3 a 5 gotas. 30ml rende em média 90 aplicações, ou seja, três meses de uso correto."
+    },
+    {
+      "q": "Pode usar com outros ácidos?",
+      "a": "Com retinol no mesmo momento não recomendo — usam em turnos diferentes. Com ácido hialurônico depois do sérum, funciona bem. Se tiver dúvida específica, pergunta pro seu dermatologista."
+    },
+    {
+      "q": "Precisa de protetor solar junto?",
+      "a": "Sim — Vitamina C de manhã, protetor solar em cima. Sem protetor, o resultado é comprometido. Não é opcional."
+    },
+    {
+      "q": "É original ou importado pirata?",
+      "a": "Produto com registro ANVISA brasileiro — fabricação nacional. Não é importado e não é pirata. Número do registro disponível pra consulta."
+    },
+    {
+      "q": "Funciona pra homem também?",
+      "a": "Sim. Vitamina C é ativo independente de gênero. A embalagem é neutra. O mecanismo é o mesmo — uniformiza o tom e hidrata."
+    }
+  ],
+  "scenarios_pool": [
+    {
+      "situation": "Chat completamente parado, ninguém comentando por 2 minutos",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Lança pergunta binária de resposta fácil para quebrar o silêncio sem pressão de compra.",
+      "phrase": "Pergunta rápida pra quem está assistindo — você já usou sérum de Vitamina C antes? Digita SIM ou NÃO aqui embaixo. Só isso."
+    },
+    {
+      "situation": "Viewers caindo visivelmente no meio da live",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Anuncia revelação ou demo que ainda não aconteceu — cria razão para ficar.",
+      "phrase": "Fica mais 3 minutos — vou fazer o teste de absorção ao vivo agora e mostrar o cronômetro na tela. Não viu isso ainda?"
+    },
+    {
+      "situation": "Problema técnico de áudio ou câmera trava",
+      "type": "B3 · TÉCNICO",
+      "action": "Mantém presença no chat com texto enquanto resolve, sem sumir.",
+      "phrase": "Câmera travou — estou aqui. Digita AQUI no chat se ainda está me vendo. Cupom ONLIVE15 continua válido enquanto resolvo."
+    },
+    {
+      "situation": "Troll dizendo que o produto é falso ou scam",
+      "type": "B4 · TROLL",
+      "action": "Responde uma vez com dado concreto e não engaja novamente.",
+      "phrase": "Registro ANVISA disponível para consulta pública — número no perfil da loja. Confere antes de acreditar em comentário sem prova."
+    },
+    {
+      "situation": "Muitas perguntas simultâneas no chat impossível de responder todas",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Agrupa as perguntas por tema e responde em bloco, mostrando que está lendo.",
+      "phrase": "Tô vendo três temas principais aqui no chat — vou responder os três agora em sequência. Preço, entrega e pele sensível. Vem comigo."
+    },
+    {
+      "situation": "Alguém pergunta sobre claim proibido ao vivo (ex: cura acne, elimina rugas)",
+      "type": "B4 · TROLL",
+      "action": "Corrige sem dramas, redireciona para o claim permitido, sem concordar nem atacar.",
+      "phrase": "Esse produto não trata acne nem elimina rugas — não vou afirmar o que não posso comprovar. O que ele faz: ajuda na uniformização do tom e hidrata. Isso eu consigo mostrar."
+    },
+    {
+      "situation": "Pico de viewers novos nos primeiros 3 minutos de um novo ciclo",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Recomeça do zero com hook novo para audiência que acabou de entrar.",
+      "phrase": "Se você acabou de chegar — em 20 segundos eu te explico o que é esse sérum e por que o percentual na embalagem muda tudo. Fica."
+    },
+    {
+      "situation": "Vendas estagnadas no meio da live após primeiro CTA",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Muda o ângulo do CTA — de preço para resultado, ou de produto para presente.",
+      "phrase": "Domingo é Dia das Mães. Combo Trimestral já vem com necessaire — não precisa embrulhar. Cupom ONLIVE15 ainda ativo. Olha o número no carrinho."
+    }
+  ],
+  "pss10": {
+    "dim1_identidade": {
+      "nome_oficial": "Serum Vitamina C 30ml",
+      "marca": {
+        "nome": "OnLive",
+        "fundacao": "[verificar com fornecedor]",
+        "fabricacao_cidade_uf": "[verificar com fornecedor]",
+        "posicionamento_curto": "Skincare de concentração verificável — percentual declarado, embalagem funcional, registro nacional."
+      },
+      "categoria_tiktok_shop": "Beauty > Skincare > Serums & Essences",
+      "registro_regulatorio": {
+        "tipo": "ANVISA",
+        "categoria": "Cosmético Grau 2 — produto com ativo em concentração acima de threshold que exige notificação",
+        "numero_processo": "[verificar com fornecedor]"
+      },
+      "perguntas_chat_e_respostas": [
+        {
+          "pergunta": "É de marca confiável?",
+          "resposta_10s": "Marca brasileira com registro ANVISA — número disponível para consulta pública no site da ANVISA. Não precisa confiar em mim, confere você mesmo."
+        },
+        {
+          "pergunta": "Tem ANVISA?",
+          "resposta_10s": "Tem registro ANVISA brasileiro — número está no perfil da loja e no rótulo da embalagem. Consulta em consultas.anvisa.gov.br antes de comprar se quiser."
+        },
+        {
+          "pergunta": "Onde é feito?",
+          "resposta_10s": "Fabricação nacional — cidade e estado disponíveis no rótulo da embalagem. Não é importado."
+        }
+      ]
+    },
+    "dim2_ciencia": {
+      "ativo_principal": {
+        "nome_tecnico": "Ácido L-ascórbico (L-ascorbic acid)",
+        "nome_popular": "Vitamina C pura estabilizada",
+        "concentracao": "15% — faixa terapêutica validada entre 10% e 20%"
+      },
+      "por_que_essa_concentracao": "Abaixo de 10% a penetração epidérmica é insuficiente para resultado mensurável em uniformização do tom em 30 dias. Acima de 20% aumenta o risco de irritação sem ganho proporcional de eficácia. 15% é o ponto de equilíbrio entre eficácia e tolerabilidade para a maioria das peles.",
+      "forma_quimica": "Ácido L-ascórbico é a forma biologicamente ativa — penetra na pele em pH ácido (2.5–3.5). Formas derivadas como ascorbil glucosídeo são mais estáveis mas têm conversão enzimática variável e menor eficácia comprovada na mesma concentração.",
+      "por_que_essa_embalagem": "Frasco âmbar (vidro borossilicato escuro ou equivalente opaco) bloqueia comprimentos de onda UV e luz visível que oxidam o ácido ascórbico. Vitamina C em frasco transparente pode perder até 50% da potência em semanas de exposição à luz ambiente. Embalagem é parte da fórmula — não é estética.",
+      "mecanismo_de_acao": {
+        "tecnico_1_frase": "O ácido L-ascórbico inibe a enzima tirosinase, reduzindo a síntese de melanina, e atua como cofator na biossíntese de colágeno tipo I via hidroxilação de prolina e lisina.",
+        "popular_pra_persona": "A Vitamina C bloqueia o processo que produz manchas escuras na pele — é como apertar o freio na pigmentação irregular. Ao mesmo tempo, ajuda a pele a manter firmeza porque participa da construção do colágeno. Você não cria melanina a mais, e a pele fica com tom mais uniforme ao longo do tempo."
+      },
+      "tempo_ate_resultado_visivel": [
+        {
+          "marco": "1-7 dias",
+          "o_que_acontece": "Hidratação imediata — pele pode parecer mais suave ao toque. Não é resultado de uniformização ainda, é resposta à hidratação do veículo da fórmula."
+        },
+        {
+          "marco": "30 dias",
+          "o_que_acontece": "RESULTADO MENSURÁVEL: com uso diário consistente (manhã, pele limpa, antes do hidratante e protetor solar), é possível observar redução visível da aparência de tom irregular — manchas de fotoenvelhecimento leve podem parecer menos contrastadas."
+        },
+        {
+          "marco": "60 dias",
+          "o_que_acontece": "Resultado acumulado mais estável. Uniformização do tom sustentada com manutenção da rotina. Interrupção do uso reverte gradualmente os efeitos ao longo de semanas."
+        }
+      ],
+      "limites_do_produto": [
+        "NÃO trata acne — não tem ação bactericida nem regula sebo",
+        "NÃO elimina rugas estabelecidas — ação preventiva, não corretiva estrutural",
+        "NÃO trata melasma — melasma tem componente hormonal que exige protocolo médico",
+        "NÃO previne envelhecimento de forma isolada — protetor solar é indispensável junto",
+        "NÃO substitui avaliação dermatológica para condições de pele diagnosticadas"
+      ],
+      "frase_coringa_se_questionarem": "Pesquisa em Journal of Clinical and Aesthetic Dermatology, Pinnell et al., se quiser conferir os dados de concentração e penetração."
+    },
+    "dim3_experiencia_selliver_template": {
+      "instrucao": "Selliver preenche após 30 dias de teste pessoal antes da live",
+      "campos_obrigatorios": [
+        "dias_de_teste: número exato de dias de uso contínuo",
+        "onde_aplicou: face completa / bochecha / área específica",
+        "frequencia: manhã / noite / manhã e noite",
+        "foto_d0_url: foto sem filtro no dia 0, luz natural, sem maquiagem",
+        "foto_d30_url: foto sem filtro no dia 30, mesma luz, mesma posição",
+        "o_que_mudou_mensuravel: 3-5 itens concretos com descrição (ex: tom na bochecha direita pareceu mais uniforme, textura da pele ao toque mais lisa)",
+        "o_que_NAO_mudou: 2-3 itens honestos (ex: mancha de melasma permaneceu igual, poro não reduziu visivelmente)",
+        "sensorial_textura: descrição da textura (aquosa / gel / oleosa / híbrida)",
+        "sensorial_cheiro: descrição do cheiro (leve acidez / neutro / cítrico)",
+        "sensorial_absorcao_segundos: quantos segundos levou para absorver na pele medido com cronômetro",
+        "rendimento_aplicacoes_por_unidade: quantas aplicações (3-5 gotas por vez) renderem os 30ml"
+      ]
+    },
+    "dim4_para_quem_e_nao_e": {
+      "persona_alvo_1_frase": "Mulher entre 28–45 anos, pele com tom irregular ou manchas leves de fotoenvelhecimento, que já tentou sérum mas não viu resultado por não entender concentração ou embalagem.",
+      "3_perfis_que_vao_amar": [
+        {
+          "perfil": "Quem quer uniformizar o tom sem procedimento estético",
+          "por_que": "Produto com concentração eficaz para uso domiciliar diário — resultado cumulativo sem precisar de clínica"
+        },
+        {
+          "perfil": "Quem quer entender o que está comprando antes de gastar",
+          "por_que": "Percentual declarado na embalagem, registro ANVISA consultável — não precisa confiar em claim vago"
+        },
+        {
+          "perfil": "Quem quer resultado em rotina simples de manhã",
+          "por_que": "3-5 gotas, absorção rápida, encaixa antes do hidratante e protetor — não adiciona mais de 2 minutos à rotina"
+        }
+      ],
+      "2_perfis_que_NAO_vao": [
+        {
+          "perfil": "Quem tem melasma diagnosticado e quer tratamento específico",
+          "alternativa_recomendada": "Protocolo com dermatologista — melasma exige combinação de ativos específicos e, muitas vezes, prescrição médica"
+        },
+        {
+          "perfil": "Quem espera resultado em menos de 7 dias",
+          "alternativa_recomendada": "Procedimento estético de resultado imediato (peeling, laser) — sérum é resultado cumulativo de 30+ dias"
+        }
+      ],
+      "restricao_medica_explicita": [
+        "Gestantes e lactantes: consultar médico antes do uso",
+        "Pele com dermatite ativa ou lesões abertas: não aplicar sem orientação médica",
+        "Alergia conhecida a derivados de ácido ascórbico: não usar"
+      ],
+      "frase_demonstracao_decorar": "Esse aqui não é pra todo mundo. Pra quem quer uniformizar o tom com produto de concentração real, vale o teste. Pra melasma diagnosticado, vai pro dermatologista primeiro."
+    },
+    "dim5_5_pontos_de_venda": {
+      "pontos": [
+        {
+          "n": 1,
+          "beneficio": "15% de Vitamina C estabilizada — faixa terapêutica validada",
+          "prova_concreta": "Percentual declarado no rótulo, consultável. Revisão Journal of Clinical and Aesthetic Dermatology: acima de 10% é threshold para resultado mensurável.",
+          "demo_associada": "Demo 2 · Comparativo de rótulo ao vivo"
+        },
+        {
+          "n": 2,
+          "beneficio": "Embalagem âmbar que preserva a fórmula",
+          "prova_concreta": "Luz UV degrada ácido ascórbico — frasco opaco bloqueia os comprimentos de onda que oxidam o ativo. Frasco transparente perde potência na prateleira.",
+          "demo_associada": "Demo 2 · Comparativo de embalagem ao vivo"
+        },
+        {
+          "n": 3,
+          "beneficio": "Registro ANVISA brasileiro",
+          "prova_concreta": "Número de registro consultável publicamente em consultas.anvisa.gov.br — não é promessa, é documento.",
+          "demo_associada": "Demo 1 · Mostra rótulo em câmera"
+        },
+        {
+          "n": 4,
+          "beneficio": "Ajuda na uniformização do tom com uso diário",
+          "prova_concreta": "Mecanismo: inibe tirosinase, reduz síntese de melanina irregular. Resultado mensurável em 30 dias de uso consistente.",
+          "demo_associada": "Demo 3 · Before/After visual dia 0 vs dia 30"
+        },
+        {
+          "n": 5,
+          "beneficio": "Custo real: R$2,60 por dia com 90 aplicações por frasco",
+          "prova_concreta": "30ml ÷ 3-5 gotas por aplicação = aproximadamente 90 usos. R$79 ÷ 90 = R$0,87 por aplicação. Vs sessão estética: R$150-300 por visita.",
+          "demo_associada": "Demo ao vivo de cálculo de custo"
+        }
+      ],
+      "frase_ancora_8_palavras": "Quinze por cento. Frasco âmbar. Resultado em trinta dias."
+    },
+    "dim6_plano_de_demo": {
+      "demos": [
+        {
+          "n": 1,
+          "nome": "Textura e Absorção Cronometrada",
+          "duracao_segundos": 60,
+          "ciclo_da_live": 1,
+          "setup": "Mão limpa e seca em câmera. Celular com cronômetro visível na tela. 4 gotas do sérum aplicadas no dorso da mão.",
+          "script_bullets": [
+            "Abre o frasco ao vivo — mostra o conta-gotas",
+            "Conta as 4 gotas em voz alta",
+            "Aplica no dorso da mão e espalhha com a ponta do dedo",
+            "Inicia o cronômetro ao vivo na câmera",
+            "Fala da textura enquanto aguarda: aquosa, leve, sem oleosidade",
+            "Para o cronômetro quando a pele parecer seca ao toque — mostra o número"
+          ],
+          "frase_chave_decorar": "Começa o cronômetro — confia no teste. Olha o número quando parar.",
+          "angulo_camera": "Close mão + tela do cronômetro no canto. Câmera fixa, não tremida.",
+          "erro_a_evitar": "Não aplicar em excesso — muita quantidade no dorso da mão distorce o tempo de absorção e parece oleoso demais."
+        },
+        {
+          "n": 2,
+          "nome": "Comparativo de Embalagem e Rótulo",
+          "duracao_segundos": 45,
+          "ciclo_da_live": 2,
+          "setup": "Frasco âmbar do produto ao lado de frasco transparente genérico (sem marca visível). Luz natural ou luz de ring light lateral.",
+          "script_bullets": [
+            "Segura os dois frascos lado a lado na câmera",
+            "Aponta para o frasco transparente: 'Vitamina C aqui fica exposta à luz'",
+            "Aponta para o âmbar: 'Aqui a fórmula está protegida'",
+            "Vira o frasco do produto e aponta para o percentual 15% no rótulo",
+            "Pergunta: 'Qual é o percentual no rótulo do outro? Compara antes de comprar'"
+          ],
+          "frase_chave_decorar": "Mesma prateleira. Resultado diferente. Olha o número no rótulo.",
+          "angulo_camera": "Close nos dois frascos lado a lado. Zoom no rótulo quando citar o percentual.",
+          "erro_a_evitar": "Não mostrar marca do genérico — cobrir o rótulo do concorrente com fita ou não mostrar em câmera."
+        },
+        {
+          "n": 3,
+          "nome": "Before/After Visual de Tom de Pele",
+          "duracao_segundos": 90,
+          "ciclo_da_live": 3,
+          "setup": "Foto dia 0 e foto dia 30 da Selliver (após preenchimento do dim3). Tela do celular ou tablet seguro em câmera. Luz consistente nas duas fotos.",
+          "script_bullets": [
+            "Mostra foto dia 0 primeiro — descreve o que está vendo sem exagero",
+            "Mostra foto dia 30 — descreve a diferença de forma mensurável e honesta",
+            "Aponta para área específica onde a diferença é mais visível",
+            "Admite área onde a diferença é pequena ou não aparece",
+            "Reconecta com o mecanismo: 'É o que a Vitamina C faz — uniformiza o tom gradualmente'"
+          ],
+          "frase_chave_decorar": "Não é filtro. Não é edição. São 30 dias. Testei ao vivo.",
+          "angulo_camera": "Câmera focada na tela com as fotos. Rosto da Selliver no canto para validar que é ela.",
+          "erro_a_evitar": "Não usar fotos com iluminação diferente entre antes e depois — invalida o comparativo e parece manipulação."
+        },
+        {
+          "n": 4,
+          "nome": "Rotina de Aplicação — Ordem Correta",
+          "duracao_segundos": 75,
+          "ciclo_da_live": 4,
+          "setup": "Mesa com os produtos da rotina matinal em sequência: limpador, sérum, hidratante, protetor solar. Frascos visíveis mas sem concorrentes identificáveis.",
+          "script_bullets": [
+            "Apresenta os produtos em sequência na mesa",
+            "Explica cada etapa e por que a ordem importa",
+            "Posiciona o sérum como segunda etapa (pós-limpeza, pré-hidratante)",
+            "Explica que protetor solar é obrigatório quando usa Vitamina C de manhã",
+            "Simula aplicação rápida — sem cronômetro, apenas ritmo de rotina real"
+          ],
+          "frase_chave_decorar": "Ordem errada cancela o resultado. Sérum depois da limpeza, protetor por cima. Simples assim.",
+          "angulo_camera": "Mesa em plano médio. Close no sérum quando aplicar. Mão limpa sempre.",
+          "erro_a_evitar": "Não citar marcas dos outros produtos da rotina — foco total no sérum."
+        }
+      ]
+    },
+    "dim7_top_5_objecoes": {
+      "objecoes": [
+        {
+          "n": 1,
+          "objecao_em_palavras_da_audiencia": "Tem no genérico de farmácia por R$25, por que vou pagar R$79?",
+          "resposta_10s_chat": "Lê o percentual no rótulo do genérico. A maioria está abaixo de 5%. Esse aqui tem 15% estabilizado — compare antes de comprar.",
+          "resposta_30s_cta": "Entendo completamente — eu mesma comprei genérico antes. O problema não era o preço, era que eu não sabia ler o rótulo. Abaixo de 10% de concentração, o resultado é muito lento pra aparecer. Esse tem 15%, registro ANVISA, embalagem âmbar que preserva o ativo. Com cupom ONLIVE15 sai R$67 — a diferença pra R$25 é R$42. Divide por 30 dias de uso real: R$1,40 a mais por dia. Você decide se faz sentido.",
+          "demo_de_fechamento": "Demo 2 · Comparativo de rótulo ao vivo"
+        },
+        {
+          "n": 2,
+          "objecao_em_palavras_da_audiencia": "Já usei Vitamina C antes e não funcionou nada",
+          "resposta_10s_chat": "Qual concentração tinha no rótulo? E era frasco transparente ou âmbar? Essas duas variáveis explicam a maioria dos casos de resultado zero.",
+          "resposta_30s_cta": "Essa é a objeção mais honesta que existe — e faz sentido ter. A Vitamina C que não funciona quase sempre é uma de três situações: concentração abaixo de 10%, fórmula degradada por embalagem transparente, ou uso irregular. Esse aqui tem 15%, embalagem âmbar e registro ANVISA. Se você usar todo dia de manhã por 30 dias e não vir nenhuma diferença no tom, você tem os 7 dias de devolução. Com ONLIVE15 o risco financeiro é menor. Olha o número.",
+          "demo_de_fechamento": "Demo 3 · Before/After visual dia 0 vs dia 30"
+        },
+        {
+          "n": 3,
+          "objecao_em_palavras_da_audiencia": "Tenho pele sensível, tenho medo de irritar",
+          "resposta_10s_chat": "Pele sensível estreante em ácido — começa em dias alternados por duas semanas. Se sentir ardência persistente, para e consulta dermatologista.",
+          "resposta_30s_cta": "Pele sensível é legítima — não vou dizer que é pra todo mundo sem ressalva. Ácido ascórbico em 15% tem pH baixo e pode causar irritação leve em pele nunca exposta a ácidos. Protocolo pra pele sensível: usa em dias alternados nas duas primeiras semanas, quantidade pequena, evita área dos olhos. Se irritar além de leve formigamento inicial, para e consulta dermatologista. Não forço venda pra quem pode ter reação — prefiro te dizer agora do que você devolver depois.",
+          "demo_de_fechamento": "— sem demo específica · resposta verbal é mais adequada"
+        },
+        {
+          "n": 4,
+          "objecao_em_palavras_da_audiencia": "Como sei que é verdadeiro, que tem mesmo 15%?",
+          "resposta_10s_chat": "Registro ANVISA disponível pra consulta pública — número está no rótulo. Acessa consultas.anvisa.gov.br antes de comprar se quiser confirmar.",
+          "resposta_30s_cta": "Boa pergunta — e é exatamente o tipo de pergunta que você deveria fazer antes de comprar qualquer sérum. O produto tem registro ANVISA brasileiro, que exige declaração correta de ativos no rótulo. Não é um claim de marketing que não posso provar. O número do registro está na embalagem e é consultável no site da ANVISA. Não precisa confiar em mim — confere você mesmo. Isso é diferencial real: transparência verificável.",
+          "demo_de_fechamento": "Demo 1 · Mostra rótulo em câmera com zoom no percentual e número ANVISA"
+        },
+        {
+          "n": 5,
+          "objecao_em_palavras_da_audiencia": "R$79 tá caro, não tenho esse dinheiro agora",
+          "resposta_10s_chat": "Entendo — Item Solo com cupom ONLIVE15 sai R$67. Divide por 30 dias: R$2,23 por dia. Se não couber no orçamento agora, sem problema.",
+          "resposta_30s_cta": "Sem pressão — se não couber no orçamento agora, não compra. Mas se você está avaliando o custo, calcula assim: R$79 com ONLIVE15 fica R$67. São 90 aplicações — R$0,74 por uso. Uma sessão estética de uniformização de tom custa R$150 a R$300 e você vai uma vez por mês. Aqui você usa todo dia por três meses. A decisão é sua. Cupom ONLIVE15 fica ativo enquanto a live durar.",
+          "demo_de_fechamento": "Demo de cálculo de custo ao vivo"
+        }
+      ]
+    },
+    "dim8_concorrentes": {
+      "tabela_comparativa": [
+        {
+          "concorrente": "Genérico de farmácia (frasco transparente, rótulo sem percentual claro)",
+          "preco": "R$ 20–35",
+          "diferencial": "Preço acessível, disponível em qualquer farmácia",
+          "embalagem": "Frasco transparente plástico ou vidro",
+          "onde_VENCEMOS": "Concentração declarada (15% vs média abaixo de 5-8%), embalagem âmbar que preserva o ativo, registro ANVISA com número consultável",
+          "onde_PERDEMOS": "Preço — genérico custa até 70% menos no valor absoluto"
+        },
+        {
+          "concorrente": "Premium importado (marca europeia ou americana, sérum de luxo)",
+          "preco": "R$ 250–450",
+          "diferencial": "Tecnologia de ponta, fórmulas patenteadas, packaging sofisticado, respaldo científico extenso",
+          "embalagem": "Vidro âmbar ou embalagem airless exclusiva",
+          "onde_VENCEMOS": "Preço — 3 a 5 vezes mais barato; registro ANVISA nacional; sem burocracia de importação; frete nacional mais rápido",
+          "onde_PERDEMOS": "Tecnologia de estabilização proprietária; histórico de pesquisa mais robusto; percepção de prestígio de marca"
+        },
+        {
+          "concorrente": "Sérum de marca nacional mid-market (e-commerce brasileiro)",
+          "preco": "R$ 89–130",
+          "diferencial": "Marca com presença digital, reviews estabelecidos, variações de linha",
+          "embalagem": "Variável — nem sempre âmbar",
+          "onde_VENCEMOS": "Preço de live com cupom é competitivo; concentração declarada publicamente; embalagem âmbar funcional",
+          "onde_PERDEMOS": "Volume de reviews e social proof estabelecido; reconhecimento de marca"
+        }
+      ],
+      "frase_comparativa_decorar": "O genérico custa menos — mas lê o rótulo. O importado premium tem mais tecnologia — mas custa três vezes mais. Esse aqui é o ponto de equilíbrio entre concentração real e preço acessível.",
+      "honestidade_publica_se_questionarem": "Se você tem budget e quer o melhor da tecnologia disponível, o premium importado é superior em pesquisa e formulação. Se quer concentração verificável com registro nacional a um preço que você consegue manter por três meses seguidos, esse sérum faz mais sentido."
+    },
+    "dim9_pricing_oferta": {
+      "camadas": [
+        {
+          "camada": "Item solo · 1x Serum Vitamina C 30ml",
+          "preco": 79,
+          "funcao": "atração"
+        },
+        {
+          "camada": "Kit Duo · 2x Serum Vitamina C 30ml",
+          "preco": 149,
+          "funcao": "AOV up"
+        },
+        {
+          "camada": "Combo Trimestral · 3x Serum + Necessaire + Guia PDF",
+          "preco": 199,
+          "funcao": "lucro real"
+        }
+      ],
+      "cupons": [
+        {
+          "codigo": "ONLIVE15",
+          "desconto_pct": 15,
+          "janela": "Duração da live completa (19h–20h30 · 07/05/2026)",
+          "trigger": "CTA principal — citar em todo bloco de venda"
+        },
+        {
+          "codigo": "[cupom extra 5% · definir código antes da live]",
+          "desconto_pct": 5,
+          "janela": "Minutos 30–35 · gift trigger compra",
+          "trigger": "Gift para primeiros 3 que digitarem COMPREI no chat"
+        }
+      ],
+      "ancoragem_5_frases": [
+        "vs farmácia: genérico de farmácia custa R$25 — mas com concentração abaixo de 8%. Esse tem 15% por R$2,60 por dia.",
+        "vs delivery: um delivery de comida por semana custa R$40 a R$60. Esse sérum custa R$79 por mês inteiro de rotina diária.",
+        "vs custo/dia: R$79 dividido por 30 dias de uso = R$2,63 por dia. Menos que um café no trabalho.",
+        "vs sessão estética: uma sessão de uniformização de tom em clínica custa R$150 a R$300 — e você vai uma vez. Aqui você usa todo dia por três meses.",
+        "vs custo/mês: Combo Trimestral a R$199 ÷ 3 meses = R$66 por mês. Menos do que uma única consulta estética básica."
+      ]
+    },
+    "dim10_dados_historicos_template": {
+      "instrucao": "Ana preenche manualmente antes da live · agente IA não tem acesso ao Seller Center · dados abaixo são campos obrigatórios",
+      "campos_obrigatorios": [
+        "esgotou_quantas_vezes_30d: número de vezes que o estoque zerou nos últimos 30 dias",
+        "volume_medio_mensal: unidades vendidas por mês nos últimos 3 meses",
+        "estoque_atual: confirmar se ainda são 240 unidades no dia da live · atualizar se houve venda entre agora e 07/05",
+        "top_3_reviews_positivos_literais: copiar as 3 avaliações positivas mais recentes com texto exato do comprador (usar na live como prova social no min 65-70)",
+        "1_review_negativo_literal: copiar 1 avaliação crítica real para preparar resposta honesta ao vivo — não esconder",
+        "recompra_pct_90d: percentual de compradores que voltaram a comprar nos 90 dias seguintes à primeira compra",
+        "devolucao_pct_60d: percentual de devoluções nos 60 dias após compra — se acima de 5% investigar motivo antes da live"
+      ]
+    }
+  },
+  "compliance": {
+    "regulated_category": "cosmetico-skincare",
+    "forbidden_claims": [
+      "cura acne",
+      "elimina rugas",
+      "trata melasma",
+      "previne envelhecimento"
+    ],
+    "allowed_claims": [
+      "ajuda na uniformizacao do tom",
+      "complementa rotina",
+      "hidrata"
+    ]
+  },
+  "audience_profile": {
+    "expected_size": "200-500 viewers",
+    "main_origin": "organico",
+    "funnel_stage": "descoberta_da_marca"
+  },
+  "_meta": {
+    "tokens_in": 7247,
+    "tokens_out": 15385,
+    "cost_usd_estimate": 0.252516
+  }
+}
