@@ -58,12 +58,12 @@ export default function NovaLivePage() {
   >([]);
   type GenerateResult = {
     status: string;
-    total_sellivers: number;
-    results: Array<{
+    url: string;
+    indice_url: string;
+    distribution: Array<{
       selliver_id: string;
       selliver_nome: string;
       whatsapp: string;
-      url: string;
       indice_url: string;
     }>;
   };
@@ -510,36 +510,39 @@ export default function NovaLivePage() {
         {/* ── STEP 3: DONE ──────────────────────────────────────────────── */}
         {step === 'done' && result && (
           <div className="space-y-4">
-            <div className="bg-green-50 border-2 border-green-400 rounded-xl p-4">
-              <p className="font-bold text-green-900">✓ {result.total_sellivers} curso(s) gerado(s) com sucesso</p>
-              <p className="text-sm text-green-800 mt-1">Links prontos abaixo. Manda no WhatsApp de cada Selliver.</p>
+
+            {/* Curso gerado — 1 só */}
+            <div className="bg-green-50 border-2 border-green-400 rounded-xl p-5">
+              <p className="font-bold text-green-900 mb-1">✓ Curso gerado com sucesso</p>
+              <a href={result.indice_url} target="_blank" rel="noopener"
+                className="text-sm text-green-800 underline break-all">
+                {result.indice_url}
+              </a>
+              <div className="mt-3">
+                <button
+                  type="button"
+                  onClick={() => navigator.clipboard.writeText(result.indice_url)}
+                  className="bg-white border border-green-300 text-green-800 font-bold py-1.5 px-4 rounded-lg text-sm hover:bg-green-100 transition-colors">
+                  📋 Copiar link
+                </button>
+              </div>
             </div>
 
-            {result.results.map((r) => {
+            {/* Distribuição — mesmo link, WhatsApp diferente */}
+            <p className="text-sm font-bold text-gray-600 tracking-wider">ENVIAR PARA</p>
+            {result.distribution.map((r) => {
               const mensagem = `Oi ${r.selliver_nome}! Seu curso pré-live tá pronto: ${r.indice_url}`;
               const whatsappUrl = `https://wa.me/${r.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(mensagem)}`;
               return (
-                <div key={r.selliver_id} className="bg-white border-2 border-purple-200 rounded-xl p-4">
-                  <div className="mb-3">
-                    <h3 className="font-bold text-lg text-purple-900">{r.selliver_nome}</h3>
+                <div key={r.selliver_id} className="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-between gap-3">
+                  <div>
+                    <p className="font-bold text-sm">{r.selliver_nome}</p>
                     <p className="text-xs text-gray-400">{r.whatsapp}</p>
                   </div>
-                  <a href={r.indice_url} target="_blank" rel="noopener"
-                    className="block text-sm text-purple-700 underline truncate mb-3">
-                    {r.indice_url}
+                  <a href={whatsappUrl} target="_blank" rel="noopener"
+                    className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg text-sm text-center transition-colors whitespace-nowrap">
+                    💬 Abrir WhatsApp
                   </a>
-                  <div className="flex gap-2">
-                    <button
-                      type="button"
-                      onClick={() => navigator.clipboard.writeText(r.indice_url)}
-                      className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold py-2 px-3 rounded-lg text-sm transition-colors">
-                      📋 Copiar link
-                    </button>
-                    <a href={whatsappUrl} target="_blank" rel="noopener"
-                      className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-3 rounded-lg text-sm text-center transition-colors">
-                      💬 Abrir WhatsApp
-                    </a>
-                  </div>
                 </div>
               );
             })}

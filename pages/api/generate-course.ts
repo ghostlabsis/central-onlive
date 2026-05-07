@@ -22,78 +22,78 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ error: 'Selecione pelo menos 1 Selliver.' });
     }
 
-    const baseForm = FormInputSchema.parse({
+    // Slug baseado no produto — 1 curso por produto, não por Selliver
+    const productSlug = (req.body.hero?.name as string | undefined)
+      ?.toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '')
+      .slice(0, 40) ?? 'produto';
+
+    const form = FormInputSchema.parse({
       ...req.body,
-      selliver: req.body.selliver ?? {
-        slug: 'default',
-        name: 'default',
-        level: 'iniciante',
+      selliver: {
+        slug: productSlug,
+        name: 'OnLive',
+        level: 'iniciante' as const,
         previous_lives: 0,
+        whatsapp: '',
       },
     });
 
-    const results = [];
+    // 1 chamada Claude — independente de quantas Sellivers foram selecionadas
+    console.log('[generate-course] Calling Claude Master Prompt...');
+    const courseData = await generateCourseData(form);
+    console.log('[generate-course] Claude responded.', {
+      tokens_in: courseData._meta.tokens_in,
+      tokens_out: courseData._meta.tokens_out,
+      cost_usd: courseData._meta.cost_usd_estimate.toFixed(4),
+    });
 
-    for (const id of sellivers_ids) {
-      const selliver = getSelliverById(id);
-      if (!selliver) continue;
+    const filename = `${productSlug}-${form.live.date}.json`;
+    console.log(`[generate-course] Committing data/${filename}...`);
+    await commitCourseData(filename, courseData);
 
-      const formForSelliver = {
-        ...baseForm,
-        selliver: {
-          slug: selliver.slug,
-          name: selliver.nome,
-          level: selliver.nivel,
-          previous_lives: 0,
-          whatsapp: selliver.whatsapp,
-        },
-      };
+    console.log('[generate-course] Rendering HTMLs...');
+    const builtFiles = await buildCourseFromData(courseData);
 
-      console.log(`[generate-course] Calling Claude for ${selliver.nome}...`);
-      const courseData = await generateCourseData(formForSelliver);
-      console.log(`[generate-course] Claude responded for ${selliver.nome}.`, {
-        tokens_in: courseData._meta.tokens_in,
-        tokens_out: courseData._meta.tokens_out,
-        cost_usd: courseData._meta.cost_usd_estimate.toFixed(4),
-      });
-
-      const filename = `${selliver.slug}-${baseForm.live.date}.json`;
-      console.log(`[generate-course] Committing data/${filename}...`);
-      await commitCourseData(filename, courseData);
-
-      console.log(`[generate-course] Rendering HTMLs for ${selliver.nome}...`);
-      const builtFiles = await buildCourseFromData(courseData);
-
-      await registerProduct({
-        id: `${selliver.slug}-${baseForm.live.date}`,
-        name: baseForm.hero.name,
-        slug: selliver.slug,
-        date: baseForm.live.date,
-        status: 'active',
-        sellivers: [selliver.id],
-        course_path: `/${selliver.slug}/${baseForm.live.date}/`,
-        product_url: '',
-        key_phrase: (courseData as any).hero?.key_phrase ?? '',
-        category: baseForm.hero.category,
-      });
-
-      results.push({
-        selliver_id: id,
-        selliver_nome: selliver.nome,
-        whatsapp: selliver.whatsapp,
-        url: `${process.env.NEXT_PUBLIC_APP_URL}/${selliver.slug}/${baseForm.live.date}/`,
-        indice_url: `${process.env.NEXT_PUBLIC_APP_URL}/${selliver.slug}/${baseForm.live.date}/00-INDICE.html`,
-        files: builtFiles.files,
-      });
-    }
+    // Registra com permissão por Selliver
+    await registerProduct({
+      id: `${productSlug}-${form.live.date}`,
+      name: form.hero.name,
+      slug: productSlug,
+      date: form.live.date,
+      status: 'selective',
+      sellivers: sellivers_ids,
+      course_path: `/${productSlug}/${form.live.date}/`,
+      product_url: '',
+      key_phrase: (courseData as any).hero?.key_phrase ?? '',
+      category: form.hero.category,
+    });
 
     triggerVercelBuild().catch((e) => console.error('[generate-course] Vercel trigger failed:', e));
 
+    const indice_url = `${process.env.NEXT_PUBLIC_APP_URL}/${productSlug}/${form.live.date}/00-INDICE.html`;
+
+    // Monta lista de distribuição — mesmo link, WhatsApp diferente por Selliver
+    const distribution = sellivers_ids
+      .map((id) => getSelliverById(id))
+      .filter(Boolean)
+      .map((s) => ({
+        selliver_id: s!.id,
+        selliver_nome: s!.nome,
+        whatsapp: s!.whatsapp,
+        indice_url,
+      }));
+
     return res.status(200).json({
       status: 'ok',
-      results,
-      total_sellivers: results.length,
-      message: `${results.length} curso(s) gerado(s).`,
+      url: `${process.env.NEXT_PUBLIC_APP_URL}/${productSlug}/${form.live.date}/`,
+      indice_url,
+      distribution,
+      files: builtFiles.files,
+      meta: courseData._meta,
+      message: `Curso gerado. ${distribution.length} Selliver(s) com acesso.`,
     });
   } catch (err: any) {
     console.error('[generate-course] ERROR:', err);
