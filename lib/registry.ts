@@ -41,6 +41,7 @@ async function writeRegistry(registry: Registry): Promise<void> {
     access: 'public',
     contentType: 'application/json',
     addRandomSuffix: false,
+    allowOverwrite: true,
   });
 }
 
