@@ -89,15 +89,50 @@ Exemplos:
 - Casa: "Mesa posta. Sogra surpresa. Sem reforma." (6 palavras)
 
 ═══════════════════════════════════════════════════════════════
-R5 · ÂNGULO DE VENDA COM REFRAME (não comparação simples)
+R5 · ÂNGULO DE VENDA — GATILHO DOMINANTE + PRODUTO + AMPLIFICADOR
 ═══════════════════════════════════════════════════════════════
 
-❌ NUNCA: "Enquanto X custa Y, aqui é mais barato"
-❌ NUNCA: comparação direta de preço sem reframe
+Frase curta o suficiente pra falar numa respiração durante a live (≤ 25 palavras).
+Linguagem TikTok Shop informal ("você tá", não "você está").
 
-✅ SEMPRE: contraria senso comum + revela verdade técnica + entrega solução
+3 elementos obrigatórios em 1 frase:
+1. GATILHO DOMINANTE: o problema mais visceral DESTE produto específico — varia por categoria (ver abaixo)
+2. PRODUTO: o que ela leva aqui + preço concreto (R$ X)
+3. AMPLIFICADOR: frequência de uso OU resultado imediato que justifica a troca
 
-Estrutura: "Você [crença comum errada] · na verdade [verdade técnica/dado] · por isso [como o produto resolve]"
+Estrutura: "Enquanto você tá [GATILHO DOMINANTE], aqui você [leva/tem] [produto]
+            por [R$ X] e [amplificador concreto]."
+
+GATILHO DOMINANTE por categoria — escolha o mais visceral:
+- Dispositivo estético / aparelho clínico: FINANCEIRO
+  → "pagando R$ 300 por sessão na clínica"
+- Pet (saúde/conforto animal): EMOCIONAL/CULPA
+  → "vendo o Thor se levantar gemendo toda manhã"
+- Baby/infantil: MEDO/PROTEÇÃO
+  → "levantando 3x por noite pra checar o bebê"
+- Moda / lifestyle: SOCIAL/STATUS
+  → "evitando postar foto porque o look não tá funcionando"
+- Suplemento / resultado físico: ASPIRAÇÃO FRUSTRADA
+  → "na academia há 6 meses sem ver resultado no espelho"
+- Eletrônico / utilidade: FRUSTRAÇÃO DE USO
+  → "trocando cabo de fone todo mês porque quebra no dobramento"
+- Casa / decoração: SOCIAL/APROVAÇÃO
+  → "com vergonha quando visita chega e vê a sala"
+
+Exemplos finais:
+- Beauty (LED): "Enquanto você tá pagando R$ 300 por sessão de LED na clínica,
+  aqui você leva pra casa as 7 cores por menos de R$ 132 e usa toda semana."
+- Pet: "Enquanto você tá vendo o Thor se levantar gemendo toda manhã, aqui
+  você leva a cama ortopédica por R$ 249 — e começa a ajudar na primeira noite."
+- Baby: "Enquanto você tá levantando 3x por noite pra checar o bebê, aqui
+  você coloca o monitor por R$ 189 e dorme tranquila a noite toda."
+- Moda: "Enquanto você tá evitando postar foto porque o look não tá fechando,
+  aqui você leva 3 peças que combinam por R$ 159 e já sai usando."
+
+❌ NUNCA: jargão técnico sem contexto emocional (ex: "fotobiomodulação de 630nm" isolado)
+❌ NUNCA: > 30 palavras
+❌ NUNCA: linguagem formal ("o produto oferece", "você está")
+❌ NUNCA: gatilho financeiro em produto cujo gatilho dominante é emocional/medo
 
 ═══════════════════════════════════════════════════════════════
 R6 · DESEJOS COM IDENTIDADE (não aspiração vaga)
@@ -131,7 +166,7 @@ Antes de retornar, rode em si mesmo:
 2. target_audience é nome próprio + cena? Se for "Mulheres X-Y" · REESCREVE
 3. Cada uma das 4 main_pains tem cena específica? Se for genérica · REESCREVE
 4. key_phrase tem ≤ 8 palavras? Se for prosa · REESCREVE
-5. live_selling_angle tem reframe (não comparação simples)? Se for só preço · REESCREVE
+5. live_selling_angle tem âncora de preço + produto + amplificador ≤ 25 palavras? Se for jargão técnico ou prosa longa · REESCREVE
 6. main_desires têm identidade (não aspiração vaga)? Se for "investir em si" · REESCREVE
 7. product_strengths têm prova mensurável? Se for adjetivo só · REESCREVE
 
@@ -188,7 +223,7 @@ JSON OUTPUT (retorne EXCLUSIVAMENTE JSON válido, sem texto antes ou depois)
       "Força 2: ... — ver R7",
       "Força 3: ... — ver R7"
     ],
-    "live_selling_angle": "Você [crença errada] · na verdade [dado técnico] · por isso [solução do produto] — ver R5"
+    "live_selling_angle": "Enquanto você tá [pagando R$ X em Y], aqui você [leva] [produto] por [R$ X] e [frequência/resultado] — ≤ 25 palavras · ver R5"
   }
 }
 
