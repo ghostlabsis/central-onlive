@@ -45,6 +45,7 @@ export async function POST(req: NextRequest) {
   await put(BLOB_KEY, JSON.stringify(data, null, 2), {
     access: 'public',
     addRandomSuffix: false,
+    allowOverwrite: true,
   });
   return NextResponse.json({ ok: true }, { headers: CORS });
 }
