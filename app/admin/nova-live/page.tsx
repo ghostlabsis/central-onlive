@@ -6,6 +6,8 @@ import { SELLIVERS } from '@/data/sellivers';
 // ── Types ──────────────────────────────────────────────────────────────────
 type Differential = { label: string; description: string };
 
+type FeatureItem = { feature: string; beneficio: string; para_quem: string; demo_visual: string };
+
 type ProductAnalysis = {
   hero: {
     name: string; category: string; price_full: number; price_live: number;
@@ -19,6 +21,13 @@ type ProductAnalysis = {
     target_audience: string; main_pains: string[]; main_desires: string[];
     product_strengths: string[]; live_selling_angle: string;
   };
+  feature_map?: FeatureItem[];
+  angulo_principal?: { feature: string; motivo: string };
+  demo_principal?: { setup: string; o_que_mostra: string; frase_chave: string; duracao_segundos: number };
+  concorrente_referencia?: { nome: string; preco_referencia: string; nosso_diferencial: string };
+  bundle_natural?: { descricao: string; preco_estimado: number; angulo: string };
+  gate5?: { demo_vel_30s: boolean; compliance_ok: boolean; preco_impulso_br: boolean; bundle_aov80: boolean; sinal: string };
+  checklist_entrega?: Record<string, boolean>;
 };
 
 type FormState = {
@@ -317,10 +326,24 @@ export default function NovaLivePage() {
                   <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center text-sm">🧠</div>
                   <div>
                     <p className="font-bold text-sm">Análise completa — {analysis.hero.name}</p>
-                    <p className="text-xs text-gray-400">Público-alvo · Dores · Desejos · Forças · Ângulo de venda</p>
+                    <p className="text-xs text-gray-400">Features · Público · Dores · Demo · Forças · Ângulo</p>
                   </div>
                 </div>
-                <span className="text-gray-400">{analysisOpen ? '▲' : '▼'}</span>
+                <div className="flex items-center gap-3">
+                  {analysis.gate5 && (
+                    <span className={`text-xs font-bold px-2 py-1 rounded-full ${
+                      analysis.gate5.sinal === 'Hero candidate' ? 'bg-green-500/20 text-green-300 border border-green-500/40' :
+                      analysis.gate5.sinal === 'Trending candidate' ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/40' :
+                      analysis.gate5.sinal === 'Avaliar' ? 'bg-orange-500/20 text-orange-300 border border-orange-500/40' :
+                      'bg-red-500/20 text-red-300 border border-red-500/40'
+                    }`}>
+                      {analysis.gate5.sinal === 'Hero candidate' ? '★ Hero' :
+                       analysis.gate5.sinal === 'Trending candidate' ? '↗ Trending' :
+                       analysis.gate5.sinal === 'Avaliar' ? '? Avaliar' : '✗ Recusar'}
+                    </span>
+                  )}
+                  <span className="text-gray-400">{analysisOpen ? '▲' : '▼'}</span>
+                </div>
               </button>
 
               {analysisOpen && (
@@ -368,6 +391,94 @@ export default function NovaLivePage() {
                       </div>
                     </div>
                   </div>
+
+                  {/* Feature Map */}
+                  {analysis.feature_map && analysis.feature_map.length > 0 && (
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <p className="text-xs text-orange-400 font-bold tracking-wider">MAPA DE FEATURES</p>
+                        {analysis.angulo_principal && (
+                          <span className="text-xs bg-orange-500/20 text-orange-300 border border-orange-500/30 px-2 py-0.5 rounded-full">
+                            Principal: {analysis.angulo_principal.feature}
+                          </span>
+                        )}
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {analysis.feature_map.map((f, i) => {
+                          const isPrincipal = analysis.angulo_principal?.feature === f.feature;
+                          return (
+                            <div key={i} className={`rounded-lg px-3 py-2.5 border text-xs leading-snug ${
+                              isPrincipal
+                                ? 'bg-orange-900/30 border-orange-500/50'
+                                : 'bg-white/5 border-white/10'
+                            }`}>
+                              <div className="flex items-center gap-1.5 mb-1">
+                                {isPrincipal && <span className="text-orange-400">★</span>}
+                                <span className="font-bold text-white">{f.feature}</span>
+                                <span className="text-gray-400">→</span>
+                                <span className="text-gray-300">{f.para_quem}</span>
+                              </div>
+                              <p className="text-gray-400 mb-1">{f.beneficio}</p>
+                              <p className="text-teal-300/80 italic">📹 {f.demo_visual}</p>
+                            </div>
+                          );
+                        })}
+                      </div>
+                      {analysis.angulo_principal && (
+                        <p className="text-xs text-orange-300/70 mt-2 italic">
+                          Por que principal: {analysis.angulo_principal.motivo}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Demo Principal + Concorrente + Bundle */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {analysis.demo_principal && (
+                      <div className="bg-teal-900/20 border border-teal-500/30 rounded-xl p-3">
+                        <p className="text-xs text-teal-300 font-bold mb-2 tracking-wider">🎬 DEMO PRINCIPAL</p>
+                        <p className="text-xs text-gray-400 mb-1"><span className="text-white font-medium">Setup:</span> {analysis.demo_principal.setup}</p>
+                        <p className="text-xs text-gray-400 mb-1"><span className="text-white font-medium">On camera:</span> {analysis.demo_principal.o_que_mostra}</p>
+                        <p className="text-xs text-teal-200 font-semibold mt-2">"{analysis.demo_principal.frase_chave}"</p>
+                        <p className="text-xs text-gray-500 mt-1">{analysis.demo_principal.duracao_segundos}s</p>
+                      </div>
+                    )}
+                    {analysis.concorrente_referencia && (
+                      <div className="bg-white/5 border border-white/10 rounded-xl p-3">
+                        <p className="text-xs text-gray-400 font-bold mb-2 tracking-wider">⚔️ CONCORRENTE</p>
+                        <p className="text-xs text-white font-medium">{analysis.concorrente_referencia.nome}</p>
+                        <p className="text-xs text-gray-400 mt-0.5">{analysis.concorrente_referencia.preco_referencia}</p>
+                        <p className="text-xs text-green-300 mt-2">{analysis.concorrente_referencia.nosso_diferencial}</p>
+                      </div>
+                    )}
+                    {analysis.bundle_natural && (
+                      <div className="bg-purple-900/20 border border-purple-500/30 rounded-xl p-3">
+                        <p className="text-xs text-purple-300 font-bold mb-2 tracking-wider">📦 BUNDLE</p>
+                        <p className="text-xs text-white">{analysis.bundle_natural.descricao}</p>
+                        {analysis.bundle_natural.preco_estimado > 0 && (
+                          <p className="text-xs text-purple-300 mt-1 font-medium">R$ {analysis.bundle_natural.preco_estimado}</p>
+                        )}
+                        <p className="text-xs text-gray-400 mt-1 italic">{analysis.bundle_natural.angulo}</p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Checklist de entrega */}
+                  {analysis.checklist_entrega && (
+                    <div className="border-t border-white/10 pt-4">
+                      <p className="text-xs text-gray-400 font-bold mb-3 tracking-wider">CHECKLIST DA ANÁLISE</p>
+                      <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5">
+                        {Object.entries(analysis.checklist_entrega).map(([key, val]) => (
+                          <div key={key} className={`flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-xs ${
+                            val ? 'bg-green-900/20 text-green-300' : 'bg-red-900/20 text-red-300'
+                          }`}>
+                            <span>{val ? '✓' : '✗'}</span>
+                            <span className="truncate">{key.replace(/_/g, ' ')}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
