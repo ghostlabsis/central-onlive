@@ -1,0 +1,290 @@
+{
+  "$schema": "../schemas/course-data.json",
+  "version": "1.0",
+  "template_version": "v1.0",
+  "generated_at": "2026-05-07T00:48:12.477Z",
+  "selliver": {
+    "slug": "f1-gate",
+    "name": "f1-gate",
+    "level": "iniciante",
+    "previous_lives": 0
+  },
+  "live": {
+    "date": "2026-05-07",
+    "time": "19:00",
+    "duration_min": 90,
+    "context": "regular",
+    "master_coupon": "F1GATE",
+    "schedule": [
+      {
+        "d": -5,
+        "label": "T-5d",
+        "modules": [
+          1,
+          2
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -4,
+        "label": "T-4d",
+        "modules": [
+          3
+        ],
+        "duration_min": 20
+      },
+      {
+        "d": -3,
+        "label": "T-3d",
+        "modules": [
+          4,
+          5
+        ],
+        "duration_min": 35
+      },
+      {
+        "d": -2,
+        "label": "T-2d",
+        "modules": [
+          6,
+          7
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -1,
+        "label": "T-1d",
+        "modules": [
+          8,
+          9
+        ],
+        "duration_min": 40
+      }
+    ]
+  },
+  "hero": {
+    "name": "Sérum Vitamina C",
+    "category": "beauty",
+    "price_full": 129,
+    "price_live": 79,
+    "stock": 100,
+    "differentials": [
+      {
+        "label": "15% Vit C",
+        "description": "Vitamina C estabilizada alta concentração"
+      }
+    ],
+    "main_objection": "caro",
+    "key_phrase": "Sérum Vitamina C Vitamina C estabilizada alta concentração para quem Meu rosto parece apagado, com mancha e sem viço — e não tenho dinheiro pra gastar errado.."
+  },
+  "secondary_products": [],
+  "persona": {
+    "fictional_name": "Camila",
+    "age": 32,
+    "city": "São Paulo – Zona Leste",
+    "class": "C+",
+    "occupation": "Auxiliar administrativa",
+    "income_monthly": 2800,
+    "kids": 1,
+    "routine": "Acorda às 6h, leva filho na escola, trabalha o dia todo, chega em casa às 19h cansada. Cuida da pele no banheiro rápido antes de dormir. Consome TikTok no sofá depois das 19h.",
+    "main_pain_quote": "Meu rosto parece apagado, com mancha e sem viço — e não tenho dinheiro pra gastar errado.",
+    "phrases_that_resonate": [
+      "Testei ao vivo e deu diferença visível",
+      "Não precisa ser caro pra funcionar de verdade",
+      "Compare o antes e depois com os seus olhos",
+      "Sem desperdício: uma dose certa já resolve"
+    ],
+    "phrases_to_avoid": [
+      "minha comunidade pediu",
+      "eu uso há anos",
+      "vai te empoderar"
+    ],
+    "buying_triggers": [
+      "Ver a textura e absorção sendo demonstrada ao vivo",
+      "Sentir que o preço só existe naquele momento",
+      "Ouvir que já vendeu X unidades em minutos"
+    ],
+    "best_live_time": "19h–21h (horário após retorno do trabalho)"
+  },
+  "hooks": {
+    "by_type": [
+      {
+        "type": "pergunta-problema",
+        "text": "Sua pele tá com aquele tom apagado, manchinha aqui e ali, e você já gastou em produto que não fez nada? Fica aqui — testei o Sérum Vitamina C ao vivo agora."
+      },
+      {
+        "type": "afirmacao-resultado",
+        "text": "15% de Vitamina C estabilizada num sérum — testei a textura aqui na câmera, absorveu em segundos. Isso uniformiza o tom sem deixar a pele oleosa."
+      },
+      {
+        "type": "curiosidade",
+        "text": "Por que a maioria dos séruns de Vitamina C oxida rápido e não entrega resultado? Esse aqui tem formulação estabilizada — vou mostrar a diferença ao vivo."
+      },
+      {
+        "type": "polemica-leve",
+        "text": "Muita gente gasta R$200, R$300 em sérum importado achando que concentração baixa funciona igual. Olha aqui: 15% de Vit C estabilizada a R$79 nessa live. Compare antes de comprar."
+      },
+      {
+        "type": "prova-social",
+        "text": "Já saíram dezenas de unidades desde que a live começou — quem chegou agora: esse é o Sérum Vitamina C, confia no teste que fiz aqui na câmera."
+      },
+      {
+        "type": "comparacao-visual",
+        "text": "Olha a textura aqui — não é pesado, não deixa resíduo branco. Passei no dorso da mão, absorveu em menos de 10 segundos. Isso é o Sérum Vitamina C 15% ao vivo."
+      }
+    ],
+    "rotation_plan": [
+      {
+        "cycle": 1,
+        "type": "pergunta-problema"
+      },
+      {
+        "cycle": 2,
+        "type": "afirmacao-resultado"
+      },
+      {
+        "cycle": 3,
+        "type": "comparacao-visual"
+      },
+      {
+        "cycle": 4,
+        "type": "curiosidade"
+      },
+      {
+        "cycle": 5,
+        "type": "prova-social"
+      },
+      {
+        "cycle": 6,
+        "type": "polemica-leve"
+      },
+      {
+        "cycle": 7,
+        "type": "pergunta-problema"
+      },
+      {
+        "cycle": 8,
+        "type": "afirmacao-resultado"
+      }
+    ]
+  },
+  "objections_pool": [
+    {
+      "q": "Tá caro, não tenho esse dinheiro agora",
+      "a": "Entendo. Por isso o preço de R$79 existe SÓ nessa live com cupom F1GATE — fora daqui volta pra R$129. Aproveita agora enquanto tá aberto."
+    },
+    {
+      "q": "Sérum de Vitamina C não funciona mesmo, já tentei",
+      "a": "Concentração importa. Testei ao vivo: esse tem 15% estabilizado. Formulação fraca realmente não entrega — esse aqui é diferente, vê a textura na câmera."
+    },
+    {
+      "q": "Minha pele é sensível, tenho medo de irritar",
+      "a": "A Vitamina C estabilizada tem menos potencial de irritação que a forma ácida pura. Mesmo assim, começa em noites alternadas e observa sua pele — é o jeito certo de testar."
+    },
+    {
+      "q": "Como eu sei que vai chegar certo na minha casa?",
+      "a": "É TikTok Shop — o pedido fica registrado na plataforma com rastreio. A entrega é pelo sistema oficial, não é pelo meu direct."
+    },
+    {
+      "q": "Demora quanto pra chegar?",
+      "a": "Prazo aparece no checkout da TikTok Shop antes de você fechar o pedido — já tá visível lá, compra pelo app agora com cupom F1GATE."
+    },
+    {
+      "q": "E se eu não gostar, tem devolução?",
+      "a": "Sim — a política de devolução é da TikTok Shop, fica registrada no seu pedido. Compra protegida pela plataforma."
+    },
+    {
+      "q": "Esse sérum clareia mancha mesmo?",
+      "a": "O que posso mostrar ao vivo é que ele uniformiza o tom da pele com uso contínuo — é o que a fórmula faz. Resultado visível na regularidade de uso."
+    },
+    {
+      "q": "Qual é a diferença de 15% pra uma concentração menor?",
+      "a": "Concentração mais alta significa mais ativo disponível por aplicação. Testei aqui ao vivo: a textura absorve rápido sem resíduo — dá pra ver na câmera agora."
+    },
+    {
+      "q": "Tem que usar todo dia? Vou gastar rápido?",
+      "a": "Uma a duas gotas por aplicação já cobrem o rosto todo. O frasco dura bastante com uso correto — não precisa exagerar na dose."
+    },
+    {
+      "q": "Posso usar de dia ou só de noite?",
+      "a": "Vitamina C vai bem de manhã antes do protetor solar — ajuda a uniformizar o tom ao longo do dia. Protetor solar junto é essencial, não abre mão disso."
+    },
+    {
+      "q": "Por que é mais barato aqui do que na loja?",
+      "a": "Live tem condição especial que não existe no catálogo normal. R$79 com cupom F1GATE só enquanto essa transmissão estiver no ar — é o modelo da live."
+    },
+    {
+      "q": "Tem nota fiscal?",
+      "a": "Sim — a compra é pela TikTok Shop, nota fiscal vai junto com o pedido. Compra formal, registrada na plataforma."
+    }
+  ],
+  "scenarios_pool": [
+    {
+      "situation": "Chat completamente parado, sem comentários",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Fazer pergunta de resposta fácil e demonstrar produto na câmera imediatamente",
+      "phrase": "Me fala no chat: você tem mais problema com mancha ou com pele sem viço? Enquanto isso olha aqui — testei a textura do Sérum Vitamina C ao vivo, vê como absorve."
+    },
+    {
+      "situation": "Audiência baixa, menos de 10 pessoas",
+      "type": "B2 · AUDIÊNCIA BAIXA",
+      "action": "Reduzir ritmo, falar diretamente para quem está presente e repetir hook de curiosidade",
+      "phrase": "Quem tá aqui agora tem vantagem — vou mostrar o teste completo do sérum com calma. Cupom F1GATE tá ativo, R$79 só nessa live."
+    },
+    {
+      "situation": "Pico de audiência, chat acelerado e cheio de perguntas",
+      "type": "B3 · PICO DE AUDIÊNCIA",
+      "action": "Priorizar CTA e demonstração visual, responder objeções mais frequentes em bloco rápido",
+      "phrase": "Muita gente chegou agora — esse é o Sérum Vitamina C 15%, R$79 com cupom F1GATE. Clica no produto fixado, compra pelo TikTok Shop. Testei ao vivo, vê na câmera."
+    },
+    {
+      "situation": "Comentários repetindo 'tá caro' em sequência",
+      "type": "B4 · OBJEÇÃO EM MASSA",
+      "action": "Ancorar o valor antes de mencionar o preço novamente, mostrar o diferencial da concentração",
+      "phrase": "Sérum de 15% Vitamina C estabilizada fora daqui custa R$129 — aqui tá R$79 com cupom F1GATE só enquanto a live tiver ativa. Confia no teste que fiz aqui na câmera."
+    },
+    {
+      "situation": "Queda brusca de viewers no meio da live",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Reiniciar ciclo do zero com hook pergunta-problema, como se fosse o início da live",
+      "phrase": "Pra quem chegou agora: tô mostrando ao vivo o Sérum Vitamina C com 15% de Vit C estabilizada. Sua pele tá apagada ou com manchinha? Fica aqui que vou testar na câmera."
+    },
+    {
+      "situation": "Muitas perguntas sobre entrega e logística",
+      "type": "B2 · AUDIÊNCIA BAIXA",
+      "action": "Responder logística em bloco único e redirecionar para o CTA imediatamente",
+      "phrase": "Entrega e prazo aparecem no checkout da TikTok Shop antes de fechar — é tudo pelo app, rastreável. Cupom F1GATE, clica no produto fixado agora."
+    },
+    {
+      "situation": "Alguém pede comparação com produto concorrente",
+      "type": "B4 · OBJEÇÃO EM MASSA",
+      "action": "Não citar concorrente, focar no diferencial mensurável do produto e redirecionar para demonstração",
+      "phrase": "Não vou comparar com outro produto aqui — o que posso mostrar é o que esse sérum entrega: 15% Vit C estabilizada, absorção rápida, uniformiza o tom. Vê ao vivo na câmera."
+    },
+    {
+      "situation": "Estoque chegando perto de 20 unidades restantes",
+      "type": "B3 · PICO DE AUDIÊNCIA",
+      "action": "Ativar urgência real de estoque com contagem e repetir CTA três vezes seguidas",
+      "phrase": "Atenção — poucas unidades restando aqui na live. Cupom F1GATE, R$79, clica no produto fixado. Quem deixar pra depois perde o preço. Compra agora pelo TikTok Shop."
+    }
+  ],
+  "compliance": {
+    "regulated_category": "cosmetico",
+    "forbidden_claims": [
+      "cura acne"
+    ],
+    "allowed_claims": [
+      "uniformiza tom"
+    ]
+  },
+  "audience_profile": {
+    "expected_size": "200-500 viewers",
+    "main_origin": "organico",
+    "funnel_stage": "descoberta_da_marca"
+  },
+  "_meta": {
+    "tokens_in": 1120,
+    "tokens_out": 3122,
+    "cost_usd_estimate": 0.05019
+  }
+}
