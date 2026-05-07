@@ -42,20 +42,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
 
     // 1 chamada Claude — independente de quantas Sellivers foram selecionadas
+    const t0 = Date.now();
     console.log('[generate-course] Calling Claude Master Prompt...');
     const courseData = await generateCourseData(form);
-    console.log('[generate-course] Claude responded.', {
+    console.log(`[generate-course] Claude responded in ${((Date.now()-t0)/1000).toFixed(1)}s`, {
       tokens_in: courseData._meta.tokens_in,
       tokens_out: courseData._meta.tokens_out,
       cost_usd: courseData._meta.cost_usd_estimate.toFixed(4),
     });
 
     const filename = `${productSlug}-${form.live.date}.json`;
+    const t1 = Date.now();
     console.log(`[generate-course] Committing data/${filename}...`);
     await commitCourseData(filename, courseData);
+    console.log(`[generate-course] GitHub commit done in ${((Date.now()-t1)/1000).toFixed(1)}s`);
 
-    console.log('[generate-course] Rendering HTMLs...');
+    const t2 = Date.now();
+    console.log('[generate-course] Rendering + uploading HTMLs (parallel)...');
     const builtFiles = await buildCourseFromData(courseData);
+    console.log(`[generate-course] Render+upload done in ${((Date.now()-t2)/1000).toFixed(1)}s`);
 
     // Registra com permissão por Selliver
     await registerProduct({

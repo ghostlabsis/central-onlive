@@ -176,9 +176,6 @@ Retorne EXCLUSIVAMENTE JSON válido (sem texto antes ou depois, sem markdown cod
     "decoy":  { "label": "string", "preco": 0, "itens": ["string"], "funcao": "decoy" },
     "target": { "label": "string", "preco": 0, "itens": ["string"], "funcao": "target", "percent_vendas_esperado": 60 }
   },
-  "micro_momentos_timeline": [
-    { "min_inicio": 0, "min_fim": 5, "tipo": "hook-abertura", "acao": "string", "frase_gatilho": "string" }
-  ],
   "authority_transfer": {
     "expert": "string (nome/instituição real)",
     "dado": "string (dado específico com número ou citação)",
@@ -361,6 +358,7 @@ Retorne EXCLUSIVAMENTE JSON válido (sem texto antes ou depois, sem markdown cod
 }
 
 REGRAS FINAIS:
+- forbidden_claims e allowed_claims: use no máximo 8 palavras por item (ex: "cura acne", "trata rugas", "previne envelhecimento") — NÃO escreva parágrafos legais
 - 12 objeções no objections_pool (preço · confiança · logística · função · comparação)
 - 8 cenários no scenarios_pool
 - dim7 top 5 objeções são as MAIS CRÍTICAS deste SKU específico (não copia do pool)
@@ -382,7 +380,7 @@ Gere o JSON completo seguindo o schema v3. Sem texto antes ou depois. Sem markdo
 
   const response = await anthropic.messages.create({
     model: 'claude-sonnet-4-6',
-    max_tokens: 16000,
+    max_tokens: 32000,
     system: MASTER_SYSTEM,
     messages: [{ role: 'user', content: userPrompt }],
   });
@@ -395,7 +393,38 @@ Gere o JSON completo seguindo o schema v3. Sem texto antes ou depois. Sem markdo
   // Extrai JSON (com fallback se vier embrulhado em ```)
   const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/) || text.match(/```\s*([\s\S]*?)\s*```/) || text.match(/(\{[\s\S]*\})/);
   if (!jsonMatch) throw new Error('Claude não retornou JSON válido');
-  const aiPayload = JSON.parse(jsonMatch[1] || jsonMatch[0]);
+
+  let rawJson = jsonMatch[1] || jsonMatch[0];
+
+  // Safety net: se o JSON estiver truncado, fecha todos os colchetes/chaves abertos
+  let aiPayload: Record<string, unknown>;
+  try {
+    aiPayload = JSON.parse(rawJson);
+  } catch {
+    // Tenta reparar JSON truncado
+    rawJson = rawJson.trimEnd();
+    // Remove vírgula/dois-pontos dangling no final
+    rawJson = rawJson.replace(/[,:\s]+$/, '');
+    // Conta chaves/colchetes abertos e fecha
+    let braces = 0, brackets = 0, inStr = false, esc = false;
+    for (const c of rawJson) {
+      if (esc) { esc = false; continue; }
+      if (c === '\\' && inStr) { esc = true; continue; }
+      if (c === '"') { inStr = !inStr; continue; }
+      if (inStr) continue;
+      if (c === '{') braces++;
+      else if (c === '}') braces--;
+      else if (c === '[') brackets++;
+      else if (c === ']') brackets--;
+    }
+    rawJson += ']'.repeat(Math.max(0, brackets)) + '}'.repeat(Math.max(0, braces));
+    try {
+      aiPayload = JSON.parse(rawJson);
+      console.warn('[claude] JSON was truncated and repaired — increase max_tokens or reduce output');
+    } catch (repairErr) {
+      throw new Error(`Claude retornou JSON inválido (truncado e irrecuperável): ${(repairErr as Error).message}`);
+    }
+  }
 
   const courseData = {
     $schema: '../schemas/course-data.json',
@@ -416,7 +445,7 @@ Gere o JSON completo seguindo o schema v3. Sem texto antes ou depois. Sem markdo
     hero: {
       ...validated.hero,
       key_phrase: aiPayload.catchphrase_5_palavras
-        ?? `${validated.hero.name} ${validated.hero.differentials[0]?.description ?? ''} para quem ${aiPayload.persona?.main_pain_quote ?? 'precisa de solução'}.`.trim(),
+        ?? `${validated.hero.name} ${validated.hero.differentials[0]?.description ?? ''} para quem ${(aiPayload.persona as any)?.main_pain_quote ?? 'precisa de solução'}.`.trim(),
     },
     secondary_products: validated.secondary_products ?? [],
     // v3 new fields

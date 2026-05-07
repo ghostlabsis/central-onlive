@@ -38,24 +38,26 @@ export async function buildCourseFromData(courseData: Record<string, unknown>): 
   }
 
   const fileNames = readdirSync(tmpOutDir);
-  const uploadedPaths: string[] = [];
 
-  for (const fileName of fileNames) {
-    const content = readFileSync(join(tmpOutDir, fileName));
-    const blobPath = `courses/${slug}/${date}/${fileName}`;
-    const contentType = fileName.endsWith('.json')
-      ? 'application/json'
-      : 'text/html; charset=utf-8';
+  // Upload em paralelo — reduz tempo de N×T para ~T
+  const uploadedPaths = await Promise.all(
+    fileNames.map(async (fileName) => {
+      const content = readFileSync(join(tmpOutDir, fileName));
+      const blobPath = `courses/${slug}/${date}/${fileName}`;
+      const contentType = fileName.endsWith('.json')
+        ? 'application/json'
+        : 'text/html; charset=utf-8';
 
-    await put(blobPath, content, {
-      access: 'public',
-      contentType,
-      addRandomSuffix: false,
-      allowOverwrite: true,
-    });
+      await put(blobPath, content, {
+        access: 'public',
+        contentType,
+        addRandomSuffix: false,
+        allowOverwrite: true,
+      });
 
-    uploadedPaths.push(`/${slug}/${date}/${fileName}`);
-  }
+      return `/${slug}/${date}/${fileName}`;
+    })
+  );
 
   rmSync(tmpOutBase, { recursive: true, force: true });
 

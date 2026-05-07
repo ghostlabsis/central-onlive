@@ -495,13 +495,27 @@ export default function NovaLivePage() {
             </div>
 
             {submitting && (
-              <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 text-sm text-purple-800">
-                <ol className="space-y-1 list-decimal list-inside text-purple-700">
-                  <li>Validando dados</li>
-                  <li>Claude gerando persona + 6 hooks + 12 objeções + 8 cenários Plano B</li>
-                  <li>Renderizando 10 módulos HTML</li>
-                  <li>Salvando dados do curso</li>
-                </ol>
+              <div className="bg-purple-50 border-2 border-purple-300 rounded-xl p-5">
+                <p className="text-sm font-bold text-purple-900 mb-3">
+                  ⏳ Gerando… leva 1–2 minutos. Não feche essa aba.
+                </p>
+                <div className="space-y-2 text-sm text-purple-700">
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 border-2 border-purple-400 border-t-transparent rounded-full animate-spin flex-shrink-0" />
+                    <span>Claude analisando produto + gerando 12 camadas PSS-10…</span>
+                  </div>
+                  <div className="flex items-center gap-2 opacity-50">
+                    <div className="w-4 h-4 border-2 border-purple-200 rounded-full flex-shrink-0" />
+                    <span>Renderizando 10 módulos HTML</span>
+                  </div>
+                  <div className="flex items-center gap-2 opacity-50">
+                    <div className="w-4 h-4 border-2 border-purple-200 rounded-full flex-shrink-0" />
+                    <span>Publicando + enviando link para Sellivers</span>
+                  </div>
+                </div>
+                <p className="text-xs text-purple-500 mt-3">
+                  A IA gera ~15.000 tokens de conteúdo estruturado — isso vale o tempo.
+                </p>
               </div>
             )}
           </form>
