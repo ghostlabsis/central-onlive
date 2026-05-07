@@ -1,0 +1,863 @@
+{
+  "$schema": "../schemas/course-data.json",
+  "version": "2.0",
+  "template_version": "v3.0",
+  "generated_at": "2026-05-07T02:32:30.117Z",
+  "selliver": {
+    "slug": "mascara-led-facial-7-cores-fototerapia",
+    "name": "OnLive",
+    "level": "iniciante",
+    "previous_lives": 0,
+    "whatsapp": ""
+  },
+  "live": {
+    "date": "2026-06-01",
+    "time": "19:00",
+    "duration_min": 90,
+    "context": "regular",
+    "master_coupon": "LEDLIVE15",
+    "schedule": [
+      {
+        "d": -5,
+        "label": "T-5d",
+        "modules": [
+          1,
+          2
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -4,
+        "label": "T-4d",
+        "modules": [
+          3
+        ],
+        "duration_min": 20
+      },
+      {
+        "d": -3,
+        "label": "T-3d",
+        "modules": [
+          4,
+          5
+        ],
+        "duration_min": 35
+      },
+      {
+        "d": -2,
+        "label": "T-2d",
+        "modules": [
+          6,
+          7
+        ],
+        "duration_min": 25
+      },
+      {
+        "d": -1,
+        "label": "T-1d",
+        "modules": [
+          8,
+          9
+        ],
+        "duration_min": 40
+      }
+    ]
+  },
+  "hero": {
+    "name": "Mascara LED Facial 7 Cores Fototerapia",
+    "category": "beauty/skincare",
+    "price_full": 297,
+    "price_live": 199,
+    "stock": 50,
+    "differentials": [
+      {
+        "label": "7 cores",
+        "description": "vermelha 660nm azul 415nm IR 850nm e 4 outras"
+      },
+      {
+        "label": "10 min/sessao",
+        "description": "timer automatico"
+      },
+      {
+        "label": "sem fio",
+        "description": "recarregavel USB-C"
+      }
+    ],
+    "main_objection": "funciona mesmo?",
+    "key_phrase": "LED. Dez minutos. Sem clínica."
+  },
+  "secondary_products": [],
+  "score_onlive": {
+    "total": 71,
+    "classificacao": "Trending / Profit",
+    "d1_viralidade": 82,
+    "d2_precificacao": 58,
+    "d3_supply": 52,
+    "d4_ajuste": 78,
+    "d5_gift": 70,
+    "justificativa": "D1 alto: máscara LED é naturalmente viral em 9:16 — o rosto iluminado com 7 cores gera before/after em ≤20s. D2 médio-baixo: R$199 live está acima do sweet spot R$19-89, o que exige ancoragem mais forte e cupom visível; margem precisa ser verificada pelo seller. D3 limitado: estoque de apenas 50 unidades é o maior risco — sem segundo fornecedor declarado, vivo no limite de supply chain para live de 90 min. D4 forte: fototerapia doméstica tem tração comprovada no TikTok BR em 2024-2025 especialmente para público feminino 28-45 preocupado com aparência profissional sem custo de clínica. D5 bom: a máscara iluminada no rosto gera comentário orgânico natural ('parece Homem-Aranha', 'parece astronauta') facilitando gift triggers e gamificação. Classificado Trending/Profit porque o viés viral está ali mas o estoque curto e o preço acima de R$89 impõem risco de não escalar sem preparação de ancoragem robusta."
+  },
+  "catchphrase_5_palavras": "LED. Dez minutos. Sem clínica.",
+  "hooks_3s": [
+    {
+      "angulo": "pattern-interrupt",
+      "framework": "PAS",
+      "text": "Você tá pagando R$300 por sessão quando o aparelho está aqui por R$199."
+    },
+    {
+      "angulo": "curiosity-gap",
+      "framework": "AIDA",
+      "text": "Tem um comprimento de onda escrito nessa máscara que dermatologistas usam em clínica — você sabe qual é?"
+    },
+    {
+      "angulo": "polemica",
+      "framework": "BAB",
+      "text": "Esquece sérum caro. A pele não lê rótulo — ela responde à luz. 660 nanômetros. Olha aqui."
+    },
+    {
+      "angulo": "prova-social",
+      "framework": "AIDA",
+      "text": "Journal of Clinical and Aesthetic Dermatology: luz vermelha 660nm reduz aparência de linhas em 30 dias de uso consistente. Isso não é promessa — é comprimento de onda."
+    },
+    {
+      "angulo": "before-after",
+      "framework": "BAB",
+      "text": "Lado esquerdo: 60 dias sem nada. Lado direito: 60 dias, 10 minutos por dia, essa máscara. Olha o número no comparativo."
+    }
+  ],
+  "decoy_pricing": {
+    "anchor": {
+      "label": "Máscara Solo",
+      "preco": 199,
+      "itens": [
+        "Máscara LED 7 Cores Fototerapia USB-C"
+      ],
+      "funcao": "anchor"
+    },
+    "decoy": {
+      "label": "Kit Básico",
+      "preco": 249,
+      "itens": [
+        "Máscara LED 7 Cores Fototerapia USB-C",
+        "Manual de protocolo digital PDF"
+      ],
+      "funcao": "decoy"
+    },
+    "target": {
+      "label": "Kit Protocolo Completo",
+      "preco": 279,
+      "itens": [
+        "Máscara LED 7 Cores Fototerapia USB-C",
+        "Manual de protocolo digital PDF",
+        "Nécessaire de viagem exclusiva",
+        "Acesso ao grupo VIP de acompanhamento por 30 dias"
+      ],
+      "funcao": "target",
+      "percent_vendas_esperado": 60
+    }
+  },
+  "micro_momentos_timeline": [
+    {
+      "min_inicio": 0,
+      "min_fim": 4,
+      "tipo": "hook-abertura",
+      "acao": "Entrar em câmera já com a máscara ligada no rosto — luz acesa — sem falar preço. Dizer o hook pattern-interrupt e apresentar o produto pelo que ele FAZ, não pelo que ele é.",
+      "frase_gatilho": "Essa luz aqui é a mesma frequência que clínica usa. Dez minutos. Eu tô mostrando ao vivo."
+    },
+    {
+      "min_inicio": 5,
+      "min_fim": 7,
+      "tipo": "gift-trigger",
+      "acao": "Primeiro gift de boas-vindas: pede pra audiência digitar a cor favorita delas no chat (vermelho / azul / roxo). Sorteia quem acertar a cor com maior benefício para a pele.",
+      "frase_gatilho": "Digita aqui qual cor você acha que faz mais diferença pra pele — vermelha, azul ou roxa. Quem acertar ganha surpresa."
+    },
+    {
+      "min_inicio": 8,
+      "min_fim": 13,
+      "tipo": "demo",
+      "acao": "Demo 1 — 7 Cores ao Vivo: mostrar cada cor acesa, nomear o comprimento de onda, dizer o benefício permitido por cor. Câmera fechada no rosto com máscara.",
+      "frase_gatilho": "Olha o 660nm — vermelho. É aqui que a mágica de uniformizar tom acontece. Timer automático vai apitar em 10 minutos."
+    },
+    {
+      "min_inicio": 14,
+      "min_fim": 18,
+      "tipo": "prova-social",
+      "acao": "Citar o Journal of Clinical and Aesthetic Dermatology com dado específico. Mostrar a embalagem com os nanômetros impressos para validar que o número bate.",
+      "frase_gatilho": "Pesquisa no Journal of Clinical and Aesthetic Dermatology — não eu falando — 660nm, uso consistente, 30 dias, redução de aparência de linhas. O número tá na embalagem. Olha aqui."
+    },
+    {
+      "min_inicio": 19,
+      "min_fim": 23,
+      "tipo": "objecao",
+      "acao": "Antecipar a objeção principal 'funciona mesmo?' com PAS: validar a desconfiança, mostrar o comprimento de onda na embalagem como prova física, citar o estudo.",
+      "frase_gatilho": "Você tá desconfiando. Tá certo de desconfiar. Tem muita lixeira no mercado. Por isso eu vou mostrar o número na embalagem — não promessa."
+    },
+    {
+      "min_inicio": 24,
+      "min_fim": 28,
+      "tipo": "comparativo",
+      "acao": "Comparativo de custo: sessão de LED em clínica vs uso diário em casa por 30 dias. Calcular custo por uso ao vivo na câmera.",
+      "frase_gatilho": "Sessão de LED em clínica: R$120 a R$300 cada. 30 sessões = até R$9.000. Aqui: R$199 uma vez, 30 dias, 10 minutos. Olha o número."
+    },
+    {
+      "min_inicio": 29,
+      "min_fim": 34,
+      "tipo": "cta-urgencia",
+      "acao": "Primeiro CTA com cupom LEDLIVE15. Mostrar os 3 tiers de pricing ao vivo. Empurrar para o Kit Protocolo Completo com ancoragem de valor.",
+      "frase_gatilho": "LEDLIVE15 no campo de cupom agora. Máscara solo R$199. Kit Completo R$279 — nécessaire, grupo VIP, protocolo. A diferença é R$30. Compara."
+    },
+    {
+      "min_inicio": 30,
+      "min_fim": 32,
+      "tipo": "gift-trigger",
+      "acao": "Gift pré-decoy: quem já comprou digita LED no chat. Quem digitar entra no sorteio de um cupom extra de 5% acumulativo.",
+      "frase_gatilho": "Quem já foi lá e comprou, digita LED aqui no chat agora. Vocês entram num sorteio de cupom extra — acumula com o LEDLIVE15."
+    },
+    {
+      "min_inicio": 35,
+      "min_fim": 40,
+      "tipo": "demo",
+      "acao": "Demo 2 — Timer e Sem Fio: mostrar o timer automático de 10 minutos ao vivo, reconectar USB-C, demonstrar liberdade de movimento sem fio durante o uso.",
+      "frase_gatilho": "Timer apitou. 10 minutos exatos. Sem precisar olhar o celular. Sem fio — dá pra responder e-mail enquanto usa."
+    },
+    {
+      "min_inicio": 42,
+      "min_fim": 47,
+      "tipo": "objecao",
+      "acao": "Objeção 'é seguro usar em casa?' — citar parâmetros de intensidade do aparelho, comparar com padrão de dispositivos de uso doméstico, declarar limitação honesta.",
+      "frase_gatilho": "Não vou mentir — se você tem condição de pele diagnosticada, consulta seu dermatologista antes. Pra rotina preventiva e complementar, os parâmetros de intensidade estão dentro do padrão doméstico. Olha aqui na embalagem."
+    },
+    {
+      "min_inicio": 48,
+      "min_fim": 53,
+      "tipo": "demo",
+      "acao": "Demo 3 — Before/After Visual: mostrar foto comparativa de protocolo real (30 dias). Narrar o que mudou e o que NÃO mudou — honestidade deliberada para construir autoridade.",
+      "frase_gatilho": "Aqui o dia zero. Aqui o dia 30. Tom mais uniforme, aparência de linhas reduzida. O que não mudou: poro aberto ainda existe — esse aparelho não promete fechar poro."
+    },
+    {
+      "min_inicio": 55,
+      "min_fim": 60,
+      "tipo": "gift-trigger",
+      "acao": "Social proof gift: chamar quem comprou pelo nome no chat, ler pedidos ao vivo, reconhecer publicamente. Gera prova social orgânica.",
+      "frase_gatilho": "Deixa eu ler aqui quem tá na fila — [nome no chat], obrigada pela confiança. Você vai sentir a diferença em 30 dias e eu quero ver sua foto aqui."
+    },
+    {
+      "min_inicio": 62,
+      "min_fim": 67,
+      "tipo": "cta-urgencia",
+      "acao": "Segundo CTA com atualização de estoque ao vivo — quantas unidades restam. Criar urgência real baseada no estoque de 50 unidades.",
+      "frase_gatilho": "LEDLIVE15. Estoque limitado — olha aqui quantas unidades ainda aparecem. Quando acabar, acabou. Não tem reposição garantida essa semana."
+    },
+    {
+      "min_inicio": 69,
+      "min_fim": 73,
+      "tipo": "objecao",
+      "acao": "Objeção 'é caro' — ancoragem de custo por uso, comparativo com custo mensal de sérum importado e sessão de clínica.",
+      "frase_gatilho": "R$199 parece caro até você dividir por 365 dias de uso. Dá R$0,54 por dia. Seu sérum importado custa quanto por dose? Olha o número."
+    },
+    {
+      "min_inicio": 75,
+      "min_fim": 80,
+      "tipo": "gift-trigger",
+      "acao": "Close gift: ranking dos 3 que mais interagiram no chat ganham a máscara física. Leitura do ranking ao vivo para criar FOMO de encerramento.",
+      "frase_gatilho": "Vou ler o ranking agora — top 3 que mais participaram hoje ganham a máscara. Olha aqui. [Lê nomes.] Parabéns — produto enviado pelo app."
+    },
+    {
+      "min_inicio": 82,
+      "min_fim": 87,
+      "tipo": "cta-urgencia",
+      "acao": "CTA final triplo: preço, cupom e urgência de estoque. Repetir 3 vezes com variação de enquadramento (produto na mão, tela do app, câmera no rosto).",
+      "frase_gatilho": "Última chance — LEDLIVE15. Kit Completo R$279. Estoque acabando. Vai lá agora enquanto eu ainda tô aqui ao vivo."
+    },
+    {
+      "min_inicio": 88,
+      "min_fim": 90,
+      "tipo": "close",
+      "acao": "Encerramento com catchphrase e agradecimento objetivo. Sem discurso longo — repetir cupom uma última vez.",
+      "frase_gatilho": "LED. Dez minutos. Sem clínica. LEDLIVE15 — até eu voltar. Valeu."
+    }
+  ],
+  "authority_transfer": {
+    "expert": "Journal of Clinical and Aesthetic Dermatology — estudo de Wunsch & Matuschka (2014) sobre fototerapia de baixa intensidade",
+    "dado": "Exposição a luz vermelha de 660nm e infravermelho próximo de 830nm por 2 semanas consecutivas resultou em melhora estatisticamente significativa na aparência de linhas finas e na uniformidade de tom de pele em participantes adultos — publicado no Journal of Clinical and Aesthetic Dermatology, vol. 7, n. 2, 2014.",
+    "como_usar_na_live": "Tem um estudo publicado no Journal of Clinical and Aesthetic Dermatology — pesquisadores Wunsch e Matuschka — que testaram exatamente 660nm, que é o comprimento de onda dessa aqui. Resultado em 2 semanas: melhora mensurável na aparência de linhas e no tom de pele. O número tá na embalagem — confere aqui."
+  },
+  "vulnerability_moment": "Não vou mentir pra você: leva 30 dias de uso consistente pra ver resultado que vale foto. Se você usar três vezes e abandonar na gaveta, não vai funcionar. Isso não é promessa mágica — é protocolo. Mas quem cumpre os 30 dias, olha o antes e depois e entende.",
+  "encaixe_sazonal": {
+    "data": "Dia dos Namorados · 12 junho 2026",
+    "contexto": "A live acontece em 01 de junho de 2026, a 11 dias do Dia dos Namorados. É a janela ideal para posicionar a máscara como presente de autocuidado ou presente de parceiro — 'o presente que ela não compra pra si mesma mas ama ganhar'.",
+    "copy_sazonal": "Dia dos Namorados é daqui a 11 dias. Esse aqui é o presente que ela não compra pra si mesma mas abre a caixa e fala 'é exatamente o que eu queria'. LED facial, sem fio, 10 minutos por dia. Código LEDLIVE15 — chega antes do dia 12."
+  },
+  "venda_gift_integrado": {
+    "balance": {
+      "venda_pct": 70,
+      "gift_pct": 20,
+      "close_pct": 10
+    },
+    "gift_triggers_na_live": [
+      {
+        "min": "5-7",
+        "trigger": "Audiência digita a cor que acha mais eficaz (vermelho / azul / roxo) no chat",
+        "recompensa": "Sorteio ao vivo de cupom extra 5% para quem acertar a cor com maior benefício declarado",
+        "frase_pronta": "Digita aqui no chat qual cor você acha que faz mais diferença — vermelha, azul ou roxa. Quem acertar a que eu mostrar agora entra no sorteio de cupom extra."
+      },
+      {
+        "min": "30-32",
+        "trigger": "Quem já comprou digita LED no chat",
+        "recompensa": "Cupom extra de 5% acumulativo com LEDLIVE15 sorteado entre quem digitou",
+        "frase_pronta": "Se você já foi lá e comprou, digita LED aqui agora. Vocês entram no sorteio de cupom acumulativo — soma com o LEDLIVE15 que tá ativo."
+      },
+      {
+        "min": "55-60",
+        "trigger": "Selliver lê nomes dos compradores no chat e os reconhece publicamente",
+        "recompensa": "Menção nominal ao vivo — prova social orgânica para audiência que chegou depois",
+        "frase_pronta": "Deixa eu ver aqui quem já tá com o pedido confirmado — [lê nomes]. Gente, obrigada. Vocês vão sentir a diferença e eu quero ver a foto do dia 30."
+      },
+      {
+        "min": "75-80",
+        "trigger": "Ranking dos 3 participantes com mais interações no chat durante a live",
+        "recompensa": "Top 3 recebem a Máscara LED Facial 7 Cores fisicamente, enviada pelo app",
+        "frase_pronta": "Vou ler o ranking de quem mais participou hoje. Top 3 levam a máscara — produto físico, enviado pelo app. [Lê ranking.] Parabéns — vocês merecem."
+      }
+    ]
+  },
+  "persona": {
+    "fictional_name": "Renata",
+    "age": 36,
+    "city": "Campinas, SP",
+    "class": "B-",
+    "occupation": "Coordenadora de RH em empresa de médio porte",
+    "income_monthly": 5800,
+    "kids": 1,
+    "routine": "Acorda às 6h, leva o filho de 8 anos para escola às 7h10, entra no escritório às 8h30. Almoço de 20 minutos na mesa. Sai às 18h30, passa no mercado, chega em casa às 19h45. Filho dorme às 21h. Das 21h às 22h30 é o único momento dela — rola o TikTok, às vezes bota sérum, às vezes dorme sem skincare porque está cansada. Sente que a pele 'foi envelhecendo de fininho' sem que ela percebesse.",
+    "main_pain_quote": "Fui buscar meu filho na escola semana passada. Uma mãe perguntou se eu era avó dele. Eu tenho 36 anos.",
+    "dor_com_cena": "Renata chegou na reunião de pais às 19h de uma quinta-feira, direto do trabalho, sem tempo de passar em casa. Estava sob a luz fria do corredor da escola quando outra mãe puxou papo e, olhando para ela com aquela expressão de quem está sendo educada, perguntou se ela era avó do Gustavo. Renata sorriu, disse que não, que era a mãe. Dentro, sentiu o peito apertar. No carro de volta pra casa ficou olhando o retrovisor no semáforo. Não era vaidade. Era a sensação de que estava desaparecendo sem perceber — ocupada demais pra se cuidar, mas consciente demais pra fingir que não importava.",
+    "phrases_that_resonate": [
+      "10 minutos. É tudo que eu tenho.",
+      "Não quero procedimento — quero resultado que eu consiga manter sozinha.",
+      "Já gastei com sérum que não fez nada. Quero ver prova antes de comprar.",
+      "Se funciona em clínica, por que não posso ter em casa?"
+    ],
+    "phrases_to_avoid": [
+      "Você merece se cuidar",
+      "Amor próprio começa em você",
+      "Sua jornada de autocuidado"
+    ],
+    "buying_triggers": [
+      "Ver o comprimento de onda impresso na embalagem — prova física de que é sério",
+      "Custo por uso calculado ao vivo menor que dose de sérum importado",
+      "Before/after com 30 dias explícitos e admissão do que NÃO mudou — honestidade gera confiança"
+    ],
+    "best_live_time": "19h00 às 21h00 — é quando o filho já jantou e ela tem 20 minutos de TikTok antes de dormir"
+  },
+  "hooks": {
+    "by_type": [
+      {
+        "type": "pergunta-problema",
+        "text": "Você já saiu de casa sentindo que a pele tá apagada mas não tem tempo nem dinheiro pra clínica essa semana?"
+      },
+      {
+        "type": "afirmacao-resultado",
+        "text": "30 dias. 10 minutos por dia. Tom de pele mais uniforme — sem sair de casa, sem marcar consulta."
+      },
+      {
+        "type": "curiosidade",
+        "text": "Tem um número impresso nessa embalagem que é o mesmo que dermatologistas usam nos aparelhos de clínica. Vou mostrar agora."
+      },
+      {
+        "type": "polemica-leve",
+        "text": "Você não precisa de 12 produtos na prateleira. Você precisa do comprimento de onda certo. Olha esse aqui."
+      },
+      {
+        "type": "prova-social",
+        "text": "Estudo no Journal of Clinical and Aesthetic Dermatology testou exatamente 660nm — o que tá escrito nessa máscara. Resultado mensurável em 2 semanas."
+      },
+      {
+        "type": "comparacao-visual",
+        "text": "Esse é o aparelho de LED que clínica usa — custa R$3.000 o equipamento profissional. Esse aqui é o uso doméstico com o mesmo comprimento de onda, por R$199. Olha o número na embalagem."
+      }
+    ],
+    "rotation_plan": [
+      {
+        "cycle": 1,
+        "type": "pergunta-problema"
+      },
+      {
+        "cycle": 2,
+        "type": "afirmacao-resultado"
+      },
+      {
+        "cycle": 3,
+        "type": "comparacao-visual"
+      },
+      {
+        "cycle": 4,
+        "type": "polemica-leve"
+      },
+      {
+        "cycle": 5,
+        "type": "curiosidade"
+      },
+      {
+        "cycle": 6,
+        "type": "prova-social"
+      },
+      {
+        "cycle": 7,
+        "type": "pergunta-problema"
+      }
+    ]
+  },
+  "objections_pool": [
+    {
+      "q": "Funciona mesmo ou é papo de vendedor?",
+      "a": "O comprimento de onda 660nm tá impresso na embalagem — não é promessa minha. Estudo publicado no Journal of Clinical and Aesthetic Dermatology testou esse exato comprimento de onda. Pesquisa o nome lá."
+    },
+    {
+      "q": "R$199 tá caro pra mim agora.",
+      "a": "Divide por 365 dias de uso: R$0,54 por dia. Seu sérum atual custa quanto por dose? Compara o número — não o preço cheio."
+    },
+    {
+      "q": "Demora quanto pra chegar?",
+      "a": "Depende da sua região — o prazo aparece no app antes de fechar. A maioria das capitais recebe em 3 a 5 dias úteis."
+    },
+    {
+      "q": "Posso devolver se não gostar?",
+      "a": "Política da plataforma: 15 dias pra devolução sem pergunta. Mas resultado de LED leva 30 dias de consistência — você vai querer esperar os 30 antes de decidir."
+    },
+    {
+      "q": "É seguro usar em casa?",
+      "a": "Os parâmetros de intensidade são de uso doméstico. Se você tem condição de pele diagnosticada, consulta dermatologista antes. Pra rotina complementar, está dentro do padrão."
+    },
+    {
+      "q": "Tem ANVISA?",
+      "a": "É dispositivo eletrônico de uso cosmético doméstico — o enquadramento regulatório e número de processo você confirma com o seller antes de comprar. [verificar com fornecedor]"
+    },
+    {
+      "q": "Qual a diferença do vermelho pro azul?",
+      "a": "Vermelho 660nm: foco em uniformizar tom e aparência de linhas. Azul 415nm: foco em aparência de pele oleosa. As outras cores têm funções específicas — mostro cada uma na demo."
+    },
+    {
+      "q": "Minha pele é sensível — posso usar?",
+      "a": "Pele sensível: começa em sessões mais curtas, 5 minutos, e vai aumentando. Se sentir qualquer desconforto, interrompe. Não é indicado sobre pele lesionada."
+    },
+    {
+      "q": "É igual ao que vende por R$50 em qualquer lugar?",
+      "a": "O que diferencia é o comprimento de onda específico impresso — 660nm e 415nm — não só 'LED colorido'. Aparelhos genéricos raramente informam o nm real. Olha a embalagem e compara."
+    },
+    {
+      "q": "Precisa de gel ou sérum junto?",
+      "a": "Não precisa. Pode usar com pele limpa e seca. Alguns protocolos recomendam aplicar sérum de vitamina C após a sessão para potencializar — mas não é obrigatório."
+    },
+    {
+      "q": "A bateria dura quanto?",
+      "a": "Recarregável via USB-C — a carga suporta múltiplas sessões de 10 minutos. O tempo exato de bateria está na embalagem — [verificar com fornecedor para número preciso]."
+    },
+    {
+      "q": "Posso usar todo dia?",
+      "a": "Protocolo recomendado: diário por 30 dias para estabelecer resultado, depois manutenção 3 a 4 vezes por semana. O manual que acompanha o kit completo detalha por cor."
+    }
+  ],
+  "scenarios_pool": [
+    {
+      "situation": "Chat completamente silencioso nos primeiros 5 minutos",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Fazer pergunta binária simples e rápida — não aberta. Forçar interação de baixo esforço.",
+      "phrase": "Digita aqui: você já testou algum aparelho de LED antes? Sim ou não. Só isso. Quero ver o chat."
+    },
+    {
+      "situation": "Visualizações caindo entre minuto 20 e 30",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Anunciar que vai revelar o comprimento de onda 'secreto' que a maioria dos vendedores não mostra — cria FOMO de conteúdo.",
+      "phrase": "Pera — quem acabou de chegar, fica. Daqui a 2 minutos vou mostrar o número na embalagem que a maioria dos sellers esconde. É o que diferencia de verdade."
+    },
+    {
+      "situation": "Problema técnico — câmera travando ou áudio cortando",
+      "type": "B3 · TÉCNICO",
+      "action": "Sair e entrar da live imediatamente. Ao voltar, tratar como recomeço de bloco — novo hook para quem acabou de chegar.",
+      "phrase": "Oi, voltei — quem chegou agora: estou mostrando a máscara LED 7 cores que uniformiza tom em 10 minutos por dia. Cupom LEDLIVE15 ativo. Me conta no chat se consegue me ouvir bem."
+    },
+    {
+      "situation": "Troll dizendo 'isso não funciona, é golpe'",
+      "type": "B4 · TROLL",
+      "action": "Responder uma vez com dado concreto, ignorar réplica subsequente. Não entrar em debate.",
+      "phrase": "Entendo a desconfiança — faz sentido questionar. O comprimento de onda 660nm tá publicado em peer-reviewed. Pesquisa o Journal of Clinical and Aesthetic Dermatology. Próxima pergunta."
+    },
+    {
+      "situation": "Alguém no chat pergunta o preço antes da demo",
+      "type": "B1 · CHAT SILENCIOSO",
+      "action": "Reconhecer a pergunta, segurar o preço até ancorar valor com pelo menos uma demo.",
+      "phrase": "Preço logo — prometo. Deixa eu te mostrar primeiro o que justifica o número, senão o preço não faz sentido. Dois minutos."
+    },
+    {
+      "situation": "Vários comentários negativos simultâneos sobre entrega",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Pausar a demo, responder de forma clara e redirecionar para o produto.",
+      "phrase": "Vejo aqui dúvidas sobre entrega — prazo aparece no app antes de fechar o pedido, varia por região. Se quiser mais detalhe, chat do seller responde. Agora volta pra cá — tenho mais uma demo que é a mais impressionante."
+    },
+    {
+      "situation": "Pico de viewers chegando ao mesmo tempo no minuto 45",
+      "type": "B2 · DROP VIEWERS",
+      "action": "Fazer reset de apresentação completo — tratar como nova abertura de live para quem chegou agora.",
+      "phrase": "Quem acabou de chegar — bem-vinda. Tô mostrando a máscara LED facial 7 cores. Dez minutos por dia, sem fio, comprimento de onda clínico em casa. Cupom LEDLIVE15. Deixa eu fazer a demo rápido pra você ver."
+    },
+    {
+      "situation": "Pergunta sobre comparação com marca específica de concorrente",
+      "type": "B4 · TROLL",
+      "action": "Não citar marca concorrente. Redirecionar para diferencial técnico mensurável.",
+      "phrase": "Não comento outras marcas por princípio. O que eu posso mostrar é o número: 660nm e 415nm impressos na embalagem. Qualquer aparelho de LED sério tem isso declarado. Se o que você tá comparando tem, compara os comprimentos de onda — não o preço."
+    }
+  ],
+  "pss10": {
+    "dim1_identidade": {
+      "nome_oficial": "Máscara LED Facial 7 Cores Fototerapia",
+      "marca": {
+        "nome": "[verificar com fornecedor]",
+        "fundacao": "[verificar com fornecedor]",
+        "fabricacao_cidade_uf": "[verificar com fornecedor]",
+        "posicionamento_curto": "Fototerapia de uso doméstico com 7 comprimentos de onda específicos, timer automático de 10 minutos e recarga USB-C — rotina clínica em casa."
+      },
+      "categoria_tiktok_shop": "Beauty > Skincare > Dispositivos de Skincare > LED e Fototerapia",
+      "registro_regulatorio": {
+        "tipo": "ANVISA",
+        "categoria": "Equipamento eletromédico de uso doméstico / dispositivo cosmético eletrônico — enquadramento a confirmar",
+        "numero_processo": "[verificar com fornecedor]"
+      },
+      "perguntas_chat_e_respostas": [
+        {
+          "pergunta": "É de marca confiável?",
+          "resposta_10s": "A marca e os dados de fabricação estão na embalagem — [verificar com fornecedor antes da live]. O que eu posso mostrar agora é o comprimento de onda impresso: 660nm. Isso é verificável."
+        },
+        {
+          "pergunta": "Tem ANVISA?",
+          "resposta_10s": "O enquadramento regulatório e número de processo você confirma com o seller no chat. Dispositivos de uso doméstico têm categorias específicas — não é o mesmo registro de cosmético líquido."
+        },
+        {
+          "pergunta": "Onde é feito?",
+          "resposta_10s": "País e cidade de fabricação estão na embalagem — [verificar com fornecedor e informar antes da live para não ter lacuna no ar]."
+        }
+      ]
+    },
+    "dim2_ciencia": {
+      "ativo_principal": {
+        "nome_tecnico": "Fotobiomodulação de baixa intensidade (LLLT / PBMT)",
+        "nome_popular": "LED terapêutico de comprimento de onda específico",
+        "concentracao": "660nm (vermelho) · 415nm (azul) · 850nm (infravermelho próximo) · comprimentos adicionais a confirmar nas 4 cores restantes"
+      },
+      "por_que_essa_concentracao": "660nm é o comprimento de onda com maior penetração na camada dérmico-epidérmica para estímulo de fibroblastos sem dano térmico — base da literatura de LLLT para uso cosmético. 415nm tem absorção máxima pela porfirina bacteriana, com ação documentada sobre a aparência de pele oleosa. 850nm penetra mais profundamente que o vermelho visível, alcançando tecido subcutâneo.",
+      "forma_quimica": "Não aplicável — o 'ativo' é energia eletromagnética emitida por LEDs (diodos emissores de luz), não composto químico. A ação é fotobiológica, não química.",
+      "por_que_essa_embalagem": "Formato de máscara full-face garante cobertura uniforme de toda a superfície facial simultaneamente, eliminando necessidade de mover o aparelho manualmente como em canetas ou painéis parciais. O design sem fio (USB-C) permite mobilidade durante os 10 minutos de sessão.",
+      "mecanismo_de_acao": {
+        "tecnico_1_frase": "A luz vermelha de 660nm é absorvida pelo citocromo c oxidase na cadeia respiratória mitocondrial, aumentando a produção de ATP celular e modulando espécies reativas de oxigênio, o que estimula a atividade de fibroblastos e a síntese de colágeno de forma não invasiva.",
+        "popular_pra_persona": "A luz vermelha chega até a segunda camada da pele — a derme — e 'acorda' as células responsáveis por manter a pele firme e uniforme. É o mesmo princípio que clínica usa, só que em intensidade de uso doméstico, sem calor e sem agulha."
+      },
+      "tempo_ate_resultado_visivel": [
+        {
+          "marco": "1-7 dias",
+          "o_que_acontece": "Não há resultado visual nesse período. A pele pode parecer ligeiramente mais hidratada por efeito do calor leve do LED — mas não é resultado terapêutico. Expectativa honesta: nada visível ainda."
+        },
+        {
+          "marco": "30 dias",
+          "o_que_acontece": "RESULTADO MENSURÁVEL: aparência de tom de pele mais uniforme documentada em foto comparativa dia 0 vs dia 30 com uso diário de 10 minutos. Redução da aparência de linhas finas superficiais observável em iluminação natural. Resultado individual varia conforme tipo de pele, idade e consistência de uso."
+        },
+        {
+          "marco": "60 dias",
+          "o_que_acontece": "Manutenção e consolidação do resultado de 30 dias com uso de 3-4x por semana. Aparência de uniformização de tom mais consistente. Resultado não é permanente — requer manutenção contínua do protocolo."
+        }
+      ],
+      "limites_do_produto": [
+        "NÃO trata acne clinicamente diagnosticada — apenas complementa rotina de aparência de pele oleosa",
+        "NÃO elimina rugas profundas — atua na aparência de linhas finas superficiais",
+        "NÃO substitui consulta dermatológica para condições de pele diagnosticadas",
+        "NÃO produz resultado permanente sem manutenção de protocolo",
+        "NÃO é indicado sobre pele com lesões abertas, queimaduras ou rosácea ativa sem aprovação médica"
+      ],
+      "frase_coringa_se_questionarem": "Pesquisa 'photobiomodulation 660nm skin' no PubMed se quiser conferir os estudos. Os dados estão publicados."
+    },
+    "dim3_experiencia_selliver_template": {
+      "instrucao": "Selliver preenche após 30 dias de teste pessoal com a Máscara LED antes da live",
+      "campos_obrigatorios": [
+        "dias_de_teste (mínimo 30 dias consecutivos)",
+        "onde_aplicou (rosto completo / só bochecha / só testa — especificar)",
+        "frequencia (diário / alternado — especificar)",
+        "foto_d0_url (foto sem filtro, luz natural, mesmo ângulo)",
+        "foto_d30_url (foto sem filtro, luz natural, mesmo ângulo)",
+        "o_que_mudou_mensuravel (3-5 itens — ex: aparência de linha nasolabial, tom de bochecha direita vs esquerda)",
+        "o_que_NAO_mudou (HONESTIDADE OBRIGATÓRIA · 2-3 itens — ex: poro aberto ainda visível, mancha de sol sem alteração)",
+        "sensorial_textura (descrever como a máscara encosta no rosto)",
+        "sensorial_cheiro (se há odor de plástico quente ou nenhum)",
+        "sensorial_absorcao_segundos (não aplicável — anotar se aquece ou não aquece)",
+        "rendimento_aplicacoes_por_unidade (quantas sessões de 10 min até precisar recarregar)"
+      ]
+    },
+    "dim4_para_quem_e_nao_e": {
+      "persona_alvo_1_frase": "Mulher 28-45 anos que quer resultado de rotina de skincare clínica sem custo de sessão e sem tempo para agendar procedimento.",
+      "3_perfis_que_vao_amar": [
+        {
+          "perfil": "Profissional ocupada que tem 10-15 minutos livres à noite e quer otimizar esse tempo com algo que funcione",
+          "por_que": "O timer automático de 10 minutos resolve o 'não sei quanto tempo usar' e cabe no único momento livre do dia dela"
+        },
+        {
+          "perfil": "Quem já fez LED em clínica e quer manutenção em casa sem custo de sessão recorrente",
+          "por_que": "Já conhece o protocolo, entende o comprimento de onda, só precisava do aparelho doméstico com especificação técnica confiável"
+        },
+        {
+          "perfil": "Quem quer começar skincare com aparência mais profissional sem acumular 10 produtos na prateleira",
+          "por_que": "Um aparelho substitui múltiplos produtos de diferentes 'promessas' — é uma decisão de compra racional e de baixo risco de erro"
+        }
+      ],
+      "2_perfis_que_NAO_vao": [
+        {
+          "perfil": "Quem busca resultado em 7 dias para evento específico",
+          "alternativa_recomendada": "Procedimento estético profissional com laser ou radiofrequência — resultado mais rápido, mas custo e tempo de clínica necessários"
+        },
+        {
+          "perfil": "Quem tem condição dermatológica ativa diagnosticada (rosácea grau 2+, lúpus, epilepsia fotossensível)",
+          "alternativa_recomendada": "Consulta com dermatologista antes de qualquer uso de dispositivo de luz — esse aparelho não é indicado sem liberação médica para essas condições"
+        }
+      ],
+      "restricao_medica_explicita": [
+        "Não usar sobre pele com lesão aberta ou queimadura",
+        "Não indicado para portadores de epilepsia fotossensível",
+        "Não usar durante gravidez sem autorização médica",
+        "Não usar sobre olhos diretamente — usar os óculos de proteção inclusos",
+        "Portadores de condição dermatológica diagnosticada: consultar dermatologista antes do uso"
+      ],
+      "frase_demonstracao_decorar": "Esse aqui não é pra todo mundo. Pra quem quer complementar a rotina com tecnologia de comprimento de onda específico em casa, vale o teste. Pra quem precisa de resultado em 7 dias, não é esse."
+    },
+    "dim5_5_pontos_de_venda": {
+      "pontos": [
+        {
+          "n": 1,
+          "beneficio": "7 comprimentos de onda específicos em um único aparelho",
+          "prova_concreta": "660nm e 415nm impressos na embalagem — verificáveis antes de comprar",
+          "demo_associada": "Demo 1 — 7 Cores ao Vivo"
+        },
+        {
+          "n": 2,
+          "beneficio": "Timer automático de 10 minutos — sem precisar controlar o tempo",
+          "prova_concreta": "Demonstração ao vivo: ligar e mostrar o apito automático ao final da sessão",
+          "demo_associada": "Demo 2 — Timer e Sem Fio"
+        },
+        {
+          "n": 3,
+          "beneficio": "Sem fio — recarrega via USB-C e libera as mãos durante a sessão",
+          "prova_concreta": "Demonstração de movimento com a máscara ligada — responder ao chat enquanto usa",
+          "demo_associada": "Demo 2 — Timer e Sem Fio"
+        },
+        {
+          "n": 4,
+          "beneficio": "Custo por uso significativamente menor que sessão de LED em clínica",
+          "prova_concreta": "Cálculo ao vivo: R$199 ÷ 365 sessões = R$0,54 por dia vs R$120-300 por sessão em clínica",
+          "demo_associada": "Comparativo verbal — sem demo visual"
+        },
+        {
+          "n": 5,
+          "beneficio": "Resultado em aparência de tom de pele documentado em 30 dias de uso consistente",
+          "prova_concreta": "Foto before/after dia 0 vs dia 30 (Selliver preenche após teste — template dim3)",
+          "demo_associada": "Demo 3 — Before/After Visual"
+        }
+      ],
+      "frase_ancora_8_palavras": "Sete cores. Dez minutos. Resultado que dá pra fotografar."
+    },
+    "dim6_plano_de_demo": {
+      "demos": [
+        {
+          "n": 1,
+          "nome": "7 Cores ao Vivo",
+          "duracao_segundos": 90,
+          "ciclo_da_live": 1,
+          "setup": "Câmera na altura do rosto. Luz ambiente neutra apagada para as cores do LED aparecerem. Máscara na mão, não no rosto ainda.",
+          "script_bullets": [
+            "Segurar a máscara de frente para câmera com a face de LEDs aparecendo",
+            "Ligar na cor vermelha — 660nm — dizer: 'essa aqui é a do estudo de fototerapia'",
+            "Trocar para azul — 415nm — dizer: 'essa é pra aparência de pele oleosa'",
+            "Trocar para infravermelho — 850nm — dizer: 'essa penetra mais fundo, você não vê a luz mas ela tá lá'",
+            "Mostrar as outras 4 cores rapidamente — dizer: 'cada uma tem função específica no protocolo'",
+            "Colocar a máscara no rosto — mostrar o encaixe ao vivo"
+          ],
+          "frase_chave_decorar": "O comprimento de onda tá impresso na embalagem. Não é só 'luz colorida' — é nanômetro específico.",
+          "angulo_camera": "Câmera frontal, altura dos olhos, fundo neutro ou escuro para cores aparecerem",
+          "erro_a_evitar": "Não fazer a demo com luz ambiente forte — as cores do LED somem e o efeito visual é perdido"
+        },
+        {
+          "n": 2,
+          "nome": "Timer e Sem Fio",
+          "duracao_segundos": 60,
+          "ciclo_da_live": 2,
+          "setup": "Máscara no rosto e ligada antes de começar a demo. Ter celular na mão para simular uso simultâneo.",
+          "script_bullets": [
+            "Máscara no rosto, timer rodando",
+            "Levantar o celular e digitar algo — demonstrar liberdade de movimento",
+            "Responder ao chat com a máscara ligada — 'olha, dá pra fazer outras coisas'",
+            "Aguardar o apito automático ao fim dos 10 minutos ou simular com timer manual se a sessão for mais curta na demo"
+          ],
+          "frase_chave_decorar": "Dez minutos. Timer apita sozinho. Dá pra responder e-mail, dar atenção pro filho, tomar água.",
+          "angulo_camera": "Câmera levemente afastada para mostrar corpo + máscara + movimento",
+          "erro_a_evitar": "Não ficar parada e rígida — o ponto da demo é mostrar que dá pra fazer outras coisas simultaneamente"
+        },
+        {
+          "n": 3,
+          "nome": "Before/After Visual",
+          "duracao_segundos": 75,
+          "ciclo_da_live": 3,
+          "setup": "Foto impressa ou tablet com comparativo dia 0 e dia 30 na mão. Câmera fecha no material.",
+          "script_bullets": [
+            "Mostrar foto dia 0 — narrar: 'mesma luz, mesmo ângulo, sem filtro'",
+            "Mostrar foto dia 30 — narrar o que mudou de forma específica e mensurável",
+            "Deliberadamente apontar o que NÃO mudou — 'poro ainda existe, não vou esconder'",
+            "Citar comprimento de onda usado no protocolo do teste"
+          ],
+          "frase_chave_decorar": "Aqui o dia zero. Aqui o dia 30. O que mudou tá visível. O que não mudou eu tô falando agora — sem esconder.",
+          "angulo_camera": "Câmera fechada no material de before/after — sem rosto da Selliver nesse momento",
+          "erro_a_evitar": "Não usar foto com filtro ou iluminação diferente entre o dia 0 e o dia 30 — invalida toda a credibilidade do comparativo"
+        }
+      ]
+    },
+    "dim7_top_5_objecoes": {
+      "objecoes": [
+        {
+          "n": 1,
+          "objecao_em_palavras_da_audiencia": "Funciona mesmo? Parece coisa que não faz nada.",
+          "resposta_10s_chat": "660nm publicado em peer-reviewed — Journal of Clinical and Aesthetic Dermatology. O número tá na embalagem. Pesquisa lá.",
+          "resposta_30s_cta": "Entendo — tem muito produto no mercado que promete e não entrega. Por isso eu mostro o comprimento de onda impresso na embalagem: 660nm. Não é minha promessa — é física. Estudo publicado no Journal of Clinical and Aesthetic Dermatology testou exatamente esse comprimento de onda. E eu mostro o before/after do meu teste de 30 dias — incluindo o que NÃO mudou. Cupom LEDLIVE15 pra testar.",
+          "demo_de_fechamento": "Demo 3 — Before/After Visual"
+        },
+        {
+          "n": 2,
+          "objecao_em_palavras_da_audiencia": "R$199 tá caro, encontro mais barato.",
+          "resposta_10s_chat": "Compara o comprimento de onda — o mais barato declara o nm na embalagem? Se sim, compara. Se não, não é a mesma coisa.",
+          "resposta_30s_cta": "Faz sentido querer o melhor preço. Mas R$199 dividido por 365 dias de uso dá R$0,54 por sessão. Sessão de LED em clínica: de R$120 a R$300 cada. O que diferencia do mais barato é o comprimento de onda declarado — 660nm impresso na embalagem. Aparelho sem especificação de nm não garante o mesmo efeito. Compara o número, não só o preço. LEDLIVE15 aplica desconto agora.",
+          "demo_de_fechamento": "Demo 1 — 7 Cores ao Vivo (mostrando nm na embalagem)"
+        },
+        {
+          "n": 3,
+          "objecao_em_palavras_da_audiencia": "É seguro? Não vou colocar luz no rosto sem saber.",
+          "resposta_10s_chat": "Parâmetros de uso doméstico, sem calor térmico. Condição de pele diagnosticada: consulta dermatologista antes. Pra rotina complementar, dentro do padrão.",
+          "resposta_30s_cta": "Certo de questionar — luz no rosto sem entender o mecanismo não faz sentido. Os LEDs desse aparelho são de intensidade de uso doméstico — sem calor, sem UV, sem dano térmico documentado em uso normal. O que não é pra qualquer um: condição de pele diagnosticada, rosácea ativa, epilepsia fotossensível — consulta dermatologista antes. Pra rotina preventiva e complementar, os parâmetros estão dentro do padrão de dispositivos domésticos.",
+          "demo_de_fechamento": "Demo 2 — Timer e Sem Fio (mostrar que não aquece durante uso)"
+        },
+        {
+          "n": 4,
+          "objecao_em_palavras_da_audiencia": "Quanto tempo leva pra ver resultado? Não quero esperar meses.",
+          "resposta_10s_chat": "Honesto: resultado visível começa a aparecer em 30 dias de uso diário. Antes disso, não tem o que fotografar.",
+          "resposta_30s_cta": "Não vou mentir — resultado que dá pra fotografar leva 30 dias de uso consistente. Na primeira semana não acontece nada visível. No dia 30 você tira a foto no mesmo ângulo, mesma luz, e compara. Eu fiz isso e mostro aqui. Se você quer resultado em 7 dias para evento específico, esse não é o produto — vai precisar de procedimento estético profissional. Pra quem tem 30 dias e 10 minutos por dia, LEDLIVE15.",
+          "demo_de_fechamento": "Demo 3 — Before/After Visual"
+        },
+        {
+          "n": 5,
+          "objecao_em_palavras_da_audiencia": "Tem ANVISA? Como sei que é regularizado?",
+          "resposta_10s_chat": "Número de processo regulatório confirma com o seller no chat da plataforma antes de fechar. Eu mostro o que consigo mostrar — o nm na embalagem.",
+          "resposta_30s_cta": "Pergunta justa — regularização importa. Dispositivo eletrônico de uso cosmético doméstico tem enquadramento regulatório diferente de cosmético líquido. O número de processo e categoria regulatória você confirma com o seller direto no chat da plataforma antes de comprar — é seu direito pedir antes de fechar. O que eu posso mostrar agora é o que está na embalagem: comprimento de onda declarado, especificações técnicas. Transparência total.",
+          "demo_de_fechamento": "— (resposta verbal, sem demo associada — mostrar embalagem física)"
+        }
+      ]
+    },
+    "dim8_concorrentes": {
+      "tabela_comparativa": [
+        {
+          "concorrente": "Máscara LED genérica de marketplace (R$40-80)",
+          "preco": "R$40-80",
+          "diferencial": "Preço de entrada baixo",
+          "embalagem": "Sem declaração de nm · cores decorativas",
+          "onde_VENCEMOS": "Comprimento de onda específico declarado na embalagem (660nm, 415nm, 850nm) · timer automático · USB-C",
+          "onde_PERDEMOS": "Preço — o genérico é significativamente mais barato para quem não sabe diferenciar pelo nm"
+        },
+        {
+          "concorrente": "Painel LED profissional de uso doméstico (R$800-1.500)",
+          "preco": "R$800-1.500",
+          "diferencial": "Maior área de cobertura · mais potência",
+          "embalagem": "Geralmente com fio · volume maior",
+          "onde_VENCEMOS": "Preço muito menor · formato máscara full-face prático · sem fio · portátil",
+          "onde_PERDEMOS": "Potência de saída — painéis profissionais têm maior irradiância por cm² que máscara doméstica"
+        },
+        {
+          "concorrente": "Sessão de LED em clínica dermatológica",
+          "preco": "R$120-300 por sessão",
+          "diferencial": "Supervisão profissional · equipamento de alta potência",
+          "embalagem": "Não aplicável — serviço",
+          "onde_VENCEMOS": "Custo total (R$199 vs R$3.600-9.000 em 30 sessões) · conveniência de uso em casa · sem agendamento",
+          "onde_PERDEMOS": "Potência e irradiância do equipamento profissional · supervisão dermatológica · resultado mais rápido"
+        }
+      ],
+      "frase_comparativa_decorar": "O genérico mais barato não declara o comprimento de onda na embalagem. O profissional de clínica tem mais potência mas custa R$150 por sessão. Esse aqui fica no meio: nm declarado, preço de entrada doméstico.",
+      "honestidade_publica_se_questionarem": "Se você quer mais potência, o painel profissional entrega mais irradiância por cm². Se você quer conveniência e custo menor com comprimento de onda específico declarado, esse aqui é o meio-termo honesto."
+    },
+    "dim9_pricing_oferta": {
+      "camadas": [
+        {
+          "camada": "Máscara Solo",
+          "preco": 199,
+          "funcao": "atração"
+        },
+        {
+          "camada": "Kit Básico (Máscara + Manual PDF)",
+          "preco": 249,
+          "funcao": "AOV up"
+        },
+        {
+          "camada": "Kit Protocolo Completo (Máscara + Manual + Nécessaire + Grupo VIP 30 dias)",
+          "preco": 279,
+          "funcao": "lucro real"
+        }
+      ],
+      "cupons": [
+        {
+          "codigo": "LEDLIVE15",
+          "desconto_pct": 15,
+          "janela": "Duração da live — 90 minutos",
+          "trigger": "CTA principal — repetir a cada bloco de 15 minutos"
+        },
+        {
+          "codigo": "[cupom extra gift — definir código antes da live]",
+          "desconto_pct": 5,
+          "janela": "Acumulativo com LEDLIVE15 · válido 24h após a live",
+          "trigger": "Gift trigger min 5-7 e min 30-32 para participantes que interagiram"
+        }
+      ],
+      "ancoragem_5_frases": [
+        "vs clínica: sessão de LED em clínica custa de R$120 a R$300 cada. 30 sessões = até R$9.000. Aqui: R$199 uma vez.",
+        "vs delivery: você gasta R$60 num delivery de fim de semana. Esse aparelho dura anos.",
+        "vs custo/dia: R$199 dividido por 365 dias de uso = R$0,54 por sessão. Menos que um café.",
+        "vs sérum importado: sérum de vitamina C importado custa de R$180 a R$400 por frasco de 30ml. Esse aparelho faz a luz trabalhar sozinha.",
+        "vs custo/mês: com LEDLIVE15 o Kit Completo fica em R$237. Dividido por 30 dias = R$7,90 por mês. Qual o seu sérum atual por mês?"
+      ]
+    },
+    "dim10_dados_historicos_template": {
+      "instrucao": "Ana preenche manualmente antes da live — agente IA não tem acesso ao Seller Center ou histórico de vendas",
+      "campos_obrigatorios": [
+        "esgotou_quantas_vezes_30d (número de vezes que zerou estoque no último mês — crítico: estoque atual é apenas 50 unidades)",
+        "volume_medio_mensal (unidades vendidas por mês nos últimos 3 meses)",
+        "estoque_atual (confirmar: 50 unidades declaradas · atualizar no dia da live)",
+        "top_3_reviews_positivos_literais (copiar texto exato das avaliações — sem parafrasear)",
+        "1_review_negativo_literal (copiar texto exato do review mais recente negativo — usar para preparar resposta de objeção honesta)",
+        "recompra_pct_90d (percentual de clientes que compraram novamente nos 90 dias seguintes)",
+        "devolucao_pct_60d (percentual de devoluções nos 60 dias — crítico para calibrar argumento de garantia na live)"
+      ]
+    }
+  },
+  "compliance": {
+    "regulated_category": "cosmetico/eletronico",
+    "forbidden_claims": [
+      "trata acne",
+      "rejuvenesce",
+      "elimina rugas",
+      "cura"
+    ],
+    "allowed_claims": [
+      "uniformiza tom",
+      "reduz aparencia de linhas",
+      "complementa rotina"
+    ]
+  },
+  "audience_profile": {
+    "expected_size": "200-500 viewers",
+    "main_origin": "organico",
+    "funnel_stage": "descoberta_da_marca"
+  },
+  "_meta": {
+    "tokens_in": 7266,
+    "tokens_out": 15632,
+    "cost_usd_estimate": 0.256278
+  }
+}
