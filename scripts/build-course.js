@@ -25,17 +25,27 @@ const PARTIALS_DIR = path.join(TEMPLATES_DIR, '_partials');
 const PUBLIC_DIR = process.env.COURSE_OUTPUT_DIR || path.join(ROOT, 'public');
 
 const MODULES = [
-  { file: '00-INDICE', title: 'Índice' },
-  { file: '01-O-Produto', title: 'O Produto' },
-  { file: '02-A-Audiencia', title: 'A Audiência' },
-  { file: '03-O-Ciclo-OnLive', title: 'O Ciclo OnLive' },
-  { file: '04-Hooks', title: 'Hooks que Capturam' },
-  { file: '05-Demonstracao', title: 'Demonstração que Vende' },
-  { file: '06-Oferta-e-Preco', title: 'Oferta e Preço' },
-  { file: '07-CTA-e-Objecoes', title: 'CTA e Objeções' },
-  { file: '08-Plano-B', title: 'Plano B e Emergências' },
-  { file: '09-Prova-Final', title: 'Prova Final — Live Simulada' },
+  { file: '00-INDICE',      title: 'Índice · 4 Pilares' },
+  { file: '01-produto',     title: 'Pilar 1 · Produto' },
+  { file: '02-cliente',     title: 'Pilar 2 · Cliente' },
+  { file: '03-concorrencia',title: 'Pilar 3 · Concorrência' },
+  { file: '04-estado-live', title: 'Pilar 4 · Estado + Live' },
 ];
+
+// ===== slug → label legível (zero slug bruto) =====
+const CATEGORY_LABELS = {
+  eletronicos_beleza: 'Beauty Tech', cosmeticos: 'Cosmético', skincare: 'Skincare',
+  maquiagem: 'Maquiagem', cabelos: 'Cabelos', perfumaria: 'Perfumaria',
+  alimentos: 'Alimento', suplementos: 'Suplemento', moda: 'Moda',
+  calcados: 'Calçados', acessorios: 'Acessórios', casa_decoracao: 'Casa & Decoração',
+  utilidades_domesticas: 'Utilidades Domésticas', pet: 'Pet', infantil: 'Infantil',
+  fitness: 'Fitness', esportes: 'Esportes', saude: 'Saúde',
+  higiene_pessoal: 'Higiene Pessoal', tecnologia: 'Tecnologia', eletronicos: 'Eletrônicos',
+};
+function categoryLabel(slug) {
+  const k = String(slug || '').toLowerCase().replace(/ /g, '_');
+  return CATEGORY_LABELS[k] || k.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
 
 // ===== Helpers (compatível com Handlebars) =====
 const helpers = {
@@ -44,6 +54,7 @@ const helpers = {
   json: (ctx) => JSON.stringify(ctx),
   uppercase: (s) => String(s).toUpperCase(),
   progressPct: (current, total) => Math.round((current / total) * 100),
+  categoryLabel: (slug) => categoryLabel(slug),
 };
 
 // ===== Resolve dot path =====

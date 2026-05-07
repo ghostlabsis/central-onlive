@@ -12,12 +12,16 @@ export const FormInputSchema = z.object({
     date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Use formato YYYY-MM-DD'),
     time: z.string().regex(/^\d{2}:\d{2}$/, 'Use formato HH:MM'),
     duration_min: z.number().int().min(30).max(240),
+    live_duration_min: z.number().int().min(15).max(240).default(30),
     context: z.enum(['regular', 'brand-day', 'cast-day', 'lancamento']),
     master_coupon: z.string().min(1),
   }),
   hero: z.object({
     name: z.string().min(1),
+    nome_oficial: z.string().optional(),
+    nome_padrao: z.string().max(40).optional(),
     category: z.string().min(1),
+    regiao_alvo: z.enum(['nacional', 'sudeste', 'nordeste', 'sul', 'norte_centro_oeste']).default('nacional'),
     price_full: z.number().min(0),
     price_live: z.number().min(0),
     extra_coupon: z.string().optional(),
@@ -27,6 +31,10 @@ export const FormInputSchema = z.object({
       description: z.string().min(1),
     })).min(1).max(6),
     main_objection: z.string().min(1),
+    defeitos_conhecidos: z.array(z.object({
+      defeito: z.string().min(1),
+      resposta_pronta: z.string().min(1),
+    })).length(3).optional(),
   }),
   secondary_products: z.array(z.object({
     name: z.string().min(1),

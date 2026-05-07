@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+{{> head}}
+</head>
+<body class="min-h-screen">
+
+{{> header}}
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-10">
+    <p class="text-red-600 font-bold text-sm tracking-wider mb-2">PILAR 4 · ESTADO + EXECUÇÃO LIVE · 🔴 PROVA FINAL</p>
+    <h1 class="text-4xl font-bold leading-tight mb-3">{{module.title}}</h1>
+    <p class="text-lg text-gray-700 mb-4">Tudo que você estudou vai ser testado aqui. Prova Final: 30min cronometrados.</p>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+      <span>⏱️ 30 minutos</span>
+      <span>🔴 Prova Final obrigatória</span>
+      <span>📊 Scorecard 4 dimensões</span>
+      <span>🎬 Live {{pilar_4_estado_execucao_live.live_duration_min}} minutos</span>
+    </div>
+  </div>
+
+  <!-- Pré-Suasion 0-7min -->
+  <section class="mb-8">
+    <h2 class="text-xl font-bold mb-3">🎯 4.1 · Pré-Suasão Min 0-7 (Cialdini)</h2>
+    <p class="text-xs text-gray-500 mb-3">Autoridade + vulnerabilidade ANTES do pitch. A venda começa no min 7+.</p>
+    <div class="bg-gradient-to-br from-purple-900 to-black text-white rounded-2xl p-5">
+      <p class="text-sm text-gray-200 leading-relaxed whitespace-pre-line">{{pilar_4_estado_execucao_live.pre_suasion_min_0_7}}</p>
+    </div>
+  </section>
+
+  <!-- 5 Hooks -->
+  <section class="mb-8">
+    <h2 class="text-xl font-bold mb-3">🎣 4.2 · 5 Hooks 3s (5 ângulos diferentes)</h2>
+    <div class="space-y-3">
+      {{#each pilar_4_estado_execucao_live.5_hooks_3s}}
+      <div class="bg-white border border-gray-100 rounded-xl p-4">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded">{{angulo}}</span>
+          <span class="text-xs text-gray-400">{{framework}}</span>
+        </div>
+        <p class="text-gray-800 italic text-sm">"{{texto}}"</p>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+
+  <!-- Ciclo 10-12min -->
+  <section class="mb-8">
+    <h2 class="text-xl font-bold mb-3">🔄 4.3 · Ciclo 10-12 min (repetir durante toda a live)</h2>
+    <div class="space-y-3">
+      <div class="flex gap-3 items-start">
+        <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 text-purple-700 font-bold text-sm">H</div>
+        <div><p class="text-xs font-bold text-gray-500 mb-1">HOOK</p><p class="text-sm text-gray-700">{{pilar_4_estado_execucao_live.ciclo_10_12_min.hook}}</p></div>
+      </div>
+      <div class="flex gap-3 items-start">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-700 font-bold text-sm">D</div>
+        <div><p class="text-xs font-bold text-gray-500 mb-1">DEMO (PPTRI)</p><p class="text-sm text-gray-700">{{pilar_4_estado_execucao_live.ciclo_10_12_min.demo_pptri}}</p></div>
+      </div>
+      <div class="flex gap-3 items-start">
+        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-green-700 font-bold text-sm">O</div>
+        <div><p class="text-xs font-bold text-gray-500 mb-1">OFERTA</p><p class="text-sm text-gray-700">{{pilar_4_estado_execucao_live.ciclo_10_12_min.oferta}}</p></div>
+      </div>
+      <div class="flex gap-3 items-start">
+        <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 text-red-700 font-bold text-sm">C</div>
+        <div><p class="text-xs font-bold text-gray-500 mb-1">CTA</p><p class="text-sm text-gray-700">{{pilar_4_estado_execucao_live.ciclo_10_12_min.cta}}</p></div>
+      </div>
+      <div class="flex gap-3 items-start">
+        <div class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 text-amber-700 font-bold text-sm">G</div>
+        <div><p class="text-xs font-bold text-gray-500 mb-1">RESET GIFT</p><p class="text-sm text-gray-700">{{pilar_4_estado_execucao_live.ciclo_10_12_min.reset_gift}}</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer Stack + Risk + Future Pacing -->
+  <section class="mb-8">
+    <h2 class="text-xl font-bold mb-3">💰 4.4 · Offer Stack + Risk Reversal + Future Pacing (Hormozi)</h2>
+    <div class="space-y-4">
+      <!-- Stack -->
+      <div class="bg-white border border-gray-200 rounded-xl p-4">
+        <p class="text-xs font-bold text-gray-500 tracking-wider mb-3">OFFER STACK</p>
+        <div class="space-y-2">
+          {{#each pilar_4_estado_execucao_live.offer_stack_risk_future_pacing.stack}}
+          <div class="flex items-center gap-2 text-sm">
+            <span class="text-green-500">+</span>
+            <span class="text-gray-700">{{.}}</span>
+          </div>
+          {{/each}}
+        </div>
+        <div class="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
+          <span class="text-xs text-gray-500">Valor percebido: <strong>R$ {{pilar_4_estado_execucao_live.offer_stack_risk_future_pacing.valor_total_percebido}}</strong></span>
+          <span class="text-xs text-gray-500">Preço pedido: <strong class="text-purple-700">R$ {{pilar_4_estado_execucao_live.offer_stack_risk_future_pacing.preco_pedido}}</strong></span>
+          <span class="text-xs font-bold text-green-600">{{pilar_4_estado_execucao_live.offer_stack_risk_future_pacing.multiplo_valor}}× valor</span>
+        </div>
+      </div>
+      <!-- Risk Reversal -->
+      <div class="bg-green-50 border border-green-200 rounded-xl p-4">
+        <p class="text-xs font-bold text-green-600 tracking-wider mb-2">RISK REVERSAL (PIX + 7D)</p>
+        <p class="text-sm text-gray-700 italic">"{{pilar_4_estado_execucao_live.offer_stack_risk_future_pacing.risk_reversal}}"</p>
+      </div>
+      <!-- Future Pacing -->
+      <div class="bg-purple-50 border border-purple-200 rounded-xl p-4">
+        <p class="text-xs font-bold text-purple-600 tracking-wider mb-3">FUTURE PACING (3 CENAS)</p>
+        <div class="space-y-3">
+          {{#each pilar_4_estado_execucao_live.offer_stack_risk_future_pacing.future_pacing}}
+          <div class="flex items-start gap-3">
+            <span class="text-xs font-bold text-purple-600 bg-white border border-purple-200 px-2 py-1 rounded whitespace-nowrap">D+{{dias}}</span>
+            <p class="text-sm text-gray-700 italic">"{{cena}}"</p>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gift Triggers + Carrinho-Opens -->
+  <section class="mb-8">
+    <h2 class="text-xl font-bold mb-3">🎁 4.5 · Gift Triggers + Carrinho-Opens</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <!-- Gifts -->
+      <div>
+        <p class="text-xs font-bold text-amber-600 tracking-wider mb-2">🎁 GIFT TRIGGERS ({{_meta.gift_triggers_count}})</p>
+        <div class="space-y-2">
+          {{#each pilar_4_estado_execucao_live.gift_triggers}}
+          <div class="bg-amber-50 border border-amber-200 rounded-lg p-3">
+            <p class="text-xs font-bold text-amber-700 mb-1">Min {{min}}</p>
+            <p class="text-xs text-gray-600 italic mb-1">"{{frase_pronta}}"</p>
+            <p class="text-xs text-gray-500">🎁 {{recompensa}}</p>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <!-- Carrinho-opens -->
+      <div>
+        <p class="text-xs font-bold text-purple-600 tracking-wider mb-2">🛒 CARRINHO-OPENS ({{_meta.carrinho_opens_count}})</p>
+        <div class="space-y-2">
+          {{#each pilar_4_estado_execucao_live.carrinho_opens}}
+          <div class="bg-purple-50 border border-purple-200 rounded-lg p-3">
+            <p class="text-xs font-bold text-purple-700 mb-1">Min {{min}}</p>
+            <p class="text-xs text-gray-600">{{contexto}}</p>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plano B -->
+  <section class="mb-8">
+    <h2 class="text-xl font-bold mb-3">🆘 4.6 · Plano B (4 cenários de emergência)</h2>
+    <div class="space-y-3">
+      <div class="bg-white border border-gray-100 rounded-lg p-4"><p class="text-xs font-bold text-red-500 mb-1">DROP DE VIEWERS</p><p class="text-sm text-gray-700">{{pilar_4_estado_execucao_live.plano_b.drop_viewers}}</p></div>
+      <div class="bg-white border border-gray-100 rounded-lg p-4"><p class="text-xs font-bold text-orange-500 mb-1">TROLL</p><p class="text-sm text-gray-700">{{pilar_4_estado_execucao_live.plano_b.troll}}</p></div>
+      <div class="bg-white border border-gray-100 rounded-lg p-4"><p class="text-xs font-bold text-blue-500 mb-1">CHAT PARADO</p><p class="text-sm text-gray-700">{{pilar_4_estado_execucao_live.plano_b.chat_parado}}</p></div>
+      <div class="bg-white border border-gray-100 rounded-lg p-4"><p class="text-xs font-bold text-purple-500 mb-1">45MIN SEM VENDA</p><p class="text-sm text-gray-700">{{pilar_4_estado_execucao_live.plano_b.min_45_sem_venda}}</p></div>
+    </div>
+  </section>
+
+  <!-- TikTok Algorithm Layer -->
+  <section class="mb-8">
+    <h2 class="text-xl font-bold mb-3">📱 4.7 · TikTok Algorithm Layer (L17)</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="bg-black text-white rounded-xl p-4">
+        <p class="text-xs text-purple-300 font-bold tracking-wider mb-2">📌 PINNED COMMENT</p>
+        <p class="text-sm text-gray-200">{{pilar_4_estado_execucao_live.pinned_comment}}</p>
+      </div>
+      <div class="bg-black text-white rounded-xl p-4">
+        <p class="text-xs text-pink-300 font-bold tracking-wider mb-2">🎵 TRENDING SOUND</p>
+        <p class="text-sm text-gray-200">{{pilar_4_estado_execucao_live.trending_sound}}</p>
+      </div>
+      <div class="bg-black text-white rounded-xl p-4 sm:col-span-2">
+        <p class="text-xs text-amber-300 font-bold tracking-wider mb-2">🔁 OPEN LOOPS</p>
+        <ul class="space-y-2">
+          {{#each pilar_4_estado_execucao_live.open_loops}}
+          <li class="text-sm text-gray-200 italic">"{{.}}"</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prova Final -->
+  <div class="bg-gradient-to-br from-red-900 to-black text-white rounded-2xl p-6 mb-8">
+    <p class="text-xs text-red-300 font-bold tracking-wider mb-2">🔴 PROVA FINAL · 30 MINUTOS CRONOMETRADOS</p>
+    <h3 class="text-2xl font-black mb-3">Live Simulada</h3>
+    <p class="text-gray-300 text-sm leading-relaxed mb-4">{{outputs_mensuraveis.prova_final_p4}}</p>
+    <p class="text-xs text-red-400">Aprovação ≥4/5 em todas as dimensões do scorecard. Abaixo disso: refaz o pilar com menor score.</p>
+  </div>
+
+  <!-- Scorecard Drill P4 -->
+  <div class="bg-black text-white rounded-xl p-6 mb-6">
+    <h3 class="font-bold text-lg mb-2">🎯 Drill P4 · Prova Final</h3>
+    <p class="text-gray-300 text-sm mb-3">{{outputs_mensuraveis.drill_p3}}</p>
+    <p class="text-xs text-purple-400">Scorecard: Produto · Persona · Concorrência · Execução live. 4/5 mínimo em cada.</p>
+  </div>
+
+  <!-- Nav -->
+  <div class="flex justify-between mt-8 pt-8 border-t border-gray-100">
+    <a href="03-concorrencia.html" class="text-sm text-gray-600 hover:text-purple-600">← Pilar 3 · Concorrência</a>
+    <a href="00-INDICE.html" class="bg-gray-900 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-gray-700">↑ Índice · Voltar ao início</a>
+  </div>
+
+</main>
+</body>
+</html>

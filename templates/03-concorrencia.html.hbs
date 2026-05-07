@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+{{> head}}
+</head>
+<body class="min-h-screen">
+
+{{> header}}
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <div class="mb-10">
+    <p class="text-purple-600 font-bold text-sm tracking-wider mb-2">PILAR 3 · CONCORRÊNCIA</p>
+    <h1 class="text-4xl font-bold leading-tight mb-3">{{module.title}}</h1>
+    <p class="text-lg text-gray-700 mb-4">Audiência pesquisa. Selliver que conhece a concorrência ganha na pesquisa paralela.</p>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+      <span>⏱️ 15 minutos</span>
+      <span>🎯 Responder comparação de preço em ≤30s</span>
+      <span>📝 Quiz P3 (3 perguntas)</span>
+    </div>
+  </div>
+
+  <!-- Diferencial inegociável + Pix/7d -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+    <div class="bg-gradient-to-br from-purple-900 to-black text-white rounded-2xl p-5">
+      <p class="text-xs text-purple-300 font-bold tracking-wider mb-2">DIFERENCIAL INEGOCIÁVEL</p>
+      <p class="text-lg font-black leading-snug">"{{pilar_3_concorrencia.diferencial_inegociavel}}"</p>
+      <p class="text-xs text-purple-400 mt-3">Repete a cada ciclo da live.</p>
+    </div>
+    <div class="bg-gradient-to-br from-green-800 to-green-900 text-white rounded-2xl p-5">
+      <p class="text-xs text-green-300 font-bold tracking-wider mb-2">PIX + 7 DIAS GARANTIA</p>
+      <p class="text-base font-bold leading-snug">"{{pilar_3_concorrencia.pix_7d_garantia_frase}}"</p>
+      <p class="text-xs text-green-400 mt-3">Fala a cada 15 minutos de live.</p>
+    </div>
+  </div>
+
+  <!-- Concorrentes Mapeados -->
+  <section class="mb-8">
+    <h2 class="text-xl font-bold mb-3">🔍 3.1 · Concorrentes mapeados</h2>
+    <p class="text-xs text-gray-500 mb-3">Sem citar marca real. "Genérico de farmácia" / "Premium importado".</p>
+    <div class="space-y-4">
+      {{#each pilar_3_concorrencia.concorrentes_mapeados}}
+      <div class="bg-white border border-gray-100 rounded-xl p-4">
+        <p class="font-bold text-gray-900 mb-3">{{nome}}</p>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <p class="text-xs font-bold text-green-600 tracking-wider mb-2">ONDE VENCEMOS</p>
+            <ul class="space-y-1">
+              {{#each forcas}}
+              <li class="text-sm text-green-700 flex items-start gap-1"><span>✓</span>{{.}}</li>
+              {{/each}}
+            </ul>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-red-500 tracking-wider mb-2">ONDE PERDEMOS</p>
+            <ul class="space-y-1">
+              {{#each fraquezas}}
+              <li class="text-sm text-red-600 flex items-start gap-1"><span>✗</span>{{.}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+
+  <!-- Tabela comparativa -->
+  <section class="mb-8">
+    <h2 class="text-xl font-bold mb-3">📊 3.2 · Tabela comparativa (4 dimensões)</h2>
+    <div class="overflow-x-auto rounded-xl border border-gray-200">
+      <table class="w-full text-sm">
+        <thead class="bg-purple-900 text-white">
+          <tr>
+            <th class="text-left p-3 text-xs tracking-wider">Dimensão</th>
+            <th class="text-center p-3 text-xs tracking-wider text-purple-300">✅ Nós</th>
+            <th class="text-center p-3 text-xs tracking-wider text-gray-400">Concorrente</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="bg-white">
+            <td class="p-3 font-semibold text-gray-700">Preço/uso</td>
+            <td class="p-3 text-center font-bold text-purple-700">{{pilar_3_concorrencia.tabela_comparativa.voce.preco_uso}}</td>
+            <td class="p-3 text-center text-gray-500">{{pilar_3_concorrencia.tabela_comparativa.concorrente_principal.preco_uso}}</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="p-3 font-semibold text-gray-700">Garantia</td>
+            <td class="p-3 text-center font-bold text-purple-700">{{pilar_3_concorrencia.tabela_comparativa.voce.garantia}}</td>
+            <td class="p-3 text-center text-gray-500">{{pilar_3_concorrencia.tabela_comparativa.concorrente_principal.garantia}}</td>
+          </tr>
+          <tr class="bg-white">
+            <td class="p-3 font-semibold text-gray-700">Entrega</td>
+            <td class="p-3 text-center font-bold text-purple-700">{{pilar_3_concorrencia.tabela_comparativa.voce.entrega}}</td>
+            <td class="p-3 text-center text-gray-500">{{pilar_3_concorrencia.tabela_comparativa.concorrente_principal.entrega}}</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="p-3 font-semibold text-gray-700">Brinde</td>
+            <td class="p-3 text-center font-bold text-purple-700">{{pilar_3_concorrencia.tabela_comparativa.voce.brinde}}</td>
+            <td class="p-3 text-center text-gray-500">{{pilar_3_concorrencia.tabela_comparativa.concorrente_principal.brinde}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Resposta objeção comparativa -->
+  <section class="mb-8">
+    <h2 class="text-xl font-bold mb-3">💬 3.3 · Resposta à comparação de preço (30s)</h2>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+      <p class="text-sm text-gray-800 italic leading-relaxed">"{{pilar_3_concorrencia.resposta_objecao_comparativa_30s}}"</p>
+    </div>
+  </section>
+
+  <!-- Drill P3 -->
+  <div class="bg-black text-white rounded-xl p-6 mb-6">
+    <h3 class="font-bold text-lg mb-2">🎯 Drill P3 · Resposta comparativa em ≤30s</h3>
+    <p class="text-gray-300 text-sm mb-3">{{outputs_mensuraveis.drill_p3}}</p>
+    <p class="text-xs text-purple-400">Aprovação: frase completa · cita diferencial inegociável · ≤30s · sem hesitar.</p>
+  </div>
+
+  <!-- Quiz P3 -->
+  <section class="mb-8">
+    <h2 class="text-xl font-bold mb-4">📝 Quiz P3 · 3 perguntas</h2>
+    <div class="space-y-4">
+      {{#each outputs_mensuraveis.quiz_p3}}
+      <div class="bg-white border border-gray-100 rounded-xl p-4">
+        <p class="font-semibold text-gray-900 mb-3">{{@index}}. {{pergunta}}</p>
+        <div class="space-y-2">
+          {{#each opcoes}}
+          <label class="flex items-center gap-3 cursor-pointer text-sm text-gray-700">
+            <input type="radio" name="q3_{{../@index}}" value="{{.}}" class="w-4 h-4 text-purple-600">
+            <span>{{.}}</span>
+          </label>
+          {{/each}}
+        </div>
+        <details class="mt-3">
+          <summary class="text-xs text-purple-500 cursor-pointer font-semibold">Ver resposta</summary>
+          <p class="text-sm text-green-700 mt-2 font-bold">✅ {{resposta}}</p>
+        </details>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+
+  <!-- Nav -->
+  <div class="flex justify-between mt-8 pt-8 border-t border-gray-100">
+    <a href="02-cliente.html" class="text-sm text-gray-600 hover:text-purple-600">← Pilar 2 · Cliente</a>
+    <a href="04-estado-live.html" class="bg-red-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-red-700">Pilar 4 · Estado + Live 🔴 →</a>
+  </div>
+
+</main>
+</body>
+</html>

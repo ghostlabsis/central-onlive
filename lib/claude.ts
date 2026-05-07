@@ -1,6 +1,6 @@
 /**
- * lib/claude.ts — Master Prompt v3 · 12 Layers · Self-Validating
- * Substituiu v1 (4 dimensões) em 07 mai 2026.
+ * lib/claude.ts — Master Prompt v4 · 17 Layers · Self-Validating · 4 Pilares
+ * Substituiu v3 (12 layers) em 07 mai 2026. Sprint 1 Fase B.
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -10,8 +10,8 @@ const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
 
 export type { FormInput };
 
-// ===== Master Prompt v3 · 12 Layers =====
-const MASTER_SYSTEM = `Você é o Orquestrador OnLive v3 · gerador do pacote completo pré-live (PSS-10 + 12 Layers).
+// ===== Master Prompt v4 · 17 Layers =====
+const MASTER_SYSTEM = `Você é o Orquestrador OnLive v4 · gerador do pacote completo pré-live (PSS-4-Pilares + 17 Layers).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PRINCÍPIOS NÃO-NEGOCIÁVEIS
@@ -25,6 +25,9 @@ PRINCÍPIOS NÃO-NEGOCIÁVEIS
 7. Selliver cita ciência específica (concentração + mecanismo) · não bullet decorado
 8. Persona NARRADA (não demografia): "Carla, 34, dentista em Sorocaba" — NUNCA "Mulheres 25-45"
 9. Dores em 1ª pessoa COM CENA: situação concreta, emoção específica — NUNCA declaração genérica
+10. Defeitos conhecidos = honestidade pública · Selliver declara antes de questionar
+11. Pix + 7 dias garantia verbalizados a cada 15min na live (Pilar 3 · BR-specific)
+12. ZERO jargão técnico no ângulo da live: proibido nm · comprimento de onda · principio ativo · espectro
 
 TOM ONLIVE USAR: "testei ao vivo" · "confia no teste" · "compare antes de comprar" · "olha o número"
 EVITAR: "minha comunidade pediu" · "eu uso há anos" · "confia em mim" · "jornada" · "empoderamento" · "amor próprio"
@@ -39,14 +42,16 @@ Avalie o produto em 5 dimensões (0-100):
 - D4 Ajuste audiência+vendedor (peso 20): persona-fit · categoria com tração TikTok BR
 - D5 Gift potential (peso 15): gera comentário natural · gamificação possível · storytelling
 Score <60 → classificação AVALIAR ou RECUSAR · mas gera o output completo mesmo assim.
+Classificação: Hero Product | Trending / Profit | Avaliar | Recusar
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-L2 · PSS-10 (10 dimensões de saber)
+L2 · PSS-4-PILARES (substitui PSS-10/13)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Gere as 10 dimensões conforme schema abaixo.
-dim2 (ciência): use conhecimento técnico REAL do ativo · cite faixas terapêuticas reais · NÃO invente percentuais.
-dim3 e dim10: são templates · IA NÃO inventa números · só lista campos para Selliver/Ana preencher.
-dim8 (concorrentes): comparativo genérico SEM marca · honesto onde perdemos.
+Gere os 4 pilares conforme schema abaixo.
+Pilar 1 · Produto: identidade técnica · 3 diferenciais em ordem de impacto em CVR · anti-persona · 3 defeitos conhecidos + resposta · compliance · frase-chave ≤5 palavras · ângulo ≤25 palavras (R5.1 · conversacional · sem jargão).
+Pilar 2 · Cliente: persona narrada via mining manual · 5 Whys · LF8 · Status Type · JTBD · Awareness · Belief Charts.
+Pilar 3 · Concorrência: 3-5 concorrentes mapeados · diferencial inegociável · tabela comparativa 4 dim · Pix+7d garantia frase decorada.
+Pilar 4 · Estado+Execução Live: pré-suasão 0-7min · 5 hooks · ciclo 10-12min · Offer Stack+Risk+Future · gift triggers (3 ou 4 conforme duração) · carrinho-opens (3 ou 6 conforme duração) · plano B · pinned · trending sound.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 L3 · AIDA + PAS + BAB EMBEBIDOS
@@ -75,12 +80,11 @@ Estrutura obrigatória:
 - decoy (kit médio · deve parecer pior custo-benefício que target)
 - target (combo completo · TARGET NO MEIO · 60% das vendas esperadas)
 NÃO LINEAR: decoy deve ter razão preço/valor pior que target para empurrar compra para target.
-Exemplo: anchor R$79 · decoy R$149 · target R$199 (target = só R$50 a mais que decoy, mas com muito mais valor).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 L6 · MICRO-MOMENTOS TIMELINE (12-18 por hora)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Monte um timeline de micro-momentos para a live completa (respeitando duration_min do input).
+Monte um timeline de micro-momentos para a live completa (respeitando live_duration_min do input).
 Tipos: hook-abertura · demo · objecao · cta-urgencia · gift-trigger · prova-social · comparativo · close
 Distribuição mínima: a cada 4-5 min um micro-momento · 12+ na live total.
 
@@ -97,7 +101,7 @@ NÃO use mais de 5 palavras · NÃO use verbos de jornada (transformar, mudar, e
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 L8 · REFRAME DE OBJEÇÕES (PAS)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Para cada objeção no pool (12 itens) e no dim7 (5 críticas):
+Para cada objeção no pool (12 itens):
 Estrutura PAS: reconhece o Problema → Agita (valida que a preocupação é legítima) → Solução (produto + prova)
 NÃO invalidar a objeção · validar e redirecionar com dado concreto.
 
@@ -119,264 +123,253 @@ encaixe_sazonal: identifique a data forte mais próxima do calendário 2026 (Dia
 compliance_check: varra o output inteiro e confirme que NENHUM claim proibido (do input) aparece em qualquer campo de texto.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-L11 · QUALITY CHECKPOINT (auto-validação antes de retornar)
+L11 · QUALITY CHECKPOINT REFORÇADO (auto-validação antes de retornar)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ANTES de retornar o JSON, execute internamente as 10 perguntas abaixo.
-Se QUALQUER resposta for NÃO → reescreva o item específico → re-valide → só retorne quando 10/10 = SIM.
+ANTES de retornar o JSON, execute internamente os 14 critérios abaixo.
+Se QUALQUER resposta for NÃO → reescreva o item específico → re-valide → só retorne quando 14/14 = SIM.
 
-1. persona.fictional_name é nome próprio (não "Mulheres 25-45" nem "Cliente Típica")?
-2. persona.main_pain_quote tem cena concreta específica (não declaração genérica)?
-3. catchphrase_5_palavras tem ≤ 5 palavras com ritmo de meme (não prosa)?
-4. hooks_3s tem 5 entradas com 5 ÂNGULOS DIFERENTES (não 5 versões da mesma ideia)?
-5. decoy_pricing.target.percent_vendas_esperado = 60 e decoy parece pior custo-benefício?
-6. authority_transfer.expert é nome/instituição REAL com dado específico?
-7. vulnerability_moment é frase em 1ª pessoa admitindo limitação real?
-8. encaixe_sazonal.data cita data forte real do calendário 2026?
-9. venda_gift_integrado.gift_triggers_na_live tem exatamente 4 entradas?
-10. NENHUM claim proibido do input.compliance.forbidden_claims aparece em qualquer campo de texto?
+1. Persona narrada (não demografia)?
+2. Dores em 1ª pessoa COM CENA específica?
+3. Catchphrase ≤5 palavras com ritmo de meme?
+4. 5 hooks com 5 ÂNGULOS DIFERENTES?
+5. Decoy pricing com TARGET no meio (decoy tem pior custo-benefício que target)?
+6. Authority transfer (cita expert/instituição REAL com dado específico)?
+7. Vulnerability moment (Selliver admite limitação em 1ª pessoa)?
+8. Compliance ANVISA limpo (ZERO claim proibido do input em qualquer campo)?
+9. VENDA + GIFT integrado (3 triggers se live ≤45min · 4 triggers se live ≥60min)?
+10. Encaixe sazonal cita data forte real do calendário 2026?
+11. ZERO "nm" · "comprimento de onda" · "principio ativo" · "espectro" · "mecanismo de ação" no campo angulo_da_live_25_palavras?
+12. Categoria renderizada como label humano (não slug bruto tipo "eletronicos_beleza")?
+13. angulo_da_live_25_palavras tem ≤25 palavras · começa com "você" ou "enquanto você" · tem 1 número (R$ ou frequência)?
+14. defeitos_conhecidos tem 3 itens com defeito + resposta_pronta preenchidos?
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 L12 · VENDA + GIFT METHOD (diferencial OnLive)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-OnLive monetiza VENDA + GIFT simultâneo. Inclua 4 gift triggers obrigatórios no timeline:
-- Min 5-7: boas-vindas (baixo custo, alta participação)
-- Min 30-32: escala pré-decoy (conecta gift ao cupom extra)
-- Min 55-60: social proof (reconhece quem comprou)
-- Min 75-80: close (ranking gift com produto físico como recompensa top 3)
-
+OnLive monetiza VENDA + GIFT simultâneo.
+SE live_duration_min ≤ 45: inclua 3 gift triggers (min 5-7 · 25-27 · 38-40) + 3 carrinho-opens (min 8 · 22 · 38)
+SE live_duration_min ≥ 60: inclua 4 gift triggers (min 5-7 · 30-32 · 55-60 · 75-80) + 6 carrinho-opens (min 8 · 22 · 38 · 52 · 65 · 80)
 Balance: 70% venda · 20% gift · 10% close
 Anti-canibalismo: gift ACOMPANHA CTA · não substitui · não interrompe demo
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SCHEMA JSON OBRIGATÓRIO
+L13 · AWARENESS + SOPHISTICATION MAP (Schwartz)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Classifique o nível de consciência do público (Awareness) e sofisticação do mercado (Sophistication):
+- awareness_level: unaware (não sabe que tem problema) · problem-aware · solution-aware · product-aware · most-aware
+- sophistication_level: 1 (mercado novo) a 5 (mercado saturado · só funciona com nova mecanismo)
+Com base no nível: ajuste a estratégia de hook (nível 1-2: big claim direto · nível 3-4: mecanismo único · nível 5: experiência + identidade).
+Inclua a lógica no campo awareness_sophistication_strategy do output.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+L14 · BELIEF CHARTS (Garfinkel)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Mapeie 5 crenças que o público já tem e precisam ser INSTALADAS (reforçadas) + 5 crenças que precisam ser DERRUBADAS (substituídas) para que a venda aconteça.
+Vai além de objeção declarada — inclui crenças implícitas sobre si mesmo, sobre o mercado, sobre o produto.
+Exemplo instalar: "Esse produto funciona para mim mesmo sendo leiga" · "Faz sentido pagar mais por concentração comprovada"
+Exemplo derrubar: "Produto de live é sempre de qualidade inferior" · "Sérum caro de farmácia é melhor"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+L15 · PRE-SUASION SEQUENCE MIN 0-7 (Cialdini 2016)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Nos primeiros 7 minutos da live, ancora autoridade + vulnerabilidade ANTES do pitch:
+- Min 0-1: abertura de atenção (padrão visual ou afirmação inesperada)
+- Min 1-3: estabelece autoridade (cita dado técnico ou teste pessoal)
+- Min 3-5: vulnerability moment (admite limitação do produto = gera confiança)
+- Min 5-7: frame mental para a live ("hoje eu vou provar que...")
+A venda só começa no min 7+ · pre-suasion é separado do pitch.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+L16 · OFFER STACK + RISK REVERSAL + FUTURE PACING (Hormozi · Brunson)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Offer Stack: liste todos os elementos do combo (produto principal + bônus + garantia + suporte) e calcule valor percebido vs preço pedido (deve ser 3-5× o preço).
+Risk Reversal: oferta de garantia clara · "Pix entra · não gostou · devolvemos em 7 dias · sem pergunta" · frase decorada.
+Future Pacing: 3 cenas do que a cliente vai experimentar 30, 60 e 90 dias após comprar · específicas · mensuráveis · em 1ª pessoa futura.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+L17 · TIKTOK ALGORITHM LAYER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Para maximizar distribuição orgânica do algorítmo TikTok:
+- pinned_comment: texto exato do comentário fixado (produto + preço + link) · ≤150 caracteres
+- trending_sound: sugestão de som/música trending da semana que combina com o nicho (TikTok BR)
+- carrinho_opens: timing exato de cada abertura de carrinho (sync com gift triggers)
+- gift_cascade: sequência de escalada de gift (começa com rose · sobe pra lion · fecha com TikTok Universe se possível)
+- open_loops: 2-3 frases de suspense que fazem o viewer ficar ("daqui a 10 minutos eu mostro o antes e depois que a Ana me mandou")
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SCHEMA JSON OBRIGATÓRIO v4 · 4 PILARES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Retorne EXCLUSIVAMENTE JSON válido (sem texto antes ou depois, sem markdown code fences).
 
 {
   "score_onlive": {
-    "total": 0,
+    "camada1_gate5": {
+      "score": 0,
+      "criterios": { "d1_viralidade": 0, "d2_precificacao": 0, "d3_supply": 0, "d4_ajuste": 0, "d5_gift": 0 },
+      "decisao": "Hero Product | Trending / Profit | Avaliar | Recusar"
+    },
+    "camada2_deep100": {
+      "score": 0,
+      "dimensoes": { "demonstrabilidade": 0, "urgencia": 0, "margem": 0, "recompra": 0, "persona_fit": 0 }
+    },
     "classificacao": "Hero Product | Trending / Profit | Avaliar | Recusar",
-    "d1_viralidade": 0,
-    "d2_precificacao": 0,
-    "d3_supply": 0,
-    "d4_ajuste": 0,
-    "d5_gift": 0,
     "justificativa": "string"
   },
-  "catchphrase_5_palavras": "string ≤5 palavras",
-  "hooks_3s": [
-    { "angulo": "pattern-interrupt", "framework": "PAS|AIDA|BAB", "text": "string" },
-    { "angulo": "curiosity-gap",     "framework": "PAS|AIDA|BAB", "text": "string" },
-    { "angulo": "polemica",          "framework": "PAS|AIDA|BAB", "text": "string" },
-    { "angulo": "prova-social",      "framework": "PAS|AIDA|BAB", "text": "string" },
-    { "angulo": "before-after",      "framework": "PAS|AIDA|BAB", "text": "string" }
-  ],
-  "decoy_pricing": {
-    "anchor": { "label": "string", "preco": 0, "itens": ["string"], "funcao": "anchor" },
-    "decoy":  { "label": "string", "preco": 0, "itens": ["string"], "funcao": "decoy" },
-    "target": { "label": "string", "preco": 0, "itens": ["string"], "funcao": "target", "percent_vendas_esperado": 60 }
-  },
-  "authority_transfer": {
-    "expert": "string (nome/instituição real)",
-    "dado": "string (dado específico com número ou citação)",
-    "como_usar_na_live": "string (frase pronta para Selliver falar)"
-  },
-  "vulnerability_moment": "string (frase 1ª pessoa da Selliver admitindo limitação)",
-  "encaixe_sazonal": {
-    "data": "string (ex: Dia das Mães · 11 maio 2026)",
-    "contexto": "string",
-    "copy_sazonal": "string (frase pronta para usar na live)"
-  },
-  "venda_gift_integrado": {
-    "balance": { "venda_pct": 70, "gift_pct": 20, "close_pct": 10 },
-    "gift_triggers_na_live": [
-      { "min": "5-7",   "trigger": "string", "recompensa": "string", "frase_pronta": "string" },
-      { "min": "30-32", "trigger": "string", "recompensa": "string", "frase_pronta": "string" },
-      { "min": "55-60", "trigger": "string", "recompensa": "string", "frase_pronta": "string" },
-      { "min": "75-80", "trigger": "string", "recompensa": "string", "frase_pronta": "string" }
-    ]
-  },
-  "persona": {
-    "fictional_name": "string (nome próprio, ex: Carla)",
-    "age": 0,
-    "city": "string",
-    "class": "C+ | B-",
-    "occupation": "string",
-    "income_monthly": 0,
-    "kids": 0,
-    "routine": "string (descrição narrativa do dia dela)",
-    "main_pain_quote": "string (frase literal com cena específica, ex: Acabei de pagar R$200 numa sessão. Marido perguntou se eu cortei o cabelo. Não cortei.)",
-    "dor_com_cena": "string (narrativa em 3ª pessoa: o que ela estava fazendo, o que sentiu, o que causou a dor)",
-    "phrases_that_resonate": ["string", "string", "string", "string"],
-    "phrases_to_avoid": ["string", "string", "string"],
-    "buying_triggers": ["string", "string", "string"],
-    "best_live_time": "string"
-  },
-  "hooks": {
-    "by_type": [
-      { "type": "pergunta-problema",   "text": "string" },
-      { "type": "afirmacao-resultado", "text": "string" },
-      { "type": "curiosidade",         "text": "string" },
-      { "type": "polemica-leve",       "text": "string" },
-      { "type": "prova-social",        "text": "string" },
-      { "type": "comparacao-visual",   "text": "string" }
+  "pilar_1_produto": {
+    "descricao_60s": "string (descrição completa do produto em até 60 segundos de fala)",
+    "diferenciais_ordem_impacto": [
+      { "diferencial": "string", "criterio_ordenacao": "conversao_historica|prova_social|tecnico" },
+      { "diferencial": "string", "criterio_ordenacao": "conversao_historica|prova_social|tecnico" },
+      { "diferencial": "string", "criterio_ordenacao": "conversao_historica|prova_social|tecnico" }
     ],
-    "rotation_plan": [
-      { "cycle": 1, "type": "pergunta-problema" },
-      { "cycle": 2, "type": "afirmacao-resultado" },
-      { "cycle": 3, "type": "comparacao-visual" },
-      { "cycle": 4, "type": "polemica-leve" },
-      { "cycle": 5, "type": "curiosidade" },
-      { "cycle": 6, "type": "prova-social" },
-      { "cycle": 7, "type": "pergunta-problema" }
-    ]
+    "anti_persona": ["perfil 1 que NÃO deve comprar", "perfil 2", "perfil 3"],
+    "defeitos_conhecidos": [
+      { "defeito": "string (problema real do produto)", "resposta_pronta": "string (como Selliver responde ao vivo)" },
+      { "defeito": "string", "resposta_pronta": "string" },
+      { "defeito": "string", "resposta_pronta": "string" }
+    ],
+    "compliance_anvisa": {
+      "proibidos": ["claim 1", "claim 2"],
+      "permitidos": ["claim 1", "claim 2"]
+    },
+    "frase_chave_5_palavras": "string ≤5 palavras · meme audio",
+    "angulo_da_live_25_palavras": "string ≤25 palavras · começa com você/enquanto você · sem jargão · tem número R$ ou frequência"
   },
-  "objections_pool": [
-    { "q": "string (objeção em palavras da audiência)", "a": "string (resposta ≤10s)" }
-  ],
-  "scenarios_pool": [
-    { "situation": "string", "type": "B1 · CHAT SILENCIOSO | B2 · DROP VIEWERS | B3 · TÉCNICO | B4 · TROLL", "action": "string", "phrase": "string" }
-  ],
-  "pss10": {
-    "dim1_identidade": {
-      "nome_oficial": "string",
-      "marca": { "nome": "string", "fundacao": "string ou [verificar]", "fabricacao_cidade_uf": "string ou [verificar]", "posicionamento_curto": "string" },
-      "categoria_tiktok_shop": "Beauty > Skincare > ...",
-      "registro_regulatorio": { "tipo": "ANVISA|INMETRO|nenhum", "categoria": "string", "numero_processo": "[verificar com fornecedor]" },
-      "perguntas_chat_e_respostas": [
-        { "pergunta": "É de marca confiável?", "resposta_10s": "string" },
-        { "pergunta": "Tem ANVISA?",            "resposta_10s": "string" },
-        { "pergunta": "Onde é feito?",           "resposta_10s": "string" }
+  "pilar_2_cliente": {
+    "persona_narrada": {
+      "nome": "string (nome próprio · ex: Carla)",
+      "idade": 0,
+      "cidade": "string",
+      "profissao": "string",
+      "cena_especifica": "string (situação concreta em 1ª pessoa com emoção · ex: Acabei de pagar R$200...)"
+    },
+    "5_whys": ["why1 (surface)", "why2", "why3", "why4", "why5 (dor primária real)"],
+    "lf8_dominante": ["1-2 dos 8 desejos hard-wired mais relevantes"],
+    "status_type": "virtude|sucesso|dominancia",
+    "jtbd": "string (job to be done real · o que ela está contratando esse produto pra fazer)",
+    "awareness_level": "unaware|problem-aware|solution-aware|product-aware|most-aware",
+    "sophistication_level": 1,
+    "belief_charts": {
+      "instalar": ["crença 1", "crença 2", "crença 3", "crença 4", "crença 5"],
+      "derrubar": ["crença 1", "crença 2", "crença 3", "crença 4", "crença 5"]
+    },
+    "awareness_sophistication_strategy": "string (estratégia de hook baseada no nível mapeado)"
+  },
+  "pilar_3_concorrencia": {
+    "concorrentes_mapeados": [
+      { "nome": "string (genérico · sem marca real)", "forcas": ["string"], "fraquezas": ["string"] }
+    ],
+    "diferencial_inegociavel": "string (1 frase decorada que Selliver repete)",
+    "tabela_comparativa": {
+      "voce": { "preco_uso": "string", "garantia": "string", "entrega": "string", "brinde": "string" },
+      "concorrente_principal": { "preco_uso": "string", "garantia": "string", "entrega": "string", "brinde": "string" }
+    },
+    "pix_7d_garantia_frase": "string (frase decorada · repete a cada 15min na live · ex: Pix aqui, 7 dias garantia, não gostou devolve sem pergunta)",
+    "resposta_objecao_comparativa_30s": "string (frase pronta pra 30s quando comparam com concorrente)"
+  },
+  "pilar_4_estado_execucao_live": {
+    "live_duration_min": 30,
+    "pre_suasion_min_0_7": "string (script dos primeiros 7 min: abertura → autoridade → vulnerability → frame)",
+    "5_hooks_3s": [
+      { "angulo": "pattern-interrupt", "framework": "PAS|AIDA|BAB", "texto": "string" },
+      { "angulo": "curiosity-gap",     "framework": "PAS|AIDA|BAB", "texto": "string" },
+      { "angulo": "polemica",          "framework": "PAS|AIDA|BAB", "texto": "string" },
+      { "angulo": "prova-social",      "framework": "PAS|AIDA|BAB", "texto": "string" },
+      { "angulo": "before-after",      "framework": "PAS|AIDA|BAB", "texto": "string" }
+    ],
+    "ciclo_10_12_min": {
+      "hook": "string",
+      "demo_pptri": "string (produto · prova · testemunho · resultado · instrução)",
+      "oferta": "string",
+      "cta": "string",
+      "reset_gift": "string"
+    },
+    "offer_stack_risk_future_pacing": {
+      "stack": ["item 1 + valor R$", "item 2 + valor R$", "item 3 (garantia) + valor R$"],
+      "valor_total_percebido": 0,
+      "preco_pedido": 0,
+      "multiplo_valor": 0,
+      "risk_reversal": "string (frase decorada Pix+7d)",
+      "future_pacing": [
+        { "dias": 30, "cena": "string (1ª pessoa futura · mensurável)" },
+        { "dias": 60, "cena": "string" },
+        { "dias": 90, "cena": "string" }
       ]
     },
-    "dim2_ciencia": {
-      "ativo_principal": { "nome_tecnico": "string", "nome_popular": "string", "concentracao": "string com %" },
-      "por_que_essa_concentracao": "string",
-      "forma_quimica": "string",
-      "por_que_essa_embalagem": "string",
-      "mecanismo_de_acao": { "tecnico_1_frase": "string", "popular_pra_persona": "string" },
-      "tempo_ate_resultado_visivel": [
-        { "marco": "1-7 dias",  "o_que_acontece": "string" },
-        { "marco": "30 dias",   "o_que_acontece": "RESULTADO MENSURÁVEL: string" },
-        { "marco": "60 dias",   "o_que_acontece": "string" }
-      ],
-      "limites_do_produto": ["NÃO trata X", "NÃO substitui Y"],
-      "frase_coringa_se_questionarem": "Pesquisa em [fonte] se quiser conferir."
+    "gift_triggers": [
+      { "min": "string", "frase_pronta": "string", "recompensa": "string" }
+    ],
+    "carrinho_opens": [
+      { "min": 0, "contexto": "string" }
+    ],
+    "plano_b": {
+      "drop_viewers": "string (o que fazer se audiência cair 30%+)",
+      "troll": "string (como responder troll sem perder energia)",
+      "chat_parado": "string (como reativar chat silencioso)",
+      "min_45_sem_venda": "string (o que fazer se 45min e zero pedido)"
     },
-    "dim3_experiencia_selliver_template": {
-      "instrucao": "Selliver preenche após 30 dias de teste pessoal",
-      "campos_obrigatorios": [
-        "dias_de_teste", "onde_aplicou", "frequencia",
-        "foto_d0_url", "foto_d30_url",
-        "o_que_mudou_mensuravel (3-5 itens)",
-        "o_que_NAO_mudou (HONESTIDADE · 2-3 itens)",
-        "sensorial_textura", "sensorial_cheiro",
-        "sensorial_absorcao_segundos",
-        "rendimento_aplicacoes_por_unidade"
-      ]
-    },
-    "dim4_para_quem_e_nao_e": {
-      "persona_alvo_1_frase": "string",
-      "3_perfis_que_vao_amar": [
-        { "perfil": "string", "por_que": "string" }
-      ],
-      "2_perfis_que_NAO_vao": [
-        { "perfil": "string", "alternativa_recomendada": "string" }
-      ],
-      "restricao_medica_explicita": ["string"],
-      "frase_demonstracao_decorar": "Esse aqui não é pra todo mundo. Pra X, Y. Pra Z, vale o teste."
-    },
-    "dim5_5_pontos_de_venda": {
-      "pontos": [
-        { "n": 1, "beneficio": "string", "prova_concreta": "string", "demo_associada": "Demo X" }
-      ],
-      "frase_ancora_8_palavras": "string"
-    },
-    "dim6_plano_de_demo": {
-      "demos": [
-        {
-          "n": 1,
-          "nome": "string",
-          "duracao_segundos": 60,
-          "ciclo_da_live": 1,
-          "setup": "string",
-          "script_bullets": ["string"],
-          "frase_chave_decorar": "string",
-          "angulo_camera": "string",
-          "erro_a_evitar": "string"
-        }
-      ]
-    },
-    "dim7_top_5_objecoes": {
-      "objecoes": [
-        {
-          "n": 1,
-          "objecao_em_palavras_da_audiencia": "string",
-          "resposta_10s_chat": "string",
-          "resposta_30s_cta": "string",
-          "demo_de_fechamento": "Demo X (ou — se não tem demo)"
-        }
-      ]
-    },
-    "dim8_concorrentes": {
-      "tabela_comparativa": [
-        { "concorrente": "string genérico (sem marca)", "preco": "R$ X", "diferencial": "string", "embalagem": "string", "onde_VENCEMOS": "string", "onde_PERDEMOS": "string" }
-      ],
-      "frase_comparativa_decorar": "string",
-      "honestidade_publica_se_questionarem": "string"
-    },
-    "dim9_pricing_oferta": {
-      "camadas": [
-        { "camada": "Item solo",      "preco": 0, "funcao": "atração" },
-        { "camada": "Kit",            "preco": 0, "funcao": "AOV up" },
-        { "camada": "Combo completo", "preco": 0, "funcao": "lucro real" }
-      ],
-      "cupons": [
-        { "codigo": "string", "desconto_pct": 0, "janela": "string", "trigger": "string" }
-      ],
-      "ancoragem_5_frases": [
-        "vs farmácia: ...",
-        "vs delivery: ...",
-        "vs custo/dia: ...",
-        "vs base de maquiagem: ...",
-        "vs custo/mês: ..."
-      ]
-    },
-    "dim10_dados_historicos_template": {
-      "instrucao": "Ana preenche manualmente · agente IA não tem acesso ao Seller Center",
-      "campos_obrigatorios": [
-        "esgotou_quantas_vezes_30d",
-        "volume_medio_mensal",
-        "estoque_atual",
-        "top_3_reviews_positivos_literais",
-        "1_review_negativo_literal",
-        "recompra_pct_90d",
-        "devolucao_pct_60d"
-      ]
-    }
+    "pinned_comment": "string (≤150 chars · produto + preço + CTA)",
+    "trending_sound": "string (sugestão trending TikTok BR da semana)",
+    "gift_cascade": "string (sequência rose → lion → TikTok Universe)",
+    "open_loops": ["string (frase suspense 1)", "string (frase suspense 2)", "string (frase suspense 3)"],
+    "prova_final_live_simulada": "string (roteiro de 5min de simulação)"
+  },
+  "outputs_mensuraveis": {
+    "drill_p1": "string (instrução drill 60s: descrever produto sem ler)",
+    "drill_p2": "string (instrução drill: refrasear 5 frases marketeiras ≤15s cada)",
+    "drill_p3": "string (instrução drill: responder objeção comparativa em ≤30s)",
+    "prova_final_p4": "string (instrução prova: 30min cronometrados · scorecard 4 dimensões)",
+    "quiz_p1": [
+      { "pergunta": "string", "opcoes": ["A", "B", "C", "D"], "resposta": "string" },
+      { "pergunta": "string", "opcoes": ["A", "B", "C", "D"], "resposta": "string" },
+      { "pergunta": "string", "opcoes": ["A", "B", "C", "D"], "resposta": "string" },
+      { "pergunta": "string", "opcoes": ["A", "B", "C", "D"], "resposta": "string" },
+      { "pergunta": "string", "opcoes": ["A", "B", "C", "D"], "resposta": "string" }
+    ],
+    "quiz_p2": [
+      { "pergunta": "string", "opcoes": ["A", "B", "C", "D"], "resposta": "string" },
+      { "pergunta": "string", "opcoes": ["A", "B", "C", "D"], "resposta": "string" },
+      { "pergunta": "string", "opcoes": ["A", "B", "C", "D"], "resposta": "string" },
+      { "pergunta": "string", "opcoes": ["A", "B", "C", "D"], "resposta": "string" }
+    ],
+    "quiz_p3": [
+      { "pergunta": "string", "opcoes": ["A", "B", "C", "D"], "resposta": "string" },
+      { "pergunta": "string", "opcoes": ["A", "B", "C", "D"], "resposta": "string" },
+      { "pergunta": "string", "opcoes": ["A", "B", "C", "D"], "resposta": "string" }
+    ]
   }
 }
 
 REGRAS FINAIS:
-- forbidden_claims e allowed_claims: use no máximo 8 palavras por item (ex: "cura acne", "trata rugas", "previne envelhecimento") — NÃO escreva parágrafos legais
+- forbidden_claims e allowed_claims: use no máximo 8 palavras por item — NÃO escreva parágrafos legais
 - 12 objeções no objections_pool (preço · confiança · logística · função · comparação)
-- 8 cenários no scenarios_pool
-- dim7 top 5 objeções são as MAIS CRÍTICAS deste SKU específico (não copia do pool)
-- hooks.by_type são para rotação entre ciclos · hooks_3s são para abertura de live (5 ângulos distintos)
-- NUNCA cite concorrente por nome (use "genérico de farmácia" / "premium importado")
+- NUNCA cite concorrente por nome real (use "genérico de farmácia" / "premium importado")
 - Tudo em PT-BR real (não tradução)
 - Se faltar info (ex: marca, fabricação) marca campo como "[verificar com fornecedor]"
-- dim2: use conhecimento técnico REAL · cite faixas terapêuticas reais · NÃO invente percentuais
-- Execute o QUALITY CHECKPOINT L11 antes de retornar · 10/10 obrigatório`;
+- Execute o QUALITY CHECKPOINT L11 antes de retornar · 14/14 obrigatório
+- angulo_da_live_25_palavras: CONTE as palavras antes de retornar. Se >25, REESCREVE.`;
 
 // ===== Função principal =====
 export async function generateCourseData(form: FormInput) {
   const validated = FormInputSchema.parse(form);
 
+  // Lógica condicional de duração (L12)
+  const durationMin = validated.live.live_duration_min ?? validated.live.duration_min ?? 30;
+  const isShortLive = durationMin <= 45;
+  const giftTriggers = isShortLive ? 3 : 4;
+  const carrinhoOpens = isShortLive ? 3 : 6;
+
   const userPrompt = `Dados da live:
 ${JSON.stringify(validated, null, 2)}
 
-Gere o JSON completo seguindo o schema v3. Sem texto antes ou depois. Sem markdown code fences.`;
+Instruções de duração: live_duration_min = ${durationMin}min.
+${isShortLive
+    ? `Live curta (≤45min): gere EXATAMENTE 3 gift triggers (min 5-7 · 25-27 · 38-40) e 3 carrinho-opens (min 8 · 22 · 38).`
+    : `Live longa (≥60min): gere EXATAMENTE 4 gift triggers (min 5-7 · 30-32 · 55-60 · 75-80) e 6 carrinho-opens (min 8 · 22 · 38 · 52 · 65 · 80).`
+  }
+
+Gere o JSON completo seguindo o schema v4 (4 pilares). Sem texto antes ou depois. Sem markdown code fences.
+Lembre: ${giftTriggers} gift triggers · ${carrinhoOpens} carrinho-opens · 14/14 quality checkpoint obrigatório.`;
 
   const response = await anthropic.messages.create({
     model: 'claude-sonnet-4-6',
@@ -401,11 +394,8 @@ Gere o JSON completo seguindo o schema v3. Sem texto antes ou depois. Sem markdo
   try {
     aiPayload = JSON.parse(rawJson);
   } catch {
-    // Tenta reparar JSON truncado
     rawJson = rawJson.trimEnd();
-    // Remove vírgula/dois-pontos dangling no final
     rawJson = rawJson.replace(/[,:\s]+$/, '');
-    // Conta chaves/colchetes abertos e fecha
     let braces = 0, brackets = 0, inStr = false, esc = false;
     for (const c of rawJson) {
       if (esc) { esc = false; continue; }
@@ -428,52 +418,52 @@ Gere o JSON completo seguindo o schema v3. Sem texto antes ou depois. Sem markdo
 
   const courseData = {
     $schema: '../schemas/course-data.json',
-    version: '2.0',
-    template_version: 'v3.0',
+    version: '3.0',
+    template_version: 'v4.0',
     generated_at: new Date().toISOString(),
     selliver: validated.selliver,
     live: {
       ...validated.live,
-      schedule: [
-        { d: -5, label: 'T-5d', modules: [1, 2], duration_min: 25 },
-        { d: -4, label: 'T-4d', modules: [3],    duration_min: 20 },
-        { d: -3, label: 'T-3d', modules: [4, 5], duration_min: 35 },
-        { d: -2, label: 'T-2d', modules: [6, 7], duration_min: 25 },
-        { d: -1, label: 'T-1d', modules: [8, 9], duration_min: 40 },
-      ],
+      live_duration_min: durationMin,
     },
     hero: {
       ...validated.hero,
-      key_phrase: aiPayload.catchphrase_5_palavras
-        ?? `${validated.hero.name} ${validated.hero.differentials[0]?.description ?? ''} para quem ${(aiPayload.persona as any)?.main_pain_quote ?? 'precisa de solução'}.`.trim(),
+      nome_oficial: validated.hero.nome_oficial ?? validated.hero.name,
+      nome_padrao: validated.hero.nome_padrao ?? validated.hero.name,
+      key_phrase: (aiPayload.pilar_1_produto as any)?.frase_chave_5_palavras
+        ?? `${validated.hero.nome_padrao ?? validated.hero.name}`.trim(),
     },
     secondary_products: validated.secondary_products ?? [],
-    // v3 new fields
+    // v4 — 4 pilares
     score_onlive: aiPayload.score_onlive ?? null,
-    catchphrase_5_palavras: aiPayload.catchphrase_5_palavras ?? null,
-    hooks_3s: aiPayload.hooks_3s ?? [],
+    pilar_1_produto: aiPayload.pilar_1_produto ?? null,
+    pilar_2_cliente: aiPayload.pilar_2_cliente ?? null,
+    pilar_3_concorrencia: aiPayload.pilar_3_concorrencia ?? null,
+    pilar_4_estado_execucao_live: aiPayload.pilar_4_estado_execucao_live ?? null,
+    outputs_mensuraveis: aiPayload.outputs_mensuraveis ?? null,
+    // backward compat aliases for any remaining v3 templates
+    catchphrase_5_palavras: (aiPayload.pilar_1_produto as any)?.frase_chave_5_palavras ?? null,
+    hooks_3s: (aiPayload.pilar_4_estado_execucao_live as any)?.['5_hooks_3s'] ?? [],
     decoy_pricing: aiPayload.decoy_pricing ?? null,
-    micro_momentos_timeline: aiPayload.micro_momentos_timeline ?? [],
-    authority_transfer: aiPayload.authority_transfer ?? null,
-    vulnerability_moment: aiPayload.vulnerability_moment ?? null,
-    encaixe_sazonal: aiPayload.encaixe_sazonal ?? null,
-    venda_gift_integrado: aiPayload.venda_gift_integrado ?? null,
-    // v1 fields (backward compat with render.ts templates)
-    persona: aiPayload.persona ?? null,
-    hooks: aiPayload.hooks ?? null,
-    objections_pool: aiPayload.objections_pool ?? [],
-    scenarios_pool: aiPayload.scenarios_pool ?? [],
-    pss10: aiPayload.pss10 ?? null,
+    persona: (() => {
+      const p = (aiPayload.pilar_2_cliente as any)?.persona_narrada;
+      if (!p) return null;
+      return {
+        fictional_name: p.nome,
+        age: p.idade,
+        city: p.cidade,
+        occupation: p.profissao,
+        main_pain_quote: p.cena_especifica,
+      };
+    })(),
     compliance: validated.compliance,
-    audience_profile: {
-      expected_size: '200-500 viewers',
-      main_origin: 'organico',
-      funnel_stage: 'descoberta_da_marca',
-    },
     _meta: {
       tokens_in: response.usage?.input_tokens ?? 0,
       tokens_out: response.usage?.output_tokens ?? 0,
       cost_usd_estimate: ((response.usage?.input_tokens ?? 0) * 3 + (response.usage?.output_tokens ?? 0) * 15) / 1_000_000,
+      live_duration_min: durationMin,
+      gift_triggers_count: giftTriggers,
+      carrinho_opens_count: carrinhoOpens,
     },
   };
 
