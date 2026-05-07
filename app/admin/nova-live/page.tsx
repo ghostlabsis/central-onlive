@@ -56,9 +56,21 @@ export default function NovaLivePage() {
   const [secondaryProducts, setSecondaryProducts] = useState<
     { name: string; price_live: number; bundle_with_hero: boolean }[]
   >([]);
+  type GenerateResult = {
+    status: string;
+    total_sellivers: number;
+    results: Array<{
+      selliver_id: string;
+      selliver_nome: string;
+      whatsapp: string;
+      url: string;
+      indice_url: string;
+    }>;
+  };
+
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [result, setResult] = useState<{ url: string; indice_url: string } | null>(null);
+  const [result, setResult] = useState<GenerateResult | null>(null);
 
   // ── Step 1: Analyze URL ────────────────────────────────────────────────
   async function handleAnalyze(e: React.FormEvent) {
@@ -498,16 +510,40 @@ export default function NovaLivePage() {
         {/* ── STEP 3: DONE ──────────────────────────────────────────────── */}
         {step === 'done' && result && (
           <div className="space-y-4">
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-400 rounded-2xl p-10 text-center">
-              <div className="text-5xl mb-4">✅</div>
-              <h2 className="text-2xl font-bold text-green-900 mb-2">Curso gerado</h2>
-              <p className="text-green-700 mb-6">10 módulos prontos. Manda o link no WhatsApp da Selliver.</p>
-              <a href={result.indice_url} target="_blank" rel="noopener noreferrer"
-                className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors">
-                🟣 Abrir curso →
-              </a>
-              <p className="text-xs text-gray-400 mt-4 break-all">{result.indice_url}</p>
+            <div className="bg-green-50 border-2 border-green-400 rounded-xl p-4">
+              <p className="font-bold text-green-900">✓ {result.total_sellivers} curso(s) gerado(s) com sucesso</p>
+              <p className="text-sm text-green-800 mt-1">Links prontos abaixo. Manda no WhatsApp de cada Selliver.</p>
             </div>
+
+            {result.results.map((r) => {
+              const mensagem = `Oi ${r.selliver_nome}! Seu curso pré-live tá pronto: ${r.indice_url}`;
+              const whatsappUrl = `https://wa.me/${r.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(mensagem)}`;
+              return (
+                <div key={r.selliver_id} className="bg-white border-2 border-purple-200 rounded-xl p-4">
+                  <div className="mb-3">
+                    <h3 className="font-bold text-lg text-purple-900">{r.selliver_nome}</h3>
+                    <p className="text-xs text-gray-400">{r.whatsapp}</p>
+                  </div>
+                  <a href={r.indice_url} target="_blank" rel="noopener"
+                    className="block text-sm text-purple-700 underline truncate mb-3">
+                    {r.indice_url}
+                  </a>
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={() => navigator.clipboard.writeText(r.indice_url)}
+                      className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold py-2 px-3 rounded-lg text-sm transition-colors">
+                      📋 Copiar link
+                    </button>
+                    <a href={whatsappUrl} target="_blank" rel="noopener"
+                      className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-3 rounded-lg text-sm text-center transition-colors">
+                      💬 Abrir WhatsApp
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+
             <button
               onClick={() => { setStep('url'); setProductUrl(''); setExtraContext(''); setAnalysis(null); setResult(null); setForm(EMPTY_FORM); setSecondaryProducts([]); }}
               className="w-full border-2 border-gray-200 rounded-xl py-3 text-gray-600 font-bold hover:border-gray-300 transition-colors">
